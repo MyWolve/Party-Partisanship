@@ -8,6 +8,10 @@ def get_vote_pages(session):
     vote_url = "https://www.ourcommons.ca/members/en/votes?parlSession="
     house_of_commons = vote_url + session
     response = requests.get(house_of_commons)
+    
+    if response.status_code == 500:
+        return response.status_code
+
     html_content = response.text
 
     soup = BeautifulSoup(html_content, "html.parser")
@@ -23,6 +27,8 @@ def get_vote_pages(session):
                 if a_tag and 'href' in a_tag.attrs:
                     data_row = ["https://www.ourcommons.ca" + a_tag['href']]
                     writer.writerow(data_row)
+    
+    return 0
     
 def get_vote_by_party(vote_pages, output_name):
     with open(vote_pages, mode='r') as file:
@@ -50,7 +56,7 @@ def get_vote_by_party(vote_pages, output_name):
 
                     file_response = requests.get("https://www.ourcommons.ca" + href)
                     if file_response.status_code == 200:
-                        vote_url = vote_url[-3:]
+                        vote_url = vote_url[-4:]
                         while "/" in vote_url:
                             vote_url = vote_url[1:]
                         file_name = f"file_{vote_url}.csv"
@@ -60,9 +66,12 @@ def get_vote_by_party(vote_pages, output_name):
 
 
 if __name__ == "__main__":
-    session = "43-1"
-    get_vote_pages(session)
-    output_name = "./Parliament_" + session + "/"
-    get_vote_by_party('./output.csv', output_name)
+        for i in range(38, 42):
+            for j in range(1, 4):
+                session = str(i) + "-" + str(j)
+                response = get_vote_pages(session)
+                if response == 0:
+                    output_name = "./Parliament_" + session + "/"
+                    get_vote_by_party('./output.csv', output_name)
 
 
