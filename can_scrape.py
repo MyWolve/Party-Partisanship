@@ -4,8 +4,9 @@ import csv
 import os
 
 
-def get_vote_pages():
-    house_of_commons = "https://www.ourcommons.ca/members/en/votes" 
+def get_vote_pages(session):
+    vote_url = "https://www.ourcommons.ca/members/en/votes?parlSession="
+    house_of_commons = vote_url + session
     response = requests.get(house_of_commons)
     html_content = response.text
 
@@ -23,12 +24,12 @@ def get_vote_pages():
                     data_row = ["https://www.ourcommons.ca" + a_tag['href']]
                     writer.writerow(data_row)
     
-def get_vote_by_party(vote_pages):
+def get_vote_by_party(vote_pages, output_name):
     with open(vote_pages, mode='r') as file:
         csv_reader = csv.reader(file)
 
-        if not os.path.exists("votes_by_party"):
-            os.makedirs("votes_by_party")
+        if not os.path.exists(output_name):
+            os.makedirs(output_name)
 
         for row in csv_reader:
             vote_url = row[0]
@@ -53,11 +54,15 @@ def get_vote_by_party(vote_pages):
                         while "/" in vote_url:
                             vote_url = vote_url[1:]
                         file_name = f"file_{vote_url}.csv"
-                        file_path = os.path.join('./votes_by_party/', file_name)
+                        file_path = os.path.join(output_name, file_name)
                         with open(file_path, 'wb') as file:
                             file.write(file_response.content)
 
 
 if __name__ == "__main__":
-    get_vote_by_party('./output.csv')
+    session = "43-1"
+    get_vote_pages(session)
+    output_name = "./Parliament_" + session + "/"
+    get_vote_by_party('./output.csv', output_name)
+
 
