@@ -1,5 +1,6 @@
 import os
 import csv
+import random
 
 
 def get_votes_by_party(directory, bill):
@@ -14,6 +15,8 @@ def get_votes_by_party(directory, bill):
 
                 voters = list(reader)
                 print(f"Number of voters: {len(voters)}")
+                # Prints name of Parliament session
+                print(f"Parliament: {directory}")
                 # Prints name of file
                 print(f"Bill: {filename}")
 
@@ -156,15 +159,27 @@ def display_cohesion_by_party(party_votes):
         Independent_Cohesion = "N/A"
 
     print()
-    print(f"Conservative Cohesion: {Conservative_Cohesion}%")
-    print(f"Liberal Cohesion: {Liberal_Cohesion}%")
-    print(f"NDP Cohesion: {NDP_Cohesion}%")
-    print(f"Bloc Cohesion: {Bloc_Cohesion}%")
-    print(f"Green Cohesion: {Green_Cohesion}%")
-    print(f"Independent Cohesion: {Independent_Cohesion}%")
+    print(f"Conservative Cohesion: {Conservative_Cohesion}% (Party Size: {Conservative_Party_Size}, Yea Votes: {yea_votes}, Nay Votes: {nay_votes})")
+    print(f"Liberal Cohesion: {Liberal_Cohesion}% (Party Size: {Liberal_Party_Size}, Yea Votes: {yea_votes}, Nay Votes: {nay_votes})")
+    print(f"NDP Cohesion: {NDP_Cohesion}% (Party Size: {NDP_Party_Size}, Yea Votes: {yea_votes}, Nay Votes: {nay_votes})")
+    print(f"Bloc Cohesion: {Bloc_Cohesion}% (Party Size: {Bloc_Party_Size}, Yea Votes: {yea_votes}, Nay Votes: {nay_votes})")
+    print(f"Green Cohesion: {Green_Cohesion}% (Party Size: {Green_Party_Size}, Yea Votes: {yea_votes}, Nay Votes: {nay_votes})")
+    print(f"Independent Cohesion: {Independent_Cohesion}% (Party Size: {Independent_Party_Size}, Yea Votes: {yea_votes}, Nay Votes: {nay_votes})")
+   
+# Test a random parliament session and bill from the current directory
+def test_random_parliament():
+    directories = [d for d in os.listdir("./") if os.path.isdir(os.path.join("./", d))]
+    directory = os.path.join("./", random.choice(directories))
+    bill = random.choice(os.listdir(directory))
+    party_votes = get_votes_by_party(directory, bill)
+    display_cohesion_by_party(party_votes)
 
+# Test a specific parliament session and bill
+def test_parliament():
+    directory = "./Parliament_38-1"
+    bill = "file_23.csv"
+    party_votes = get_votes_by_party(directory, bill)
+    display_cohesion_by_party(party_votes)
 
-directory = "./Parliament_38-1"
-bill = "file_1.csv"
-party_votes = get_votes_by_party(directory, bill)
-display_cohesion_by_party(party_votes)
+if __name__ == "__main__":
+    test_random_parliament()
