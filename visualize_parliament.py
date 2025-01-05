@@ -2,7 +2,7 @@ import os
 import csv
 import random
 import matplotlib.pyplot as plt
-
+import numpy as np
 
 def get_votes_by_party(directory, bill=None):
     if bill is None:
@@ -16,17 +16,17 @@ def get_votes_by_party(directory, bill=None):
         # Get the votes for each bill
         Party_Votes = []
         for file_path in file_paths:
-            with open(file_path, 'r') as file:
+            with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
                 reader = csv.reader(file)
                 # Skip the header row
                 header = next(reader)
 
                 voters = list(reader)
-                print(f"Number of voters: {len(voters)}")
+                # print(f"Number of voters: {len(voters)}")
                 # Prints name of Parliament session
-                print(f"Parliament: {directory}")
+                # print(f"Parliament: {directory}")
                 # Prints name of file
-                print(f"Bill: {file_path}")
+                # print(f"Bill: {file_path}")
 
                 # Count the number of votes by party and return them as lists
                 Conservative_Votes = []
@@ -53,7 +53,8 @@ def get_votes_by_party(directory, bill=None):
                 except IndexError:
                     pass
 
-                Party_Votes.append([Conservative_Votes, Liberal_Votes, NDP_Votes, Bloc_Votes, Green_Votes, Independent_Votes])
+                filename = os.path.basename(file_path)[:-4]
+                Party_Votes.append([Conservative_Votes, Liberal_Votes, NDP_Votes, Bloc_Votes, Green_Votes, Independent_Votes, filename])
         
         return Party_Votes
 
@@ -125,15 +126,17 @@ def display_cohesion_by_party(party_votes):
                 for vote in bill_votes[0]:
                     if vote[1] == "Yea":
                         Conservative_yea_votes += 1
-                    else:
+                    elif vote[1] == "Nay":
                         Conservative_nay_votes += 1
+                    else:
+                        Conservative_Party_Size -= 1
                 
                 if Conservative_yea_votes >= Conservative_nay_votes:
                     Conservative_Cohesion = round(Conservative_yea_votes / Conservative_Party_Size * 100, 2)
                 else:
                     Conservative_Cohesion = round(Conservative_nay_votes / Conservative_Party_Size * 100, 2)
             except ZeroDivisionError:
-                Conservative_Cohesion = 0
+                Conservative_Cohesion = None
             
             # Liberal Cohesion
             try:
@@ -142,15 +145,17 @@ def display_cohesion_by_party(party_votes):
                 for vote in bill_votes[1]:
                     if vote[1] == "Yea":
                         Liberal_yea_votes += 1
-                    else:
+                    elif vote[1] == "Nay":
                         Liberal_nay_votes += 1
+                    else:
+                        Liberal_Party_Size -= 1
                 
                 if Liberal_yea_votes >= Liberal_nay_votes:
                     Liberal_Cohesion = round(Liberal_yea_votes / Liberal_Party_Size * 100, 2)
                 else:
                     Liberal_Cohesion = round(Liberal_nay_votes / Liberal_Party_Size * 100, 2)
             except ZeroDivisionError:
-                Liberal_Cohesion = 0
+                Liberal_Cohesion = None
             
             # NDP Cohesion
             try:
@@ -159,15 +164,17 @@ def display_cohesion_by_party(party_votes):
                 for vote in bill_votes[2]:
                     if vote[1] == "Yea":
                         NDP_yea_votes += 1
-                    else:
+                    elif vote[1] == "Nay":
                         NDP_nay_votes += 1
+                    else:
+                        NDP_Party_Size -= 1
                 
                 if NDP_yea_votes >= NDP_nay_votes:
                     NDP_Cohesion = round(NDP_yea_votes / NDP_Party_Size * 100, 2)
                 else:
                     NDP_Cohesion = round(NDP_nay_votes / NDP_Party_Size * 100, 2)
             except ZeroDivisionError:
-                NDP_Cohesion = 0
+                NDP_Cohesion = 1
             
             # Bloc Cohesion
             try:
@@ -176,15 +183,17 @@ def display_cohesion_by_party(party_votes):
                 for vote in bill_votes[3]:
                     if vote[1] == "Yea":
                         Bloc_yea_votes += 1
-                    else:
+                    elif vote[1] == "Nay":
                         Bloc_nay_votes += 1
+                    else:
+                        Bloc_Party_Size -= 1
                 
                 if Bloc_yea_votes >= Bloc_nay_votes:
                     Bloc_Cohesion = round(Bloc_yea_votes / Bloc_Party_Size * 100, 2)
                 else:
                     Bloc_Cohesion = round(Bloc_nay_votes / Bloc_Party_Size * 100, 2)
             except ZeroDivisionError:
-                Bloc_Cohesion = 0
+                Bloc_Cohesion = None
             
             # Green Cohesion
             try:
@@ -193,15 +202,17 @@ def display_cohesion_by_party(party_votes):
                 for vote in bill_votes[4]:
                     if vote[1] == "Yea":
                         Green_yea_votes += 1
-                    else:
+                    elif vote[1] == "Nay":
                         Green_nay_votes += 1
+                    else:
+                        Green_Party_Size -= 1
                 
                 if Green_yea_votes >= Green_nay_votes:
                     Green_Cohesion = round(Green_yea_votes / Green_Party_Size * 100, 2)
                 else:
                     Green_Cohesion = round(Green_nay_votes / Green_Party_Size * 100, 2)
             except ZeroDivisionError:
-                Green_Cohesion = 0
+                Green_Cohesion = None
             
             # Independent Cohesion
             try:
@@ -210,15 +221,17 @@ def display_cohesion_by_party(party_votes):
                 for vote in bill_votes[5]:
                     if vote[1] == "Yea":
                         Independent_yea_votes += 1
-                    else:
+                    elif vote[1] == "Nay":
                         Independent_nay_votes += 1
+                    else:
+                        Independent_Party_Size -= 1
 
                 if Independent_yea_votes >= Independent_nay_votes:
                     Independent_Cohesion = round(Independent_yea_votes / Independent_Party_Size * 100, 2)
                 else:
                     Independent_Cohesion = round(Independent_nay_votes / Independent_Party_Size * 100, 2)
             except ZeroDivisionError:
-                Independent_Cohesion = 0
+                Independent_Cohesion = None
             
             Party_Cohesion.append([(Conservative_Cohesion, Conservative_Party_Size, Conservative_yea_votes, Conservative_nay_votes), (Liberal_Cohesion, Liberal_Party_Size, Liberal_yea_votes, Liberal_nay_votes), (NDP_Cohesion, NDP_Party_Size, NDP_yea_votes, NDP_nay_votes), (Bloc_Cohesion, Bloc_Party_Size, Bloc_yea_votes, Bloc_nay_votes), (Green_Cohesion, Green_Party_Size, Green_yea_votes, Green_nay_votes), (Independent_Cohesion, Independent_Party_Size, Independent_yea_votes, Independent_nay_votes)])
          
@@ -271,15 +284,17 @@ def display_cohesion_by_party(party_votes):
             for vote in party_votes[0]:
                 if vote[1] == "Yea":
                     Conservative_yea_votes += 1
-                else:
+                elif vote[1] == "Nay":
                     Conservative_nay_votes += 1
+                else:
+                    Conservative_Party_Size -= 1
             
             if Conservative_yea_votes >= Conservative_nay_votes:
                 Conservative_Cohesion = round(Conservative_yea_votes / Conservative_Party_Size * 100, 2)
             else:
                 Conservative_Cohesion = round(Conservative_nay_votes / Conservative_Party_Size * 100, 2)
         except ZeroDivisionError:
-            Conservative_Cohesion = "N/A"
+            Conservative_Cohesion = None
 
         # Liberal Cohesion
         try:
@@ -288,15 +303,17 @@ def display_cohesion_by_party(party_votes):
             for vote in party_votes[1]:
                 if vote[1] == "Yea":
                     Liberal_yea_votes += 1
-                else:
+                elif vote[1] == "Nay":
                     Liberal_nay_votes += 1
+                else:
+                    Liberal_Party_Size -= 1
             
             if Liberal_yea_votes >= Liberal_nay_votes:
                 Liberal_Cohesion = round(Liberal_yea_votes / Liberal_Party_Size * 100, 2)
             else:
                 Liberal_Cohesion = round(Liberal_nay_votes / Liberal_Party_Size * 100, 2)
         except ZeroDivisionError:
-            Liberal_Cohesion = "N/A"
+            Liberal_Cohesion = None
         
         # NDP Cohesion
         try:
@@ -305,15 +322,17 @@ def display_cohesion_by_party(party_votes):
             for vote in party_votes[2]:
                 if vote[1] == "Yea":
                     NDP_yea_votes += 1
-                else:
+                elif vote[1] == "Nay":
                     NDP_nay_votes += 1
+                else:
+                    NDP_Party_Size -= 1
             
             if NDP_yea_votes >= NDP_nay_votes:
                 NDP_Cohesion = round(NDP_yea_votes / NDP_Party_Size * 100, 2)
             else:
                 NDP_Cohesion = round(NDP_nay_votes / NDP_Party_Size * 100, 2)
         except ZeroDivisionError:
-            NDP_Cohesion = "N/A"
+            NDP_Cohesion = None
         
         # Bloc Cohesion
         try:
@@ -322,15 +341,17 @@ def display_cohesion_by_party(party_votes):
             for vote in party_votes[3]:
                 if vote[1] == "Yea":
                     Bloc_yea_votes += 1
-                else:
+                elif vote[1] == "Nay":
                     Bloc_nay_votes += 1
+                else:
+                    Bloc_Party_Size -= 1
             
             if Bloc_yea_votes >= Bloc_nay_votes:
                 Bloc_Cohesion = round(Bloc_yea_votes / Bloc_Party_Size * 100, 2)
             else:
                 Bloc_Cohesion = round(Bloc_nay_votes / Bloc_Party_Size * 100, 2)
         except ZeroDivisionError:
-            Bloc_Cohesion = "N/A"
+            Bloc_Cohesion = None
             
         # Green Cohesion
         try:
@@ -339,15 +360,17 @@ def display_cohesion_by_party(party_votes):
             for vote in party_votes[4]:
                 if vote[1] == "Yea":
                     Green_yea_votes += 1
-                else:
+                elif vote[1] == "Nay":
                     Green_nay_votes += 1
+                else:
+                    Green_Party_Size -= 1
             
             if Green_yea_votes >= Green_nay_votes:
                 Green_Cohesion = round(Green_yea_votes / Green_Party_Size * 100, 2)
             else:
                 Green_Cohesion = round(Green_nay_votes / Green_Party_Size * 100, 2)
         except ZeroDivisionError:
-            Green_Cohesion = "N/A"
+            Green_Cohesion = None
 
         # Independent Cohesion
         try:
@@ -356,15 +379,17 @@ def display_cohesion_by_party(party_votes):
             for vote in party_votes[5]:
                 if vote[1] == "Yea":
                     Independent_yea_votes += 1
-                else:
+                elif vote[1] == "Nay":
                     Independent_nay_votes += 1
+                else:
+                    Independent_Party_Size -= 1
 
             if Independent_yea_votes >= Independent_nay_votes:
                 Independent_Cohesion = round(Independent_yea_votes / Independent_Party_Size * 100, 2)
             else:
                 Independent_Cohesion = round(Independent_nay_votes / Independent_Party_Size * 100, 2)
         except ZeroDivisionError:
-            Independent_Cohesion = "N/A"
+            Independent_Cohesion = None
 
         print()
         print(f"Conservative Cohesion: {Conservative_Cohesion}% (Party Size: {Conservative_Party_Size}, Yea Votes: {Conservative_yea_votes}, Nay Votes: {Conservative_nay_votes})")
@@ -418,11 +443,174 @@ def test_parliament_and_bill():
     Party_Cohesion = display_cohesion_by_party(party_votes)
     plot_cohesion_by_party(Party_Cohesion)
 
+# Test a specific parliament session and all its bills
 def test_parliament():
     directory = "./Parliament_44-1"
     party_votes = get_votes_by_party(directory)
     Party_Cohesion = display_cohesion_by_party(party_votes)
     plot_cohesion_by_party(Party_Cohesion)
 
+def plot_rand_parliament_cohesion_over_time(excluded_parties=None):
+    if excluded_parties is None:
+        excluded_parties = []
+
+    #directories = [d for d in os.listdir("./") if os.path.isdir(os.path.join("./", d))]
+    #directory = os.path.join("./", random.choice(directories))
+    directory = "./Parliament_44-1"
+    party_votes = get_votes_by_party(directory)
+
+    cohesion_by_bill = []
+    for vote in party_votes:
+        Conservative_Party_Size = len(vote[0])
+        Liberal_Party_Size = len(vote[1])
+        NDP_Party_Size = len(vote[2])
+        Bloc_Party_Size = len(vote[3])
+        Green_Party_Size = len(vote[4])
+        Independent_Party_Size = len(vote[5])
+
+        bill = vote[6]
+
+        # Conservative Cohesion
+        try:
+            Conservative_yea_votes = 0
+            Conservative_nay_votes = 0
+            for value in vote[0]:
+                if value[1] == "Yea":
+                    Conservative_yea_votes += 1
+                elif value[1] == "Nay":
+                    Conservative_nay_votes += 1
+                else:
+                    Conservative_Party_Size -= 1
+            
+            if Conservative_yea_votes >= Conservative_nay_votes:
+                Conservative_Cohesion = round(Conservative_yea_votes / Conservative_Party_Size * 100, 2)
+            else:
+                Conservative_Cohesion = round(Conservative_nay_votes / Conservative_Party_Size * 100, 2)
+        except ZeroDivisionError:
+            Conservative_Cohesion = None
+        
+        # Liberal Cohesion
+        try:
+            Liberal_yea_votes = 0
+            Liberal_nay_votes = 0
+            for value in vote[1]:
+                if value[1] == "Yea":
+                    Liberal_yea_votes += 1
+                elif value[1] == "Nay":
+                    Liberal_nay_votes += 1
+                else:
+                    Liberal_Party_Size -= 1
+            
+            if Liberal_yea_votes >= Liberal_nay_votes:
+                Liberal_Cohesion = round(Liberal_yea_votes / Liberal_Party_Size * 100, 2)
+            else:
+                Liberal_Cohesion = round(Liberal_nay_votes / Liberal_Party_Size * 100, 2)
+        except ZeroDivisionError:
+            Liberal_Cohesion = None
+        
+        # NDP Cohesion
+        try:
+            NDP_yea_votes = 0
+            NDP_nay_votes = 0
+            for value in vote[2]:
+                if value[1] == "Yea":
+                    NDP_yea_votes += 1
+                elif value[1] == "Nay":
+                    NDP_nay_votes += 1
+                else:
+                    NDP_Party_Size -= 1
+            
+            if NDP_yea_votes >= NDP_nay_votes:
+                NDP_Cohesion = round(NDP_yea_votes / NDP_Party_Size * 100, 2)
+            else:
+                NDP_Cohesion = round(NDP_nay_votes / NDP_Party_Size * 100, 2)
+        except ZeroDivisionError:
+            NDP_Cohesion = None
+        
+        # Bloc Cohesion
+        try:
+            Bloc_yea_votes = 0
+            Bloc_nay_votes = 0
+            for value in vote[3]:
+                if value[1] == "Yea":
+                    Bloc_yea_votes += 1
+                elif value[1] == "Nay":
+                    Bloc_nay_votes += 1
+                else:
+                    Bloc_Party_Size -= 1
+            
+            if Bloc_yea_votes >= Bloc_nay_votes:
+                Bloc_Cohesion = round(Bloc_yea_votes / Bloc_Party_Size * 100, 2)
+            else:
+                Bloc_Cohesion = round(Bloc_nay_votes / Bloc_Party_Size * 100, 2)
+        except ZeroDivisionError:
+            Bloc_Cohesion = None
+        
+        # Green Cohesion
+        try:
+            Green_yea_votes = 0
+            Green_nay_votes = 0
+            for value in vote[4]:
+                if value[1] == "Yea":
+                    Green_yea_votes += 1
+                elif value[1] == "Nay":
+                    Green_nay_votes += 1
+                else:
+                    Green_Party_Size -= 1
+            
+            if Green_yea_votes >= Green_nay_votes:
+                Green_Cohesion = round(Green_yea_votes / Green_Party_Size * 100, 2)
+            else:
+                Green_Cohesion = round(Green_nay_votes / Green_Party_Size * 100, 2)
+        except ZeroDivisionError:
+            Green_Cohesion = None
+        
+        # Independent Cohesion
+        try:
+            Independent_yea_votes = 0
+            Independent_nay_votes = 0
+            for value in vote[5]:
+                if value[1] == "Yea":
+                    Independent_yea_votes += 1
+                elif value[1] == "Nay":
+                    Independent_nay_votes += 1
+                else:
+                    Independent_Party_Size -= 1
+
+            if Independent_yea_votes >= Independent_nay_votes:
+                Independent_Cohesion = round(Independent_yea_votes / Independent_Party_Size * 100, 2)
+            else:
+                Independent_Cohesion = round(Independent_nay_votes / Independent_Party_Size * 100, 2)
+        except ZeroDivisionError:
+            Independent_Cohesion = None
+
+        cohesion_by_bill.append([[Conservative_Cohesion, Liberal_Cohesion, NDP_Cohesion, Bloc_Cohesion, Green_Cohesion, Independent_Cohesion], bill])
+
+    cohesion_by_bill_sorted = sorted(cohesion_by_bill, key=lambda x: int(x[1].split('_')[1]))
+
+    # Plotting cohesion_by_bill_sorted
+    plt.figure(figsize=(20, 10))
+    parties = ["Conservative", "Liberal", "NDP", "Bloc Quebecois", "Green", "Independent"]
+    
+    # Filter out excluded parties
+    included_indices = [i for i, party in enumerate(parties) if party not in excluded_parties]
+    included_parties = [parties[i] for i in included_indices]
+    
+    for i, party in zip(included_indices, included_parties):
+        cohesion_values = [cohesion[0][i] for cohesion in cohesion_by_bill_sorted]
+        bills = [cohesion[1].split('_')[1] for cohesion in cohesion_by_bill_sorted]
+        plt.plot(bills, cohesion_values, label=party, marker='o', linestyle='-', markersize=6, alpha=0.7)
+
+    plt.xlabel('Bills')
+    plt.ylabel('Cohesion')
+    plt.title(f'Party Cohesion: {directory}')
+    plt.xticks(rotation=45, ha='right', fontsize=5)
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.legend()
+    plt.tight_layout(pad=10.0)
+    plt.savefig('cohesion_by_bill_sorted.png')
+
+
 if __name__ == "__main__":
-    test_parliament()
+    # test_parliament()
+    plot_rand_parliament_cohesion_over_time(['Independent', 'Green'])
