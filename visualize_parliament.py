@@ -450,13 +450,17 @@ def test_parliament():
     Party_Cohesion = display_cohesion_by_party(party_votes)
     plot_cohesion_by_party(Party_Cohesion)
 
-def plot_rand_parliament_cohesion_over_time(excluded_parties=None):
+# Plot the cohesion of each party over time for a random parliament session
+def plot_rand_parliament_cohesion_over_time(excluded_parties=None, parliament=None):
     if excluded_parties is None:
         excluded_parties = []
 
-    #directories = [d for d in os.listdir("./") if os.path.isdir(os.path.join("./", d))]
-    #directory = os.path.join("./", random.choice(directories))
-    directory = "./Parliament_44-1"
+    if parliament is None:
+        directories = [d for d in os.listdir("./") if os.path.isdir(os.path.join("./", d))]
+        directory = os.path.join("./", random.choice(directories))
+    else:
+        directory = parliament
+    
     party_votes = get_votes_by_party(directory)
 
     cohesion_by_bill = []
@@ -591,7 +595,14 @@ def plot_rand_parliament_cohesion_over_time(excluded_parties=None):
     # Plotting cohesion_by_bill_sorted
     plt.figure(figsize=(20, 10))
     parties = ["Conservative", "Liberal", "NDP", "Bloc Quebecois", "Green", "Independent"]
-    
+    party_colors = {
+        "Conservative": "#1C4587",  # Blue
+        "Liberal": "#D71920",       # Red
+        "NDP": "#F58220",          # Orange
+        "Bloc Quebecois": "#33B2CC", # Light Blue
+        "Green": "#3D9B35",        # Green
+        "Independent": "#777777"    # Grey
+    }
     # Filter out excluded parties
     included_indices = [i for i, party in enumerate(parties) if party not in excluded_parties]
     included_parties = [parties[i] for i in included_indices]
@@ -599,18 +610,24 @@ def plot_rand_parliament_cohesion_over_time(excluded_parties=None):
     for i, party in zip(included_indices, included_parties):
         cohesion_values = [cohesion[0][i] for cohesion in cohesion_by_bill_sorted]
         bills = [cohesion[1].split('_')[1] for cohesion in cohesion_by_bill_sorted]
-        plt.plot(bills, cohesion_values, label=party, marker='o', linestyle='-', markersize=6, alpha=0.7)
+        plt.plot(bills, cohesion_values, 
+                 label=party,
+                 color=party_colors[party], 
+                 marker='o', 
+                 linestyle='-', 
+                 markersize=6, 
+                 alpha=0.5)
 
     plt.xlabel('Bills')
     plt.ylabel('Cohesion')
     plt.title(f'Party Cohesion: {directory}')
-    plt.xticks(rotation=45, ha='right', fontsize=5)
+    plt.xticks(rotation=45, ha='right', fontsize=2)
     plt.grid(True, linestyle='--', alpha=0.7)
     plt.legend()
-    plt.tight_layout(pad=10.0)
+    plt.tight_layout(pad=3, w_pad=5)
     plt.savefig('cohesion_by_bill_sorted.png')
 
 
 if __name__ == "__main__":
     # test_parliament()
-    plot_rand_parliament_cohesion_over_time(['Independent', 'Green'])
+    plot_rand_parliament_cohesion_over_time(['Independent'])
