@@ -1,0 +1,174 @@
+vote_number,date,subject,bill_number,result,yeas,nays,paired
+173,2026-06-18T13:00:00,"3rd reading and adoption of Bill C-30, An Act to implement certain provisions of the spring economic update tabled in Parliament on April 28, 2026",C-30,Agreed To,166,159,12
+172,2026-06-17T22:15:00,"Government Business No. 13 (Proceedings on Bill C-22, An Act respecting lawful access)",,Agreed To,166,150,14
+171,2026-06-17T22:00:00,"Government Business No. 13 (Proceedings on Bill C-22, An Act respecting lawful access) (amendment)",,Negatived,151,171,14
+170,2026-06-17T16:00:00,"2nd reading of Bill C-267, An Act to establish a national framework to promote the durability of electronic products and essential home appliances",C-267,Agreed To,192,131,14
+169,2026-06-17T15:45:00,"2nd reading of Bill C-26, An Act to authorize certain payments to be made out of the Consolidated Revenue Fund for the purpose of improving housing supply",C-26,Agreed To,191,129,14
+168,2026-06-17T15:30:00,"Motion respecting Senate amendments to Bill C-9, An Act to amend the Criminal Code (hate propaganda, hate crime and access to religious or cultural places)",C-9,Agreed To,189,128,14
+167,2026-06-17T15:15:00,"Motion respecting Senate amendments to Bill C-9, An Act to amend the Criminal Code (hate propaganda, hate crime and access to religious or cultural places) (amendment)",C-9,Negatived,132,184,14
+166,2026-06-16T20:45:00,"Government Business No. 11 (Proceedings on Bill C-26, An Act to authorize certain payments to be made out of the Consolidated Revenue Fund for the purpose of improving housing supply)",,Agreed To,164,156,16
+165,2026-06-16T20:30:00,"Government Business No. 11 (Proceedings on Bill C-26, An Act to authorize certain payments to be made out of the Consolidated Revenue Fund for the purpose of improving housing supply) (amendment)",,Negatived,134,187,16
+164,2026-06-16T17:00:00,Motion for closure,,Agreed To,164,155,16
+163,2026-06-16T16:40:00,Motion to adjourn the House,,Negatived,130,189,16
+162,2026-06-16T10:45:00,Motion to proceed to Orders of the Day,,Agreed To,164,157,16
+161,2026-06-15T22:26:54,"Time allocation for Bill C-9, An Act to amend the Criminal Code (hate propaganda, hate crime and access to religious or cultural places)",C-9,Agreed To,168,159,8
+160,2026-06-15T20:50:00,"Government Business No. 12 (Proceedings on Bill C-30, An Act to implement certain provisions of the spring economic update tabled in Parliament on April 28, 2026)",,Agreed To,168,162,8
+159,2026-06-15T20:30:00,"Government Business No. 12 (Proceedings on Bill C-30, An Act to implement certain provisions of the spring economic update tabled in Parliament on April 28, 2026) (amendment))",,Negatived,162,168,8
+158,2026-06-15T20:30:06,"Government Business No. 12 (Proceedings on Bill C-30, An Act to implement certain provisions of the spring economic update tabled in Parliament on April 28, 2026) (subamendment)",,Negatived,160,169,8
+157,2026-06-15T15:45:00,Motion to proceed to Orders of the Day,,Agreed To,167,162,8
+156,2026-06-15T13:00:00,Motion for closure,,Agreed To,168,162,8
+155,2026-06-12T13:30:13,"Time allocation for Bill C-14, An Act to amend the Criminal Code, the Youth Criminal Justice Act and the National Defence Act (bail and sentencing)",C-14,Agreed To,166,158,10
+154,2026-06-11T16:45:34,"Time allocation for Bill C-25, An Act to amend the Canada Elections Act and to enact An Act to change the names of certain electoral districts, 2026",C-25,Agreed To,167,156,12
+153,2026-06-11T15:15:10,"3rd reading and adoption of Bill C-16, An Act to amend certain Acts in relation to criminal and correctional matters (child protection, gender-based violence, delays and other measures)",C-16,Agreed To,192,133,12
+152,2026-06-11T10:40:48,Motion to proceed to Orders of the Day,,Agreed To,165,157,12
+151,2026-06-10T21:36:00,"Concurrence at report stage of Bill C-25, An Act to amend the Canada Elections Act and to enact An Act to change the names of certain electoral districts, 2026",C-25,Agreed To,314,0,14
+150,2026-06-10T20:45:00,Motion to adjourn the House,,Negatived,122,186,14
+149,2026-06-10T19:10:00,Motion to adjourn the debate,,Negatived,125,189,14
+148,2026-06-10T16:36:03,Motion to proceed to Orders of the Day,,Agreed To,166,149,14
+147,2026-06-10T15:35:03,"2nd reading of Bill C-232, An Act to amend the Corrections and Conditional Release Act (maximum security offenders)",C-232,Negatived,133,190,14
+146,2026-06-10T15:35:32,"3rd reading and adoption of Bill C-20, An Act respecting the establishment of Build Canada Homes",C-20,Agreed To,184,140,14
+145,2026-06-10T15:15:00,Sixth report of the Standing Committee on Justice and Human Rights,,Agreed To,317,6,14
+144,2026-06-09T20:30:48,Motion to adjourn the House,,Negatived,124,186,12
+143,2026-06-09T15:15:25,Government Business No. 10 (Extension of sitting hours in June),,Agreed To,325,1,12
+142,2026-06-09T12:15:20,"Time allocation for Bill C-20, An Act respecting the establishment of Build Canada Homes",C-20,Agreed To,166,159,12
+141,2026-06-09T11:00:32,Motion to proceed to Orders of the Day,,Agreed To,167,161,12
+140,2026-06-08T23:20:16,"3rd reading and adoption of Bill C-33, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2027",C-33,Agreed To,191,134,12
+139,2026-06-08T22:35:36,Concurrence in an opposed item (amendment),,Negatived,140,186,12
+138,2026-06-08T22:30:38,Opposition Motion (Inflationary policies),,Negatived,133,191,12
+137,2026-06-08T15:35:38,"Concurrence at report stage of Bill C-16, An Act to amend certain Acts in relation to criminal and correctional matters (child protection, gender-based violence, delays and other measures)",C-16,Agreed To,195,136,10
+136,2026-06-08T15:25:50,"C-16, An Act to amend certain Acts in relation to criminal and correctional matters (child protection, gender-based violence, delays and other measures) (report stage amendment) (Motion No. 2)",C-16,Negatived,142,189,10
+135,2026-06-08T15:15:00,"C-16, An Act to amend certain Acts in relation to criminal and correctional matters (child protection, gender-based violence, delays and other measures) (report stage amendment) (Motion No. 1)",C-16,Negatived,7,323,10
+134,2026-06-04T12:33:00,"Time allocation for Bill C-16, An Act to amend certain Acts in relation to criminal and correctional matters (child protection, gender-based violence, delays and other measures)",C-16,Agreed To,169,164,6
+133,2026-06-03T15:45:00,"2nd reading of Bill C-31, A second Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025 (all remaining provisions of the bill)",C-31,Agreed To,170,165,6
+132,2026-06-03T15:30:00,"2nd reading of Bill C-31, A second Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025 (Part 4, Division 17, that is clauses 339 to 364 of the bill)",C-31,Agreed To,177,158,6
+131,2026-06-03T15:15:00,"2nd reading of Bill C-31, A second Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025 (reasoned amendment)",C-31,Negatived,137,198,6
+130,2026-06-03T16:00:00,Opposition Motion (Economic policies),,Negatived,144,191,6
+129,2026-06-01T15:15:00,Opposition Motion (Elimination of the streaming tax),,Negatived,134,193,12
+128,2026-06-01T13:00:00,"Time allocation for Bill C-31, A second Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025",C-31,Agreed To,167,161,12
+127,2026-05-27T15:30:00,"2nd reading of Bill S-233, An Act to amend the Criminal Code (assault against persons who provide health services and first responders)",S-233,Agreed To,332,0,8
+126,2026-05-27T15:15:00,Opposition Motion (Cancellation of federal taxes on gas and diesel and the Clean Fuel Standard),,Negatived,138,195,8
+125,2026-05-26T15:30:00,"2nd reading of Bill C-30, An Act to implement certain provisions of the spring economic update tabled in Parliament on April 28, 2026",C-30,Agreed To,170,164,6
+124,2026-05-26T15:15:00,"2nd reading of Bill C-30, An Act to implement certain provisions of the spring economic update tabled in Parliament on April 28, 2026 (reasoned amendment)",C-30,Negatived,137,197,6
+123,2026-05-25T15:35:20,"3rd reading and adoption of Bill C-11, An Act to amend the National Defence Act and other Acts",C-11,Agreed To,198,140,2
+122,2026-05-25T15:25:51,"Bill C-11, An Act to amend the National Defence Act and other Acts (recommittal to a committee)",C-11,Negatived,160,178,2
+121,2026-05-25T15:15:11,Opposition Motion (Protection of private property rights in Canada),,Negatived,139,199,2
+120,2026-05-25T13:07:58,"Time allocation for Bill C-30, An Act to implement certain provisions of the spring economic update tabled in Parliament on April 28, 2026",C-30,Agreed To,171,167,2
+119,2026-05-06T15:45:00,Ways and means motion No. 11,,Agreed To,170,165,6
+118,2026-05-06T15:15:00,Opposition Motion (Measures to support the manufacturing sector),,Agreed To,333,0,6
+117,2026-05-05T15:50:00,"Concurrence at report stage of Bill C-11, An Act to amend the National Defence Act and other Acts",C-11,Agreed To,200,136,4
+116,2026-05-05T15:45:00,"Bill C-11, An Act to amend the National Defence Act and other Acts (report stage amendment) (Motion No. 9)",C-11,Negatived,165,171,4
+115,2026-05-05T15:40:00,"Bill C-11, An Act to amend the National Defence Act and other Acts (report stage amendment) (Motion No. 6)",C-11,Agreed To,171,165,4
+114,2026-05-05T15:35:00,"Bill C-11, An Act to amend the National Defence Act and other Acts (report stage amendment) (Motion No. 5)",C-11,Agreed To,178,158,4
+113,2026-05-05T15:30:00,"Bill C-11, An Act to amend the National Defence Act and other Acts (report stage amendment) (Motion No. 4)",C-11,Negatived,158,178,4
+112,2026-05-05T15:25:00,"Bill C-11, An Act to amend the National Defence Act and other Acts (report stage amendment) (Motion No. 3)",C-11,Agreed To,171,165,4
+111,2026-05-05T15:20:00,"Bill C-11, An Act to amend the National Defence Act and other Acts (report stage amendment) (Motion No. 2)",C-11,Negatived,158,178,4
+110,2026-05-05T15:15:00,"Bill C-11, An Act to amend the National Defence Act and other Acts (report stage amendment) (Motion No. 1)",C-11,Negatived,158,178,4
+109,2026-05-04T15:15:00,Opposition Motion (Sovereign debt funds),,Negatived,160,175,6
+108,2026-05-04T13:00:00,"Time allocation for Bill C-11, An Act to amend the National Defence Act and other Acts",C-11,Agreed To,169,164,6
+107,2026-04-29T15:30:00,Ways and means motion No. 10,,Agreed To,173,161,2
+106,2026-04-27T20:45:07,Government Business No. 9 (Changes to the Standing Orders),,Agreed To,178,162,2
+105,2026-04-27T20:30:55,Government Business No. 9 (Changes to the Standing Orders) (amendment),,Negatived,168,172,2
+104,2026-04-27T13:04:29,Motion for closure,,Agreed To,173,163,0
+103,2026-04-22T16:00:00,Private Members' Business M-16 (Use of underused and surplus federal lands and buildings for services for veterans),,Agreed To,168,151,18
+102,2026-04-22T15:45:00,"2nd reading of Bill C-226, An Act to establish a national framework to improve food price transparency",C-226,Agreed To,168,150,18
+101,2026-04-22T15:30:00,"2nd reading of Bill C-238, An Act to amend the Criminal Code (restitution orders)",C-238,Agreed To,168,153,18
+100,2026-04-22T15:15:00,"2nd reading of Bill S-211, An Act respecting a national framework on sports betting advertising",S-211,Agreed To,291,28,18
+99,2026-04-21T15:15:00,"Seventh report of the Standing Committee on Human Resources, Skills and Social Development and the Status of Persons with Disabilities",,Negatived,152,166,18
+98,2026-04-21T10:30:00,Appointment of an officer of Parliament,,Agreed To,164,153,18
+97,2026-04-15T15:35:00,Private Members' Business M-15 (Conservation donations),,Agreed To,193,132,10
+96,2026-04-15T15:25:00,"2nd reading of Bill C-231, An Act to amend the Youth Criminal Justice Act",C-231,Agreed To,327,0,10
+95,2026-04-15T15:15:33,Opposition Motion (Fuel taxes),,Negatived,134,192,10
+94,2026-03-26T15:15:31,Eighth report of the Standing Committee on Public Accounts,,Tie,164,164,10
+93,2026-03-25T18:12:00,"3rd reading and adoption of Bill C-9, An Act to amend the Criminal Code (hate propaganda, hate crime and access to religious or cultural places)",C-9,Agreed To,186,137,10
+92,2026-03-25T18:02:00,"Bill C-9, An Act to amend the Criminal Code (hate propaganda, hate crime and access to religious or cultural places) (recommittal to a committee)",C-9,Negatived,125,188,10
+91,2026-03-25T15:45:00,"2nd reading of Bill C-242, An Act to amend the Criminal Code and the Department of Justice Act",C-242,Negatived,136,193,10
+90,2026-03-25T15:35:00,"2nd reading of Bill C-243, An Act to amend the Corrections and Conditional Release Act (parole review)",C-243,Negatived,136,192,10
+89,2026-03-25T15:25:00,"2nd reading of Bill C-220, An Act to amend the Criminal Code (immigration status in sentencing)",C-220,Negatived,158,171,10
+88,2026-03-25T15:15:00,"2nd reading of Bill C-246, An Act to amend the Criminal Code (consecutive sentences for sexual offences)",C-246,Negatived,157,169,10
+87,2026-03-24T17:45:00,Opposition Motion (Tariff-free auto pact),,Negatived,136,194,8
+86,2026-03-23T18:55:04,"Concurrence at report stage of Bill C-9, An Act to amend the Criminal Code (hate propaganda, hate crime and access to religious or cultural places)",C-9,Agreed To,188,144,4
+85,2026-03-11T15:30:00,"2nd reading of Bill C-233, An Act to amend the Export and Import Permits Act",C-233,Negatived,22,295,6
+84,2026-03-10T20:30:00,"Government Business No. 6 (Proceedings on Bill C-9, An Act to amend the Criminal Code (hate propaganda, hate crime and access to religious or cultural places))",,Agreed To,186,140,6
+83,2026-03-10T11:22:00,Motion for closure,,Agreed To,186,144,6
+82,2026-02-25T20:30:00,"Concurrence at report stage of Bill C-15, An Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025",C-15,Agreed To,168,163,0
+81,2026-02-25T20:20:00,"Bill C-15, An Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025 (report stage amendment) (Motion No. 81)",C-15,Negatived,30,301,0
+80,2026-02-25T20:10:00,"Bill C-15, An Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025 (report stage amendment) (Motion No. 78)",C-15,Negatived,162,168,0
+79,2026-02-25T20:00:00,"Bill C-15, An Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025 (report stage amendment) (Motion No. 55)",C-15,Negatived,22,309,0
+78,2026-02-25T19:50:00,"Bill C-15, An Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025 (report stage amendment) (Motion No. 48)",C-15,Negatived,162,169,0
+77,2026-02-25T19:40:00,"Bill C-15, An Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025 (report stage amendment) (Motion No. 44)",C-15,Negatived,155,176,0
+76,2026-02-25T19:30:00,"Bill C-15, An Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025 (report stage amendment) (Motion No. 34)",C-15,Negatived,7,323,0
+75,2026-02-25T19:20:00,"Bill C-15, An Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025 (report stage amendment) (Motion No. 1)",C-15,Negatived,30,301,0
+74,2026-02-25T15:35:00,"2nd reading of Bill C-237, An Act to amend the Fisheries Act (Atlantic groundfish fisheries)",C-237,Negatived,134,197,0
+73,2026-02-25T15:25:00,"2nd reading of Bill C-244, An Act to amend the Canadian Environmental Protection Act, 1999 and the Wrecked, Abandoned or Hazardous Vessels Act",C-244,Agreed To,202,125,0
+72,2026-02-25T15:15:00,Opposition Motion (Federal benefits and asylum claimants),,Negatived,134,198,0
+71,2026-02-23T15:25:00,Opposition Motion (Automotive strategy),,Negatived,139,190,2
+70,2026-02-23T15:15:00,Opposition Motion (Automotive strategy ) (amendment),,Negatived,161,168,2
+69,2026-02-12T15:45:00,"2nd reading of Bill S-210, An Act respecting Ukrainian Heritage Month",S-210,Agreed To,318,0,14
+68,2026-02-12T15:30:00,"2nd reading of Bill C-227, An Act to establish a national strategy on housing for young Canadians",C-227,Agreed To,169,152,14
+67,2026-02-12T15:15:00,Opposition Motion (Serious crimes and refugee claims),,Negatived,131,191,14
+66,2026-02-09T15:15:00,Opposition Motion (Apology to those whose land was expropriated in Mirabel),,Agreed To,330,0,4
+65,2026-02-04T16:00:00,"2nd reading of Bill C-245, An Act to amend the Canadian Multiculturalism Act (non-application in Quebec)",C-245,Negatived,22,307,4
+64,2026-02-04T15:45:00,"2nd reading of Bill C-222, An Act to amend the Employment Insurance Act and the Canada Labour Code (death of a child)",C-222,Agreed To,331,0,4
+63,2026-02-04T15:15:00,Opposition Motion (Food affordability),,Negatived,137,195,4
+62,2026-02-02T15:15:00,"2nd reading of Bill C-18, An Act to implement the Comprehensive Economic Partnership Agreement between Canada and Indonesia",C-18,Agreed To,332,1,4
+61,2026-01-28T15:30:00,"2nd reading of Bill C-228, An Act to amend the Department of Foreign Affairs, Trade and Development Act (prior review of treaties by Parliament)",C-228,Negatived,32,302,4
+60,2026-01-28T15:15:00,Opposition Motion (Canadian economic sovereignty),,Negatived,137,197,4
+59,2025-12-11T16:00:00,"Bill C-12, An Act respecting certain measures relating to the security of Canada's borders and the integrity of the Canadian immigration system and respecting other related security measures (report stage amendment) (Motion No. 48)",C-12,Agreed To,327,8,0
+58,2025-12-11T15:45:00,"Bill C-12, An Act respecting certain measures relating to the security of Canada's borders and the integrity of the Canadian immigration system and respecting other related security measures (report stage amendment) (Motion No. 22)",C-12,Agreed To,327,8,0
+57,2025-12-11T15:30:00,"Bill C-12, An Act respecting certain measures relating to the security of Canada's borders and the integrity of the Canadian immigration system and respecting other related security measures (report stage amendment) (Motion No. 2)",C-12,Negatived,8,327,0
+56,2025-12-11T15:15:00,"Bill C-12, An Act respecting certain measures relating to the security of Canada's borders and the integrity of the Canadian immigration system and respecting other related security measures (report stage amendment) (Motion No. 1)",C-12,Negatived,147,188,0
+55,2025-12-09T17:50:53,Opposition Motion (Pipeline construction),,Negatived,138,196,2
+54,2025-12-09T17:45:59,Opposition Motion (Pipeline construction) (amendment),,Negatived,138,196,2
+53,2025-12-08T15:15:00,"2nd reading of Bill C-15, An Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025 (reasoned amendment)",C-15,Negatived,138,196,2
+52,2025-12-03T15:30:00,"2nd reading of Bill C-241, An Act to establish a national strategy respecting flood and drought forecasting",C-241,Agreed To,303,22,8
+51,2025-12-03T15:15:00,"2nd reading of Bill C-225, An Act to amend the Criminal Code",C-225,Agreed To,325,0,8
+50,2025-11-17T18:45:29,Budgetary policy,,Agreed To,170,168,0
+49,2025-11-07T13:30:00,Budgetary policy (amendment),,Negatived,30,306,0
+48,2025-11-06T17:15:00,Budgetary policy (subamendment),,Negatived,139,198,0
+47,2025-11-05T15:15:00,"3rd reading and adoption of Bill C-3, An Act to amend the Citizenship Act (2025)",C-3,Agreed To,177,163,0
+46,2025-11-04T15:10:00,"First report of the Standing Committee on Human Resources, Skills and Social Development and the Status of Persons with Disabilities",,Agreed To,338,0,0
+45,2025-11-03T15:25:00,"Concurrence at report stage of Bill C-3, An Act to amend the Citizenship Act (2025)",C-3,Agreed To,169,163,2
+44,2025-11-03T15:15:00,"Bill C-3, An Act to amend the Citizenship Act (2025) (report stage amendment)",C-3,Agreed To,170,163,2
+43,2025-10-28T15:25:00,"Third report of the Standing Committee on Access to Information, Privacy and Ethics (main motion as amended)",,Agreed To,171,163,6
+42,2025-10-28T15:15:00,"Third report of the Standing Committee on Access to Information, Privacy and Ethics (amendment)",,Agreed To,170,164,6
+41,2025-10-20T15:15:00,Opposition Motion (Cost of deficits),,Negatived,163,173,2
+40,2025-10-06T15:15:00,Opposition Motion (Passage of Bill C-242),,Negatived,142,196,2
+39,2025-10-01T15:15:00,Opposition Motion (Food taxation),,Negatived,138,194,6
+38,2025-09-24T15:15:00,Opposition Motion (Constitutional powers of Quebec and the provinces),,Negatived,159,170,10
+37,2025-09-23T15:15:16,Opposition Motion (Oil and gas emissions cap),,Negatived,140,191,6
+36,2025-09-22T15:30:00,"2nd reading of Bill C-3, An Act to amend the Citizenship Act (2025)",C-3,Agreed To,189,138,10
+35,2025-09-22T15:15:00,Opposition Motion (Violent crime and repeat offenders),,Negatived,139,189,10
+34,2025-06-20T18:00:08,"3rd reading and adoption of Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act (Part 2)",C-5,Agreed To,306,31,2
+33,2025-06-20T17:50:55,"3rd reading and adoption of Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act (Part 1)",C-5,Agreed To,335,1,2
+32,2025-06-20T15:15:46,"Concurrence at report stage of Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act",C-5,Agreed To,313,24,2
+31,2025-06-20T15:05:13,"Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act (report stage amendment) (Motion 19)",C-5,Negatived,31,306,2
+30,2025-06-20T14:55:32,"Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act (report stage amendment) (Motion 18)",C-5,Agreed To,337,0,2
+29,2025-06-20T14:45:16,"Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act (report stage amendment) (Motion 15)",C-5,Negatived,140,197,2
+28,2025-06-20T14:35:56,"Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act (report stage amendment) (Motion 11)",C-5,Negatived,30,307,2
+27,2025-06-20T14:25:15,"Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act (report stage amendment) (Motion 9)",C-5,Agreed To,307,30,2
+26,2025-06-20T14:15:23,"Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act (report stage amendment) (Motion 7)",C-5,Agreed To,337,0,2
+25,2025-06-20T14:05:11,"Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act (report stage amendment) (Motion 5)",C-5,Agreed To,170,167,2
+24,2025-06-20T13:55:27,"Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act (report stage amendment) (Motion 4)",C-5,Negatived,163,174,2
+23,2025-06-20T13:45:00,"Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act (report stage amendment) (Motion 1)",C-5,Negatived,31,306,2
+22,2025-06-17T23:35:28,"3rd reading and adoption of Bill C-7, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2026",C-7,Agreed To,194,141,6
+21,2025-06-17T23:25:22,"Concurrence at report stage of Bill C-7, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2026",C-7,Agreed To,194,141,6
+20,2025-06-17T23:21:24,"2nd reading of Bill C-7, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2026",C-7,Agreed To,194,141,6
+19,2025-06-17T23:20:37,"Concurrence in estimates (Supplementary Estimates (A) for the fiscal year ending March 31, 2026)",,Agreed To,194,141,6
+18,2025-06-17T23:15:10,"3rd reading and adoption of Bill C-6, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2026",C-6,Agreed To,194,141,6
+17,2025-06-17T23:10:11,"Concurrence at report stage of Bill C-6, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2026",C-6,Agreed To,194,141,6
+16,2025-06-17T23:05:21,"2nd reading of Bill C-6, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2026",C-6,Agreed To,194,141,6
+15,2025-06-17T23:00:50,"Concurrence in estimates (Main Estimates for the fiscal year ending March 31, 2026)",,Agreed To,194,141,6
+14,2025-06-17T22:30:03,Opposition Motion (Sale of gas-powered vehicles),,Negatived,141,194,6
+13,2025-06-16T21:30:39,"2nd reading of Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act",C-5,Agreed To,304,29,4
+12,2025-06-16T20:45:15,"Government Business No. 1 (Proceedings on Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act)",,Agreed To,305,30,4
+11,2025-06-16T20:30:00,"Government Business No. 1 (Proceedings on Bill C-5, An Act to enact the Free Trade and Labour Mobility in Canada Act and the Building Canada Act) (amendment)",,Negatived,29,305,4
+10,2025-06-16T15:15:00,Opposition Motion (GCStrategies Inc.),,Agreed To,172,166,4
+9,2025-06-16T12:00:00,Motion for closure,,Agreed To,307,29,4
+8,2025-06-12T15:15:00,"2nd reading of Bill C-4, An Act respecting certain affordability measures for Canadians and another measure",C-4,Agreed To,335,0,6
+7,2025-06-11T15:30:00,Opposition Motion (Canada carbon rebate and payment to Quebec),,Negatived,30,308,2
+6,2025-06-11T15:15:00,Opposition Motion (Canada carbon rebate and payment to Quebec) (amendment),,Negatived,30,310,2
+5,2025-06-10T15:15:00,Opposition Motion (Food inflation and budgetary policy),,Negatived,162,174,4
+4,2025-06-05T10:40:00,Ways and means motion No. 1,,Agreed To,333,0,8
+3,2025-06-02T18:45:00,Address in Reply to the Speech from the Throne (amendment as amended),,Agreed To,166,164,8
+2,2025-06-02T18:44:00,Address in Reply to the Speech from the Throne (subamendment),,Agreed To,331,0,8
+1,2025-05-29T18:45:00,Address in Reply to the Speech from the Throne (subamendment),,Agreed To,337,0,0
