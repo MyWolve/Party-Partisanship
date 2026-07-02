@@ -1,77 +1,107 @@
-import requests
-from bs4 import BeautifulSoup
+"""
+Scrape recorded division (vote) data from the House of Commons website.
+
+For each parliamentary session, this script:
+  1. Fetches the list of recorded votes and saves their URLs to a CSV.
+  2. Visits each vote page and downloads the per-member vote CSV
+     into a Parliament_<session>/ directory.
+
+All paths are relative to this file's location, so the script runs
+from any machine or working directory.
+"""
+
 import csv
 import os
 
+import requests
+from bs4 import BeautifulSoup
 
-def get_vote_pages(session):
-    vote_url = "https://www.ourcommons.ca/members/en/votes?parlSession="
-    house_of_commons = vote_url + session
-    response = requests.get(house_of_commons)
-    
-    if response.status_code == 500:
-        return response.status_code
+# Project root = the directory this script lives in.
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-    html_content = response.text
+BASE_URL = "https://www.ourcommons.ca"
+VOTE_LIST_URL = BASE_URL + "/members/en/votes?parlSession="
 
-    soup = BeautifulSoup(html_content, "html.parser")
 
+def get_vote_pages(session, output_csv):
+    """
+    Fetch the list of vote-detail URLs for a session and write them to output_csv.
+
+    Returns the number of vote URLs found, or None if the session doesn't exist
+    (the site returns a 500 for unknown sessions).
+    """
+    response = requests.get(VOTE_LIST_URL + session)
+
+    if response.status_code != 200:
+        return None
+
+    soup = BeautifulSoup(response.text, "html.parser")
     tbody = soup.find("tbody")
+    if tbody is None:
+        return None
 
-    with open('/home/mgday/repos/Party-Partisanship/output.csv', mode='w', newline='', encoding='utf-8') as f:    
+    count = 0
+    with open(output_csv, mode="w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        for tr in tbody.find_all('tr'):
-            td = tr.find('td')
+        for tr in tbody.find_all("tr"):
+            td = tr.find("td")
             if td:
-                a_tag = td.find('a')
-                if a_tag and 'href' in a_tag.attrs:
-                    data_row = ["https://www.ourcommons.ca" + a_tag['href']]
-                    writer.writerow(data_row)
-    
-    return 0
-    
-def get_vote_by_party(vote_pages, output_name):
-    with open(vote_pages, mode='r') as file:
-        csv_reader = csv.reader(file)
+                a_tag = td.find("a")
+                if a_tag and "href" in a_tag.attrs:
+                    writer.writerow([BASE_URL + a_tag["href"]])
+                    count += 1
+    return count
 
-        if not os.path.exists(output_name):
-            os.makedirs(output_name)
 
-        for row in csv_reader:
+def get_vote_by_party(vote_pages_csv, output_dir):
+    """Download the per-member vote CSV for every vote URL listed in vote_pages_csv."""
+    os.makedirs(output_dir, exist_ok=True)
+
+    with open(vote_pages_csv, mode="r", encoding="utf-8") as file:
+        for row in csv.reader(file):
             vote_url = row[0]
-            
+
             response = requests.get(vote_url)
-            html_content = response.text
+            if response.status_code != 200:
+                continue
 
-            soup = BeautifulSoup(html_content, "html.parser")
+            soup = BeautifulSoup(response.text, "html.parser")
+            div = soup.find("div", class_="pt-2")
+            if div is None:
+                continue
 
-            div = soup.find('div', class_='pt-2')
+            a_tags = div.find_all("a")
+            if len(a_tags) < 2:
+                continue
 
-            if div:
-                a_tags = div.find_all('a')
+            href = a_tags[1].get("href")
+            file_response = requests.get(BASE_URL + href)
+            if file_response.status_code != 200:
+                continue
 
-                if len(a_tags) >= 2:
-                    csv_tag = a_tags[1]
-                    href = csv_tag.get('href')
+            # The vote number is the last path segment of the URL,
+            # e.g. .../votes/41/2/467 -> 467
+            vote_number = vote_url.rstrip("/").rsplit("/", 1)[-1]
+            file_path = os.path.join(output_dir, f"file_{vote_number}.csv")
+            with open(file_path, "wb") as f:
+                f.write(file_response.content)
 
-                    file_response = requests.get("https://www.ourcommons.ca" + href)
-                    if file_response.status_code == 200:
-                        vote_url = vote_url[-4:]
-                        while "/" in vote_url:
-                            vote_url = vote_url[1:]
-                        file_name = f"file_{vote_url}.csv"
-                        file_path = os.path.join(output_name, file_name)
-                        with open(file_path, 'wb') as file:
-                            file.write(file_response.content)
+
+def scrape_sessions(parliaments, sessions_per_parliament=range(1, 4)):
+    """Scrape all vote data for the given parliaments (e.g. range(38, 45))."""
+    vote_pages_csv = os.path.join(PROJECT_ROOT, "output.csv")
+
+    for parliament in parliaments:
+        for session_number in sessions_per_parliament:
+            session = f"{parliament}-{session_number}"
+            found = get_vote_pages(session, vote_pages_csv)
+            if found:
+                print(f"Session {session}: {found} votes found, downloading...")
+                output_dir = os.path.join(PROJECT_ROOT, f"Parliament_{session}")
+                get_vote_by_party(vote_pages_csv, output_dir)
+            else:
+                print(f"Session {session}: not found, skipping.")
 
 
 if __name__ == "__main__":
-        for i in range(38, 42):
-            for j in range(1, 4):
-                session = str(i) + "-" + str(j)
-                response = get_vote_pages(session)
-                if response == 0:
-                    output_name = "./Parliament_" + session + "/"
-                    get_vote_by_party('./output.csv', output_name)
-
-
+    scrape_sessions(range(38, 42))
