@@ -55,6 +55,51 @@ AFFILIATION_ALIASES = {
 # Data Loading
 # ----------------------------------------------------------------------
 
+def _find_column(header, *fragments, default=None):
+    """Locate a column index by substring match on the header (case-insensitive)."""
+    for index, name in enumerate(header):
+        lowered = name.lower()
+        if any(fragment in lowered for fragment in fragments):
+            return index
+    return default
+
+
+def read_vote_rows(file_path):
+    """Read one vote CSV into [{"member", "party", "vote", "paired"}, ...].
+
+    Column positions are located from the header row, because the House's
+    export format has changed over time: older files are
+    (Member, Affiliation, Voted, Paired) while the current endpoint
+    prepends a Person ID column. Reading by header name handles both,
+    plus any future reshuffle. Falls back to the legacy positions if the
+    header is unrecognizable.
+    """
+    with open(file_path, "r", encoding="utf-8-sig", errors="ignore") as file:
+        reader = csv.reader(file)
+        header = next(reader, None)
+        if header is None:
+            return []
+
+        member_col = _find_column(header, "member of parliament", default=0)
+        party_col = _find_column(header, "affiliation", "political party",
+                                 default=1)
+        vote_col = _find_column(header, "voted", "member voted", default=2)
+        paired_col = _find_column(header, "paired", default=3)
+
+        rows = []
+        for row in reader:
+            if len(row) <= vote_col:
+                continue
+            rows.append({
+                "member": row[member_col],
+                "party": row[party_col],
+                "vote": row[vote_col],
+                "paired": (len(row) > paired_col
+                           and row[paired_col].strip() == "Paired"),
+            })
+        return rows
+
+
 def load_vote_file(file_path):
     """
     Read one vote CSV and return {party: [(member, vote), ...]}.
@@ -63,17 +108,10 @@ def load_vote_file(file_path):
     """
     votes = {party: [] for party in PARTIES}
 
-    with open(file_path, "r", encoding="utf-8", errors="ignore") as file:
-        reader = csv.reader(file)
-        next(reader, None)  # skip header row
-
-        for row in reader:
-            if len(row) < 3:
-                continue
-            member, affiliation, vote = row[0], row[1], row[2]
-            affiliation = AFFILIATION_ALIASES.get(affiliation, affiliation)
-            party = affiliation if affiliation in PARTIES else "Independent"
-            votes[party].append((member, vote))
+    for row in read_vote_rows(file_path):
+        affiliation = AFFILIATION_ALIASES.get(row["party"], row["party"])
+        party = affiliation if affiliation in PARTIES else "Independent"
+        votes[party].append((row["member"], row["vote"]))
 
     return votes
 
