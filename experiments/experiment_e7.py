@@ -39,6 +39,8 @@ import matplotlib.pyplot as plt
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
+# You might get an error importing visualize_parliament, but the above direct setting of the 
+# directory should resolve this when you actually execute the file. 
 from visualize_parliament import (PARTIES, PARTY_COLORS, count_yea_nay,
                                   load_parliament, party_majority_side)
 
