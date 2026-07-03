@@ -27,6 +27,7 @@ import re
 import sys
 
 import bill_info
+from visualize_parliament import read_vote_rows
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -46,22 +47,20 @@ def session_directories(sessions=None):
 def tally_vote_file(file_path):
     """Return (yeas, nays, paired, data_rows) from one member vote file.
 
-    Returns None if the file is unreadable or has no data rows.
+    Returns None if the file is unreadable or has no data rows. Parsing is
+    header-aware (see read_vote_rows), so both the legacy column layout and
+    the current Person ID layout are handled.
     """
     try:
-        with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
-            reader = csv.reader(f)
-            next(reader, None)  # header
-            rows = [row for row in reader if len(row) >= 3]
+        rows = read_vote_rows(file_path)
     except (OSError, csv.Error):
         return None
     if not rows:
         return None
 
-    yeas = sum(1 for row in rows if row[2] == "Yea")
-    nays = sum(1 for row in rows if row[2] == "Nay")
-    paired = sum(1 for row in rows
-                 if len(row) >= 4 and row[3].strip() == "Paired")
+    yeas = sum(1 for row in rows if row["vote"] == "Yea")
+    nays = sum(1 for row in rows if row["vote"] == "Nay")
+    paired = sum(1 for row in rows if row["paired"])
     return yeas, nays, paired, len(rows)
 
 
