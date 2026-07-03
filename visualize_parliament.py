@@ -17,6 +17,7 @@ and None values are excluded from averages.
 """
 
 import os
+import re
 import csv
 import random
 import matplotlib.pyplot as plt
@@ -95,7 +96,10 @@ def load_parliament(directory, bill=None):
     bills = []
     for filename in os.listdir(directory):
         file_path = os.path.join(directory, filename)
-        if os.path.isfile(file_path) and filename.endswith(".csv"):
+        # Only file_<N>.csv vote files; the directory may also contain
+        # votes_metadata.csv (see bill_info.py), which is not a division.
+        if (os.path.isfile(file_path)
+                and re.fullmatch(r"file_\d+\.csv", filename)):
             bill_name = os.path.splitext(filename)[0]  # e.g. "file_23"
             bills.append((bill_name, load_vote_file(file_path)))
 
@@ -273,6 +277,8 @@ def plot_cohesion_over_time(directory, metric="rice", excluded_parties=None,save
 # The Independent group is excluded by default: it has no whip, so "dissent"
 # is necessarily meaningless for them.  
 # ----------------------------------------------------------------------
+
+import bill_info
 
 WHIPPED_PARTIES = [p for p in PARTIES if p != "Independent"]
  
@@ -531,6 +537,192 @@ def plot_top_rebels(directory, parties=None, top_n=15, save_path=None):
                  va="center", fontsize=9)
     plt.tight_layout()
  
+    if save_path:
+        plt.savefig(save_path)
+        plt.close()
+    else:
+        plt.show()
+
+
+# ----------------------------------------------------------------------
+# Dissent by vote category (requires votes_metadata.csv; see bill_info.py)
+#
+# This is the direct test of the whip: if party discipline is doing the
+# work, dissent should concentrate almost entirely in private members'
+# business (traditionally unwhipped) and be near zero on government
+# bills and confidence matters.
+# ----------------------------------------------------------------------
+
+def dissent_by_category(directory, parties=None):
+    """
+    Cross-tabulate dissent by party and vote category.
+
+    Returns {party: {category: {"divisions", "with_dissent", "dissent_rate",
+                                "total_rebel_votes"}}}.
+    Raises FileNotFoundError if the session has no votes_metadata.csv.
+    """
+    if parties is None:
+        parties = WHIPPED_PARTIES
+
+    metadata = bill_info.load_vote_metadata(directory)
+    if not metadata:
+        raise FileNotFoundError(
+            f"No votes_metadata.csv in {directory}; run the scraper's "
+            f"metadata step first (see can_scrape.py).")
+
+    bills = load_parliament(directory)
+    table = {party: {} for party in parties}
+
+    for bill_name, votes in bills:
+        number = vote_number(bill_name)
+        if number not in metadata:
+            continue
+        category = metadata[number]["category"]
+        rebels = find_rebels(votes, parties)
+        for party in parties:
+            party_rebels = rebels[party]
+            if party_rebels is None:
+                continue
+            cell = table[party].setdefault(
+                category, {"divisions": 0, "with_dissent": 0,
+                           "total_rebel_votes": 0})
+            cell["divisions"] += 1
+            if party_rebels:
+                cell["with_dissent"] += 1
+                cell["total_rebel_votes"] += len(party_rebels)
+
+    for party_cells in table.values():
+        for cell in party_cells.values():
+            cell["dissent_rate"] = round(
+                cell["with_dissent"] / cell["divisions"] * 100, 2)
+    return table
+
+
+def mp_loyalty_split(directory, parties=None, min_votes=10,
+                     free_categories=None):
+    """
+    Per-MP loyalty computed separately for whipped and free business.
+
+    An MP at 99% whipped / 75% free is a conscientious backbencher who
+    respects the whip; one rebelling on whipped business is a different
+    animal entirely. Returns
+    {member: {"party", "whipped": {"votes", "rebellions", "loyalty"},
+              "free": {...}}}
+    sorted by whipped-business rebellions.
+    """
+    if parties is None:
+        parties = WHIPPED_PARTIES
+    if free_categories is None:
+        free_categories = bill_info.FREE_VOTE_CATEGORIES
+
+    metadata = bill_info.load_vote_metadata(directory)
+    if not metadata:
+        raise FileNotFoundError(f"No votes_metadata.csv in {directory}.")
+
+    bills = load_parliament(directory)
+    records = {}
+
+    for bill_name, votes in bills:
+        number = vote_number(bill_name)
+        if number not in metadata:
+            continue
+        bucket = ("free" if metadata[number]["category"] in free_categories
+                  else "whipped")
+        for party in parties:
+            majority = party_majority_side(votes[party])
+            if majority is None:
+                continue
+            for member, vote in votes[party]:
+                if vote not in ("Yea", "Nay"):
+                    continue
+                record = records.setdefault(member, {
+                    "parties": {},
+                    "whipped": {"votes": 0, "rebellions": 0},
+                    "free": {"votes": 0, "rebellions": 0}})
+                record["parties"][party] = record["parties"].get(party, 0) + 1
+                record[bucket]["votes"] += 1
+                if vote != majority:
+                    record[bucket]["rebellions"] += 1
+
+    result = {}
+    for member, record in records.items():
+        total = record["whipped"]["votes"] + record["free"]["votes"]
+        if total < min_votes:
+            continue
+        entry = {"party": max(record["parties"], key=record["parties"].get)}
+        for bucket in ("whipped", "free"):
+            votes_cast = record[bucket]["votes"]
+            rebellions = record[bucket]["rebellions"]
+            entry[bucket] = {
+                "votes": votes_cast,
+                "rebellions": rebellions,
+                "loyalty": (round((votes_cast - rebellions) / votes_cast * 100, 2)
+                            if votes_cast else None),
+            }
+        result[member] = entry
+
+    return dict(sorted(result.items(),
+                       key=lambda item: item[1]["whipped"]["rebellions"],
+                       reverse=True))
+
+
+def print_whip_report(directory, parties=None, top_n=10):
+    """The whip test: dissent rates by category, plus split loyalty."""
+    session = os.path.basename(os.path.normpath(directory))
+    table = dissent_by_category(directory, parties)
+    loyalty = mp_loyalty_split(directory, parties)
+
+    print(f"\nWhip report: {session}")
+    print("-" * 72)
+    for party, cells in table.items():
+        if not cells:
+            continue
+        print(f"  {party}:")
+        for category, cell in sorted(cells.items(),
+                                     key=lambda c: -c[1]["dissent_rate"]):
+            print(f"    {category}: {cell['with_dissent']}/{cell['divisions']} "
+                  f"divisions with dissent ({cell['dissent_rate']}%), "
+                  f"{cell['total_rebel_votes']} rebel votes")
+
+    print(f"\n  Top {top_n} whipped-business rebels:")
+    shown = 0
+    for member, record in loyalty.items():
+        if record["whipped"]["rebellions"] == 0 or shown >= top_n:
+            break
+        free = record["free"]
+        free_text = (f"free loyalty {free['loyalty']}% ({free['votes']} votes)"
+                     if free["votes"] else "no free votes")
+        print(f"    {member} [{record['party']}]: "
+              f"{record['whipped']['rebellions']} whipped rebellions "
+              f"(loyalty {record['whipped']['loyalty']}%), {free_text}")
+        shown += 1
+    return table, loyalty
+
+
+def plot_dissent_by_category(directory, parties=None, save_path=None):
+    """Grouped bar chart: dissent rate per category, one bar group per party."""
+    table = dissent_by_category(directory, parties)
+    session = os.path.basename(os.path.normpath(directory))
+
+    categories = sorted({c for cells in table.values() for c in cells})
+    party_names = [p for p in table if table[p]]
+
+    plt.figure(figsize=(14, 7))
+    width = 0.8 / max(len(party_names), 1)
+    for i, party in enumerate(party_names):
+        xs = [j + i * width for j in range(len(categories))]
+        ys = [table[party].get(c, {}).get("dissent_rate", 0)
+              for c in categories]
+        plt.bar(xs, ys, width=width, label=party, color=PARTY_COLORS[party])
+
+    plt.xticks([j + width * (len(party_names) - 1) / 2
+                for j in range(len(categories))],
+               [c.replace("_", "\n") for c in categories])
+    plt.ylabel("Divisions with any dissent (%)")
+    plt.title(f"Dissent Rate by Vote Category: {session}")
+    plt.legend()
+    plt.tight_layout()
+
     if save_path:
         plt.savefig(save_path)
         plt.close()
