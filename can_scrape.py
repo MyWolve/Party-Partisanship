@@ -176,5 +176,5 @@ def scrape_all(sessions=None):
 
 
 if __name__ == "__main__":
-    #scrape_all()
-    scrape_session("45-1")
+    scrape_all()
+    #scrape_session("45-1")
