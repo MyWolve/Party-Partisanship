@@ -44,7 +44,7 @@ sys.path.insert(0, PROJECT_ROOT)
 from visualize_parliament import (PARTIES, PARTY_COLORS, count_yea_nay,
                                   load_parliament, party_majority_side)
 
-RESULTS_DIR = os.path.join(PROJECT_ROOT, "results_e7")
+RESULTS_DIR = os.path.join(PROJECT_ROOT, "experiments", "results_e7")
 BENCHMARKS = os.path.join(PROJECT_ROOT, "experiments", "benchmarks_e7.csv")
 
 # Godbout & Høyland's documented filters.
