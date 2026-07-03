@@ -156,9 +156,14 @@ def classify_vote(subject, bill_number, bill_types):
             break
 
     if category is None and bill_number:
-        if "Government Bill" in bill_type:
+        # Normalize before matching: LEGISinfo uses a curly apostrophe in
+        # "Private Member’s Bill", which a straight-quote equality check
+        # silently misses (misfiling every PMB as a government bill).
+        type_lowered = bill_type.replace("\u2019", "'").lower()
+        if "government bill" in type_lowered:
             category = "government_bill"
-        elif bill_type in ("Private Member's Bill", "Senate Public Bill"):
+        elif ("private member" in type_lowered
+              or "senate public" in type_lowered):
             category = "private_members_business"
         else:
             category = "government_bill"  # unknown bill type: safer default
