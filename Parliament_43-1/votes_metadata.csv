@@ -1,0 +1,27 @@
+vote_number,date,subject,bill_number,result,yeas,nays,paired
+26,2020-05-26T19:30:00,Government Business No. 7 (Business of the House and its committees),,Agreed To,28,23,0
+25,2020-05-26T15:27:49,Motion for closure,,Agreed To,29,23,0
+24,2020-05-26T10:36:49,Motion to proceed to Orders of the Day,,Tie,23,23,0
+23,2020-05-25T16:10:00,First report of the Special Committee on Canada-China Relations (amendment),,Negatived,21,29,0
+22,2020-04-20T15:43:18,Government Business No. 3 (COVID-19),,Agreed To,22,15,0
+21,2020-04-20T15:40:05,Government Business No. 3 (COVID-19) (amendment),,Negatived,15,22,0
+20,2020-03-09T18:45:00,Opposition Motion (Additional allotted days in the supply period),,Agreed To,169,146,2
+19,2020-03-09T18:30:00,Opposition Motion (Documents on economic downturns),,Agreed To,315,0,2
+18,2020-02-26T15:00:00,Opposition Motion (Proposed tax changes),,Negatived,27,294,0
+17,2020-02-24T18:30:03,Opposition Motion (Coastal GasLink project),,Negatived,115,199,2
+16,2020-02-21T13:24:08,Motion to adjourn the debate,,Negatived,45,74,0
+15,2020-02-21T12:41:25,Motion to adjourn the House,,Negatived,56,76,0
+14,2020-02-19T15:00:00,Opposition Motion (Special Employment Insurance sickness benefits),,Agreed To,169,149,2
+13,2020-02-06T15:10:39,"2nd reading of Bill C-4, An Act to implement the Agreement between Canada, the United States of America and the United Mexican States",C-4,Agreed To,275,28,2
+12,2020-02-05T15:10:00,Opposition Motion (Instruction to the Standing Committee on Public Safety and National Security (Parole Board of Canada)),,Agreed To,315,0,0
+11,2020-01-29T15:10:00,"Opposition Motion (Audit of the government’s ""Investing in Canada Plan"")",,Agreed To,166,152,0
+10,2020-01-29T15:00:00,Ways and Means motion No. 2,,Agreed To,290,28,0
+9,2020-01-27T18:55:57,Address in Reply to the Speech from the Throne,,Agreed To,180,139,0
+8,2019-12-12T18:55:00,Address in Reply to the Speech from the Throne (amendment),,Negatived,109,204,6
+7,2019-12-12T18:45:00,Address in Reply to the Speech from the Throne (subamendment),,Negatived,23,290,6
+6,2019-12-10T19:35:24,Address in Reply to the Speech from the Throne (subamendment),,Negatived,55,266,0
+5,2019-12-10T19:25:08,"3rd reading and adoption of Bill C-2, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2020",C-2,Agreed To,205,116,0
+4,2019-12-10T19:15:30,"Concurrence at report stage of Bill C-2, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2020",C-2,Agreed To,205,116,0
+3,2019-12-10T19:05:00,"2nd reading of Bill C-2, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2020",C-2,Agreed To,205,116,0
+2,2019-12-10T18:55:48,Concurrence in estimates,,Agreed To,205,116,0
+1,2019-12-10T18:45:10,Opposition Motion (Special committee on Canada-China relations),,Agreed To,171,148,0

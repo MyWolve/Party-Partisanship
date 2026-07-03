@@ -1,0 +1,929 @@
+vote_number,date,subject,bill_number,result,yeas,nays,paired
+928,2024-12-17T15:50:01,Motion to adjourn the House,,Agreed To,177,140,0
+927,2024-12-17T11:33:00,Motion to proceed to First Reading of Senate Public Bills,,Agreed To,296,17,0
+926,2024-12-17T11:15:09,Motion to proceed to Orders of the Day,,Negatived,144,167,0
+925,2024-12-12T15:16:00,Ninth report of the Standing Committee on Veterans,,Agreed To,328,0,0
+924,2024-12-12T15:15:00,Ninth report of the Standing Committee on Veterans Affairs (Previous question),,Agreed To,209,119,0
+923,2024-12-10T19:10:28,"3rd reading and adoption of Bill C-79, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2025",C-79,Agreed To,209,120,0
+922,2024-12-10T19:00:00,"Concurrence at report stage of Bill C-79, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2025",C-79,Agreed To,209,120,0
+921,2024-12-10T18:50:26,"2nd reading of Bill C-79, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2025",C-79,Agreed To,209,120,0
+920,2024-12-10T18:40:38,Concurrence in estimates,,Agreed To,209,120,0
+919,2024-12-10T18:30:59,Concurrence in an opposed item,,Agreed To,176,152,0
+918,2024-12-10T18:20:52,Opposition Motion (Repeal of Bill C-5),,Negatived,121,210,0
+917,2024-12-10T15:50:40,Eighth report of the Standing Committee on Public Accounts,,Agreed To,334,0,0
+916,2024-12-10T15:40:51,Eighth report of the Standing Committee on Public Accounts (previous question),,Agreed To,213,119,0
+915,2024-12-10T15:30:10,Opposition Motion (Federal sales tax on new homes),,Negatived,146,186,0
+914,2024-12-09T15:16:00,Opposition Motion (Cost of living relief for Canadians),,Negatived,28,303,0
+913,2024-12-09T15:15:00,Opposition Motion (Confidence in the Prime Minister and the government),,Negatived,152,180,0
+912,2024-12-05T15:16:00,20th report of the Standing Committee on Foreign Affairs and International Development,,Agreed To,208,114,0
+911,2024-12-05T15:15:00,20th report of the Standing Committee on Foreign Affairs and International Development (Previous Question),,Agreed To,209,115,0
+910,2024-12-05T12:00:01,Motion to proceed to Orders of the Day,,Negatived,146,171,0
+909,2024-12-04T15:15:00,"2nd reading of Bill C-380, An Act to amend the Canadian Environmental Protection Act, 1999 (Plastic manufactured items)",C-380,Negatived,118,210,0
+908,2024-12-03T15:19:00,10th report of the Standing Committee on Environment and Sustainable Development,,Agreed To,207,117,0
+907,2024-12-03T15:18:00,10th report of the Standing Committee on Environment and Sustainable Development (Previous Question),,Agreed To,207,117,0
+906,2024-12-03T15:16:00,18th report of the Standing Committee on Indigenous and Northern Affairs,,Agreed To,324,0,0
+905,2024-12-03T15:15:00,18th report of the Standing Committee on Indigenous and Northern Affairs (Amendment),,Agreed To,325,0,0
+904,2024-11-28T22:45:00,"2nd reading of Bill C-78, An Act respecting temporary cost of living relief (affordability)",C-78,Agreed To,176,151,2
+903,2024-11-28T21:00:00,Government Business No. 43 (Proceedings on a bill entitled An Act respecting temporary cost of living relief (affordability)),,Agreed To,174,148,2
+902,2024-11-28T20:45:00,Government Business No. 43 (Proceedings on a bill entitled An Act respecting temporary cost of living relief (affordability)) (amendment),,Negatived,153,176,2
+901,2024-11-28T12:45:00,Motion for closure,,Agreed To,177,148,2
+900,2024-11-28T12:30:00,Motion to adjourn the debate,,Agreed To,179,150,2
+899,2024-11-28T11:30:00,Motion to adjourn the debate,,Agreed To,179,150,2
+898,2024-11-28T10:30:00,Motion to proceed to orders of the day,,Agreed To,175,145,2
+897,2024-11-27T15:20:00,"12th report of the Standing Committee on Human Resources, Skills and Social Development and the Status of Persons with Disabilities (Main motion)",,Agreed To,184,145,2
+896,2024-11-27T15:16:00,"12th report of the Standing Committee on Human Resources, Skills and Social Development and the Status of Persons with Disabilities (Amendment as amended)",,Negatived,26,302,2
+895,2024-11-27T15:15:00,"12th report of the Standing Committee on Human Resources, Skills and Social Development and the Status of Persons with Disabilities (Subamendment)",,Agreed To,181,149,2
+894,2024-11-26T15:20:00,Third report of the Standing Committee on Official Languages (Main motion),,Agreed To,325,0,2
+893,2024-11-26T15:17:00,Third report of the Standing Committee on Official Languages (Amendment),,Negatived,143,182,2
+892,2024-11-26T15:16:00,Third report of the Standing Committee on Official Languages (Subamendment),,Negatived,27,298,2
+891,2024-11-26T15:25:00,37th report of the Standing Committee on Public Accounts,,Agreed To,329,0,2
+890,2024-11-21T15:19:00,Third report of the Standing Committee on Public Safety and National Security (Main motion),,Agreed To,210,117,0
+889,2024-11-21T15:16:00,Third report of the Standing Committee on Public Safety and National Security (Amendment),,Negatived,149,177,0
+888,2024-11-21T15:15:00,Third report of the Standing Committee on Public Safety and National Security (Subamendment),,Negatived,152,176,0
+887,2024-11-19T16:15:00,21st report of the Standing Committee on International Trade,,Agreed To,171,145,0
+886,2024-11-19T16:00:00,21st report of the Standing Committee on International Trade (previous question),,Agreed To,317,0,0
+885,2024-11-19T15:17:00,Second report of the Standing Committee on Indigenous and Northern Affairs (main motion as amended with subamendment),,Agreed To,173,144,0
+884,2024-11-19T15:16:00,Second report of the Standing Committee on Indigenous and Northern Affairs (amendment as amended),,Agreed To,174,145,0
+883,2024-11-19T15:15:00,Second report of the Standing Committee on Indigenous and Northern Affairs (subamendment),,Agreed To,173,146,0
+882,2024-11-18T15:30:09,Referral of a question of privilege to committee (subamendment),,Agreed To,319,0,0
+881,2024-11-07T15:16:00,20th report of the Standing Committee on Industry and Technology (main motion as amended),,Agreed To,173,147,4
+880,2024-11-07T15:15:00,20th report of the Standing Committee on Industry and Technology (amendment),,Agreed To,174,146,4
+879,2024-11-06T15:15:00,"Sixth report of the Standing Committee on Access to Information, Privacy and Ethics",,Agreed To,322,0,4
+878,2024-11-05T15:19:00,Referral of a question of privilege to committee (subamendment),,Agreed To,172,150,4
+877,2024-11-05T15:17:00,13th report of the Standing Committee on Public Accounts,,Agreed To,322,0,4
+876,2024-11-05T15:16:00,13th report of the Standing Committee on Public Accounts (Amendment),,Negatived,118,208,4
+875,2024-11-05T15:15:00,Fourth report of the Standing Committee on Environment and Sustainable Development,,Agreed To,324,0,4
+874,2024-10-31T15:15:00,Second report of the Special Joint Committee on Medical Assistance in Dying,,Agreed To,209,114,2
+873,2024-10-29T15:17:00,Eighth report of the Standing Committee on Canadian Heritage (Main motion as amended),,Agreed To,177,151,0
+872,2024-10-29T15:16:00,Eighth report of the Standing Committee on Canadian Heritage (Amendment as amended),,Agreed To,177,151,0
+871,2024-10-29T15:15:00,Eighth report of the Standing Committee on Canadian Heritage (subamendment),,Agreed To,178,152,0
+870,2024-10-23T15:15:00,16th report of the Standing Committee on Finance,,Agreed To,211,117,0
+869,2024-10-09T15:15:00,31st report of the Standing Committee on Public Accounts,,Agreed To,330,0,0
+868,2024-10-08T15:15:00,"11th report of the Standing Committee on Transport, Infrastructure and Communities",,Agreed To,325,0,0
+867,2024-10-07T15:15:00,"20th report of the Standing Committee on Human Resources, Skills and Social Development and the Status of Persons with Disabilities",,Agreed To,327,0,0
+866,2024-10-02T15:15:00,Opposition Motion (Request for a royal recommendation for Bill C-319),,Agreed To,181,143,0
+865,2024-10-01T15:15:00,Opposition Motion (Confidence in the government),,Negatived,121,207,0
+864,2024-09-25T16:15:00,"3rd reading and adoption of Bill S-205, An Act to amend the Criminal Code and to make consequential amendments to another Act (interim release and domestic violence recognizance orders)",S-205,Agreed To,321,0,0
+863,2024-09-25T16:05:00,"Concurrence at report stage of Bill S-205, An Act to amend the Criminal Code and to make consequential amendments to another Act (interim release and domestic violence recognizance orders)",S-205,Agreed To,324,0,0
+862,2024-09-25T15:55:00,"Bill S-205, An Act to amend the Criminal Code and to make consequential amendments to another Act (interim release and domestic violence recognizance orders) (report stage amendment)",S-205,Negatived,123,202,0
+861,2024-09-25T15:45:00,"2nd reading of Bill C-378, An Act amending the Canada Labour Code (complaints by former employees)",C-378,Agreed To,326,0,0
+860,2024-09-25T15:35:00,Private Members' Business M-110 (National strategy to reduce food waste and combat food insecurity),,Agreed To,177,150,0
+859,2024-09-25T15:25:00,"2nd reading of Bill C-223, An Act to develop a national framework for a guaranteed livable basic income",C-223,Negatived,54,273,0
+858,2024-09-25T15:15:00,Opposition Motion (Confidence in the Prime Minister and the government),,Negatived,120,211,0
+857,2024-09-24T15:15:00,18th report of the Standing Committee on Agriculture and Agri-Food,,Agreed To,327,0,0
+856,2024-09-19T15:15:00,"13th report of the Standing Committee on Human Resources, Skills and Social Development and the Status of Persons with Disabilities",,Agreed To,322,0,2
+855,2024-09-18T15:15:00,"2nd reading of Bill C-379, An Act to amend the Criminal Code (motor vehicle theft)",C-379,Negatived,149,170,2
+854,2024-09-17T15:15:00,13th report of the Standing Committee on Government Operations and Estimates,,Agreed To,325,0,0
+853,2024-06-19T16:30:00,"Bill S-224, An Act to amend the Criminal Code (trafficking in persons) (report stage amendment)",S-224,Negatived,118,207,2
+852,2024-06-19T16:20:00,"3rd reading and adoption of Bill C-323, An Act to amend the Excise Tax Act (mental health services)",C-323,Agreed To,174,149,2
+851,2024-06-19T16:10:00,"Bill C-323, An Act to amend the Excise Tax Act (mental health services) (recommittal to a committee)",C-323,Agreed To,174,151,2
+850,2024-06-19T16:00:00,Private Members' Business M-109 (Instruction to the Standing Committee on Procedure and House Affairs (amendments to the Standing Orders)),,Agreed To,325,0,2
+849,2024-06-19T15:50:00,"2nd reading of Bill C-65, An Act to amend the Canada Elections Act",C-65,Agreed To,170,148,2
+848,2024-06-19T15:40:00,"2nd reading of Bill C-65, An Act to amend the Canada Elections Act (reasoned amendment)",C-65,Negatived,119,204,2
+847,2024-06-19T15:30:00,"3rd reading and adoption of Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024",C-69,Agreed To,173,150,2
+846,2024-06-18T17:45:00,"Concurrence at report stage of Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024",C-69,Agreed To,174,148,2
+845,2024-06-18T17:35:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 154)",C-69,Negatived,116,206,2
+844,2024-06-18T17:25:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 148)",C-69,Negatived,148,174,2
+843,2024-06-18T17:15:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 146)",C-69,Negatived,116,206,2
+842,2024-06-18T17:05:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 142)",C-69,Negatived,116,206,2
+841,2024-06-18T16:55:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 130)",C-69,Negatived,116,206,2
+840,2024-06-18T16:45:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 79)",C-69,Negatived,116,206,2
+839,2024-06-18T16:35:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 49)",C-69,Negatived,148,174,2
+838,2024-06-18T16:25:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 46)",C-69,Negatived,116,206,2
+837,2024-06-18T16:15:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 44)",C-69,Negatived,116,206,2
+836,2024-06-18T16:05:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 42)",C-69,Negatived,148,174,2
+835,2024-06-18T15:55:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 39)",C-69,Negatived,116,206,2
+834,2024-06-18T15:45:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 38)",C-69,Negatived,116,206,2
+833,2024-06-18T15:35:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 34)",C-69,Negatived,116,206,2
+832,2024-06-18T15:25:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No.32)",C-69,Negatived,116,206,2
+831,2024-06-18T15:15:00,"Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (report stage amendment) (Motion No. 1)",C-69,Negatived,117,207,2
+830,2024-06-18T10:30:00,Motion to proceed to Orders of the Day,,Agreed To,171,148,2
+829,2024-06-17T17:30:00,"Time allocation for Bill C-65, An Act to amend the Canada Elections Act",C-65,Agreed To,173,146,2
+828,2024-06-17T16:30:00,Motion to proceed to Orders of the Day,,Agreed To,173,147,2
+827,2024-06-17T15:40:21,"Concurrence at report stage of Bill C-40, An Act to amend the Criminal Code, to make consequential amendments to other Acts and to repeal a regulation (miscarriage of justice reviews)",C-40,Agreed To,206,118,2
+826,2024-06-17T15:30:00,"Bill C-40, An Act to amend the Criminal Code, to make consequential amendments to other Acts and to repeal a regulation (miscarriage of justice reviews) (report stage amendment)",C-40,Negatived,118,206,2
+825,2024-06-17T13:00:21,"Time allocation for Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024",C-69,Agreed To,175,147,2
+824,2024-06-13T23:50:34,"3rd reading and adoption of Bill C-75, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2025",C-75,Agreed To,201,113,4
+823,2024-06-13T23:40:00,"Concurrence at report stage of Bill C-75, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2025",C-75,Agreed To,201,113,4
+822,2024-06-13T23:30:23,"2nd reading of Bill C-75, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2025",C-75,Agreed To,201,113,4
+821,2024-06-13T23:20:09,Concurrence in estimates,,Agreed To,201,113,4
+820,2024-06-13T23:10:22,"3rd reading and adoption of Bill C-74, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2025",C-74,Agreed To,201,113,4
+819,2024-06-13T23:00:48,"Concurrence at report stage of Bill C-74, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2025",C-74,Agreed To,201,113,4
+818,2024-06-13T22:50:35,"2nd reading of Bill C-74, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2025",C-74,Agreed To,202,106,4
+817,2024-06-13T22:40:25,Concurrence in estimates,,Agreed To,202,115,4
+816,2024-06-13T22:30:34,Opposition Motion (Government's economic analysis on the impact of the federal fuel charge and the output-based pricing system),,Agreed To,167,151,4
+815,2024-06-13T22:25:00,Opposition Motion (Government's economic analysis on the impact of the federal fuel charge and the output-based pricing system) (amendment),,Negatived,139,179,4
+814,2024-06-13T15:30:00,"3rd reading and adoption of Bill C-70, An Act respecting countering foreign interference",C-70,Agreed To,319,0,2
+813,2024-06-12T15:40:00,"3rd reading and adoption of Bill C-332, An Act to amend the Criminal Code (coercive control of intimate partner)",C-332,Agreed To,324,0,2
+812,2024-06-12T15:30:00,"2nd reading of Bill C-277, An Act to establish a national strategy on brain injuries",C-277,Agreed To,324,0,2
+811,2024-06-11T17:45:56,"Time allocation for Bill C-40, An Act to amend the Criminal Code, to make consequential amendments to other Acts and to repeal a regulation (miscarriage of justice reviews)",C-40,Agreed To,170,152,2
+810,2024-06-11T15:50:43,Ways and means motion No. 25,,Agreed To,208,118,2
+809,2024-06-11T15:40:00,"3rd reading and adoption of Bill C-20, An Act establishing the Public Complaints and Review Commission and amending certain Acts and statutory instruments",C-20,Agreed To,323,0,2
+808,2024-06-11T15:30:00,Opposition Motion (Foreign interference in democratic institutions),,Agreed To,320,2,2
+807,2024-06-11T10:44:12,Motion to proceed to Orders of the Day,,Agreed To,170,146,2
+806,2024-06-10T16:00:13,"Concurrence at report stage of Bill C-20, An Act establishing the Public Complaints and Review Commission and amending certain Acts and statutory instruments",C-20,Agreed To,321,0,0
+805,2024-06-10T15:50:16,"Bill C-20, An Act establishing the Public Complaints and Review Commission and amending certain Acts and statutory instruments (report stage amendment)",C-20,Negatived,117,204,0
+804,2024-06-10T15:40:19,Opposition Motion (Documents regarding Sustainable Development Technology Canada) (Main motion as amended),,Agreed To,174,148,0
+803,2024-06-10T15:30:03,Opposition Motion (Documents regarding Sustainable Development Technology Canada) (amendment),,Agreed To,171,150,0
+802,2024-06-05T16:30:00,"3rd reading and adoption of Bill C-293, An Act respecting pandemic prevention and preparedness",C-293,Agreed To,164,144,12
+801,2024-06-05T16:20:00,"3rd reading and adoption of Bill C-317, An Act to establish a national strategy respecting flood and drought forecasting",C-317,Agreed To,313,0,12
+800,2024-06-05T16:10:00,"2nd reading of Bill C-377, An Act to amend the Parliament of Canada Act (need to know)",C-377,Agreed To,173,143,12
+799,2024-06-05T16:00:00,"2nd reading of Bill C-353, An Act to provide for the imposition of restrictive measures against foreign hostage takers and those who practice arbitrary detention in state-to-state relations and to make related amendments to the Proceeds of Crime (Money Laundering) and Terrorist Financing Act and the Immigration and Refugee Protection Act",C-353,Agreed To,173,141,12
+798,2024-06-05T15:40:00,Opposition Motion (Measures to lower food prices),,Negatived,26,286,12
+797,2024-06-05T15:30:00,19th report of the Standing Committee on Finance,,Negatived,26,285,12
+796,2024-06-05T15:15:00,19th report of the Standing Committee on Finance (amendment),,Negatived,113,202,12
+795,2024-06-04T19:30:46,"Time allocation for Bill C-20, An Act establishing the Public Complaints and Review Commission and amending certain Acts and statutory instruments",C-20,Agreed To,164,143,10
+794,2024-06-03T19:00:00,"3rd reading and adoption of Bill C-64, An Act respecting pharmacare",C-64,Agreed To,165,145,10
+793,2024-06-03T15:15:00,Opposition Motion (Summer tax break),,Negatived,116,200,10
+792,2024-05-30T23:55:45,"Concurrence at report stage of Bill C-64, An Act respecting pharmacare",C-64,Agreed To,169,132,10
+791,2024-05-30T23:45:32,"Bill C-64, An Act respecting pharmacare (report stage amendment)",C-64,Negatived,130,169,10
+790,2024-05-29T15:45:00,"2nd reading of Bill C-356, An Act respecting payments by Canada and requirements in respect of housing and to amend certain other Acts",C-356,Negatived,117,203,8
+789,2024-05-29T15:35:00,"2nd reading of Bill C-368, An Act to amend the Food and Drugs Act (natural health products)",C-368,Agreed To,171,146,8
+788,2024-05-29T15:25:00,"3rd reading and adoption of Bill C-49, An Act to amend the Canada—Newfoundland and Labrador Atlantic Accord Implementation Act and the Canada-Nova Scotia Offshore Petroleum Resources Accord Implementation Act and to make consequential amendments to other Acts",C-49,Agreed To,176,144,8
+787,2024-05-29T15:15:00,"Bill C-49, An Act to amend the Canada—Newfoundland and Labrador Atlantic Accord Implementation Act and the Canada-Nova Scotia Offshore Petroleum Resources Accord Implementation Act and to make consequential amendments to other Acts (recommittal to a committee)",C-49,Negatived,116,205,8
+786,2024-05-28T20:30:00,Question of privilege (Speaker's alleged lack of impartiality),,Negatived,142,168,12
+785,2024-05-28T16:00:49,"3rd reading and adoption of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 323 to 341)",C-59,Agreed To,175,144,12
+784,2024-05-28T15:55:45,"3rd reading and adoption of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 320 to 322)",C-59,Agreed To,318,0,12
+783,2024-05-28T15:50:10,"3rd reading and adoption of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 318 and 319)",C-59,Agreed To,317,0,12
+782,2024-05-28T15:45:23,"3rd reading and adoption of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 273 to 277)",C-59,Agreed To,202,114,12
+781,2024-05-28T15:40:43,"3rd reading and adoption of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 219 to 230)",C-59,Agreed To,318,0,12
+780,2024-05-28T15:35:26,"3rd reading and adoption of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 145 to 167, 217 and 218 regarding measures related to vaping products, cannabis and tobacco)",C-59,Agreed To,318,0,12
+779,2024-05-28T15:30:18,"3rd reading and adoption of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 197 to 208 and 342 to 365 regarding amendments to the Canada Labour Code)",C-59,Agreed To,317,0,12
+778,2024-05-28T15:25:45,"3rd reading and adoption of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 137, 144 and 231 to 272 regarding measures related to affordability)",C-59,Agreed To,316,0,12
+777,2024-05-28T15:20:13,"3rd reading and adoption of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 1 to 136, 138 to 143, 168 to 196, 209 to 216 and 278 to 317 regarding measures appearing in the 2023 budget)",C-59,Agreed To,175,144,12
+776,2024-05-28T15:15:35,"Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (recommittal to a committee)",C-59,Negatived,116,202,12
+775,2024-05-28T11:10:08,Motion for closure,,Agreed To,172,145,12
+774,2024-05-27T15:25:00,"3rd reading and adoption of Bill C-58, An Act to amend the Canada Labour Code and the Canada Industrial Relations Board Regulations, 2012",C-58,Agreed To,316,0,4
+773,2024-05-27T15:15:00,Opposition Motion (Federal intrusions in the exclusive jurisdictions of Quebec and the provinces),,Negatived,149,172,4
+772,2024-05-27T13:00:00,"Time allocation for Bill C-49, An Act to amend the Canada—Newfoundland and Labrador Atlantic Accord Implementation Act and the Canada-Nova Scotia Offshore Petroleum Resources Accord Implementation Act and to make consequential amendments to other Acts",C-49,Agreed To,170,147,4
+771,2024-05-22T20:52:00,"Government Business No. 39 (Proceedings on Bill C-64, An Act respecting pharmacare)",,Agreed To,166,140,8
+770,2024-05-22T20:42:00,"Government Business No. 39 (Proceedings on Bill C-64, An Act respecting pharmacare) (amendment)",,Negatived,141,167,8
+769,2024-05-22T17:50:00,Motion for closure,,Agreed To,166,144,8
+768,2024-05-22T16:30:00,Motion to proceed to Orders of the Day,,Agreed To,172,144,8
+767,2024-05-22T15:45:00,"2nd reading of Bill C-381, An Act to amend the Criminal Code (extortion)",C-381,Negatived,144,173,8
+766,2024-05-22T15:30:00,"2nd reading of Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024",C-69,Agreed To,174,143,8
+765,2024-05-22T15:15:00,"2nd reading of Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024 (reasoned amendment)",C-69,Negatived,115,203,8
+764,2024-05-21T15:48:00,"Concurrence at report stage of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023",C-59,Agreed To,173,141,2
+763,2024-05-21T15:45:00,"Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (report stage amendment)",C-59,Negatived,114,202,2
+762,2024-05-21T15:15:00,Opposition Motion (Legalization of hard drugs),,Negatived,116,204,2
+761,2024-05-21T13:50:00,"Time allocation for Bill C-69, An Act to implement certain provisions of the budget tabled in Parliament on April 16, 2024",C-69,Agreed To,172,146,2
+760,2024-05-21T12:35:00,Motion to proceed to Orders of the Day,,Agreed To,172,145,2
+759,2024-05-09T19:00:42,"Time allocation for Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023",C-59,Agreed To,166,137,2
+758,2024-05-08T16:10:00,"2nd reading of Bill C-270, An Act to amend the Criminal Code (pornographic material)",C-270,Agreed To,327,0,2
+757,2024-05-08T16:00:00,"Private Members' Business M-112 (Political interference, violence, or intimidation on Canadian soil)",,Agreed To,326,0,2
+756,2024-05-08T15:50:00,"2nd reading of Bill C-375, An Act to amend the Impact Assessment Act (federal-provincial agreements)",C-375,Negatived,150,177,2
+755,2024-05-08T15:40:00,18th report of the Standing Committee on Justice and Human Rights,,Agreed To,327,0,2
+754,2024-05-08T15:30:00,Eighth report of the Standing Committee on National Defence,,Agreed To,173,152,2
+753,2024-05-07T15:40:00,"2nd reading of Bill C-64, An Act respecting pharmacare",C-64,Agreed To,177,148,2
+752,2024-05-07T15:30:00,"2nd reading of Bill C-64, An Act respecting pharmacare (reasoned amendment)",C-64,Negatived,151,176,2
+751,2024-05-06T16:30:17,"Time allocation for Bill C-64, An Act respecting pharmacare",C-64,Agreed To,180,147,0
+750,2024-05-02T12:15:00,"Concurrence at report stage of Bill C-49, An Act to amend the Canada—Newfoundland and Labrador Atlantic Accord Implementation Act and the Canada-Nova Scotia Offshore Petroleum Resources Accord Implementation Act and to make consequential amendments to other Acts",C-49,Agreed To,177,142,2
+749,2024-05-02T11:15:00,Ways and means motion No. 24,,Agreed To,176,150,2
+748,2024-05-02T10:30:00,Motion to proceed to Orders of the Day,,Agreed To,176,147,2
+747,2024-05-01T18:00:00,Budgetary policy,,Agreed To,172,150,4
+746,2024-05-01T16:15:00,Motion to proceed to Orders of the Day,,Agreed To,173,148,4
+745,2024-05-01T15:30:00,"2nd reading of Bill C-351, An Act to amend the Corrections and Conditional Release Act (maximum security offenders)",C-351,Negatived,120,208,2
+744,2024-05-01T15:15:00,Ninth report of the Standing Committee on Canadian Heritage,,Agreed To,326,0,2
+743,2024-04-30T18:00:00,Budgetary policy (amendment),,Negatived,117,206,2
+742,2024-04-29T19:00:00,Budgetary policy (subamendment),,Negatived,32,285,4
+741,2024-04-29T15:15:00,"Motion respecting Senate amendments to Bill C-29, An Act to provide for the establishment of a national council for reconciliation",C-29,Agreed To,323,0,4
+740,2024-04-17T15:30:00,"3rd reading and adoption of Bill S-209, An Act respecting Pandemic Observance Day",S-209,Agreed To,198,116,2
+739,2024-04-16T10:30:24,Motion to proceed to Orders of the Day,,Agreed To,175,143,4
+738,2024-04-15T18:55:02,"3rd reading and adoption of Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy",C-50,Agreed To,169,144,6
+737,2024-04-15T18:45:27,"3rd reading and adoption of Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (reasoned amendment)",C-50,Negatived,114,198,6
+736,2024-04-11T19:53:00,"Concurrence at report stage of Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy",C-50,Agreed To,173,132,8
+735,2024-04-11T19:29:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 176)",C-50,Agreed To,200,108,8
+734,2024-04-11T19:27:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 172)",C-50,Negatived,104,202,8
+733,2024-04-11T19:25:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 164)",C-50,Negatived,107,203,8
+732,2024-04-11T19:23:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 163)",C-50,Negatived,106,202,8
+731,2024-04-11T19:21:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 162)",C-50,Negatived,110,200,8
+730,2024-04-11T19:19:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 161)",C-50,Negatived,109,203,8
+729,2024-04-11T19:17:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 160)",C-50,Negatived,108,200,8
+728,2024-04-11T19:15:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 155)",C-50,Agreed To,309,0,8
+727,2024-04-11T19:13:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 143)",C-50,Negatived,139,171,8
+726,2024-04-11T19:11:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 142)",C-50,Negatived,107,199,8
+725,2024-04-11T19:09:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 138)",C-50,Negatived,109,202,8
+724,2024-04-11T19:07:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 127)",C-50,Negatived,107,206,8
+723,2024-04-11T19:05:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 123)",C-50,Negatived,108,204,8
+722,2024-04-11T18:59:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment)  (Motion 117)",C-50,Agreed To,201,107,8
+721,2024-04-11T18:57:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 113)",C-50,Negatived,135,173,8
+720,2024-04-11T18:55:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 108)",C-50,Agreed To,306,0,8
+719,2024-04-11T18:53:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 102)",C-50,Negatived,109,199,8
+718,2024-04-11T18:49:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 96)",C-50,Agreed To,201,104,8
+717,2024-04-11T18:47:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 91)",C-50,Agreed To,274,31,8
+716,2024-04-11T18:43:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 79)",C-50,Agreed To,269,32,8
+715,2024-04-11T18:41:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 64)",C-50,Negatived,106,203,8
+714,2024-04-11T18:39:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 61)",C-50,Negatived,108,203,8
+713,2024-04-11T18:37:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 60)",C-50,Negatived,110,203,8
+712,2024-04-11T18:35:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 59)",C-50,Negatived,111,203,8
+711,2024-04-11T18:33:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 54)",C-50,Negatived,136,174,8
+710,2024-04-11T18:31:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 53)",C-50,Negatived,112,203,8
+709,2024-04-11T18:29:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 52)",C-50,Negatived,111,202,8
+708,2024-04-11T18:27:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 51)",C-50,Negatived,114,203,8
+707,2024-04-11T18:25:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 49)",C-50,Negatived,111,202,8
+706,2024-04-11T18:23:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 44)",C-50,Negatived,113,202,8
+705,2024-04-11T18:21:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 42)",C-50,Negatived,111,202,8
+704,2024-04-11T18:19:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 41)",C-50,Negatived,113,203,8
+703,2024-04-11T18:17:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 37)",C-50,Agreed To,173,142,8
+702,2024-04-11T18:15:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 36)",C-50,Negatived,115,203,8
+701,2024-04-11T18:13:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 35)",C-50,Negatived,114,203,8
+700,2024-04-11T18:11:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 28)",C-50,Negatived,113,202,8
+699,2024-04-11T18:09:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 27)",C-50,Negatived,111,201,8
+698,2024-04-11T18:07:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 26)",C-50,Negatived,111,201,8
+697,2024-04-11T18:05:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 25)",C-50,Negatived,111,204,8
+696,2024-04-11T18:03:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 21)",C-50,Negatived,111,204,8
+695,2024-04-11T18:01:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 17)",C-50,Negatived,140,174,8
+694,2024-04-11T17:59:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 16)",C-50,Negatived,113,202,8
+693,2024-04-11T17:57:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 11)",C-50,Negatived,113,203,8
+692,2024-04-11T17:55:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 10)",C-50,Negatived,113,204,8
+691,2024-04-11T17:53:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 5)",C-50,Negatived,114,204,8
+690,2024-04-11T17:51:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 4)",C-50,Negatived,114,204,8
+689,2024-04-11T17:49:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 3)",C-50,Negatived,114,204,8
+688,2024-04-11T17:47:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 2)",C-50,Negatived,114,204,8
+687,2024-04-11T17:45:00,"Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy (report stage amendment) (Motion 1)",C-50,Negatived,113,202,8
+686,2024-04-11T10:30:00,Motion to proceed to Orders of the Day,,Agreed To,165,143,8
+685,2024-04-10T15:45:00,"2nd reading of Bill C-347, An Act to amend the Constitution Act, 1867 (oath of office)",C-347,Negatived,113,197,6
+684,2024-04-10T15:30:00,Opposition Motion (Main motion as amended),,Agreed To,171,149,6
+683,2024-04-10T15:15:00,Opposition Motion (Carbon tax emergency meeting) (amendment),,Agreed To,171,149,6
+682,2024-03-21T18:25:42,"3rd reading and adoption of Bill C-68, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2025",C-68,Agreed To,201,115,8
+681,2024-03-21T18:20:00,"Concurrence at report stage of Bill C-68, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2025",C-68,Agreed To,201,115,8
+680,2024-03-21T18:15:10,"2nd reading of Bill C-68, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2025",C-68,Agreed To,201,115,8
+679,2024-03-21T18:10:05,Concurrence in Interim Supply,,Agreed To,201,115,8
+678,2024-03-21T18:05:25,"3rd reading and adoption of Bill C-67, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-67,Agreed To,201,115,8
+677,2024-03-21T18:00:14,"Concurrence at report stage of Bill C-67, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-67,Agreed To,201,114,8
+676,2024-03-21T17:55:39,"2nd reading of Bill C-67, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-67,Agreed To,201,114,8
+675,2024-03-21T17:50:31,Concurrence in estimates,,Agreed To,202,115,8
+674,2024-03-21T17:45:13,Opposition Motion (Carbon tax election),,Negatived,116,204,8
+673,2024-03-20T17:00:15,"Time allocation for Bill C-29, An Act to provide for the establishment of a national council for reconciliation",C-29,Agreed To,178,146,2
+672,2024-03-20T16:00:50,Motion to proceed to Orders of the Day,,Agreed To,175,150,2
+671,2024-03-20T15:50:00,"2nd reading of Bill C-365, An Act respecting the implementation of a consumer-led banking system for Canadians",C-365,Agreed To,172,150,2
+670,2024-03-20T15:40:00,Opposition Motion (Carbon tax),,Negatived,119,205,2
+669,2024-03-20T15:30:47,Fifth report of the Standing Committee on Science and Research,,Agreed To,325,0,2
+668,2024-03-18T21:30:45,"2nd reading of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 323 to 341.)",C-59,Agreed To,175,149,2
+667,2024-03-18T21:20:51,"2nd reading of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 320 to 322; and)",C-59,Agreed To,323,0,2
+666,2024-03-18T21:10:49,"2nd reading of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 318 and 319;)",C-59,Agreed To,322,0,2
+665,2024-03-18T21:00:42,"2nd reading of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 273 to 277;)",C-59,Agreed To,206,117,2
+664,2024-03-18T20:50:28,"2nd reading of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 219 to 230;)",C-59,Agreed To,321,0,2
+663,2024-03-18T20:40:18,"2nd reading of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 145 to 167, 217 and 218 regarding measures related to vaping products, cannabis and tobacco;)",C-59,Agreed To,323,0,2
+662,2024-03-18T20:30:00,"2nd reading of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 197 to 208 and 342 to 365 regarding amendments to the Canada Labour Code;)",C-59,Agreed To,323,2,2
+661,2024-03-18T20:20:32,"2nd reading of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 137, 144 and 231 to 272 regarding measures related to affordability;)",C-59,Agreed To,320,1,2
+660,2024-03-18T20:10:00,"2nd reading of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (Clauses 1 to 136, 138 to 143, 168 to 196, 209 to 216 and 278 to 317 regarding measures appearing in the 2023 budget;)",C-59,Agreed To,172,148,2
+659,2024-03-18T20:00:05,"2nd reading of Bill C-59, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 21, 2023 and certain provisions of the budget tabled in Parliament on March 28, 2023 (reasoned amendment)",C-59,Negatived,118,206,2
+658,2024-03-18T19:50:43,Opposition Motion (As amended - Canada's actions to promote peace in the Middle East),,Agreed To,204,117,2
+657,2024-03-18T19:40:44,Amendment to opposition motion,,Agreed To,204,118,2
+656,2024-02-29T12:50:19,Motion for closure,C-35,Agreed To,167,142,8
+655,2024-02-29T11:40:00,Motion to proceed to Orders of the Day,,Agreed To,170,141,8
+654,2024-02-28T20:30:00,Government Business No. 35 (Extension of sitting hours and conduct of extended proceedings),,Agreed To,170,139,8
+653,2024-02-28T18:02:00,Motion for closure,,Agreed To,168,145,8
+652,2024-02-28T16:47:00,Motion to proceed to Orders of the Day,,Agreed To,170,144,8
+651,2024-02-28T16:00:00,"3rd reading and adoption of Bill C-320, An Act to amend the Corrections and Conditional Release Act (disclosure of information to victims)",C-320,Agreed To,319,0,8
+650,2024-02-28T15:45:00,"3rd reading and adoption of Bill C-321, An Act to amend the Criminal Code (assaults against persons who provide health services and first responders)",C-321,Agreed To,318,0,8
+649,2024-02-28T15:30:00,"2nd reading of Bill C-354, An Act to amend the Canadian Radio-television and Telecommunications Commission Act (Quebec’s cultural distinctiveness and French-speaking communities)",C-354,Agreed To,167,150,8
+648,2024-02-28T15:15:00,Opposition Motion (ArriveCAN),,Agreed To,170,149,8
+647,2024-02-27T15:15:00,"2nd reading of Bill C-58, An Act to amend the Canada Labour Code and the Canada Industrial Relations Board Regulations, 2012",C-58,Agreed To,318,0,4
+646,2024-02-15T17:55:46,"3rd reading and adoption of Bill C-62, An Act to amend An Act to amend the Criminal Code (medical assistance in dying), No. 2",C-62,Agreed To,272,32,4
+645,2024-02-15T17:45:41,"3rd reading and adoption of Bill, (previous question)",C-62,Agreed To,281,30,4
+644,2024-02-14T15:55:00,"2nd reading of Bill C-273, An Act to amend the Criminal Code (Corinne’s Quest and the protection of children)",C-273,Agreed To,209,115,2
+643,2024-02-14T15:45:00,"2nd reading of Bill C-317, An Act to establish a national strategy respecting flood and drought forecasting",C-317,Agreed To,325,0,2
+642,2024-02-14T15:35:00,"3rd reading and adoption of Bill S-202, An Act to amend the Parliament of Canada Act (Parliamentary Visual Artist Laureate)",S-202,Agreed To,210,115,2
+641,2024-02-14T15:25:00,"2nd reading of Bill C-62, An Act to amend An Act to amend the Criminal Code (medical assistance in dying), No. 2",C-62,Agreed To,294,33,2
+640,2024-02-14T15:15:00,"2nd reading of Bill C-62, An Act to amend An Act to amend the Criminal Code (medical assistance in dying), No. 2 (reasoned amendment)",C-62,Negatived,33,291,2
+639,2024-02-13T20:40:35,"Government Business No. 34 (Proceedings on Bill C-62, An Act to amend An Act to amend the Criminal Code (medical assistance in dying), No. 2)",,Agreed To,287,32,2
+638,2024-02-13T20:30:54,"Government Business No. 34 (Proceedings on Bill C-62, An Act to amend An Act to amend the Criminal Code (medical assistance in dying), No. 2) (amendment)",,Negatived,43,270,2
+637,2024-02-13T11:00:00,Motion for closure,,Agreed To,170,146,0
+636,2024-02-12T15:25:44,Opposition Motion (Federal immigration targets),,Agreed To,173,150,0
+635,2024-02-12T15:15:24,Opposition Motion (Federal immigration targets) (amendment),,Agreed To,175,152,0
+634,2024-02-07T16:15:00,Private Members' Business M-86 (Citizens' Assembly on Electoral Reform),,Negatived,101,220,0
+633,2024-02-07T16:05:00,"2nd reading of Bill C-352, An Act to amend the Competition Act and the Competition Tribunal Act",C-352,Agreed To,178,149,0
+632,2024-02-07T15:55:00,Private Members' Business M-75 (Polish Heritage Month),,Agreed To,328,0,0
+631,2024-02-07T15:45:00,Tenth report of the Standing Committee on Agriculture and Agri-Food,,Agreed To,328,0,0
+630,2024-02-07T15:35:00,Tenth report of the Standing Committee on Agriculture and Agri-Food (amendment),,Negatived,117,211,0
+629,2024-02-07T15:25:00,Opposition Motion (Auto theft),,Negatived,148,179,0
+628,2024-02-07T15:15:00,15th report of the Standing Committee on Finance,,Agreed To,212,114,0
+627,2024-02-06T15:15:37,"3rd reading and adoption of Bill C-57, An Act to implement the 2023 Free Trade Agreement between Canada and Ukraine",C-57,Agreed To,214,116,0
+626,2024-02-05T15:25:31,"Bill C-57, An Act to implement the 2023 Free Trade Agreement between Canada and Ukraine (recommittal to a committee)",C-57,Negatived,117,211,2
+625,2024-02-05T15:15:43,Opposition Motion (Carbon tax),,Negatived,119,209,2
+624,2024-01-31T17:30:00,"Concurrence at report stage of Bill S-202, An Act to amend the Parliament of Canada Act (Parliamentary Visual Artist Laureate)",S-202,Agreed To,210,113,2
+623,2024-01-31T17:15:00,"Concurrence at report stage of Bill C-321, An Act to amend the Criminal Code (assaults against health care professionals and first responders)",C-321,Agreed To,323,0,2
+622,2024-01-31T17:00:00,"2nd reading of Bill C-355, An Act to prohibit the export by air of horses for slaughter and to make related amendments to certain Acts",C-355,Agreed To,181,137,2
+621,2024-01-31T16:45:00,"3rd reading and adoption of Bill C-290, An Act to amend the Public Servants Disclosure Protection Act and to make a consequential amendment to the Conflict of Interest Act",C-290,Agreed To,328,0,2
+620,2024-01-31T16:30:00,14th report of the Standing Committee on Public Accounts,,Agreed To,329,0,2
+619,2024-01-31T16:15:00,14th report of the Standing Committee on Public Accounts (amendment),,Negatived,116,213,2
+618,2024-01-31T16:00:00,12th report of the Standing Committee on Finance,,Agreed To,175,153,2
+617,2024-01-31T15:45:00,12th report of the Standing Committee on Finance (amendment),,Negatived,144,184,2
+616,2024-01-31T15:30:00,First report of the Standing Committee on Agriculture and Agri-Food,,Agreed To,329,0,2
+615,2024-01-31T15:15:00,First report of the Standing Committee on Agriculture and Agri-Food (amendment),,Negatived,116,213,2
+614,2024-01-30T15:30:00,55th report of the Standing Committee on Procedure and House Affairs,,Agreed To,174,145,2
+613,2024-01-30T15:15:00,55th report of the Standing Committee on Procedure and House Affairs (amendment),,Negatived,149,178,2
+612,2023-12-15T14:45:34,Motion to adjourn the House,,Agreed To,170,129,0
+611,2023-12-14T10:45:00,Motion to proceed to Orders of the Day,,Agreed To,175,146,0
+610,2023-12-13T15:25:00,Private Members' Business M-96 (Canadian Aviation Regulations),,Agreed To,212,112,2
+609,2023-12-13T15:15:00,"2nd reading of Bill S-210, An Act to restrict young persons’ online access to sexually explicit material",S-210,Agreed To,189,133,2
+608,2023-12-12T15:15:00,12th report of the Standing Committee on Justice and Human Rights,,Agreed To,324,0,4
+607,2023-12-12T11:42:09,"Concurrence at report stage of Bill C-57, An Act to implement the 2023 Free Trade Agreement between Canada and Ukraine",C-57,Agreed To,209,112,4
+606,2023-12-11T17:45:42,"3rd reading and adoption of Bill C-56, An Act to amend the Excise Tax Act and the Competition Act",C-56,Agreed To,316,0,4
+605,2023-12-07T21:56:50,"3rd reading and adoption of Bill C-60, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-60,Agreed To,193,99,8
+604,2023-12-07T21:54:00,"Concurrence at report stage of Bill C-60, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-60,Agreed To,192,100,8
+603,2023-12-07T21:51:18,"2nd reading of Bill C-60, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-60,Agreed To,198,104,8
+602,2023-12-07T21:47:19,Concurrence in estimates,,Agreed To,196,100,8
+601,2023-12-07T21:45:57,Concurrence in an opposed item (Opposed Vote No. 120),,Agreed To,200,100,8
+600,2023-12-07T21:43:54,Concurrence in an opposed item (Opposed Vote No. 119),,Agreed To,201,97,8
+599,2023-12-07T21:41:05,Concurrence in an opposed item (Opposed Vote No. 118),,Agreed To,197,101,8
+598,2023-12-07T21:39:57,Concurrence in an opposed item (Opposed Vote No. 117),,Agreed To,196,102,8
+597,2023-12-07T21:37:40,Concurrence in an opposed item (Opposed Vote No. 116),,Agreed To,199,101,8
+596,2023-12-07T21:35:23,Concurrence in an opposed item (Opposed Vote No. 115),,Agreed To,197,101,8
+595,2023-12-07T21:33:53,Concurrence in an opposed item (Opposed Vote No. 114),,Agreed To,197,104,8
+594,2023-12-07T21:31:44,Concurrence in an opposed item (Opposed Vote No.113),,Agreed To,196,102,8
+593,2023-12-07T21:29:07,Concurrence in an opposed item (Opposed Vote No. 112),,Agreed To,196,103,8
+592,2023-12-07T21:27:52,Concurrence in an opposed item (Opposed Vote No. 111),,Agreed To,197,106,8
+591,2023-12-07T21:25:40,Concurrence in an opposed item (Opposed Vote No. 110),,Agreed To,196,108,8
+590,2023-12-07T21:23:45,Concurrence in an opposed item (Opposed Vote No. 109),,Agreed To,199,105,8
+589,2023-12-07T21:21:32,Concurrence in an opposed item (Opposed Vote No. 108),,Agreed To,200,106,8
+588,2023-12-07T21:19:07,Concurrence in an opposed item (Opposed Vote No. 107),,Agreed To,196,102,8
+587,2023-12-07T21:17:55,Concurrence in an opposed item (Opposed Vote No. 106),,Agreed To,199,105,8
+586,2023-12-07T21:15:10,Concurrence in an opposed item (Opposed Vote No. 105),,Agreed To,198,103,8
+585,2023-12-07T21:13:52,Concurrence in an opposed item (Opposed Vote No. 104),,Agreed To,198,102,8
+584,2023-12-07T21:11:33,Concurrence in an opposed item (Opposed Vote No. 103),,Agreed To,196,100,8
+583,2023-12-07T21:09:20,Concurrence in an opposed item (Opposed Vote No. 102),,Agreed To,198,95,8
+582,2023-12-07T21:07:40,Concurrence in an opposed item (Opposed Vote No. 101),,Agreed To,197,99,8
+581,2023-12-07T21:05:25,Concurrence in an opposed item (Opposed Vote No. 100),,Agreed To,195,100,8
+580,2023-12-07T21:03:04,Concurrence in an opposed item (Opposed Vote No. 99),,Agreed To,198,101,8
+579,2023-12-07T21:01:42,Concurrence in an opposed item (Opposed Vote No. 98),,Agreed To,196,102,8
+578,2023-12-07T20:59:25,Concurrence in an opposed item (Opposed Vote No. 97),,Agreed To,194,98,8
+577,2023-12-07T20:57:58,Concurrence in an opposed item (Opposed Vote No. 96),,Agreed To,195,100,8
+576,2023-12-07T20:55:37,Concurrence in an opposed item (Opposed Vote No. 95),,Agreed To,193,104,8
+575,2023-12-07T20:53:07,Concurrence in an opposed item (Opposed Vote No. 94),,Agreed To,191,103,8
+574,2023-12-07T20:51:49,Concurrence in an opposed item (Opposed Vote No. 93),,Agreed To,190,104,8
+573,2023-12-07T20:49:23,Concurrence in an opposed item (Opposed Vote No. 92),,Agreed To,193,103,8
+572,2023-12-07T20:47:29,Concurrence in an opposed item (Opposed Vote No. 91),,Agreed To,197,105,8
+571,2023-12-07T20:45:28,Concurrence in an opposed item (Opposed Vote No. 90),,Agreed To,196,102,8
+570,2023-12-07T20:43:04,Concurrence in an opposed item (Opposed Vote No. 89),,Agreed To,194,101,8
+569,2023-12-07T20:41:21,Concurrence in an opposed item (Opposed Vote No. 88),,Agreed To,192,101,8
+568,2023-12-07T20:39:25,Concurrence in an opposed item (Opposed Vote No. 87),,Agreed To,189,101,8
+567,2023-12-07T20:37:33,Concurrence in an opposed item (Opposed Vote No. 86),,Agreed To,188,99,8
+566,2023-12-07T20:35:26,Concurrence in an opposed item (Opposed Vote No. 85),,Agreed To,187,98,8
+565,2023-12-07T20:33:37,Concurrence in an opposed item (Opposed Vote No. 84),,Agreed To,187,90,8
+564,2023-12-07T20:31:19,Concurrence in an opposed item (Opposed Vote No. 83),,Agreed To,185,96,8
+563,2023-12-07T20:29:03,Concurrence in an opposed item (Opposed Vote No. 82),,Agreed To,189,98,8
+562,2023-12-07T20:27:21,Concurrence in an opposed item (Opposed Vote No. 81),,Agreed To,187,94,8
+561,2023-12-07T20:25:20,Concurrence in an opposed item (Opposed Vote No. 80),,Agreed To,185,96,8
+560,2023-12-07T20:23:55,Concurrence in an opposed item (Opposed Vote No. 79),,Agreed To,189,95,8
+559,2023-12-07T20:21:49,Concurrence in an opposed item (Opposed Vote No. 78),,Agreed To,192,92,8
+558,2023-12-07T20:19:46,Concurrence in an opposed item (Opposed Vote No. 77),,Agreed To,192,95,8
+557,2023-12-07T20:17:28,Concurrence in an opposed item (Opposed Vote No. 76),,Agreed To,190,97,8
+556,2023-12-07T20:15:11,Concurrence in an opposed item (Opposed Vote No. 75),,Agreed To,192,95,8
+555,2023-12-07T20:13:48,Concurrence in an opposed item (Opposed Vote No. 74),,Agreed To,190,90,8
+554,2023-12-07T20:11:36,Concurrence in an opposed item (Opposed Vote No. 73),,Agreed To,188,90,8
+553,2023-12-07T20:09:34,Concurrence in an opposed item (Opposed Vote No. 72),,Agreed To,189,84,8
+552,2023-12-07T20:07:40,Concurrence in an opposed item (Opposed Vote No. 71),,Agreed To,189,83,8
+551,2023-12-07T20:05:58,Concurrence in an opposed item (Opposed Vote No. 70),,Agreed To,188,80,8
+550,2023-12-07T20:03:34,Concurrence in an opposed item (Opposed Vote No. 69),,Agreed To,185,83,8
+549,2023-12-07T20:01:03,Concurrence in an opposed item (Opposed Vote No. 68),,Agreed To,184,78,8
+548,2023-12-07T19:59:17,Concurrence in an opposed item (Opposed Vote No. 67),,Agreed To,187,73,8
+547,2023-12-07T19:57:29,Concurrence in an opposed item (Opposed Vote No. 66),,Agreed To,180,72,8
+546,2023-12-07T19:55:07,Concurrence in an opposed item (Opposed Vote No. 65),,Agreed To,184,68,8
+545,2023-12-07T19:53:35,Concurrence in an opposed item (Opposed Vote No. 64),,Agreed To,185,70,8
+544,2023-12-07T19:51:11,Concurrence in an opposed item (Opposed Vote No. 63),,Agreed To,179,67,8
+543,2023-12-07T19:49:33,Concurrence in an opposed item (Opposed Vote No. 62),,Agreed To,177,69,8
+542,2023-12-07T19:47:59,Concurrence in an opposed item (Opposed Vote No. 61),,Agreed To,181,71,8
+541,2023-12-07T19:45:02,Concurrence in an opposed item (Opposed Vote No. 60),,Agreed To,176,69,8
+540,2023-12-07T19:43:42,Concurrence in an opposed item (Opposed Vote No. 59),,Agreed To,174,74,8
+539,2023-12-07T19:41:46,Concurrence in an opposed item (Opposed Vote No. 58),,Agreed To,173,72,8
+538,2023-12-07T19:39:06,Concurrence in an opposed item (Opposed Vote No. 57),,Agreed To,171,76,8
+537,2023-12-07T19:37:52,Concurrence in an opposed item (Opposed Vote No. 56),,Agreed To,174,74,8
+536,2023-12-07T19:35:44,Concurrence in an opposed item (Opposed Vote No. 55),,Agreed To,168,72,8
+535,2023-12-07T19:33:35,Concurrence in an opposed item (Opposed Vote No. 54),,Agreed To,168,67,8
+534,2023-12-07T19:31:26,Concurrence in an opposed item (Opposed Vote No. 53),,Agreed To,170,61,8
+533,2023-12-07T19:29:05,Concurrence in an opposed item (Opposed Vote No. 52),,Agreed To,169,61,8
+532,2023-12-07T19:27:13,Concurrence in an opposed item (Opposed Vote No. 51),,Agreed To,169,60,8
+531,2023-12-07T19:25:58,Concurrence in an opposed item (Opposed Vote No. 50),,Agreed To,171,65,8
+530,2023-12-07T19:23:32,Concurrence in an opposed item (Opposed Vote No. 49),,Agreed To,175,65,8
+529,2023-12-07T19:21:08,Concurrence in an opposed item (Opposed Vote No. 48),,Agreed To,175,63,8
+528,2023-12-07T19:19:16,Concurrence in an opposed item (Opposed Vote No. 47),,Agreed To,176,63,8
+527,2023-12-07T19:17:10,Concurrence in an opposed item (Opposed Vote No. 46),,Agreed To,178,72,8
+526,2023-12-07T19:15:52,Concurrence in an opposed item (Opposed Vote No. 45),,Agreed To,174,72,8
+525,2023-12-07T19:13:16,Concurrence in an opposed item (Opposed Vote No. 44),,Agreed To,175,73,8
+524,2023-12-07T19:11:00,Concurrence in an opposed item (Opposed Vote No. 43),,Agreed To,176,75,8
+523,2023-12-07T19:09:00,Concurrence in an opposed item (Opposed Vote No. 42),,Agreed To,179,80,8
+522,2023-12-07T19:07:00,Concurrence in an opposed item (Opposed Vote No. 41),,Agreed To,177,78,8
+521,2023-12-07T19:05:00,Concurrence in an opposed item (Opposed Vote No. 40),,Agreed To,179,86,8
+520,2023-12-07T19:03:00,Concurrence in an opposed item (Opposed Vote No. 39),,Agreed To,183,91,8
+519,2023-12-07T19:01:00,Concurrence in an opposed item (Opposed Vote No. 38),,Agreed To,183,96,8
+518,2023-12-07T18:59:00,Concurrence in an opposed item (Opposed Vote No. 37),,Agreed To,182,93,8
+517,2023-12-07T18:57:00,Concurrence in an opposed item (Opposed Vote No. 36),,Agreed To,185,99,8
+516,2023-12-07T18:55:00,Concurrence in an opposed item (Opposed Vote No. 35),,Agreed To,185,100,8
+515,2023-12-07T18:53:00,Concurrence in an opposed item (Opposed Vote No. 34),,Agreed To,187,101,8
+514,2023-12-07T18:51:00,Concurrence in an opposed item (Opposed Vote No. 33),,Agreed To,188,102,8
+513,2023-12-07T18:49:00,Concurrence in an opposed item (Opposed Vote No. 32),,Agreed To,188,102,8
+512,2023-12-07T18:47:00,Concurrence in an opposed item (Opposed Vote No. 31),,Agreed To,190,104,8
+511,2023-12-07T18:45:00,Concurrence in an opposed item (Opposed Vote No. 30),,Agreed To,190,107,8
+510,2023-12-07T18:43:00,Concurrence in an opposed item (Opposed Vote No. 29),,Agreed To,189,110,12
+509,2023-12-07T18:41:00,Concurrence in an opposed item (Opposed Vote No. 28),,Agreed To,189,110,12
+508,2023-12-07T18:39:00,Concurrence in an opposed item (Opposed Vote No. 27),,Agreed To,190,108,12
+507,2023-12-07T18:37:00,Concurrence in an opposed item (Opposed Vote No. 26),,Agreed To,187,110,12
+506,2023-12-07T18:35:00,Concurrence in an opposed item (Opposed Vote No. 25),,Agreed To,191,111,12
+505,2023-12-07T18:33:00,Concurrence in an opposed item (Opposed Vote No. 24),,Agreed To,193,109,12
+504,2023-12-07T18:31:00,Concurrence in an opposed item (Opposed Vote No. 23),,Agreed To,197,110,12
+503,2023-12-07T18:29:00,Concurrence in an opposed item (Opposed Vote No. 22),,Agreed To,198,109,12
+502,2023-12-07T18:27:00,Concurrence in an opposed item (Opposed Vote No. 21),,Agreed To,198,111,12
+501,2023-12-07T18:25:00,Concurrence in an opposed item (Opposed Vote No. 20),,Agreed To,199,112,12
+500,2023-12-07T18:23:00,Concurrence in an opposed item (Opposed Vote No. 19),,Agreed To,201,111,12
+499,2023-12-07T18:21:00,Concurrence in an opposed item (Opposed Vote No. 18),,Agreed To,200,112,12
+498,2023-12-07T18:19:00,Concurrence in an opposed item (Opposed Vote No. 17),,Agreed To,200,111,12
+497,2023-12-07T18:17:00,Concurrence in an opposed item (Opposed Vote No. 16),,Agreed To,199,110,12
+496,2023-12-07T18:15:00,Concurrence in an opposed item (Opposed Vote No. 15),,Agreed To,200,111,12
+495,2023-12-07T18:13:00,Concurrence in an opposed item (Opposed Vote No. 14),,Agreed To,200,110,12
+494,2023-12-07T18:11:00,Concurrence in an opposed item (Opposed Vote No. 13),,Agreed To,200,112,12
+493,2023-12-07T18:09:00,Concurrence in an opposed item (Opposed Vote No. 12),,Agreed To,200,113,12
+492,2023-12-07T18:07:00,Concurrence in an opposed item (Opposed Vote No. 11),,Agreed To,200,111,12
+491,2023-12-07T18:05:00,Concurrence in an opposed item (Opposed Vote No. 10),,Agreed To,199,110,12
+490,2023-12-07T18:03:00,Concurrence in an opposed item (Opposed Vote No. 9),,Agreed To,197,113,12
+489,2023-12-07T18:01:00,Concurrence in an opposed item (Opposed Vote No. 8),,Agreed To,196,112,12
+488,2023-12-07T17:59:00,Concurrence in an opposed item (Opposed Vote No. 7),,Agreed To,199,112,12
+487,2023-12-07T17:57:00,Concurrence in an opposed item (Opposed Vote No. 6),,Agreed To,201,111,12
+486,2023-12-07T17:55:00,Concurrence in an opposed item (Opposed Vote No. 5),,Agreed To,201,112,12
+485,2023-12-07T17:53:00,Concurrence in an opposed item (Opposed Vote No. 4),,Agreed To,201,112,12
+484,2023-12-07T17:51:00,Concurrence in an opposed item (Opposed Vote No. 3),,Agreed To,200,111,12
+483,2023-12-07T17:49:00,Concurrence in an opposed item (Opposed Vote No. 2),,Agreed To,199,112,12
+482,2023-12-07T17:47:00,Concurrence in an opposed item (Opposed Vote No. 1),,Agreed To,200,111,12
+481,2023-12-07T17:45:00,"Opposition Motion (Carbon tax on farmers, First Nations and families)",,Negatived,112,202,12
+480,2023-12-06T16:30:00,"2nd reading of Bill C-219, An Act to enact the Canadian Environmental Bill of Rights and to make related amendments to other Acts",C-219,Negatived,54,257,14
+479,2023-12-06T16:15:00,"3rd reading and adoption of Bill C-295, An Act to amend the Criminal Code (neglect of vulnerable adults)",C-295,Agreed To,309,0,14
+478,2023-12-06T16:00:00,"2nd reading of Bill C-322, An Act to develop a national framework to establish a school food program",C-322,Agreed To,204,110,14
+477,2023-12-06T15:45:00,Referral of a question of privilege to committee (amendment),,Agreed To,310,0,14
+476,2023-12-06T15:30:00,26th report of the Standing Committee on Public Accounts (main motion),,Agreed To,202,112,14
+475,2023-12-06T15:15:00,26th report of the Standing Committee on Public Accounts (amendment),,Negatived,111,202,14
+474,2023-12-05T18:30:00,"Concurrence at report stage of Bill C-56, An Act to amend the Excise Tax Act and the Competition Act",C-56,Agreed To,309,0,14
+473,2023-12-05T18:15:00,"Bill C-56, An Act to amend the Excise Tax Act and the Competition Act (report stage amendment) (Motion No. 3)",C-56,Agreed To,309,0,14
+472,2023-12-05T18:00:00,"Bill C-56, An Act to amend the Excise Tax Act and the Competition Act (report stage amendment) (Motion No. 2)",C-56,Negatived,137,171,14
+471,2023-12-05T17:45:00,"Bill C-56, An Act to amend the Excise Tax Act and the Competition Act (report stage amendment) (Motion No. 1)",C-56,Negatived,139,172,14
+470,2023-12-05T15:15:00,13th report of the Standing Committee on Veterans Affairs,,Agreed To,167,149,14
+469,2023-12-04T20:45:00,"Government Business No. 31 (Proceedings on Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy)",,Agreed To,172,145,12
+468,2023-12-04T20:30:41,"Government Business No. 31 (Proceedings on Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy) (amendment)",,Negatived,112,202,12
+467,2023-12-04T16:15:00,Motion for closure,,Agreed To,171,137,12
+466,2023-12-04T16:00:00,Motion to proceed to Orders of the Day,,Agreed To,175,144,12
+465,2023-11-30T14:00:24,Ways and means motion No. 19,,Agreed To,173,145,8
+464,2023-11-30T13:00:54,Motion to proceed to Orders of the Day,,Agreed To,171,145,8
+463,2023-11-30T11:30:00,Motion to adjourn the debate,,Negatived,112,203,8
+462,2023-11-30T11:00:00,Motion to adjourn the debate,,Agreed To,174,143,8
+461,2023-11-29T15:35:00,"3rd reading and adoption of Bill C-275, An Act to amend the Health of Animals Act (biosecurity on farms)",C-275,Agreed To,278,36,10
+460,2023-11-29T15:30:00,Opposition Motion (Passage of Bill C-234 by the Senate),,Negatived,135,178,10
+459,2023-11-29T15:25:00,Third report of the Standing Committee on National Defence,,Agreed To,313,2,10
+458,2023-11-29T15:20:00,Tenth report of the Standing Committee on Foreign Affairs and International Development,,Agreed To,316,0,10
+457,2023-11-29T15:15:00,Tenth report of the Standing Committee on Foreign Affairs and International Development (amendment),,Negatived,113,205,10
+456,2023-11-23T23:45:00,"2nd reading of Bill C-56, An Act to amend the Excise Tax Act and the Competition Act",C-56,Agreed To,309,1,12
+455,2023-11-23T20:40:00,"Government Business No. 30 (Proceedings on Bill C-56, An Act to amend the Excise Tax Act and the Competition Act)",,Agreed To,171,135,12
+454,2023-11-23T20:30:00,"Government Business No. 30 (Proceedings on Bill C-56, An Act to amend the Excise Tax Act and the Competition Act) (amendment)",,Negatived,138,174,12
+453,2023-11-23T11:20:41,Motion for closure,,Agreed To,171,141,12
+452,2023-11-23T11:30:20,Motion to proceed to Orders of the Day,,Agreed To,169,139,12
+451,2023-11-22T15:15:00,"2nd reading of Bill C-316, An Act to amend the Department of Canadian Heritage Act (Court Challenges Program)",C-316,Agreed To,206,111,12
+450,2023-11-21T15:15:00,"2nd reading of Bill C-57, An Act to implement the 2023 Free Trade Agreement between Canada and Ukraine",C-57,Agreed To,205,109,12
+449,2023-11-20T15:15:00,"3rd reading and adoption of Bill C-34, An Act to amend the Investment Canada Act",C-34,Agreed To,309,0,12
+448,2023-11-08T16:00:00,"2nd reading of Bill S-242, An Act to amend the Radiocommunication Act",S-242,Negatived,143,178,6
+447,2023-11-08T15:45:00,Opposition Motion (Reducing home heating costs),,Negatived,30,293,6
+446,2023-11-08T15:30:00,Sixth report of the Standing Committee on International Trade,,Agreed To,205,113,6
+445,2023-11-08T15:15:00,Sixth report of the Standing Committee on International Trade (amendment),,Negatived,145,174,6
+444,2023-11-07T15:45:00,"Concurrence at report stage of Bill C-34, An Act to amend the Investment Canada Act",C-34,Agreed To,322,0,4
+443,2023-11-07T15:30:00,"Bill C-34, An Act to amend the Investment Canada Act (report stage amendment) (Motion 3)",C-34,Negatived,140,183,4
+442,2023-11-07T15:15:00,"Bill C-34, An Act to amend the Investment Canada Act (report stage amendment) (Motion 1)",C-34,Agreed To,323,0,4
+441,2023-11-06T15:15:00,Opposition Motion (Carbon tax pause on home heating),,Negatived,136,186,4
+440,2023-11-06T13:00:00,"Time allocation for Bill C-34, An Act to amend the Investment Canada Act",C-34,Agreed To,174,150,4
+439,2023-11-01T15:30:00,"2nd reading of Bill S-205, An Act to amend the Criminal Code and to make consequential amendments to another Act (interim release and domestic violence recognizance orders)",S-205,Agreed To,323,0,6
+438,2023-11-01T15:15:00,Opposition Motion (Immigration threshold and integration capacity),,Agreed To,323,0,6
+437,2023-10-31T15:30:52,"11th report of the Standing Committee on Human Resources, Skills and Social Development and the Status of Persons with Disabilities",,Agreed To,205,117,6
+436,2023-10-31T15:15:11,"11th report of the Standing Committee on Human Resources, Skills and Social Development and the Status of Persons with Disabilities (amendment)",,Negatived,117,206,6
+435,2023-10-26T15:15:00,"Third report of the Standing Committee on Transport, Infrastructure and Communities",,Agreed To,165,150,8
+434,2023-10-25T16:05:55,"2nd reading of Bill C-278, An Act to prevent the imposition by the federal government of vaccination mandates for employment and travel",C-278,Negatived,114,206,6
+433,2023-10-25T15:55:00,Private Members' Business M-79 (Amendments to the Standing Orders),,Negatived,55,269,6
+432,2023-10-25T15:45:00,Private Members' Business M-79 (Amendments to the Standing Orders) (amendment),,Negatived,54,269,6
+431,2023-10-25T15:35:00,"3rd reading and adoption of Bill C-284, An Act to establish a national strategy for eye care",C-284,Agreed To,324,0,6
+430,2023-10-25T15:25:00,"3rd reading and adoption of Bill C-280, An Act to amend the Bankruptcy and Insolvency Act and the Companies’ Creditors Arrangement Act (deemed trust – perishable fruits and vegetables)",C-280,Agreed To,320,1,6
+429,2023-10-25T15:15:03,"3rd reading and adoption of Bill C-252, An Act to amend the Food and Drugs Act (prohibition of food and beverage marketing directed at children)",C-252,Agreed To,208,116,6
+428,2023-10-23T15:15:00,"2nd reading of Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy",C-50,Agreed To,175,144,6
+427,2023-10-19T11:33:00,"Time allocation for Bill C-50, An Act respecting accountability, transparency and engagement to support the creation of sustainable jobs for workers and economic growth in a net-zero economy",C-50,Agreed To,175,146,0
+426,2023-10-18T16:30:00,"2nd reading of Bill C-320, An Act to amend the Corrections and Conditional Release Act (disclosure of information to victims)",C-320,Agreed To,328,0,4
+425,2023-10-18T16:15:00,"2nd reading of Bill C-325, An Act to amend the Criminal Code and the Corrections and Conditional Release Act (conditions of release and conditional sentences)",C-325,Negatived,147,181,4
+424,2023-10-18T16:00:00,"3rd reading and adoption of Bill C-244, An Act to amend the Copyright Act (diagnosis, maintenance and repair)",C-244,Agreed To,325,0,4
+423,2023-10-18T15:45:00,"2nd reading of Bill C-314, An Act to amend the Criminal Code (medical assistance in dying)",C-314,Negatived,150,167,4
+422,2023-10-18T15:30:00,"2nd reading of Bill C-319, An Act to amend the Old Age Security Act (amount of full pension)",C-319,Agreed To,173,155,4
+421,2023-10-18T15:15:00,Opposition Motion (Fiscal plan),,Negatived,148,181,4
+420,2023-10-17T15:30:00,"2nd reading of Bill C-49, An Act to amend the Canada—Newfoundland and Labrador Atlantic Accord Implementation Act and the Canada-Nova Scotia Offshore Petroleum Resources Accord Implementation Act and to make consequential amendments to other Acts",C-49,Agreed To,210,113,4
+419,2023-10-17T15:15:00,"2nd reading of Bill C-49, An Act to amend the Canada—Newfoundland and Labrador Atlantic Accord Implementation Act and the Canada-Nova Scotia Offshore Petroleum Resources Accord Implementation Act and to make consequential amendments to other Acts (reasoned amendment)",C-49,Negatived,114,209,4
+418,2023-10-16T13:05:00,"Time allocation for Bill C-49, An Act to amend the Canada—Newfoundland and Labrador Atlantic Accord Implementation Act and the Canada-Nova Scotia Offshore Petroleum Resources Accord Implementation Act and to make consequential amendments to other Acts",C-49,Agreed To,177,149,4
+417,2023-10-05T15:15:00,"2nd reading of Bill S-12, An Act to amend the Criminal Code, the Sex Offender Information Registration Act and the International Transfer of Offenders Act",S-12,Agreed To,315,0,2
+416,2023-10-04T15:15:00,Opposition Motion (Carbon taxes),,Negatived,119,209,0
+415,2023-09-27T15:35:00,"3rd reading and adoption of Bill S-222, An Act to amend the Department of Public Works and Government Services Act (use of wood)",S-222,Agreed To,326,0,2
+414,2023-09-27T15:25:00,"2nd reading of Bill C-323, An Act to amend the Excise Tax Act (mental health services)",C-323,Agreed To,327,0,2
+413,2023-09-27T15:15:00,Private Members' Business M-78 (Inclusion of people with disabilities),,Agreed To,323,0,2
+412,2023-09-26T15:35:00,11th report of the Standing Committee on Foreign Affairs and International Development,,Agreed To,327,0,2
+411,2023-09-26T15:25:00,"2nd reading of Bill C-33, An Act to amend the Customs Act, the Railway Safety Act, the Transportation of Dangerous Goods Act, 1992, the Marine Transportation Security Act, the Canada Transportation Act and the Canada Marine Act and to make a consequential amendment to another Act",C-33,Agreed To,212,114,2
+410,2023-09-26T15:15:00,"2nd reading of Bill C-33, An Act to amend the Customs Act, the Railway Safety Act, the Transportation of Dangerous Goods Act, 1992, the Marine Transportation Security Act, the Canada Transportation Act and the Canada Marine Act and to make a consequential amendment to another Act (reasoned amendment)",C-33,Negatived,116,209,2
+409,2023-09-20T15:15:00,"2nd reading of Bill C-318, An Act to amend the Employment Insurance Act and the Canada Labour Code (adoptive and intended parents)",C-318,Agreed To,178,146,2
+408,2023-06-22T00:10:00,Appointment of an officer of Parliament,,Agreed To,208,113,2
+407,2023-06-22T00:05:00,"3rd reading and adoption of Bill C-42, An Act to amend the Canada Business Corporations Act and to make consequential and related amendments to other Acts",C-42,Agreed To,321,0,2
+406,2023-06-21T23:00:00,"Motion respecting Senate amendments to Bill C-18, An Act respecting online communications platforms that make news content available to persons in Canada",C-18,Agreed To,208,113,2
+405,2023-06-21T22:55:01,"Motion respecting Senate amendments to Bill C-18, An Act respecting online communications platforms that make news content available to persons in Canada (reasoned amendment)",C-18,Negatived,114,210,2
+404,2023-06-21T23:52:22,"3rd reading and adoption of Bill C-55, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-55,Agreed To,210,114,2
+403,2023-06-21T23:47:28,"Concurrence at report stage of Bill C-55, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-55,Agreed To,210,114,2
+402,2023-06-21T23:41:51,"2nd reading of Bill C-55, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-55,Agreed To,210,114,2
+401,2023-06-21T23:37:57,Concurrence in estimates,,Agreed To,210,114,2
+400,2023-06-21T23:32:36,"3rd reading and adoption of Bill C-54, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-54,Agreed To,210,114,2
+399,2023-06-21T23:29:05,"Concurrence at report stage of Bill C-54, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-54,Agreed To,210,114,2
+398,2023-06-21T23:25:21,"2nd reading of Bill C-54, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-54,Agreed To,209,114,2
+397,2023-06-21T23:15:34,Concurrence in estimates,,Agreed To,209,114,2
+396,2023-06-21T23:00:54,Opposition Motion (Balanced budget),,Negatived,145,177,2
+395,2023-06-21T16:05:30,"3rd reading and adoption of Bill C-282, An Act to amend the Department of Foreign Affairs, Trade and Development Act (supply management)",C-282,Agreed To,262,51,4
+394,2023-06-21T15:55:28,"2nd reading of Bill C-321, An Act to amend the Criminal Code (assaults against health care professionals and first responders)",C-321,Agreed To,320,0,4
+393,2023-06-21T15:45:17,"2nd reading of Bill C-275, An Act to amend the Health of Animals Act (biosecurity on farms)",C-275,Agreed To,313,3,4
+392,2023-06-20T15:25:56,"Concurrence at report stage of Bill C-42, An Act to amend the Canada Business Corporations Act and to make consequential and related amendments to other Acts",C-42,Agreed To,319,1,4
+391,2023-06-20T15:15:50,"Bill C-42, An Act to amend the Canada Business Corporations Act and to make consequential and related amendments to other Acts (report stage amendment)",C-42,Negatived,113,207,4
+390,2023-06-20T11:57:07,"Time allocation for Bill C-18, An Act respecting online communications platforms that make news content available to persons in Canada",C-18,Agreed To,170,144,4
+389,2023-06-20T10:42:12,Motion to proceed to orders of the day,,Agreed To,173,142,4
+388,2023-06-19T16:55:01,Motion to proceed to orders of the day,,Agreed To,174,142,4
+387,2023-06-19T15:35:39,"Concurrence at report stage of Bill S-8, An Act to amend the Immigration and Refugee Protection Act, to make consequential amendments to other Acts and to amend the Immigration and Refugee Protection Regulations",S-8,Agreed To,317,0,4
+386,2023-06-19T15:26:04,"Bill S-8, An Act to amend the Immigration and Refugee Protection Act, to make consequential amendments to other Acts and to amend the Immigration and Refugee Protection Regulations (report stage amendment)",S-8,Negatived,112,202,4
+385,2023-06-19T15:15:00,"3rd reading and adoption of Bill C-35, An Act respecting early learning and child care in Canada",C-35,Agreed To,315,0,4
+384,2023-06-19T13:50:52,"Time allocation for Bill C-42, An Act to amend the Canada Business Corporations Act and to make consequential and related amendments to other Acts",C-42,Agreed To,174,142,4
+383,2023-06-16T13:30:00,"Time allocation for Bill S-8, An Act to amend the Immigration and Refugee Protection Act, to make consequential amendments to other Acts and to amend the Immigration and Refugee Protection Regulations",S-8,Agreed To,172,135,0
+382,2023-06-15T20:10:00,Government Business No. 26 (Amendments to the Standing Orders),,Agreed To,171,137,4
+381,2023-06-15T20:00:00,Government Business No. 26 (Amendments to the Standing Orders) (amendment),,Negatived,136,168,4
+380,2023-06-15T17:15:00,Motion for closure,,Agreed To,168,140,4
+379,2023-06-15T15:25:00,Seventh report of the Standing Committee on Justice and Human Rights,,Agreed To,320,0,4
+378,2023-06-15T15:15:00,Seventh report of the Standing Committee on Justice and Human Rights (amendment),,Negatived,113,207,4
+377,2023-06-14T15:55:00,"2nd reading of Bill C-311, An Act to amend the Criminal Code (violence against pregnant women)",C-311,Negatived,113,205,4
+376,2023-06-14T15:45:00,Seventh report of the Standing Committee on Government Operations and Estimates,,Agreed To,319,0,4
+375,2023-06-14T15:35:00,Private Members' Business M-63 (Anti-Asian racism),,Agreed To,322,0,4
+374,2023-06-14T15:25:00,"3rd reading and adoption of Bill C-294, An Act to amend the Copyright Act (interoperability)",C-294,Agreed To,322,0,4
+373,2023-06-14T15:15:00,"Bill C-294, An Act to amend the Copyright Act (interoperability) (previous question)",C-294,Agreed To,320,0,4
+372,2023-06-13T15:15:00,"Fourth report of the Standing Committee on Human Resources, Skills and Social Development and the Status of Persons with Disabilities",,Agreed To,207,115,6
+371,2023-06-12T15:45:00,"3rd reading and adoption of Bill C-41, An Act to amend the Criminal Code and to make consequential amendments to other Acts",C-41,Agreed To,299,25,4
+370,2023-06-12T15:35:00,"Concurrence at report stage of Bill C-35, An Act respecting early learning and child care in Canada",C-35,Agreed To,325,0,4
+369,2023-06-12T15:20:00,"Bill C-35, An Act respecting early learning and child care in Canada (report stage amendment)",C-35,Negatived,114,211,4
+368,2023-06-12T15:15:00,Opposition Motion (Climate change),,Agreed To,210,115,4
+367,2023-06-12T13:00:00,"Time allocation for Bill C-33, An Act to amend the Customs Act, the Railway Safety Act, the Transportation of Dangerous Goods Act, 1992, the Marine Transportation Security Act, the Canada Transportation Act and the Canada Marine Act and to make a consequential amendment to another Act",C-33,Agreed To,174,147,4
+366,2023-06-08T15:15:00,"3rd reading and adoption of Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023",C-47,Agreed To,177,146,2
+365,2023-06-07T17:40:00,"Concurrence at report stage of Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023",C-47,Agreed To,178,145,2
+364,2023-06-07T17:30:00,"Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023 (report stage amendment) (Motion 730)",C-47,Negatived,113,207,2
+363,2023-06-07T17:20:00,"Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023 (report stage amendment) (Motion 441)",C-47,Negatived,112,208,2
+362,2023-06-07T17:10:00,"Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023 (report stage amendment) (Motion 233)",C-47,Negatived,114,208,2
+361,2023-06-07T17:00:00,"Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023 (report stage amendment) (Motion 126)",C-47,Negatived,112,208,2
+360,2023-06-07T16:50:00,"Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023 (report stage amendment) (Motion 122)",C-47,Negatived,115,207,2
+359,2023-06-07T16:40:00,"Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023 (report stage amendment) (Motion 112)",C-47,Negatived,114,206,2
+358,2023-06-07T16:30:00,"Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023 (report stage amendment) (Motion 15)",C-47,Negatived,114,206,2
+357,2023-06-07T16:20:00,"Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023 (report stage amendment) (Motion 3)",C-47,Negatived,115,209,2
+356,2023-06-07T16:10:00,"Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023 (report stage amendment) (Motion 1)",C-47,Negatived,116,208,2
+355,2023-06-07T16:00:00,"3rd reading and adoption of Bill C-281, An Act to amend the Department of Foreign Affairs, Trade and Development Act, the Justice for Victims of Corrupt Foreign Officials Act (Sergei Magnitsky Law), the Broadcasting Act and the Prohibiting Cluster Munitions Act",C-281,Agreed To,322,0,2
+354,2023-06-07T15:50:00,"2nd reading of Bill S-202, An Act to amend the Parliament of Canada Act (Parliamentary Visual Artist Laureate)",S-202,Agreed To,209,114,2
+353,2023-06-07T15:40:00,"2nd reading of Bill C-284, An Act to establish a national strategy for eye care",C-284,Agreed To,324,0,2
+352,2023-06-07T15:30:00,14th report of the Standing Committee on Health,,Agreed To,207,114,2
+351,2023-06-06T16:20:53,"Time allocation for Bill C-35, An Act respecting early learning and child care in Canada",C-35,Agreed To,173,147,0
+350,2023-06-06T11:55:52,"Time allocation for Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023",C-47,Agreed To,175,145,0
+349,2023-06-06T10:30:44,Motion to proceed to orders of the day,,Agreed To,172,144,0
+348,2023-06-05T18:45:56,Motion to adjourn the House,,Negatived,106,202,2
+347,2023-06-05T17:45:40,Motion to proceed to Presenting Petitions,,Agreed To,171,141,2
+346,2023-06-05T16:50:09,Motion to adjourn the debate,,Negatived,114,208,2
+345,2023-06-05T15:15:21,Opposition Motion (Carbon tax),,Negatived,115,209,2
+344,2023-06-02T12:35:45,Motion to proceed to orders of the day,,Agreed To,170,140,0
+343,2023-06-01T15:15:00,"2nd reading of Bill C-42, An Act to amend the Canada Business Corporations Act and to make consequential and related amendments to other Acts",C-42,Agreed To,317,0,2
+342,2023-05-31T15:45:32,"Concurrence at report stage of Bill C-244, An Act to amend the Copyright Act (diagnosis, maintenance and repair)",C-244,Agreed To,324,0,0
+341,2023-05-31T15:35:09,"Concurrence at report stage of Bill C-281, An Act to amend the Department of Foreign Affairs, Trade and Development Act, the Justice for Victims of Corrupt Foreign Officials Act (Sergei Magnitsky Law), the Broadcasting Act and the Prohibiting Cluster Munitions Act",C-281,Agreed To,324,0,0
+340,2023-05-31T15:25:53,"Bill C-281, An Act to amend the Department of Foreign Affairs, Trade and Development Act, the Justice for Victims of Corrupt Foreign Officials Act (Sergei Magnitsky Law), the Broadcasting Act and the Prohibiting Cluster Munitions Act (report stage amendment)",C-281,Agreed To,325,0,0
+339,2023-05-31T15:15:00,Opposition Motion (Public inquiry into allegations of foreign interference ),,Agreed To,174,150,0
+338,2023-05-30T15:25:26,"3rd reading and adoption of Bill S-5, An Act to amend the Canadian Environmental Protection Act, 1999, to make related amendments to the Food and Drugs Act and to repeal the Perfluorooctane Sulfonate Virtual Elimination Act",S-5,Agreed To,208,116,0
+337,2023-05-30T15:15:16,"Bill S-5, An Act to amend the Canadian Environmental Protection Act, 1999, to make related amendments to the Food and Drugs Act and to repeal the Perfluorooctane Sulfonate Virtual Elimination Act (recommittal to a committee)",S-5,Negatived,114,210,0
+336,2023-05-29T18:03:35,Motion to hear another Member,,Negatived,90,178,0
+335,2023-05-29T15:25:00,Opposition Motion (Opioid crisis (original main motion)),,Negatived,113,209,0
+334,2023-05-29T15:15:00,Opposition Motion (Opioid crisis) (amendment),,Negatived,114,208,0
+333,2023-05-18T15:25:00,"3rd reading and adoption of Bill C-21, An Act to amend certain Acts and to make certain consequential amendments (firearms)",C-21,Agreed To,207,113,4
+332,2023-05-18T15:15:00,"Bill C-21, An Act to amend certain Acts and to make certain consequential amendments (firearms) (recommittal to a committee)",C-21,Negatived,110,209,4
+331,2023-05-17T15:55:00,"2nd reading of Bill C-280, An Act to amend the Bankruptcy and Insolvency Act and the Companies’ Creditors Arrangement Act (deemed trust – perishable fruits and vegetables)",C-280,Agreed To,315,0,8
+330,2023-05-17T15:45:00,"Concurrence at report stage of Bill C-21, An Act to amend certain Acts and to make certain consequential amendments (firearms)",C-21,Agreed To,205,111,8
+329,2023-05-17T15:35:00,"Bill C-21, An Act to amend certain Acts and to make certain consequential amendments (firearms) (report stage amendment)",C-21,Agreed To,316,0,8
+328,2023-05-17T15:25:00,"Bill C-21, An Act to amend certain Acts and to make certain consequential amendments (firearms) (report stage amendment)",C-21,Agreed To,203,111,8
+327,2023-05-17T15:15:00,"Bill C-21, An Act to amend certain Acts and to make certain consequential amendments (firearms) (report stage amendment)",C-21,Negatived,110,203,8
+326,2023-05-16T15:35:00,"Concurrence at report stage of Bill S-5, An Act to amend the Canadian Environmental Protection Act, 1999, to make related amendments to the Food and Drugs Act and to repeal the Perfluorooctane Sulfonate Virtual Elimination Act",S-5,Agreed To,309,2,12
+325,2023-05-16T15:25:00,"Bill S-5, An Act to amend the Canadian Environmental Protection Act, 1999, to make related amendments to the Food and Drugs Act and to repeal the Perfluorooctane Sulfonate Virtual Elimination Act (report stage amendment)",S-5,Negatived,55,256,12
+324,2023-05-16T15:15:00,"Bill S-5, An Act to amend the Canadian Environmental Protection Act, 1999, to make related amendments to the Food and Drugs Act and to repeal the Perfluorooctane Sulfonate Virtual Elimination Act (report stage amendment)",S-5,Agreed To,201,109,12
+323,2023-05-15T15:25:00,"3rd reading and adoption of Bill C-13, An Act to amend the Official Languages Act, to enact the Use of French in Federally Regulated Private Businesses Act and to make related amendments to other Acts",C-13,Agreed To,301,1,14
+322,2023-05-15T15:15:00,Opposition Motion (Immigration levels),,Negatived,138,170,14
+321,2023-05-15T13:00:00,"Time allocation for Bill S-5, An Act to amend the Canadian Environmental Protection Act, 1999, to make related amendments to the Food and Drugs Act and to repeal the Perfluorooctane Sulfonate Virtual Elimination Act",S-5,Agreed To,168,142,12
+320,2023-05-11T15:45:00,"Concurrence at report stage of Bill C-13, An Act to amend the Official Languages Act, to enact the Use of French in Federally Regulated Private Businesses Act and to make related amendments to other Acts",C-13,Agreed To,311,1,4
+319,2023-05-11T15:35:00,"Bill C-13, An Act to amend the Official Languages Act, to enact the Use of French in Federally Regulated Private Businesses Act and to make related amendments to other Acts (report stage amendment)",C-13,Agreed To,319,0,4
+318,2023-05-11T15:25:00,"Bill C-13, An Act to amend the Official Languages Act, to enact the Use of French in Federally Regulated Private Businesses Act and to make related amendments to other Acts (report stage amendment)",C-13,Agreed To,318,0,4
+317,2023-05-11T15:15:00,"Bill C-13, An Act to amend the Official Languages Act, to enact the Use of French in Federally Regulated Private Businesses Act and to make related amendments to other Acts (report stage amendment)",C-13,Agreed To,316,0,4
+316,2023-05-10T15:15:00,Referral of a question of privilege to committee,,Agreed To,319,0,6
+315,2023-05-09T20:05:00,"Government Business No. 25 (Proceedings on Bill C-21, An Act to amend certain Acts and to make certain consequential amendments (firearms))",,Agreed To,201,114,6
+314,2023-05-09T20:00:00,"Government Business No. 25 (Proceedings on Bill C-21, An Act to amend certain Acts and to make certain consequential amendments (firearms)) (amendment)",,Negatived,112,203,6
+313,2023-05-09T16:00:00,Motion for closure,,Agreed To,173,146,6
+312,2023-05-09T15:30:00,Motion to adjourn the debate,,Agreed To,175,144,6
+311,2023-05-08T15:15:00,Opposition Motion (Interference by the People's Republic of China),,Agreed To,170,150,4
+310,2023-05-03T15:30:00,"3rd reading and adoption of Bill S-211, An Act to enact the Fighting Against Forced Labour and Child Labour in Supply Chains Act and to amend the Customs Tariff",S-211,Agreed To,271,57,0
+309,2023-05-03T15:15:00,Opposition Motion (Home ownership and renting affordability ),,Negatived,116,211,0
+308,2023-05-02T10:30:00,"2nd reading of Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023",C-47,Agreed To,177,149,0
+307,2023-05-02T10:15:00,"2nd reading of Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023 (reasoned amendment)",C-47,Negatived,116,210,0
+306,2023-05-01T13:10:23,"Time allocation for Bill C-47, An Act to implement certain provisions of the budget tabled in Parliament on March 28, 2023",C-47,Agreed To,174,148,0
+305,2023-04-26T15:25:00,"3rd reading and adoption of Bill C-248, An Act to amend the Canada National Parks Act (Ojibway National Urban Park of Canada)",C-248,Agreed To,319,1,8
+304,2023-04-26T15:15:00,"3rd reading and adoption of Bill C-288, An Act to amend the Telecommunications Act (transparent and accurate broadband services information)",C-288,Agreed To,317,0,8
+303,2023-04-25T15:15:00,15th report of the Standing Committee on Citizenship and Immigration,,Agreed To,204,113,10
+302,2023-04-24T17:30:00,Motion to proceed to Presenting Petitions,,Negatived,110,194,8
+301,2023-04-24T15:25:00,"2nd reading of Bill C-27, An Act to enact the Consumer Privacy Protection Act, the Personal Information and Data Protection Tribunal Act and the Artificial Intelligence and Data Act and to make consequential and related amendments to other Acts",C-27,Agreed To,203,112,8
+300,2023-04-24T15:15:00,"2nd reading of Bill C-27, An Act to enact the Consumer Privacy Protection Act, the Personal Information and Data Protection Tribunal Act and the Artificial Intelligence and Data Act and to make consequential and related amendments to other Acts",C-27,Agreed To,205,109,8
+299,2023-04-20T10:15:00,Ways and means motion No. 16,,Agreed To,169,140,12
+298,2023-04-19T17:45:00,Budgetary policy,,Agreed To,172,142,12
+297,2023-04-19T15:30:00,"2nd reading of Bill C-239, An Act to amend An Act to authorize the making of certain fiscal payments to provinces, and to authorize the entry into tax collection agreements with provinces",C-239,Negatived,141,170,12
+296,2023-04-19T15:15:00,14th report of the Standing Committee on Citizenship and Immigration,,Agreed To,314,0,12
+295,2023-04-18T17:45:00,Budgetary policy (amendment),,Negatived,106,204,14
+294,2023-04-17T18:45:00,Budgetary policy (subamendment),,Negatived,32,282,8
+293,2023-04-17T15:15:00,"2nd reading of Bill C-34, An Act to amend the Investment Canada Act",C-34,Agreed To,315,0,8
+292,2023-03-30T20:40:14,"Motion respecting Senate amendments to Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts",C-11,Agreed To,202,117,4
+291,2023-03-30T20:30:42,"Motion respecting Senate amendments to Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts (reasoned amendment)",C-11,Negatived,113,205,4
+290,2023-03-30T11:28:19,Motion for closure,,Agreed To,173,145,4
+289,2023-03-29T15:10:00,"3rd reading and adoption of Bill C-234, An Act to amend the Greenhouse Gas Pollution Pricing Act",C-234,Agreed To,176,146,4
+288,2023-03-29T15:00:00,"3rd reading and adoption of Bill C-226, An Act respecting the development of a national strategy to assess, prevent and address environmental racism and to advance environmental justice",C-226,Agreed To,179,145,4
+287,2023-03-27T15:00:00,"2nd reading of Bill C-26, An Act respecting cyber security, amending the Telecommunications Act and making consequential amendments to other Acts",C-26,Agreed To,321,0,4
+286,2023-03-23T15:35:00,10th report of the Standing Committee on Finance,,Agreed To,210,114,2
+285,2023-03-23T15:25:00,10th report of the Standing Committee on Finance (amendment),,Negatived,115,208,2
+284,2023-03-23T15:15:00,25th report of the Standing Committee on Procedure and House Affairs,,Agreed To,172,149,2
+283,2023-03-22T23:46:00,"3rd reading and adoption of Bill C-44, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-44,Agreed To,209,115,2
+282,2023-03-22T23:44:00,"Concurrence at report stage of Bill C-44, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-44,Agreed To,209,115,2
+281,2023-03-22T23:42:00,"2nd reading of Bill C-44, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2024",C-44,Agreed To,209,115,2
+280,2023-03-22T23:40:00,Concurrence in Interim Supply,,Agreed To,209,115,2
+279,2023-03-22T23:38:00,"3rd reading and adoption of Bill C-43, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-43,Agreed To,209,115,2
+278,2023-03-22T23:36:00,"Concurrence at report stage of Bill C-43, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-43,Agreed To,209,115,2
+277,2023-03-22T23:34:00,"2nd reading of Bill C-43, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-43,Agreed To,208,115,2
+276,2023-03-22T23:32:00,Concurrence in estimates,,Agreed To,209,115,2
+275,2023-03-22T23:30:00,"Opposition Motion (Tax increase on beer, wine and spirits)",,Agreed To,170,149,2
+274,2023-03-22T16:05:00,"2nd reading of Bill C-283, An Act to amend the Criminal Code and the Corrections and Conditional Release Act (addiction treatment in penitentiaries)",C-283,Negatived,146,177,4
+273,2023-03-22T15:55:00,"3rd reading and adoption of Bill C-241, An Act to amend the Income Tax Act (deduction of travel expenses for tradespersons)",C-241,Agreed To,172,152,4
+272,2023-03-22T15:45:00,Private Members' Business M-59 (Federal framework on housing for individuals with non-visible disabilities),,Agreed To,320,0,4
+271,2023-03-22T15:35:00,"2nd reading of Bill S-224, An Act to amend the Criminal Code (trafficking in persons)",S-224,Agreed To,322,0,4
+270,2023-03-22T15:25:00,"2nd reading of Bill C-289, An Act to amend the Criminal Code (identity verification)",C-289,Negatived,149,171,4
+269,2023-03-22T15:15:00,"2nd reading of Bill S-209, An Act respecting Pandemic Observance Day",S-209,Agreed To,207,114,4
+268,2023-03-21T15:25:00,Fourth report of the Standing Committee on International Trade,,Agreed To,324,0,4
+267,2023-03-21T15:15:00,"Opposition Motion (Instruction to the Standing Committee on Access to Information, Privacy and Ethics (foreign interference))",,Negatived,147,176,4
+266,2023-03-08T15:45:00,Ninth report of the Standing Committee on Industry and Technology,,Agreed To,322,0,2
+265,2023-03-08T15:35:00,"2nd reading of Bill C-295, An Act to amend the Criminal Code (neglect of vulnerable adults)",C-295,Agreed To,321,0,2
+264,2023-03-08T15:25:00,"3rd reading and adoption of Bill C-232, An Act respecting Arab Heritage Month",C-232,Agreed To,322,0,2
+263,2023-03-08T15:15:00,"3rd reading and adoption of Bill C-224, An Act to establish a national framework for the prevention and treatment of cancers linked to firefighting",C-224,Agreed To,322,0,2
+262,2023-03-06T15:15:00,Opposition Motion (Public health care funding and delivery),,Negatived,26,298,2
+261,2023-02-15T15:20:00,"2nd reading of Bill S-222, An Act to amend the Department of Public Works and Government Services Act (use of wood)",S-222,Agreed To,318,0,6
+260,2023-02-15T15:10:00,"2nd reading of Bill C-290, An Act to amend the Public Servants Disclosure Protection Act",C-290,Agreed To,172,0,6
+259,2023-02-15T15:00:00,Opposition Motion (Rising inflation and cost-of-living),,Negatived,115,202,6
+258,2023-02-13T15:15:00,"2nd reading of Bill S-8, An Act to amend the Immigration and Refugee Protection Act, to make consequential amendments to other Acts and to amend the Immigration and Refugee Protection Regulations",S-8,Agreed To,314,0,8
+257,2023-02-13T15:00:00,Opposition Motion (Use of the notwithstanding clause),,Negatived,142,174,8
+256,2023-02-08T15:45:00,"2nd reading of Bill C-282, An Act to amend the Department of Foreign Affairs, Trade and Development Act (supply management)",C-282,Agreed To,293,23,6
+255,2023-02-08T15:35:00,"2nd reading of Bill C-293, An Act respecting pandemic prevention and preparedness",C-293,Agreed To,176,142,6
+254,2023-02-08T15:25:00,"Concurrence at report stage of Bill C-226, An Act respecting the development of a national strategy to assess, prevent and address environmental racism and to advance environmental justice",C-226,Agreed To,176,142,6
+253,2023-02-08T15:15:00,Opposition Motion (Carbon tax),,Negatived,113,204,6
+252,2023-02-07T15:15:00,Fifth report of the Standing Committee on Government Operations and Estimates,,Agreed To,320,0,6
+251,2023-02-06T15:15:00,Opposition Motion (Bail Reform),,Negatived,116,205,2
+250,2023-02-02T15:00:00,"3rd reading and adoption of Bill C-22, An Act to reduce poverty and to support the financial security of persons with disabilities by establishing the Canada disability benefit and making a consequential amendment to the Income Tax Act",C-22,Agreed To,321,0,4
+249,2023-02-01T15:30:00,"3rd reading and adoption of Bill C-291, An Act to amend the Criminal Code and to make consequential amendments to other Acts (child sexual abuse and exploitation material)",C-291,Agreed To,323,0,2
+248,2023-02-01T15:20:00,Private Members' Business M-62 (Uyghurs and other Turkic Muslims (main motion as amended)),,Agreed To,322,0,2
+247,2023-02-01T15:10:00,Private Members' Business M-62 (Uyghurs and other Turkic Muslims) (amendment),,Agreed To,322,0,2
+246,2023-02-01T15:00:00,"2nd reading of Bill C-35, An Act respecting early learning and child care in Canada",C-35,Agreed To,323,0,2
+245,2022-12-14T15:20:00,"3rd reading and adoption of Bill S-223, An Act to amend the Criminal Code and the Immigration and Refugee Protection Act (trafficking in human organs)",S-223,Agreed To,324,0,0
+244,2022-12-14T15:10:00,"3rd reading and adoption of Bill C-18, An Act respecting online communications platforms that make news content available to persons in Canada",C-18,Agreed To,213,114,0
+243,2022-12-14T15:00:00,Second report of the Standing Committee on Foreign Affairs and International Development,,Agreed To,324,0,0
+242,2022-12-08T18:50:00,"3rd reading and adoption of Bill C-36, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-36,Agreed To,205,106,12
+241,2022-12-08T18:40:00,"Concurrence at report stage of Bill C-36, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-36,Agreed To,205,106,12
+240,2022-12-08T18:25:00,"2nd reading of Bill C-36, An Act for granting to His Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-36,Agreed To,205,106,12
+239,2022-12-08T18:10:00,Concurrence in estimates,,Agreed To,205,106,12
+238,2022-12-08T17:45:00,Opposition Motion (Carbon Tax),,Negatived,108,203,12
+237,2022-12-08T15:15:00,"3rd reading and adoption of Bill C-32, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 3, 2022 and certain provisions of the budget tabled in Parliament on April 7, 2022",C-32,Agreed To,209,105,12
+236,2022-12-07T15:55:00,"3rd reading and adoption of Bill C-235, An Act respecting the building of a green economy in the Prairies",C-235,Agreed To,176,137,14
+235,2022-12-07T15:45:00,Eighth report of the Standing Committee on Health,,Agreed To,310,0,14
+234,2022-12-07T15:35:00,Seventh report of the Standing Committee on Health,,Agreed To,161,149,14
+233,2022-12-07T15:25:00,"Concurrence at report stage of Bill C-32, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 3, 2022 and certain provisions of the budget tabled in Parliament on April 7, 2022",C-32,Agreed To,205,105,14
+232,2022-12-07T15:15:00,"Bill C-32, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 3, 2022 and certain provisions of the budget tabled in Parliament on April 7, 2022 (report stage amendment)",C-32,Negatived,105,207,14
+231,2022-12-06T12:00:00,"Time allocation for Bill C-32, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 3, 2022 and certain provisions of the budget tabled in Parliament on April 7, 2022",,Agreed To,170,136,12
+230,2022-12-01T15:15:00,"3rd reading and adoption of Bill C-29, An Act to provide for the establishment of a national council for reconciliation",C-29,Agreed To,315,0,10
+229,2022-11-30T15:30:00,"2nd reading of Bill C-294, An Act to amend the Copyright Act (interoperability)",C-294,Agreed To,318,0,8
+228,2022-11-30T15:15:00,"2nd reading of Bill C-288, An Act to amend the Telecommunications Act (transparent and accurate broadband services information)",C-288,Agreed To,318,0,8
+227,2022-11-29T15:45:00,"Concurrence at report stage of Bill C-29, An Act to provide for the establishment of a national council for reconciliation",C-29,Agreed To,320,0,10
+226,2022-11-29T15:30:00,"Bill C-29, An Act to provide for the establishment of a national council for reconciliation (report stage amendment)",C-29,Agreed To,321,0,10
+225,2022-11-29T15:15:00,"Bill C-29, An Act to provide for the establishment of a national council for reconciliation (report stage amendment)",C-29,Agreed To,321,0,10
+224,2022-11-29T15:00:00,"Bill C-29, An Act to provide for the establishment of a national council for reconciliation (report stage amendment)",C-29,Agreed To,177,144,10
+223,2022-11-23T15:20:00,"3rd reading and adoption of Bill C-228, An Act to amend the Bankruptcy and Insolvency Act, the Companies’ Creditors Arrangement Act and the Pension Benefits Standards Act, 1985",C-228,Agreed To,318,0,10
+222,2022-11-23T15:10:00,"2nd reading of Bill C-249, An Act respecting the encouragement of the growth of the cryptoasset sector",C-249,Negatived,119,199,10
+221,2022-11-23T15:00:00,"2nd reading of Bill C-291, An Act to amend the Criminal Code and to make consequential amendments to other Acts (child sexual abuse material)",C-291,Agreed To,318,0,10
+220,2022-11-22T15:10:00,"2nd reading of Bill C-32, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 3, 2022 and certain provisions of the budget tabled in Parliament on April 7, 2022",C-32,Agreed To,201,112,8
+219,2022-11-22T15:00:00,"2nd reading of Bill C-32, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 3, 2022 and certain provisions of the budget tabled in Parliament on April 7, 2022 (reasoned amendment)",C-32,Negatived,112,203,8
+218,2022-11-21T13:04:00,"Time allocation for Bill C-32, An Act to implement certain provisions of the fall economic statement tabled in Parliament on November 3, 2022 and certain provisions of the budget tabled in Parliament on April 7, 2022",C-32,Agreed To,164,141,18
+217,2022-11-16T15:15:00,"2nd reading of Bill C-281, An Act to amend the Department of Foreign Affairs, Trade and Development Act, the Justice for Victims of Corrupt Foreign Officials Act (Sergei Magnitsky Law), the Broadcasting Act and the Prohibiting Cluster Munitions Act",C-281,Agreed To,313,0,12
+216,2022-11-16T15:00:00,"2nd reading of Bill S-245, An Act to amend the Citizenship Act (granting citizenship to certain Canadians)",S-245,Agreed To,309,0,12
+215,2022-11-15T20:15:00,Government Business No. 22 (Extension of sitting hours and conduct of extended proceedings),,Agreed To,168,144,0
+214,2022-11-15T20:00:00,Government Business No. 22 (Extension of sitting hours and conduct of extended proceedings) (amendment),,Negatived,144,170,0
+213,2022-11-15T15:10:00,Motion for closure,,Agreed To,171,147,0
+212,2022-11-04T10:30:00,Ways and means motion No. 9,,Agreed To,207,109,0
+211,2022-11-03T15:30:00,First report of the Standing Committee on Veterans Affairs,,Agreed To,318,0,0
+210,2022-11-03T15:15:00,"2nd reading of Bill S-5, An Act to amend the Canadian Environmental Protection Act, 1999, to make related amendments to the Food and Drugs Act and to repeal the Perfluorooctane Sulfonate Virtual Elimination Act",S-5,Agreed To,320,0,0
+209,2022-11-02T15:45:00,"2nd reading of Bill S-227, An Act to establish Food Day in Canada",S-227,Agreed To,323,0,0
+208,2022-11-02T15:30:00,"2nd reading of Bill S-207, An Act to change the name of the electoral district of Châteauguay—Lacolle",S-207,Negatived,154,169,0
+207,2022-11-02T15:15:00,Opposition Motion (ArriveCAN application performance audit),,Agreed To,173,149,0
+206,2022-10-31T15:15:00,"2nd reading of Bill C-9, An Act to amend the Judges Act",C-9,Agreed To,327,0,0
+205,2022-10-27T19:00:57,"3rd reading and adoption of Bill C-31, An Act respecting cost of living relief measures related to dental care and rental housing",C-31,Agreed To,172,138,0
+204,2022-10-27T15:35:00,"Concurrence at report stage of Bill C-31, An Act respecting cost of living relief measures related to dental care and rental housing",C-31,Agreed To,175,145,0
+203,2022-10-27T15:25:00,"Bill C-31, An Act respecting cost of living relief measures related to dental care and rental housing (report stage amendment)",C-31,Agreed To,206,113,0
+202,2022-10-27T15:15:00,"Bill C-31, An Act respecting cost of living relief measures related to dental care and rental housing (report stage amendment)",C-31,Agreed To,207,114,0
+201,2022-10-26T17:50:00,"Time allocation for Bill C-9, An Act to amend the Judges Act",C-9,Agreed To,174,144,0
+200,2022-10-26T15:30:00,"3rd reading and adoption of Bill C-242, An Act to amend the Immigration and Refugee Protection Act (temporary resident visas for parents and grandparents)",C-242,Agreed To,319,0,0
+199,2022-10-26T15:15:00,Opposition Motion (Ties between the Canadian State and the monarchy),,Negatived,44,266,0
+198,2022-10-25T15:15:00,Sixth report of the Standing Committee on Citizenship and Immigration,,Agreed To,258,0,10
+197,2022-10-24T15:15:00,Opposition Motion (Tax exemption on home heating fuel),,Negatived,116,202,10
+196,2022-10-19T15:35:00,"2nd reading of Bill C-253, An Act to amend the Bank of Canada Act and to make consequential amendments to other Acts",C-253,Negatived,115,208,6
+195,2022-10-19T15:25:00,"2nd reading of Bill C-31, An Act respecting cost of living relief measures related to dental care and rental housing",C-31,Agreed To,212,113,6
+194,2022-10-19T15:15:00,"2nd reading of Bill C-31, An Act respecting cost of living relief measures related to dental care and rental housing (reasoned amendment)",C-31,Negatived,115,212,6
+193,2022-10-18T20:30:00,"Government Business No. 20 (Proceedings on Bill C-31, An Act respecting cost of living relief measures related to dental care and rental housing)",,Agreed To,175,143,4
+192,2022-10-18T16:40:00,Motion for closure,,Agreed To,175,146,4
+191,2022-10-18T15:20:00,Fifth report of the Standing Committee on Citizenship and Immigration,,Agreed To,327,0,4
+190,2022-10-18T15:10:00,"2nd reading of Bill C-22, An Act to reduce poverty and to support the financial security of persons with disabilities by establishing the Canada disability benefit and making a consequential amendment to the Income Tax Act",C-22,Agreed To,328,0,4
+189,2022-10-17T15:15:00,Opposition Motion (High food prices ),,Agreed To,327,0,2
+188,2022-10-06T15:15:00,"3rd reading and adoption of Bill C-30, An Act to amend the Income Tax Act (temporary enhancement to the Goods and Services Tax/Harmonized Sales Tax credit)",C-30,Agreed To,325,0,4
+187,2022-10-05T16:00:00,"2nd reading of Bill C-244, An Act to amend the Copyright Act (diagnosis, maintenance and repair)",C-244,Agreed To,323,0,4
+186,2022-10-05T15:45:00,"2nd reading of Bill C-230, An Act to amend the Criminal Code (intimidation of health care professionals)",C-230,Negatived,115,208,4
+185,2022-10-05T15:30:00,"2nd reading of Bill C-237, An Act to amend the Federal-Provincial Fiscal Arrangements Act and the Canada Health Act",C-237,Negatived,32,292,4
+184,2022-10-05T15:15:00,Third report of the Standing Committee on Health,,Agreed To,323,0,4
+183,2022-10-04T15:15:00,Fourth report of the Standing Committee on Foreign Affairs and International Development,,Agreed To,323,0,2
+182,2022-10-03T15:10:00,Opposition Motion (Moratorium on new taxes),,Negatived,119,205,0
+181,2022-09-28T15:40:00,"2nd reading of Bill C-252, An Act to amend the Food and Drugs Act (prohibition of food and beverage marketing directed at children)",C-252,Agreed To,209,113,6
+180,2022-09-28T15:35:00,"2nd reading of Bill C-238, An Act respecting the French language",C-238,Negatived,56,268,6
+179,2022-09-28T15:30:00,"2nd reading of Bill C-210, An Act to amend the Canada Elections Act (voting age)",C-210,Negatived,77,246,6
+178,2022-09-28T15:25:00,Private Members' Business M-42 (Hindu Heritage Month),,Agreed To,324,0,6
+177,2022-09-28T15:20:00,"3rd reading and adoption of Bill S-206, An Act to amend the Criminal Code (disclosure of information by jurors)",S-206,Agreed To,323,0,6
+176,2022-09-28T15:15:00,Opposition Motion (Carbon tax),,Negatived,116,209,6
+175,2022-09-21T15:15:00,Private Members' Business M-47 (Improvements to long-term care),,Agreed To,288,30,14
+174,2022-06-23T15:35:00,"C-21, 2nd reading and referral to committee - SECU",C-21,Agreed To,206,115,2
+173,2022-06-23T15:25:00,"C-21, 2nd reading - amendment",C-21,Negatived,115,206,2
+172,2022-06-23T15:15:00,"2nd reading of Bill C-21, An Act to amend certain Acts and to make certain consequential amendments (firearms) (subamendment)",C-21,Negatived,115,206,2
+171,2022-06-23T13:00:00,Government Business No. 19 (Order respecting the business of the House and its committees),,Agreed To,177,144,2
+170,2022-06-23T11:20:00,Motion for closure,,Agreed To,174,145,2
+169,2022-06-23T10:30:00,Motion to proceed to orders of the day,,Agreed To,175,142,2
+168,2022-06-22T15:30:00,"2nd reading of Bill C-245, An Act to amend the Canada Infrastructure Bank Act",C-245,Negatived,59,260,2
+167,2022-06-22T15:20:00,"2nd reading of Bill C-226, An Act respecting the development of a national strategy to assess, prevent and address environmental racism and to advance environmental justice",C-226,Agreed To,177,146,2
+166,2022-06-22T15:10:00,"2nd reading of Bill C-224, An Act to establish a national framework for the prevention and treatment of cancers linked to firefighting",C-224,Agreed To,319,0,2
+165,2022-06-22T15:00:00,"2nd reading of Bill C-228, An Act to amend the Bankruptcy and Insolvency Act, the Companies’ Creditors Arrangement Act and the Pension Benefits Standards Act, 1985",C-228,Agreed To,323,1,2
+164,2022-06-21T16:00:00,"3rd reading and adoption of Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts",C-11,Agreed To,208,117,2
+163,2022-06-21T15:45:00,"Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts (hoist amendment)",C-11,Negatived,116,209,2
+162,2022-06-21T11:23:00,"Time allocation for Bill C-21, An Act to amend certain Acts and to make certain consequential amendments (firearms)",C-21,Agreed To,170,150,0
+161,2022-06-21T10:05:00,Motion to proceed to orders of the day,,Agreed To,173,148,0
+160,2022-06-20T15:45:00,"Concurrence at report stage of Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts",C-11,Agreed To,210,118,0
+159,2022-06-20T15:30:00,"Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts (report stage amendment)",C-11,Agreed To,326,0,0
+158,2022-06-20T15:15:00,"Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts (report stage amendment)",C-11,Negatived,117,209,0
+157,2022-06-16T15:00:04,Appointment of an officer of Parliament,,Agreed To,327,0,6
+156,2022-06-15T16:30:24,"2nd reading of Bill S-214, An Act to establish International Mother Language Day",S-214,Agreed To,325,0,6
+155,2022-06-15T16:15:13,"3rd reading and adoption of Bill C-5, An Act to amend the Criminal Code and the Controlled Drugs and Substances Act",C-5,Agreed To,206,117,6
+154,2022-06-15T16:00:18,"Bill C-5, An Act to amend the Criminal Code and the Controlled Drugs and Substances Act (recommittal to a committee)",C-5,Negatived,117,209,6
+153,2022-06-15T15:30:52,"2nd reading of Bill C-215, An Act to amend the Employment Insurance Act (illness, injury or quarantine)",C-215,Agreed To,173,151,6
+152,2022-06-15T15:15:00,Private Members' Business M-45 (Retirement income),,Agreed To,301,25,6
+151,2022-06-15T15:00:00,"2nd reading of Bill C-251, An Act respecting the development of a federal framework on the conservation of fish stocks and management of pinnipeds",C-251,Negatived,150,175,6
+150,2022-06-13T20:45:18,"Government Business No. 16 (Proceedings on Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts)",,Agreed To,176,148,4
+149,2022-06-13T20:30:54,"Government Business No. 16 (Proceedings on Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts) (amendment)",,Negatived,116,207,4
+148,2022-06-13T15:15:04,"Concurrence at report stage of Bill C-5, An Act to amend the Criminal Code and the Controlled Drugs and Substances Act",C-5,Agreed To,210,116,4
+147,2022-06-13T15:03:00,"Bill C-5, An Act to amend the Criminal Code and the Controlled Drugs and Substances Act (report stage amendment)",C-5,Negatived,114,212,4
+146,2022-06-13T13:00:35,Motion for closure,,Agreed To,174,146,4
+145,2022-06-09T15:35:00,"3rd reading and adoption of Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures",C-19,Agreed To,202,115,12
+144,2022-06-09T15:25:00,"Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures (recommittal to a committee)",C-19,Negatived,140,173,12
+143,2022-06-09T15:15:00,"3rd reading and adoption of Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures (subamendment)",C-19,Negatived,140,174,12
+142,2022-06-09T11:23:00,"Time allocation for Bill C-5, An Act to amend the Criminal Code and the Controlled Drugs and Substances Act",C-5,Agreed To,170,140,12
+141,2022-06-09T10:05:00,Motion to proceed to orders of the day,,Agreed To,167,135,12
+140,2022-06-08T15:45:00,"2nd reading of Bill C-246, An Act to amend the Constitution Act, 1867 (representation in the House of Commons)",C-246,Negatived,51,264,12
+139,2022-06-08T15:35:00,"2nd reading of Bill C-241, An Act to amend the Income Tax Act (deduction of travel expenses for tradespersons)",C-241,Agreed To,166,148,12
+138,2022-06-08T15:25:00,"2nd reading of Bill C-240, An Act to amend the Income Tax Act (donations involving private corporation shares or real estate)",C-240,Negatived,146,171,12
+137,2022-06-08T15:15:00,"2nd reading of Bill C-248, An Act to amend the Canada National Parks Act (Ojibway National Urban Park of Canada)",C-248,Agreed To,169,147,12
+136,2022-06-07T23:15:00,"3rd reading and adoption of Bill C-25, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-25,Agreed To,198,111,12
+135,2022-06-07T23:10:00,"Concurrence at report stage of Bill C-25, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-25,Agreed To,198,111,12
+134,2022-06-07T23:05:00,"2nd reading of Bill C-25, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-25,Agreed To,198,111,12
+133,2022-06-07T23:00:00,Concurrence in estimates,,Agreed To,198,111,12
+132,2022-06-07T22:55:00,"3rd reading and adoption of Bill C-24, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-24,Agreed To,200,111,12
+131,2022-06-07T22:50:00,"Concurrence at report stage of Bill C-24, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-24,Agreed To,200,111,12
+130,2022-06-07T22:45:00,"2nd reading of Bill C-24, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-24,Agreed To,200,111,12
+129,2022-06-07T22:40:00,Concurrence in estimates,,Agreed To,200,111,12
+128,2022-06-07T22:35:00,Concurrence in an opposed item,,Agreed To,200,111,12
+127,2022-06-07T22:30:00,Opposition Motion (Measures for immediate financial relief),,Negatived,111,198,12
+126,2022-06-07T16:05:00,"Concurrence at report stage of Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures",C-19,Agreed To,203,116,8
+125,2022-06-07T15:55:00,"Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures (report stage amendment)",C-19,Negatived,113,206,8
+124,2022-06-07T15:35:00,"Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures (report stage amendment)",C-19,Agreed To,319,0,8
+123,2022-06-07T15:25:00,"Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures (report stage amendment)",C-19,Negatived,143,176,8
+122,2022-06-07T15:15:00,"Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures (report stage amendment)",C-19,Negatived,113,206,8
+121,2022-06-06T12:35:48,"Time allocation for Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures",C-19,Agreed To,174,146,2
+120,2022-06-03T13:10:00,Motion to adjourn the debate,,Negatived,133,170,0
+119,2022-06-02T15:15:00,Fourth report of the Standing Committee on Public Safety and National Security,,Agreed To,323,0,0
+118,2022-06-01T17:00:00,Motion to proceed to orders of the day,,Agreed To,173,147,0
+117,2022-06-01T15:55:00,"2nd reading of Bill C-235, An Act respecting the building of a green economy in the Prairies",C-235,Agreed To,206,117,0
+116,2022-06-01T15:45:00,Opposition Motion (Canada Research Chairs Program),,Negatived,148,178,0
+115,2022-06-01T15:35:00,"3rd reading and adoption of Bill C-233, An Act to amend the Criminal Code and the Judges Act (violence against an intimate partner)",C-233,Agreed To,326,0,0
+114,2022-06-01T15:25:00,"2nd reading of Bill C-216, An Act to amend the Controlled Drugs and Substances Act and to enact the Expungement of Certain Drug-related Convictions Act and the National Strategy on Substance Use Act",C-216,Negatived,71,248,0
+113,2022-06-01T15:15:00,"2nd reading of Bill S-211, An Act to enact the Fighting Against Forced Labour and Child Labour in Supply Chains Act and to amend the Customs Tariff",S-211,Agreed To,327,0,0
+112,2022-05-31T16:15:00,"2nd reading of Bill C-18, An Act respecting online communications platforms that make news content available to persons in Canada",C-18,Agreed To,207,116,0
+111,2022-05-31T16:00:00,"Bill C-18, An Act respecting online communications platforms that make news content available to persons in Canada (amendment)",C-18,Negatived,117,206,0
+110,2022-05-31T15:30:00,"Third report of the Standing Committee on Access to Information, Privacy and Ethics",,Agreed To,169,153,0
+109,2022-05-31T15:15:00,"Third report of the Standing Committee on Access to Information, Privacy and Ethics (amendment)",,Negatived,114,205,0
+108,2022-05-30T15:30:00,"2nd reading of Bill C-13, An Act to amend the Official Languages Act, to enact the Use of French in Federally Regulated Private Businesses Act and to make related amendments to other Acts",C-13,Agreed To,289,29,0
+107,2022-05-30T15:20:00,"2nd reading of Bill C-13, An Act to amend the Official Languages Act, to enact the Use of French in Federally Regulated Private Businesses Act and to make related amendments to other Acts (amendment)",C-13,Negatived,29,289,0
+106,2022-05-30T15:10:00,"2nd reading of Bill C-13, An Act to amend the Official Languages Act, to enact the Use of French in Federally Regulated Private Businesses Act and to make related amendments to other Acts (subamendment)",C-13,Negatived,29,288,0
+105,2022-05-30T15:00:00,Opposition Motion (Rules and service levels for travel),,Negatived,112,201,0
+104,2022-05-30T12:30:00,"Time allocation for Bill C-18, An Act respecting online communications platforms that make news content available to persons in Canada",,Agreed To,172,137,0
+103,2022-05-20T12:40:00,Motion to proceed to orders of the day,,Agreed To,169,128,0
+102,2022-05-20T11:00:56,"Time allocation for Bill C-13, An Act to amend the Official Languages Act, to enact the Use of French in Federally Regulated Private Businesses Act and to make related amendments to other Acts",C-13,Agreed To,168,131,0
+101,2022-05-18T17:00:13,Motion to proceed to Orders of the Day,,Agreed To,171,143,6
+100,2022-05-18T16:15:00,"2nd reading of Bill C-232, An Act respecting Arab Heritage Month",C-232,Agreed To,319,0,6
+99,2022-05-18T16:00:00,Opposition Motion (Subsidies for the oil and gas sector),,Negatived,58,261,6
+98,2022-05-18T15:45:00,"2nd reading of Bill S-223, An Act to amend the Criminal Code and the Immigration and Refugee Protection Act (trafficking in human organs)",S-223,Agreed To,318,0,6
+97,2022-05-18T15:30:00,"2nd reading of Bill S-206, An Act to amend the Criminal Code (disclosure of information by jurors)",S-206,Agreed To,318,0,6
+96,2022-05-18T15:15:00,"2nd reading of Bill C-234, An Act to amend the Greenhouse Gas Pollution Pricing Act",C-234,Agreed To,170,143,6
+95,2022-05-17T19:40:00,"Time allocation for Bill C-14, An Act to amend the Constitution Act, 1867 (electoral representation)",C-14,Agreed To,178,144,0
+94,2022-05-16T21:10:47,Motion to hear another Member,,Negatived,72,73,0
+93,2022-05-16T19:25:23,Motion to hear another Member,,Agreed To,89,81,0
+92,2022-05-16T18:43:23,Motion to adjourn the House,,Negatived,110,202,0
+91,2022-05-16T17:30:00,Motion to adjourn the debate,,Agreed To,175,137,0
+90,2022-05-16T15:10:00,Opposition Motion (Special committee on the Canada-People's Republic of China relationship),,Agreed To,168,155,0
+89,2022-05-12T15:55:00,"2nd reading of Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts",C-11,Agreed To,208,111,2
+88,2022-05-12T15:25:00,"2nd reading of Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts (amendment)",C-11,Negatived,111,209,2
+87,2022-05-12T15:10:00,"2nd reading of Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts (subamendment)",C-11,Negatived,109,209,2
+86,2022-05-11T17:25:00,"Time allocation for Bill C-11, An Act to amend the Broadcasting Act and to make related and consequential amendments to other Acts",C-11,Agreed To,174,145,0
+85,2022-05-11T15:45:00,Private Members' Business M-44 (Permanent residency for temporary foreign workers (main motion as amended)),,Agreed To,324,0,0
+84,2022-05-11T15:30:00,Private Members' Business M-44 (Permanent residency for temporary foreign workers) (amendment),,Agreed To,323,1,0
+83,2022-05-11T15:15:00,Opposition Motion (Change to Standing Order 30 regarding the prayer),,Negatived,56,266,0
+82,2022-05-10T15:35:00,"2nd reading of Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures",C-19,Agreed To,207,117,0
+81,2022-05-10T15:25:00,"2nd reading of Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures (reasoned amendment)",C-19,Negatived,115,211,0
+80,2022-05-10T15:15:00,"2nd reading of Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures (subamendment)",C-19,Negatived,115,211,0
+79,2022-05-09T13:00:00,"Time allocation for Bill C-19, An Act to implement certain provisions of the budget tabled in Parliament on April 7, 2022 and other measures",C-19,Agreed To,178,149,0
+78,2022-05-05T11:30:00,Motion to proceed to orders of the day,,Agreed To,178,148,0
+77,2022-05-04T17:30:00,Motion to proceed to Orders of the Day,,Agreed To,175,146,0
+76,2022-05-04T16:00:30,"2nd reading of Bill C-242, An Act to amend the Immigration and Refugee Protection Act (temporary resident visas for parents and grandparents)",C-242,Agreed To,330,1,0
+75,2022-05-04T15:45:24,"3rd reading and adoption of Bill C-8, An Act to implement certain provisions of the economic and fiscal update tabled in Parliament on December 14, 2021 and other measures",C-8,Agreed To,180,149,0
+74,2022-05-04T15:30:05,"Bill C-8, An Act to implement certain provisions of the economic and fiscal update tabled in Parliament on December 14, 2021 and other measures (recommittal to a committee)",C-8,Negatived,117,214,0
+73,2022-05-04T15:15:00,"3rd reading and adoption of Bill C-8, An Act to implement certain provisions of the economic and fiscal update tabled in Parliament on December 14, 2021 and other measures (subamendment)",C-8,Negatived,116,214,0
+72,2022-05-03T11:15:00,Motion to proceed to Orders of the Day,,Agreed To,181,145,0
+71,2022-05-02T21:30:00,Government Business No. 11 (Extension of sitting hours and conduct of extended proceedings (Part III)),,Agreed To,329,0,0
+70,2022-05-02T21:15:00,Government Business No. 11 (Extension of sitting hours and conduct of extended proceedings (Part II)),,Agreed To,330,0,0
+69,2022-05-02T21:00:00,Government Business No. 11 (Extension of sitting hours and conduct of extended proceedings (Part I)),,Agreed To,182,149,0
+68,2022-05-02T20:45:00,Government Business No. 11 (Extension of sitting hours and conduct of extended proceedings) (amendment),,Negatived,148,181,0
+67,2022-05-02T20:30:02,Government Business No. 11 (Extension of sitting hours and conduct of extended proceedings) (subamendment),,Negatived,152,177,0
+66,2022-05-02T16:30:38,Motion to proceed to Orders of the Day,,Agreed To,176,145,0
+65,2022-05-02T15:30:00,"Concurrence at report stage of Bill C-8, An Act to implement certain provisions of the economic and fiscal update tabled in Parliament on December 14, 2021 and other measures",C-8,Agreed To,183,148,0
+64,2022-05-02T15:15:00,"Bill C-8, An Act to implement certain provisions of the economic and fiscal update tabled in Parliament on December 14, 2021 and other measures (report stage amendment)",C-8,Negatived,118,210,0
+63,2022-05-02T12:30:00,Motion for closure,,Agreed To,182,151,0
+62,2022-04-28T17:00:01,"Time allocation for Bill C-8, An Act to implement certain provisions of the economic and fiscal update tabled in Parliament on December 14, 2021 and other measures",C-8,Agreed To,176,146,0
+61,2022-04-28T15:15:04,Ways and means motion No. 8,,Agreed To,181,144,0
+60,2022-04-28T10:30:00,Motion to proceed to Orders of the Day,,Agreed To,177,143,0
+59,2022-04-27T17:45:00,Budgetary policy,,Agreed To,177,150,0
+58,2022-04-27T15:15:18,Motion to proceed to Orders of the Day,,Agreed To,180,148,0
+57,2022-04-26T17:45:00,Budgetary policy (amendment),,Negatived,148,178,0
+56,2022-04-25T18:45:00,Budgetary policy (subamendment),,Negatived,148,178,0
+55,2022-04-06T15:10:00,Opposition Motion (Spending on national defence),,Agreed To,303,27,0
+54,2022-04-04T15:10:00,Opposition Motion (Federal budget),,Negatived,117,211,0
+53,2022-03-31T15:15:00,"2nd reading of Bill C-5, An Act to amend the Criminal Code and the Controlled Drugs and Substances Act",C-5,Agreed To,212,118,0
+52,2022-03-30T17:05:00,"Time allocation for Bill C-5, An Act to amend the Criminal Code and the Controlled Drugs and Substances Act",C-5,Agreed To,183,150,0
+51,2022-03-30T15:15:00,Motion to proceed to Orders of the Day,,Agreed To,183,148,0
+50,2022-03-29T15:15:00,Third report of the Standing Committee on Citizenship and Immigration,,Agreed To,175,154,0
+49,2022-03-24T18:27:00,"3rd reading and adoption of Bill C-16, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-16,Agreed To,214,116,0
+48,2022-03-24T18:23:00,"Concurrence at report stage of Bill C-16, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-16,Agreed To,214,116,0
+47,2022-03-24T18:13:00,"2nd reading of Bill C-16, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2023",C-16,Agreed To,213,116,0
+46,2022-03-24T18:03:00,Concurrence in estimates,,Agreed To,213,116,0
+45,2022-03-24T17:57:00,"3rd reading and adoption of Bill C-15, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2022",C-15,Agreed To,212,116,0
+44,2022-03-24T17:53:00,"Concurrence at report stage of Bill C-15, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2022",C-15,Agreed To,212,116,0
+43,2022-03-24T17:43:00,"2nd reading of Bill C-15, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2022",C-15,Agreed To,212,116,0
+42,2022-03-24T17:31:00,Concurrence in estimates,,Agreed To,212,116,0
+41,2022-03-24T17:15:00,Opposition Motion (Federal vaccine mandates),,Negatived,117,212,0
+40,2022-03-23T15:15:59,Opposition Motion (Tax reduction on gasoline and diesel),,Negatived,115,209,0
+39,2022-03-22T15:15:00,Opposition Motion (Measures to help Canadians with the cost of living),,Negatived,60,114,0
+38,2022-03-21T15:15:00,Opposition Motion (Invasion of Ukraine and natural gas pipelines),,Negatived,115,212,0
+37,2022-03-02T20:45:48,Government Business No. 9 (Parliamentary review committee pursuant to the Emergencies Act),,Agreed To,214,115,0
+36,2022-03-02T20:30:09,Government Business No. 9 (Parliamentary review committee pursuant to the Emergencies Act) (amendment),,Negatived,146,181,0
+35,2022-03-02T17:00:20,Motion for closure,,Agreed To,181,151,0
+34,2022-03-02T16:20:00,Motion to proceed to orders of the day,,Agreed To,182,150,0
+33,2022-03-02T15:15:00,Opposition Motion (Representation of Quebec in the House of Commons),,Agreed To,261,66,0
+32,2022-02-21T20:00:55,Motion for confirmation of the declaration of emergency,,Agreed To,185,151,0
+31,2022-02-16T15:15:00,"2nd reading of Bill C-12, An Act to amend the Old Age Security Act (Guaranteed Income Supplement)",C-12,Agreed To,335,0,0
+30,2022-02-15T20:45:43,"Government Business No. 7 (Proceedings on Bill C-12, An Act to amend the Old Age Security Act (Guaranteed Income Supplement))",,Agreed To,214,118,0
+29,2022-02-15T20:30:28,"Government Business No. 7 (Proceedings on Bill C-12, An Act to amend the Old Age Security Act (Guaranteed Income Supplement)) (amendment)",,Negatived,150,182,0
+28,2022-02-15T15:00:42,"2nd reading of Bill C-10, An Act respecting certain measures related to COVID-19",C-10,Agreed To,333,0,0
+27,2022-02-15T10:40:00,Motion for closure,,Agreed To,182,149,0
+26,2022-02-14T20:46:48,"Government Business No. 8 (Proceedings on Bill C-10, An Act respecting certain measures related to COVID-19)",,Agreed To,208,119,0
+25,2022-02-14T20:30:26,"Government Business No. 8 (Proceedings on Bill C-10, An Act respecting certain measures related to COVID-19) (amendment)",,Negatived,150,179,0
+24,2022-02-14T15:00:12,Opposition Motion (Federal COVID-19 mandates and restrictions),,Negatived,151,185,0
+23,2022-02-14T11:30:00,Motion for closure,,Agreed To,183,152,0
+22,2022-02-10T15:15:09,"2nd reading of Bill C-8, An Act to implement certain provisions of the economic and fiscal update tabled in Parliament on December 14, 2021 and other measures",C-8,Agreed To,215,117,0
+21,2022-02-09T15:00:53,Opposition Motion (Amendment to the Constitution of Canada (Saskatchewan Act)),,Agreed To,334,0,0
+20,2022-02-08T15:00:00,"First report of the Standing Committee on Access to Information, Privacy and Ethics",,Agreed To,173,156,0
+19,2022-02-01T18:45:06,Address in Reply to the Speech from the Throne,,Agreed To,211,121,0
+18,2021-12-16T15:15:00,"3rd reading and adoption of Bill C-2, An Act to provide further support in response to COVID-19",C-2,Agreed To,191,142,0
+17,2021-12-15T15:15:00,Ways and means motion No. 1,,Agreed To,216,118,0
+16,2021-12-13T19:00:00,Address in Reply to the Speech from the Throne (amendment),,Negatived,117,215,0
+15,2021-12-09T20:15:00,"3rd reading and adoption of Bill C-6, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2022",C-6,Agreed To,212,117,0
+14,2021-12-09T20:00:00,"Concurrence at report stage of Bill C-6, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2022",C-6,Agreed To,212,117,0
+13,2021-12-09T19:30:00,"2nd reading of Bill C-6, An Act for granting to Her Majesty certain sums of money for the federal public administration for the fiscal year ending March 31, 2022",C-6,Agreed To,212,117,0
+12,2021-12-09T19:15:00,Concurrence in estimates,,Agreed To,212,117,0
+11,2021-12-09T19:00:00,Opposition Motion (Housing supply),,Negatived,149,180,0
+10,2021-12-09T15:15:00,"2nd reading of Bill C-3, An Act to amend the Criminal Code and the Canada Labour Code",C-3,Agreed To,332,0,0
+9,2021-12-08T17:18:16,"Time allocation for Bill C-3, An Act to amend the Criminal Code and the Canada Labour Code",C-3,Agreed To,180,145,0
+8,2021-12-08T16:45:00,Motion to proceed to Orders of the Day,,Agreed To,181,148,0
+7,2021-12-08T15:30:00,Opposition Motion (Special committee on Afghanistan),,Agreed To,179,156,0
+6,2021-12-08T15:10:00,Opposition Motion (Special committee on Afghanistan) (amendment),,Agreed To,333,0,0
+5,2021-12-02T15:15:00,"2nd reading of Bill C-2, An Act to provide further support in response to COVID-19",C-2,Agreed To,183,129,0
+4,2021-12-01T18:45:00,Address in Reply to the Speech from the Throne (subamendment),,Negatived,34,289,0
+3,2021-11-25T20:30:27,Government Business No. 1 (Order respecting the business of the House and its committees),,Agreed To,180,140,0
+2,2021-11-25T20:15:24,Government Business No. 1 (Order respecting the business of the House and its committees) (amendment),,Agreed To,320,0,0
+1,2021-11-25T11:15:00,Motion for closure,,Agreed To,181,143,0
