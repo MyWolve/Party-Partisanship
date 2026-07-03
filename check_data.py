@@ -95,7 +95,16 @@ def check_session(session, directory):
                         f"{_abbreviate(orphans)}")
 
     # --- 2 & 3. Tallies and file sanity ----------------------------------
+    # Small discrepancies (a handful of votes, typically fewer in the file
+    # than the metadata) are consistent with post-division corrections:
+    # votes struck from the record after the announced totals. The member
+    # file reflects the corrected record, so these are warnings. Large
+    # discrepancies indicate corrupt or misnumbered files and stay hard
+    # problems.
+    SMALL_DIFF = 10
+
     tally_mismatches = []
+    small_diffs = []
     paired_mismatches = []
     bad_files = []
     for number in sorted(set(metadata) & set(vote_files)):
@@ -107,9 +116,14 @@ def check_session(session, directory):
         meta = metadata[number]
         expected = (_to_int(meta.get("yeas")), _to_int(meta.get("nays")))
         if (yeas, nays) != expected:
-            tally_mismatches.append(
-                f"vote {number}: file has {yeas}Y/{nays}N, "
-                f"metadata says {expected[0]}Y/{expected[1]}N")
+            line = (f"vote {number}: file has {yeas}Y/{nays}N, "
+                    f"metadata says {expected[0]}Y/{expected[1]}N")
+            diff = (abs(yeas - (expected[0] or 0))
+                    + abs(nays - (expected[1] or 0)))
+            if diff <= SMALL_DIFF:
+                small_diffs.append(line)
+            else:
+                tally_mismatches.append(line)
         expected_paired = _to_int(meta.get("paired"))
         if expected_paired is not None and paired != expected_paired:
             paired_mismatches.append(
@@ -124,6 +138,13 @@ def check_session(session, directory):
         problems.extend("  " + line for line in tally_mismatches[:10])
         if len(tally_mismatches) > 10:
             problems.append(f"  ... and {len(tally_mismatches) - 10} more")
+    if small_diffs:
+        warnings.append(f"{len(small_diffs)} small tally differences "
+                        f"(<= {SMALL_DIFF} votes; consistent with votes "
+                        f"struck after the division):")
+        warnings.extend("  " + line for line in small_diffs[:10])
+        if len(small_diffs) > 10:
+            warnings.append(f"  ... and {len(small_diffs) - 10} more")
     if paired_mismatches:
         warnings.append(f"{len(paired_mismatches)} paired-count differences "
                         f"(may just be counting convention): "
