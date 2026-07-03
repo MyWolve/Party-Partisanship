@@ -31,7 +31,7 @@ Each `Parliament_<P>-<S>/` directory contains:
 
 `House of Commons/<session>.xml` holds LEGISinfo bill details used to distinguish government bills from private members' business.
 
-`experiments/experiment_7_data/` is a CC0 copy of Godbout & Høyland's *Canadian Parliament Voting Data, 1867–2015* (Harvard Dataverse) — raw member × division matrices used only to validate this pipeline (see E7).
+`experiments/experiment_7_data/` is a CC0 subset (Parliaments 38-40 + codebook) of Godbout & Høyland's *Canadian Parliament Voting Data, 1867–2015* (Harvard Dataverse) — raw member × division matrices used only to validate this pipeline (see E7).
 
 ### Known data issues/quirks
 
