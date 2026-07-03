@@ -97,21 +97,27 @@ def bill_type_for(bill_number, bill_types):
 # a bill (e.g. time allocation) classify as procedural, not as bill votes.
 _CATEGORY_PATTERNS = [
     ("procedural", re.compile(
-        r"time allocation|closure|be not further adjourned"
-        r"|proceed to (the )?orders of the day|extension of sitting hours"
-        r"|motion to adjourn|previous question", re.I)),
-    ("opposition_motion", re.compile(r"^opposition motion", re.I)),
-    ("government_motion", re.compile(r"^government business no", re.I)),
+        # "tme allocation" is a typo in the official record (42-1 vote 997)
+        r"time allocation|tme allocation|closure|be not further adjourned"
+        r"|motion to proceed to|extension of sitting hours"
+        r"|motion to adjourn|previous question|motion to hear another member"
+        r"|production of papers|question of privilege"
+        r"|proceedings and business of the house", re.I)),
+    ("opposition_motion", re.compile(r"opposition motion", re.I)),
+    ("government_motion", re.compile(
+        r"government business no|declaration of emergency", re.I)),
     ("private_members_business", re.compile(
         r"^private members' business", re.I)),
     ("throne_speech", re.compile(r"address in reply", re.I)),
     ("supply", re.compile(
-        r"^budgetary policy|interim supply|main estimates"
-        r"|supplementary estimates|ways and means|opposed item"
-        r"|granting to (his|her) majesty certain sums", re.I)),
+        r"^budgetary policy|estimates|interim supply|ways and means"
+        r"|opposed item|granting to (his|her) majesty certain sums", re.I)),
+    ("appointment", re.compile(r"appointment of an officer of parliament",
+                               re.I)),
     ("committee_report", re.compile(
-        r"report of the standing|report of the special"
-        r"|concurrence in the .* report", re.I)),
+        # Some older subjects contain leaked template text before
+        # "Report of the ..." (41-2 vote 373), so match loosely.
+        r"report of the|concurrence in the .* report", re.I)),
 ]
 
 _STAGE_PATTERNS = [
@@ -122,10 +128,10 @@ _STAGE_PATTERNS = [
 ]
 
 _CONFIDENCE_PATTERN = re.compile(
-    r"budget|economic update|fiscal update|interim supply|main estimates"
-    r"|supplementary estimates"
+    r"budget|economic update|fiscal update|interim supply|estimates"
     r"|granting to (his|her) majesty certain sums|address in reply"
-    r"|confidence in the government|ways and means", re.I)
+    r"|confidence in the government|ways and means"
+    r"|declaration of emergency", re.I)
 
 _BILL_IN_SUBJECT = re.compile(r"\bBill ([CS]-\d+)")
 
@@ -156,6 +162,11 @@ def classify_vote(subject, bill_number, bill_types):
             category = "private_members_business"
         else:
             category = "government_bill"  # unknown bill type: safer default
+    elif category is None and re.match(r"bill\b", subject, re.I):
+        # Malformed source subjects like "Bill ,  (report stage subamendment)"
+        # (42-1 vote 247) name a bill but lost its number; treat as a bill
+        # vote of unknown type.
+        category = "government_bill"
     elif category is None:
         category = "other"
 
