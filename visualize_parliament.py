@@ -650,8 +650,6 @@ def mp_loyalty_split(directory, parties=None, min_votes=10,
     """
     if parties is None:
         parties = WHIPPED_PARTIES
-    if free_categories is None:
-        free_categories = bill_info.FREE_VOTE_CATEGORIES
 
     metadata = bill_info.load_vote_metadata(directory)
     if not metadata:
@@ -664,8 +662,13 @@ def mp_loyalty_split(directory, parties=None, min_votes=10,
         number = vote_number(bill_name)
         if number not in metadata:
             continue
-        bucket = ("free" if metadata[number]["category"] in free_categories
-                  else "whipped")
+        if free_categories is None:
+            # Default: category-based free votes plus documented designated
+            # free votes (bill_info.FREE_VOTE_BILLS / FREE_VOTE_DIVISIONS).
+            free = bill_info.is_free_vote(metadata[number])
+        else:
+            free = metadata[number]["category"] in free_categories
+        bucket = "free" if free else "whipped"
         for party in parties:
             majority = party_majority_side(votes[party])
             if majority is None:
