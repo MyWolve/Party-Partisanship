@@ -1,0 +1,891 @@
+session,party,category,variant,divisions,with_dissent,dissent_rate
+38-1,Bloc Québécois,appointment,all,1,0,0.0
+38-1,Bloc Québécois,appointment,contested,1,0,0.0
+38-1,Bloc Québécois,committee_report,all,15,0,0.0
+38-1,Bloc Québécois,committee_report,contested,10,0,0.0
+38-1,Bloc Québécois,government_bill,all,59,0,0.0
+38-1,Bloc Québécois,government_bill,contested,58,0,0.0
+38-1,Bloc Québécois,government_motion,all,3,0,0.0
+38-1,Bloc Québécois,government_motion,contested,3,0,0.0
+38-1,Bloc Québécois,opposition_motion,all,27,0,0.0
+38-1,Bloc Québécois,opposition_motion,contested,25,0,0.0
+38-1,Bloc Québécois,private_members_business,all,39,2,5.13
+38-1,Bloc Québécois,private_members_business,contested,38,2,5.26
+38-1,Bloc Québécois,procedural,all,19,1,5.26
+38-1,Bloc Québécois,procedural,contested,19,1,5.26
+38-1,Bloc Québécois,supply,all,16,2,12.5
+38-1,Bloc Québécois,supply,contested,16,2,12.5
+38-1,Conservative,appointment,all,1,0,0.0
+38-1,Conservative,appointment,contested,1,0,0.0
+38-1,Conservative,committee_report,all,15,0,0.0
+38-1,Conservative,committee_report,contested,10,0,0.0
+38-1,Conservative,government_bill,all,59,3,5.08
+38-1,Conservative,government_bill,contested,58,3,5.17
+38-1,Conservative,government_motion,all,3,0,0.0
+38-1,Conservative,government_motion,contested,3,0,0.0
+38-1,Conservative,opposition_motion,all,27,2,7.41
+38-1,Conservative,opposition_motion,contested,25,2,8.0
+38-1,Conservative,private_members_business,all,39,15,38.46
+38-1,Conservative,private_members_business,contested,38,15,39.47
+38-1,Conservative,procedural,all,19,0,0.0
+38-1,Conservative,procedural,contested,19,0,0.0
+38-1,Conservative,supply,all,15,0,0.0
+38-1,Conservative,supply,contested,15,0,0.0
+38-1,Liberal,appointment,all,1,0,0.0
+38-1,Liberal,appointment,contested,1,0,0.0
+38-1,Liberal,committee_report,all,15,6,40.0
+38-1,Liberal,committee_report,contested,10,5,50.0
+38-1,Liberal,government_bill,all,59,8,13.56
+38-1,Liberal,government_bill,contested,58,8,13.79
+38-1,Liberal,government_motion,all,3,2,66.67
+38-1,Liberal,government_motion,contested,3,2,66.67
+38-1,Liberal,opposition_motion,all,27,10,37.04
+38-1,Liberal,opposition_motion,contested,25,10,40.0
+38-1,Liberal,private_members_business,all,39,28,71.79
+38-1,Liberal,private_members_business,contested,38,28,73.68
+38-1,Liberal,procedural,all,19,5,26.32
+38-1,Liberal,procedural,contested,19,5,26.32
+38-1,Liberal,supply,all,16,1,6.25
+38-1,Liberal,supply,contested,16,1,6.25
+38-1,NDP,appointment,all,1,0,0.0
+38-1,NDP,appointment,contested,1,0,0.0
+38-1,NDP,committee_report,all,15,0,0.0
+38-1,NDP,committee_report,contested,10,0,0.0
+38-1,NDP,government_bill,all,59,0,0.0
+38-1,NDP,government_bill,contested,58,0,0.0
+38-1,NDP,government_motion,all,3,0,0.0
+38-1,NDP,government_motion,contested,3,0,0.0
+38-1,NDP,opposition_motion,all,27,0,0.0
+38-1,NDP,opposition_motion,contested,25,0,0.0
+38-1,NDP,private_members_business,all,38,6,15.79
+38-1,NDP,private_members_business,contested,37,6,16.22
+38-1,NDP,procedural,all,19,0,0.0
+38-1,NDP,procedural,contested,19,0,0.0
+38-1,NDP,supply,all,16,2,12.5
+38-1,NDP,supply,contested,16,2,12.5
+39-1,Bloc Québécois,appointment,all,1,0,0.0
+39-1,Bloc Québécois,appointment,contested,1,0,0.0
+39-1,Bloc Québécois,committee_report,all,24,0,0.0
+39-1,Bloc Québécois,committee_report,contested,20,0,0.0
+39-1,Bloc Québécois,government_bill,all,74,1,1.35
+39-1,Bloc Québécois,government_bill,contested,72,1,1.39
+39-1,Bloc Québécois,government_motion,all,7,0,0.0
+39-1,Bloc Québécois,government_motion,contested,7,0,0.0
+39-1,Bloc Québécois,opposition_motion,all,33,0,0.0
+39-1,Bloc Québécois,opposition_motion,contested,31,0,0.0
+39-1,Bloc Québécois,private_members_business,all,63,3,4.76
+39-1,Bloc Québécois,private_members_business,contested,56,3,5.36
+39-1,Bloc Québécois,procedural,all,6,0,0.0
+39-1,Bloc Québécois,procedural,contested,6,0,0.0
+39-1,Bloc Québécois,supply,all,11,0,0.0
+39-1,Bloc Québécois,supply,contested,10,0,0.0
+39-1,Conservative,appointment,all,1,0,0.0
+39-1,Conservative,appointment,contested,1,0,0.0
+39-1,Conservative,committee_report,all,24,1,4.17
+39-1,Conservative,committee_report,contested,20,1,5.0
+39-1,Conservative,government_bill,all,74,1,1.35
+39-1,Conservative,government_bill,contested,72,1,1.39
+39-1,Conservative,government_motion,all,7,1,14.29
+39-1,Conservative,government_motion,contested,7,1,14.29
+39-1,Conservative,opposition_motion,all,33,0,0.0
+39-1,Conservative,opposition_motion,contested,31,0,0.0
+39-1,Conservative,private_members_business,all,63,24,38.1
+39-1,Conservative,private_members_business,contested,56,23,41.07
+39-1,Conservative,procedural,all,6,0,0.0
+39-1,Conservative,procedural,contested,6,0,0.0
+39-1,Conservative,supply,all,11,0,0.0
+39-1,Conservative,supply,contested,10,0,0.0
+39-1,Liberal,appointment,all,1,0,0.0
+39-1,Liberal,appointment,contested,1,0,0.0
+39-1,Liberal,committee_report,all,24,2,8.33
+39-1,Liberal,committee_report,contested,20,2,10.0
+39-1,Liberal,government_bill,all,74,16,21.62
+39-1,Liberal,government_bill,contested,72,16,22.22
+39-1,Liberal,government_motion,all,7,6,85.71
+39-1,Liberal,government_motion,contested,7,6,85.71
+39-1,Liberal,opposition_motion,all,33,3,9.09
+39-1,Liberal,opposition_motion,contested,31,3,9.68
+39-1,Liberal,private_members_business,all,63,14,22.22
+39-1,Liberal,private_members_business,contested,56,13,23.21
+39-1,Liberal,procedural,all,6,0,0.0
+39-1,Liberal,procedural,contested,6,0,0.0
+39-1,Liberal,supply,all,11,1,9.09
+39-1,Liberal,supply,contested,10,1,10.0
+39-1,NDP,appointment,all,1,0,0.0
+39-1,NDP,appointment,contested,1,0,0.0
+39-1,NDP,committee_report,all,24,0,0.0
+39-1,NDP,committee_report,contested,20,0,0.0
+39-1,NDP,government_bill,all,73,0,0.0
+39-1,NDP,government_bill,contested,71,0,0.0
+39-1,NDP,government_motion,all,7,0,0.0
+39-1,NDP,government_motion,contested,7,0,0.0
+39-1,NDP,opposition_motion,all,33,0,0.0
+39-1,NDP,opposition_motion,contested,31,0,0.0
+39-1,NDP,private_members_business,all,63,4,6.35
+39-1,NDP,private_members_business,contested,56,4,7.14
+39-1,NDP,procedural,all,6,0,0.0
+39-1,NDP,procedural,contested,6,0,0.0
+39-1,NDP,supply,all,11,2,18.18
+39-1,NDP,supply,contested,10,1,10.0
+39-2,Bloc Québécois,committee_report,all,11,0,0.0
+39-2,Bloc Québécois,committee_report,contested,6,0,0.0
+39-2,Bloc Québécois,government_bill,all,42,0,0.0
+39-2,Bloc Québécois,government_bill,contested,40,0,0.0
+39-2,Bloc Québécois,government_motion,all,4,0,0.0
+39-2,Bloc Québécois,government_motion,contested,4,0,0.0
+39-2,Bloc Québécois,opposition_motion,all,16,0,0.0
+39-2,Bloc Québécois,opposition_motion,contested,14,0,0.0
+39-2,Bloc Québécois,private_members_business,all,48,4,8.33
+39-2,Bloc Québécois,private_members_business,contested,43,4,9.3
+39-2,Bloc Québécois,procedural,all,12,0,0.0
+39-2,Bloc Québécois,procedural,contested,11,0,0.0
+39-2,Bloc Québécois,supply,all,25,0,0.0
+39-2,Bloc Québécois,supply,contested,24,0,0.0
+39-2,Bloc Québécois,throne_speech,all,3,0,0.0
+39-2,Bloc Québécois,throne_speech,contested,3,0,0.0
+39-2,Conservative,committee_report,all,11,0,0.0
+39-2,Conservative,committee_report,contested,6,0,0.0
+39-2,Conservative,government_bill,all,42,1,2.38
+39-2,Conservative,government_bill,contested,40,0,0.0
+39-2,Conservative,government_motion,all,4,0,0.0
+39-2,Conservative,government_motion,contested,4,0,0.0
+39-2,Conservative,opposition_motion,all,16,1,6.25
+39-2,Conservative,opposition_motion,contested,14,1,7.14
+39-2,Conservative,private_members_business,all,48,5,10.42
+39-2,Conservative,private_members_business,contested,43,4,9.3
+39-2,Conservative,procedural,all,12,0,0.0
+39-2,Conservative,procedural,contested,11,0,0.0
+39-2,Conservative,supply,all,25,0,0.0
+39-2,Conservative,supply,contested,24,0,0.0
+39-2,Conservative,throne_speech,all,3,0,0.0
+39-2,Conservative,throne_speech,contested,3,0,0.0
+39-2,Liberal,committee_report,all,11,1,9.09
+39-2,Liberal,committee_report,contested,6,0,0.0
+39-2,Liberal,government_bill,all,41,3,7.32
+39-2,Liberal,government_bill,contested,39,3,7.69
+39-2,Liberal,government_motion,all,3,1,33.33
+39-2,Liberal,government_motion,contested,3,1,33.33
+39-2,Liberal,opposition_motion,all,15,0,0.0
+39-2,Liberal,opposition_motion,contested,13,0,0.0
+39-2,Liberal,private_members_business,all,48,12,25.0
+39-2,Liberal,private_members_business,contested,43,12,27.91
+39-2,Liberal,procedural,all,12,2,16.67
+39-2,Liberal,procedural,contested,11,2,18.18
+39-2,Liberal,supply,all,18,0,0.0
+39-2,Liberal,supply,contested,17,0,0.0
+39-2,Liberal,throne_speech,all,2,0,0.0
+39-2,Liberal,throne_speech,contested,2,0,0.0
+39-2,NDP,committee_report,all,11,0,0.0
+39-2,NDP,committee_report,contested,6,0,0.0
+39-2,NDP,government_bill,all,42,1,2.38
+39-2,NDP,government_bill,contested,40,0,0.0
+39-2,NDP,government_motion,all,4,0,0.0
+39-2,NDP,government_motion,contested,4,0,0.0
+39-2,NDP,opposition_motion,all,16,0,0.0
+39-2,NDP,opposition_motion,contested,14,0,0.0
+39-2,NDP,private_members_business,all,48,2,4.17
+39-2,NDP,private_members_business,contested,43,2,4.65
+39-2,NDP,procedural,all,12,0,0.0
+39-2,NDP,procedural,contested,11,0,0.0
+39-2,NDP,supply,all,25,0,0.0
+39-2,NDP,supply,contested,24,0,0.0
+39-2,NDP,throne_speech,all,3,0,0.0
+39-2,NDP,throne_speech,contested,3,0,0.0
+40-2,Bloc Québécois,committee_report,all,4,0,0.0
+40-2,Bloc Québécois,committee_report,contested,4,0,0.0
+40-2,Bloc Québécois,government_bill,all,42,0,0.0
+40-2,Bloc Québécois,government_bill,contested,41,0,0.0
+40-2,Bloc Québécois,government_motion,all,2,0,0.0
+40-2,Bloc Québécois,government_motion,contested,2,0,0.0
+40-2,Bloc Québécois,opposition_motion,all,22,0,0.0
+40-2,Bloc Québécois,opposition_motion,contested,19,0,0.0
+40-2,Bloc Québécois,private_members_business,all,47,1,2.13
+40-2,Bloc Québécois,private_members_business,contested,43,1,2.33
+40-2,Bloc Québécois,procedural,all,14,0,0.0
+40-2,Bloc Québécois,procedural,contested,14,0,0.0
+40-2,Bloc Québécois,supply,all,27,0,0.0
+40-2,Bloc Québécois,supply,contested,27,0,0.0
+40-2,Conservative,committee_report,all,4,0,0.0
+40-2,Conservative,committee_report,contested,4,0,0.0
+40-2,Conservative,government_bill,all,42,0,0.0
+40-2,Conservative,government_bill,contested,41,0,0.0
+40-2,Conservative,government_motion,all,2,0,0.0
+40-2,Conservative,government_motion,contested,2,0,0.0
+40-2,Conservative,opposition_motion,all,22,0,0.0
+40-2,Conservative,opposition_motion,contested,19,0,0.0
+40-2,Conservative,private_members_business,all,47,8,17.02
+40-2,Conservative,private_members_business,contested,43,8,18.6
+40-2,Conservative,procedural,all,14,0,0.0
+40-2,Conservative,procedural,contested,14,0,0.0
+40-2,Conservative,supply,all,27,0,0.0
+40-2,Conservative,supply,contested,27,0,0.0
+40-2,Liberal,committee_report,all,4,1,25.0
+40-2,Liberal,committee_report,contested,4,1,25.0
+40-2,Liberal,government_bill,all,42,1,2.38
+40-2,Liberal,government_bill,contested,41,1,2.44
+40-2,Liberal,government_motion,all,2,0,0.0
+40-2,Liberal,government_motion,contested,2,0,0.0
+40-2,Liberal,opposition_motion,all,21,1,4.76
+40-2,Liberal,opposition_motion,contested,18,1,5.56
+40-2,Liberal,private_members_business,all,47,9,19.15
+40-2,Liberal,private_members_business,contested,43,9,20.93
+40-2,Liberal,procedural,all,14,0,0.0
+40-2,Liberal,procedural,contested,14,0,0.0
+40-2,Liberal,supply,all,27,1,3.7
+40-2,Liberal,supply,contested,27,1,3.7
+40-2,NDP,committee_report,all,4,0,0.0
+40-2,NDP,committee_report,contested,4,0,0.0
+40-2,NDP,government_bill,all,42,0,0.0
+40-2,NDP,government_bill,contested,41,0,0.0
+40-2,NDP,government_motion,all,2,0,0.0
+40-2,NDP,government_motion,contested,2,0,0.0
+40-2,NDP,opposition_motion,all,21,2,9.52
+40-2,NDP,opposition_motion,contested,18,2,11.11
+40-2,NDP,private_members_business,all,47,4,8.51
+40-2,NDP,private_members_business,contested,43,4,9.3
+40-2,NDP,procedural,all,14,0,0.0
+40-2,NDP,procedural,contested,14,0,0.0
+40-2,NDP,supply,all,27,0,0.0
+40-2,NDP,supply,contested,27,0,0.0
+40-3,Bloc Québécois,committee_report,all,15,0,0.0
+40-3,Bloc Québécois,committee_report,contested,7,0,0.0
+40-3,Bloc Québécois,government_bill,all,39,0,0.0
+40-3,Bloc Québécois,government_bill,contested,37,0,0.0
+40-3,Bloc Québécois,government_motion,all,1,0,0.0
+40-3,Bloc Québécois,government_motion,contested,1,0,0.0
+40-3,Bloc Québécois,opposition_motion,all,30,0,0.0
+40-3,Bloc Québécois,opposition_motion,contested,26,0,0.0
+40-3,Bloc Québécois,private_members_business,all,77,1,1.3
+40-3,Bloc Québécois,private_members_business,contested,70,1,1.43
+40-3,Bloc Québécois,procedural,all,16,0,0.0
+40-3,Bloc Québécois,procedural,contested,16,0,0.0
+40-3,Bloc Québécois,supply,all,25,0,0.0
+40-3,Bloc Québécois,supply,contested,25,0,0.0
+40-3,Bloc Québécois,throne_speech,all,1,0,0.0
+40-3,Bloc Québécois,throne_speech,contested,1,0,0.0
+40-3,Conservative,committee_report,all,15,0,0.0
+40-3,Conservative,committee_report,contested,7,0,0.0
+40-3,Conservative,government_bill,all,39,0,0.0
+40-3,Conservative,government_bill,contested,37,0,0.0
+40-3,Conservative,government_motion,all,1,0,0.0
+40-3,Conservative,government_motion,contested,1,0,0.0
+40-3,Conservative,opposition_motion,all,30,0,0.0
+40-3,Conservative,opposition_motion,contested,26,0,0.0
+40-3,Conservative,private_members_business,all,77,16,20.78
+40-3,Conservative,private_members_business,contested,70,15,21.43
+40-3,Conservative,procedural,all,16,0,0.0
+40-3,Conservative,procedural,contested,16,0,0.0
+40-3,Conservative,supply,all,25,0,0.0
+40-3,Conservative,supply,contested,25,0,0.0
+40-3,Conservative,throne_speech,all,1,0,0.0
+40-3,Conservative,throne_speech,contested,1,0,0.0
+40-3,Liberal,committee_report,all,15,0,0.0
+40-3,Liberal,committee_report,contested,7,0,0.0
+40-3,Liberal,government_bill,all,39,2,5.13
+40-3,Liberal,government_bill,contested,37,2,5.41
+40-3,Liberal,government_motion,all,1,0,0.0
+40-3,Liberal,government_motion,contested,1,0,0.0
+40-3,Liberal,opposition_motion,all,30,1,3.33
+40-3,Liberal,opposition_motion,contested,26,1,3.85
+40-3,Liberal,private_members_business,all,77,25,32.47
+40-3,Liberal,private_members_business,contested,70,24,34.29
+40-3,Liberal,procedural,all,16,0,0.0
+40-3,Liberal,procedural,contested,16,0,0.0
+40-3,Liberal,supply,all,25,1,4.0
+40-3,Liberal,supply,contested,25,1,4.0
+40-3,Liberal,throne_speech,all,1,0,0.0
+40-3,Liberal,throne_speech,contested,1,0,0.0
+40-3,NDP,committee_report,all,15,1,6.67
+40-3,NDP,committee_report,contested,7,1,14.29
+40-3,NDP,government_bill,all,39,0,0.0
+40-3,NDP,government_bill,contested,37,0,0.0
+40-3,NDP,government_motion,all,1,0,0.0
+40-3,NDP,government_motion,contested,1,0,0.0
+40-3,NDP,opposition_motion,all,27,1,3.7
+40-3,NDP,opposition_motion,contested,23,1,4.35
+40-3,NDP,private_members_business,all,77,4,5.19
+40-3,NDP,private_members_business,contested,70,4,5.71
+40-3,NDP,procedural,all,16,0,0.0
+40-3,NDP,procedural,contested,16,0,0.0
+40-3,NDP,supply,all,25,0,0.0
+40-3,NDP,supply,contested,25,0,0.0
+40-3,NDP,throne_speech,all,1,0,0.0
+40-3,NDP,throne_speech,contested,1,0,0.0
+41-1,Bloc Québécois,appointment,all,1,0,0.0
+41-1,Bloc Québécois,appointment,contested,1,0,0.0
+41-1,Bloc Québécois,committee_report,all,6,0,0.0
+41-1,Bloc Québécois,committee_report,contested,3,0,0.0
+41-1,Bloc Québécois,government_bill,all,410,0,0.0
+41-1,Bloc Québécois,government_bill,contested,380,0,0.0
+41-1,Bloc Québécois,government_motion,all,8,0,0.0
+41-1,Bloc Québécois,government_motion,contested,5,0,0.0
+41-1,Bloc Québécois,opposition_motion,all,48,0,0.0
+41-1,Bloc Québécois,opposition_motion,contested,35,0,0.0
+41-1,Bloc Québécois,private_members_business,all,112,0,0.0
+41-1,Bloc Québécois,private_members_business,contested,81,0,0.0
+41-1,Bloc Québécois,procedural,all,96,0,0.0
+41-1,Bloc Québécois,procedural,contested,95,0,0.0
+41-1,Bloc Québécois,supply,all,73,0,0.0
+41-1,Bloc Québécois,supply,contested,72,0,0.0
+41-1,Conservative,appointment,all,1,0,0.0
+41-1,Conservative,appointment,contested,1,0,0.0
+41-1,Conservative,committee_report,all,6,1,16.67
+41-1,Conservative,committee_report,contested,3,1,33.33
+41-1,Conservative,government_bill,all,412,0,0.0
+41-1,Conservative,government_bill,contested,382,0,0.0
+41-1,Conservative,government_motion,all,8,0,0.0
+41-1,Conservative,government_motion,contested,5,0,0.0
+41-1,Conservative,opposition_motion,all,48,0,0.0
+41-1,Conservative,opposition_motion,contested,35,0,0.0
+41-1,Conservative,private_members_business,all,112,25,22.32
+41-1,Conservative,private_members_business,contested,81,23,28.4
+41-1,Conservative,procedural,all,100,0,0.0
+41-1,Conservative,procedural,contested,98,0,0.0
+41-1,Conservative,supply,all,73,0,0.0
+41-1,Conservative,supply,contested,72,0,0.0
+41-1,Green Party,appointment,all,1,0,0.0
+41-1,Green Party,appointment,contested,1,0,0.0
+41-1,Green Party,committee_report,all,6,0,0.0
+41-1,Green Party,committee_report,contested,3,0,0.0
+41-1,Green Party,government_bill,all,403,0,0.0
+41-1,Green Party,government_bill,contested,373,0,0.0
+41-1,Green Party,government_motion,all,8,0,0.0
+41-1,Green Party,government_motion,contested,5,0,0.0
+41-1,Green Party,opposition_motion,all,42,0,0.0
+41-1,Green Party,opposition_motion,contested,31,0,0.0
+41-1,Green Party,private_members_business,all,103,0,0.0
+41-1,Green Party,private_members_business,contested,75,0,0.0
+41-1,Green Party,procedural,all,93,0,0.0
+41-1,Green Party,procedural,contested,92,0,0.0
+41-1,Green Party,supply,all,68,0,0.0
+41-1,Green Party,supply,contested,67,0,0.0
+41-1,Liberal,committee_report,all,6,0,0.0
+41-1,Liberal,committee_report,contested,3,0,0.0
+41-1,Liberal,government_bill,all,411,0,0.0
+41-1,Liberal,government_bill,contested,381,0,0.0
+41-1,Liberal,government_motion,all,8,0,0.0
+41-1,Liberal,government_motion,contested,5,0,0.0
+41-1,Liberal,opposition_motion,all,48,0,0.0
+41-1,Liberal,opposition_motion,contested,35,0,0.0
+41-1,Liberal,private_members_business,all,111,7,6.31
+41-1,Liberal,private_members_business,contested,81,7,8.64
+41-1,Liberal,procedural,all,100,1,1.0
+41-1,Liberal,procedural,contested,98,1,1.02
+41-1,Liberal,supply,all,73,0,0.0
+41-1,Liberal,supply,contested,72,0,0.0
+41-1,NDP,appointment,all,1,0,0.0
+41-1,NDP,appointment,contested,1,0,0.0
+41-1,NDP,committee_report,all,6,0,0.0
+41-1,NDP,committee_report,contested,3,0,0.0
+41-1,NDP,government_bill,all,412,4,0.97
+41-1,NDP,government_bill,contested,382,4,1.05
+41-1,NDP,government_motion,all,8,0,0.0
+41-1,NDP,government_motion,contested,5,0,0.0
+41-1,NDP,opposition_motion,all,48,0,0.0
+41-1,NDP,opposition_motion,contested,35,0,0.0
+41-1,NDP,private_members_business,all,111,2,1.8
+41-1,NDP,private_members_business,contested,81,2,2.47
+41-1,NDP,procedural,all,100,1,1.0
+41-1,NDP,procedural,contested,98,1,1.02
+41-1,NDP,supply,all,73,0,0.0
+41-1,NDP,supply,contested,72,0,0.0
+41-2,Bloc Québécois,appointment,all,2,0,0.0
+41-2,Bloc Québécois,appointment,contested,1,0,0.0
+41-2,Bloc Québécois,committee_report,all,10,0,0.0
+41-2,Bloc Québécois,committee_report,contested,6,0,0.0
+41-2,Bloc Québécois,government_bill,all,133,0,0.0
+41-2,Bloc Québécois,government_bill,contested,122,0,0.0
+41-2,Bloc Québécois,government_motion,all,6,0,0.0
+41-2,Bloc Québécois,government_motion,contested,5,0,0.0
+41-2,Bloc Québécois,opposition_motion,all,40,0,0.0
+41-2,Bloc Québécois,opposition_motion,contested,35,0,0.0
+41-2,Bloc Québécois,private_members_business,all,92,0,0.0
+41-2,Bloc Québécois,private_members_business,contested,60,0,0.0
+41-2,Bloc Québécois,procedural,all,72,0,0.0
+41-2,Bloc Québécois,procedural,contested,68,0,0.0
+41-2,Bloc Québécois,supply,all,53,0,0.0
+41-2,Bloc Québécois,supply,contested,52,0,0.0
+41-2,Conservative,appointment,all,2,0,0.0
+41-2,Conservative,appointment,contested,1,0,0.0
+41-2,Conservative,committee_report,all,16,1,6.25
+41-2,Conservative,committee_report,contested,10,1,10.0
+41-2,Conservative,government_bill,all,153,0,0.0
+41-2,Conservative,government_bill,contested,139,0,0.0
+41-2,Conservative,government_motion,all,9,0,0.0
+41-2,Conservative,government_motion,contested,8,0,0.0
+41-2,Conservative,opposition_motion,all,41,3,7.32
+41-2,Conservative,opposition_motion,contested,36,2,5.56
+41-2,Conservative,private_members_business,all,100,27,27.0
+41-2,Conservative,private_members_business,contested,64,22,34.38
+41-2,Conservative,procedural,all,90,2,2.22
+41-2,Conservative,procedural,contested,86,2,2.33
+41-2,Conservative,supply,all,56,0,0.0
+41-2,Conservative,supply,contested,55,0,0.0
+41-2,Green Party,appointment,all,2,0,0.0
+41-2,Green Party,appointment,contested,1,0,0.0
+41-2,Green Party,committee_report,all,13,0,0.0
+41-2,Green Party,committee_report,contested,9,0,0.0
+41-2,Green Party,government_bill,all,146,0,0.0
+41-2,Green Party,government_bill,contested,133,0,0.0
+41-2,Green Party,government_motion,all,7,0,0.0
+41-2,Green Party,government_motion,contested,6,0,0.0
+41-2,Green Party,opposition_motion,all,38,0,0.0
+41-2,Green Party,opposition_motion,contested,33,0,0.0
+41-2,Green Party,private_members_business,all,92,0,0.0
+41-2,Green Party,private_members_business,contested,59,0,0.0
+41-2,Green Party,procedural,all,81,0,0.0
+41-2,Green Party,procedural,contested,78,0,0.0
+41-2,Green Party,supply,all,46,0,0.0
+41-2,Green Party,supply,contested,45,0,0.0
+41-2,Liberal,appointment,all,2,0,0.0
+41-2,Liberal,appointment,contested,1,0,0.0
+41-2,Liberal,committee_report,all,16,1,6.25
+41-2,Liberal,committee_report,contested,10,1,10.0
+41-2,Liberal,government_bill,all,153,0,0.0
+41-2,Liberal,government_bill,contested,139,0,0.0
+41-2,Liberal,government_motion,all,8,1,12.5
+41-2,Liberal,government_motion,contested,7,1,14.29
+41-2,Liberal,opposition_motion,all,41,1,2.44
+41-2,Liberal,opposition_motion,contested,36,1,2.78
+41-2,Liberal,private_members_business,all,100,5,5.0
+41-2,Liberal,private_members_business,contested,64,4,6.25
+41-2,Liberal,procedural,all,90,0,0.0
+41-2,Liberal,procedural,contested,86,0,0.0
+41-2,Liberal,supply,all,56,0,0.0
+41-2,Liberal,supply,contested,55,0,0.0
+41-2,NDP,appointment,all,2,0,0.0
+41-2,NDP,appointment,contested,1,0,0.0
+41-2,NDP,committee_report,all,16,1,6.25
+41-2,NDP,committee_report,contested,10,1,10.0
+41-2,NDP,government_bill,all,153,0,0.0
+41-2,NDP,government_bill,contested,139,0,0.0
+41-2,NDP,government_motion,all,9,0,0.0
+41-2,NDP,government_motion,contested,8,0,0.0
+41-2,NDP,opposition_motion,all,41,0,0.0
+41-2,NDP,opposition_motion,contested,36,0,0.0
+41-2,NDP,private_members_business,all,100,5,5.0
+41-2,NDP,private_members_business,contested,64,4,6.25
+41-2,NDP,procedural,all,90,0,0.0
+41-2,NDP,procedural,contested,86,0,0.0
+41-2,NDP,supply,all,56,0,0.0
+41-2,NDP,supply,contested,55,0,0.0
+42-1,Bloc Québécois,appointment,all,2,0,0.0
+42-1,Bloc Québécois,appointment,contested,1,0,0.0
+42-1,Bloc Québécois,committee_report,all,17,1,5.88
+42-1,Bloc Québécois,committee_report,contested,9,1,11.11
+42-1,Bloc Québécois,government_bill,all,318,1,0.31
+42-1,Bloc Québécois,government_bill,contested,299,1,0.33
+42-1,Bloc Québécois,government_motion,all,18,0,0.0
+42-1,Bloc Québécois,government_motion,contested,17,0,0.0
+42-1,Bloc Québécois,opposition_motion,all,87,0,0.0
+42-1,Bloc Québécois,opposition_motion,contested,80,0,0.0
+42-1,Bloc Québécois,private_members_business,all,150,3,2.0
+42-1,Bloc Québécois,private_members_business,contested,94,3,3.19
+42-1,Bloc Québécois,procedural,all,140,2,1.43
+42-1,Bloc Québécois,procedural,contested,136,2,1.47
+42-1,Bloc Québécois,supply,all,564,0,0.0
+42-1,Bloc Québécois,supply,contested,563,0,0.0
+42-1,Bloc Québécois,throne_speech,all,4,0,0.0
+42-1,Bloc Québécois,throne_speech,contested,4,0,0.0
+42-1,Conservative,appointment,all,2,0,0.0
+42-1,Conservative,appointment,contested,1,0,0.0
+42-1,Conservative,committee_report,all,17,0,0.0
+42-1,Conservative,committee_report,contested,9,0,0.0
+42-1,Conservative,government_bill,all,326,16,4.91
+42-1,Conservative,government_bill,contested,306,15,4.9
+42-1,Conservative,government_motion,all,18,1,5.56
+42-1,Conservative,government_motion,contested,17,0,0.0
+42-1,Conservative,opposition_motion,all,87,2,2.3
+42-1,Conservative,opposition_motion,contested,80,1,1.25
+42-1,Conservative,private_members_business,all,153,24,15.69
+42-1,Conservative,private_members_business,contested,96,20,20.83
+42-1,Conservative,procedural,all,143,4,2.8
+42-1,Conservative,procedural,contested,139,4,2.88
+42-1,Conservative,supply,all,628,1,0.16
+42-1,Conservative,supply,contested,627,0,0.0
+42-1,Conservative,throne_speech,all,4,0,0.0
+42-1,Conservative,throne_speech,contested,4,0,0.0
+42-1,Green Party,appointment,all,2,0,0.0
+42-1,Green Party,appointment,contested,1,0,0.0
+42-1,Green Party,committee_report,all,16,0,0.0
+42-1,Green Party,committee_report,contested,9,0,0.0
+42-1,Green Party,government_bill,all,305,0,0.0
+42-1,Green Party,government_bill,contested,288,0,0.0
+42-1,Green Party,government_motion,all,10,0,0.0
+42-1,Green Party,government_motion,contested,10,0,0.0
+42-1,Green Party,opposition_motion,all,80,0,0.0
+42-1,Green Party,opposition_motion,contested,74,0,0.0
+42-1,Green Party,private_members_business,all,134,0,0.0
+42-1,Green Party,private_members_business,contested,79,0,0.0
+42-1,Green Party,procedural,all,122,0,0.0
+42-1,Green Party,procedural,contested,118,0,0.0
+42-1,Green Party,supply,all,260,0,0.0
+42-1,Green Party,supply,contested,260,0,0.0
+42-1,Green Party,throne_speech,all,3,0,0.0
+42-1,Green Party,throne_speech,contested,3,0,0.0
+42-1,Liberal,appointment,all,2,0,0.0
+42-1,Liberal,appointment,contested,1,0,0.0
+42-1,Liberal,committee_report,all,17,3,17.65
+42-1,Liberal,committee_report,contested,9,3,33.33
+42-1,Liberal,government_bill,all,326,21,6.44
+42-1,Liberal,government_bill,contested,306,20,6.54
+42-1,Liberal,government_motion,all,18,0,0.0
+42-1,Liberal,government_motion,contested,17,0,0.0
+42-1,Liberal,opposition_motion,all,87,12,13.79
+42-1,Liberal,opposition_motion,contested,80,12,15.0
+42-1,Liberal,private_members_business,all,153,40,26.14
+42-1,Liberal,private_members_business,contested,96,39,40.62
+42-1,Liberal,procedural,all,143,5,3.5
+42-1,Liberal,procedural,contested,139,5,3.6
+42-1,Liberal,supply,all,628,0,0.0
+42-1,Liberal,supply,contested,627,0,0.0
+42-1,Liberal,throne_speech,all,4,0,0.0
+42-1,Liberal,throne_speech,contested,4,0,0.0
+42-1,NDP,appointment,all,2,0,0.0
+42-1,NDP,appointment,contested,1,0,0.0
+42-1,NDP,committee_report,all,17,1,5.88
+42-1,NDP,committee_report,contested,9,1,11.11
+42-1,NDP,government_bill,all,326,7,2.15
+42-1,NDP,government_bill,contested,306,7,2.29
+42-1,NDP,government_motion,all,18,0,0.0
+42-1,NDP,government_motion,contested,17,0,0.0
+42-1,NDP,opposition_motion,all,87,3,3.45
+42-1,NDP,opposition_motion,contested,80,3,3.75
+42-1,NDP,private_members_business,all,153,6,3.92
+42-1,NDP,private_members_business,contested,96,3,3.12
+42-1,NDP,procedural,all,142,3,2.11
+42-1,NDP,procedural,contested,138,3,2.17
+42-1,NDP,supply,all,626,1,0.16
+42-1,NDP,supply,contested,625,1,0.16
+42-1,NDP,throne_speech,all,4,0,0.0
+42-1,NDP,throne_speech,contested,4,0,0.0
+43-1,Bloc Québécois,committee_report,all,1,0,0.0
+43-1,Bloc Québécois,committee_report,contested,1,0,0.0
+43-1,Bloc Québécois,government_bill,all,1,0,0.0
+43-1,Bloc Québécois,government_bill,contested,1,0,0.0
+43-1,Bloc Québécois,government_motion,all,3,0,0.0
+43-1,Bloc Québécois,government_motion,contested,3,0,0.0
+43-1,Bloc Québécois,opposition_motion,all,8,0,0.0
+43-1,Bloc Québécois,opposition_motion,contested,6,0,0.0
+43-1,Bloc Québécois,procedural,all,4,0,0.0
+43-1,Bloc Québécois,procedural,contested,4,0,0.0
+43-1,Bloc Québécois,supply,all,5,0,0.0
+43-1,Bloc Québécois,supply,contested,5,0,0.0
+43-1,Bloc Québécois,throne_speech,all,4,0,0.0
+43-1,Bloc Québécois,throne_speech,contested,4,0,0.0
+43-1,Conservative,committee_report,all,1,0,0.0
+43-1,Conservative,committee_report,contested,1,0,0.0
+43-1,Conservative,government_bill,all,1,0,0.0
+43-1,Conservative,government_bill,contested,1,0,0.0
+43-1,Conservative,government_motion,all,3,0,0.0
+43-1,Conservative,government_motion,contested,3,0,0.0
+43-1,Conservative,opposition_motion,all,8,0,0.0
+43-1,Conservative,opposition_motion,contested,6,0,0.0
+43-1,Conservative,procedural,all,4,0,0.0
+43-1,Conservative,procedural,contested,4,0,0.0
+43-1,Conservative,supply,all,5,0,0.0
+43-1,Conservative,supply,contested,5,0,0.0
+43-1,Conservative,throne_speech,all,4,0,0.0
+43-1,Conservative,throne_speech,contested,4,0,0.0
+43-1,Green Party,committee_report,all,1,0,0.0
+43-1,Green Party,committee_report,contested,1,0,0.0
+43-1,Green Party,government_bill,all,1,0,0.0
+43-1,Green Party,government_bill,contested,1,0,0.0
+43-1,Green Party,government_motion,all,3,0,0.0
+43-1,Green Party,government_motion,contested,3,0,0.0
+43-1,Green Party,opposition_motion,all,8,0,0.0
+43-1,Green Party,opposition_motion,contested,6,0,0.0
+43-1,Green Party,procedural,all,4,0,0.0
+43-1,Green Party,procedural,contested,4,0,0.0
+43-1,Green Party,supply,all,1,0,0.0
+43-1,Green Party,supply,contested,1,0,0.0
+43-1,Green Party,throne_speech,all,4,0,0.0
+43-1,Green Party,throne_speech,contested,4,0,0.0
+43-1,Liberal,committee_report,all,1,0,0.0
+43-1,Liberal,committee_report,contested,1,0,0.0
+43-1,Liberal,government_bill,all,1,0,0.0
+43-1,Liberal,government_bill,contested,1,0,0.0
+43-1,Liberal,government_motion,all,3,0,0.0
+43-1,Liberal,government_motion,contested,3,0,0.0
+43-1,Liberal,opposition_motion,all,8,1,12.5
+43-1,Liberal,opposition_motion,contested,6,1,16.67
+43-1,Liberal,procedural,all,4,0,0.0
+43-1,Liberal,procedural,contested,4,0,0.0
+43-1,Liberal,supply,all,5,0,0.0
+43-1,Liberal,supply,contested,5,0,0.0
+43-1,Liberal,throne_speech,all,4,0,0.0
+43-1,Liberal,throne_speech,contested,4,0,0.0
+43-1,NDP,committee_report,all,1,0,0.0
+43-1,NDP,committee_report,contested,1,0,0.0
+43-1,NDP,government_bill,all,1,0,0.0
+43-1,NDP,government_bill,contested,1,0,0.0
+43-1,NDP,government_motion,all,3,0,0.0
+43-1,NDP,government_motion,contested,3,0,0.0
+43-1,NDP,opposition_motion,all,8,0,0.0
+43-1,NDP,opposition_motion,contested,6,0,0.0
+43-1,NDP,procedural,all,4,0,0.0
+43-1,NDP,procedural,contested,4,0,0.0
+43-1,NDP,supply,all,5,0,0.0
+43-1,NDP,supply,contested,5,0,0.0
+43-1,NDP,throne_speech,all,4,0,0.0
+43-1,NDP,throne_speech,contested,4,0,0.0
+43-2,Bloc Québécois,committee_report,all,5,0,0.0
+43-2,Bloc Québécois,committee_report,contested,2,0,0.0
+43-2,Bloc Québécois,government_bill,all,44,0,0.0
+43-2,Bloc Québécois,government_bill,contested,36,0,0.0
+43-2,Bloc Québécois,government_motion,all,8,0,0.0
+43-2,Bloc Québécois,government_motion,contested,8,0,0.0
+43-2,Bloc Québécois,opposition_motion,all,28,1,3.57
+43-2,Bloc Québécois,opposition_motion,contested,21,1,4.76
+43-2,Bloc Québécois,private_members_business,all,46,0,0.0
+43-2,Bloc Québécois,private_members_business,contested,37,0,0.0
+43-2,Bloc Québécois,procedural,all,20,2,10.0
+43-2,Bloc Québécois,procedural,contested,20,2,10.0
+43-2,Bloc Québécois,supply,all,31,0,0.0
+43-2,Bloc Québécois,supply,contested,30,0,0.0
+43-2,Bloc Québécois,throne_speech,all,3,1,33.33
+43-2,Bloc Québécois,throne_speech,contested,3,1,33.33
+43-2,Conservative,committee_report,all,5,1,20.0
+43-2,Conservative,committee_report,contested,2,1,50.0
+43-2,Conservative,government_bill,all,44,6,13.64
+43-2,Conservative,government_bill,contested,36,5,13.89
+43-2,Conservative,government_motion,all,8,1,12.5
+43-2,Conservative,government_motion,contested,8,1,12.5
+43-2,Conservative,opposition_motion,all,28,0,0.0
+43-2,Conservative,opposition_motion,contested,21,0,0.0
+43-2,Conservative,private_members_business,all,46,7,15.22
+43-2,Conservative,private_members_business,contested,37,6,16.22
+43-2,Conservative,procedural,all,19,1,5.26
+43-2,Conservative,procedural,contested,19,1,5.26
+43-2,Conservative,supply,all,31,0,0.0
+43-2,Conservative,supply,contested,30,0,0.0
+43-2,Conservative,throne_speech,all,3,0,0.0
+43-2,Conservative,throne_speech,contested,3,0,0.0
+43-2,Green Party,committee_report,all,5,0,0.0
+43-2,Green Party,committee_report,contested,2,0,0.0
+43-2,Green Party,government_bill,all,43,2,4.65
+43-2,Green Party,government_bill,contested,35,2,5.71
+43-2,Green Party,government_motion,all,8,0,0.0
+43-2,Green Party,government_motion,contested,8,0,0.0
+43-2,Green Party,opposition_motion,all,28,0,0.0
+43-2,Green Party,opposition_motion,contested,21,0,0.0
+43-2,Green Party,private_members_business,all,46,2,4.35
+43-2,Green Party,private_members_business,contested,37,2,5.41
+43-2,Green Party,procedural,all,20,0,0.0
+43-2,Green Party,procedural,contested,20,0,0.0
+43-2,Green Party,supply,all,31,1,3.23
+43-2,Green Party,supply,contested,30,1,3.33
+43-2,Green Party,throne_speech,all,3,0,0.0
+43-2,Green Party,throne_speech,contested,3,0,0.0
+43-2,Liberal,committee_report,all,5,1,20.0
+43-2,Liberal,committee_report,contested,2,1,50.0
+43-2,Liberal,government_bill,all,44,6,13.64
+43-2,Liberal,government_bill,contested,36,6,16.67
+43-2,Liberal,government_motion,all,8,1,12.5
+43-2,Liberal,government_motion,contested,8,1,12.5
+43-2,Liberal,opposition_motion,all,27,8,29.63
+43-2,Liberal,opposition_motion,contested,21,8,38.1
+43-2,Liberal,private_members_business,all,46,16,34.78
+43-2,Liberal,private_members_business,contested,37,15,40.54
+43-2,Liberal,procedural,all,20,2,10.0
+43-2,Liberal,procedural,contested,20,2,10.0
+43-2,Liberal,supply,all,31,0,0.0
+43-2,Liberal,supply,contested,30,0,0.0
+43-2,Liberal,throne_speech,all,3,0,0.0
+43-2,Liberal,throne_speech,contested,3,0,0.0
+43-2,NDP,committee_report,all,5,0,0.0
+43-2,NDP,committee_report,contested,2,0,0.0
+43-2,NDP,government_bill,all,44,1,2.27
+43-2,NDP,government_bill,contested,36,1,2.78
+43-2,NDP,government_motion,all,8,0,0.0
+43-2,NDP,government_motion,contested,8,0,0.0
+43-2,NDP,opposition_motion,all,28,0,0.0
+43-2,NDP,opposition_motion,contested,21,0,0.0
+43-2,NDP,private_members_business,all,46,0,0.0
+43-2,NDP,private_members_business,contested,37,0,0.0
+43-2,NDP,procedural,all,20,0,0.0
+43-2,NDP,procedural,contested,20,0,0.0
+43-2,NDP,supply,all,31,1,3.23
+43-2,NDP,supply,contested,30,1,3.33
+43-2,NDP,throne_speech,all,3,1,33.33
+43-2,NDP,throne_speech,contested,3,1,33.33
+44-1,Bloc Québécois,appointment,all,2,0,0.0
+44-1,Bloc Québécois,appointment,contested,1,0,0.0
+44-1,Bloc Québécois,committee_report,all,90,0,0.0
+44-1,Bloc Québécois,committee_report,contested,54,0,0.0
+44-1,Bloc Québécois,government_bill,all,250,1,0.4
+44-1,Bloc Québécois,government_bill,contested,191,1,0.52
+44-1,Bloc Québécois,government_motion,all,27,0,0.0
+44-1,Bloc Québécois,government_motion,contested,26,0,0.0
+44-1,Bloc Québécois,opposition_motion,all,75,0,0.0
+44-1,Bloc Québécois,opposition_motion,contested,70,0,0.0
+44-1,Bloc Québécois,private_members_business,all,140,1,0.71
+44-1,Bloc Québécois,private_members_business,contested,77,1,1.3
+44-1,Bloc Québécois,procedural,all,136,3,2.21
+44-1,Bloc Québécois,procedural,contested,123,3,2.44
+44-1,Bloc Québécois,supply,all,205,0,0.0
+44-1,Bloc Québécois,supply,contested,202,0,0.0
+44-1,Bloc Québécois,throne_speech,all,3,0,0.0
+44-1,Bloc Québécois,throne_speech,contested,3,0,0.0
+44-1,Conservative,appointment,all,2,0,0.0
+44-1,Conservative,appointment,contested,1,0,0.0
+44-1,Conservative,committee_report,all,90,1,1.11
+44-1,Conservative,committee_report,contested,54,1,1.85
+44-1,Conservative,government_bill,all,250,8,3.2
+44-1,Conservative,government_bill,contested,191,6,3.14
+44-1,Conservative,government_motion,all,27,1,3.7
+44-1,Conservative,government_motion,contested,26,1,3.85
+44-1,Conservative,opposition_motion,all,75,1,1.33
+44-1,Conservative,opposition_motion,contested,70,1,1.43
+44-1,Conservative,private_members_business,all,140,6,4.29
+44-1,Conservative,private_members_business,contested,77,6,7.79
+44-1,Conservative,procedural,all,136,7,5.15
+44-1,Conservative,procedural,contested,123,7,5.69
+44-1,Conservative,supply,all,205,2,0.98
+44-1,Conservative,supply,contested,202,2,0.99
+44-1,Conservative,throne_speech,all,3,0,0.0
+44-1,Conservative,throne_speech,contested,3,0,0.0
+44-1,Green Party,appointment,all,2,0,0.0
+44-1,Green Party,appointment,contested,1,0,0.0
+44-1,Green Party,committee_report,all,87,0,0.0
+44-1,Green Party,committee_report,contested,51,0,0.0
+44-1,Green Party,government_bill,all,239,0,0.0
+44-1,Green Party,government_bill,contested,183,0,0.0
+44-1,Green Party,government_motion,all,23,0,0.0
+44-1,Green Party,government_motion,contested,22,0,0.0
+44-1,Green Party,opposition_motion,all,74,0,0.0
+44-1,Green Party,opposition_motion,contested,69,0,0.0
+44-1,Green Party,private_members_business,all,135,0,0.0
+44-1,Green Party,private_members_business,contested,72,0,0.0
+44-1,Green Party,procedural,all,91,0,0.0
+44-1,Green Party,procedural,contested,78,0,0.0
+44-1,Green Party,supply,all,180,0,0.0
+44-1,Green Party,supply,contested,177,0,0.0
+44-1,Green Party,throne_speech,all,3,0,0.0
+44-1,Green Party,throne_speech,contested,3,0,0.0
+44-1,Liberal,appointment,all,2,0,0.0
+44-1,Liberal,appointment,contested,1,0,0.0
+44-1,Liberal,committee_report,all,90,2,2.22
+44-1,Liberal,committee_report,contested,54,2,3.7
+44-1,Liberal,government_bill,all,250,8,3.2
+44-1,Liberal,government_bill,contested,191,6,3.14
+44-1,Liberal,government_motion,all,27,1,3.7
+44-1,Liberal,government_motion,contested,26,1,3.85
+44-1,Liberal,opposition_motion,all,75,18,24.0
+44-1,Liberal,opposition_motion,contested,70,18,25.71
+44-1,Liberal,private_members_business,all,140,34,24.29
+44-1,Liberal,private_members_business,contested,77,28,36.36
+44-1,Liberal,procedural,all,136,1,0.74
+44-1,Liberal,procedural,contested,123,1,0.81
+44-1,Liberal,supply,all,205,0,0.0
+44-1,Liberal,supply,contested,202,0,0.0
+44-1,Liberal,throne_speech,all,3,0,0.0
+44-1,Liberal,throne_speech,contested,3,0,0.0
+44-1,NDP,appointment,all,2,0,0.0
+44-1,NDP,appointment,contested,1,0,0.0
+44-1,NDP,committee_report,all,90,1,1.11
+44-1,NDP,committee_report,contested,54,1,1.85
+44-1,NDP,government_bill,all,250,2,0.8
+44-1,NDP,government_bill,contested,191,2,1.05
+44-1,NDP,government_motion,all,27,0,0.0
+44-1,NDP,government_motion,contested,26,0,0.0
+44-1,NDP,opposition_motion,all,75,2,2.67
+44-1,NDP,opposition_motion,contested,70,2,2.86
+44-1,NDP,private_members_business,all,140,1,0.71
+44-1,NDP,private_members_business,contested,77,1,1.3
+44-1,NDP,procedural,all,135,2,1.48
+44-1,NDP,procedural,contested,122,2,1.64
+44-1,NDP,supply,all,205,1,0.49
+44-1,NDP,supply,contested,202,1,0.5
+44-1,NDP,throne_speech,all,3,1,33.33
+44-1,NDP,throne_speech,contested,3,1,33.33
+45-1,Bloc Québécois,appointment,all,1,0,0.0
+45-1,Bloc Québécois,appointment,contested,1,0,0.0
+45-1,Bloc Québécois,committee_report,all,6,0,0.0
+45-1,Bloc Québécois,committee_report,contested,4,0,0.0
+45-1,Bloc Québécois,government_bill,all,60,0,0.0
+45-1,Bloc Québécois,government_bill,contested,49,0,0.0
+45-1,Bloc Québécois,government_motion,all,12,0,0.0
+45-1,Bloc Québécois,government_motion,contested,12,0,0.0
+45-1,Bloc Québécois,opposition_motion,all,29,0,0.0
+45-1,Bloc Québécois,opposition_motion,contested,27,0,0.0
+45-1,Bloc Québécois,private_members_business,all,23,0,0.0
+45-1,Bloc Québécois,private_members_business,contested,18,0,0.0
+45-1,Bloc Québécois,procedural,all,23,0,0.0
+45-1,Bloc Québécois,procedural,contested,22,0,0.0
+45-1,Bloc Québécois,supply,all,16,0,0.0
+45-1,Bloc Québécois,supply,contested,15,0,0.0
+45-1,Bloc Québécois,throne_speech,all,3,0,0.0
+45-1,Bloc Québécois,throne_speech,contested,1,0,0.0
+45-1,Conservative,appointment,all,1,0,0.0
+45-1,Conservative,appointment,contested,1,0,0.0
+45-1,Conservative,committee_report,all,6,0,0.0
+45-1,Conservative,committee_report,contested,4,0,0.0
+45-1,Conservative,government_bill,all,60,0,0.0
+45-1,Conservative,government_bill,contested,49,0,0.0
+45-1,Conservative,government_motion,all,12,1,8.33
+45-1,Conservative,government_motion,contested,12,1,8.33
+45-1,Conservative,opposition_motion,all,29,0,0.0
+45-1,Conservative,opposition_motion,contested,27,0,0.0
+45-1,Conservative,private_members_business,all,23,3,13.04
+45-1,Conservative,private_members_business,contested,18,3,16.67
+45-1,Conservative,procedural,all,23,1,4.35
+45-1,Conservative,procedural,contested,22,1,4.55
+45-1,Conservative,supply,all,16,0,0.0
+45-1,Conservative,supply,contested,15,0,0.0
+45-1,Conservative,throne_speech,all,3,0,0.0
+45-1,Conservative,throne_speech,contested,1,0,0.0
+45-1,Green Party,appointment,all,1,0,0.0
+45-1,Green Party,appointment,contested,1,0,0.0
+45-1,Green Party,committee_report,all,5,0,0.0
+45-1,Green Party,committee_report,contested,4,0,0.0
+45-1,Green Party,government_bill,all,58,0,0.0
+45-1,Green Party,government_bill,contested,48,0,0.0
+45-1,Green Party,government_motion,all,12,0,0.0
+45-1,Green Party,government_motion,contested,12,0,0.0
+45-1,Green Party,opposition_motion,all,29,0,0.0
+45-1,Green Party,opposition_motion,contested,27,0,0.0
+45-1,Green Party,private_members_business,all,23,0,0.0
+45-1,Green Party,private_members_business,contested,18,0,0.0
+45-1,Green Party,procedural,all,23,0,0.0
+45-1,Green Party,procedural,contested,22,0,0.0
+45-1,Green Party,supply,all,16,0,0.0
+45-1,Green Party,supply,contested,15,0,0.0
+45-1,Green Party,throne_speech,all,3,0,0.0
+45-1,Green Party,throne_speech,contested,1,0,0.0
+45-1,Liberal,appointment,all,1,0,0.0
+45-1,Liberal,appointment,contested,1,0,0.0
+45-1,Liberal,committee_report,all,6,0,0.0
+45-1,Liberal,committee_report,contested,4,0,0.0
+45-1,Liberal,government_bill,all,60,5,8.33
+45-1,Liberal,government_bill,contested,49,5,10.2
+45-1,Liberal,government_motion,all,12,1,8.33
+45-1,Liberal,government_motion,contested,12,1,8.33
+45-1,Liberal,opposition_motion,all,29,0,0.0
+45-1,Liberal,opposition_motion,contested,27,0,0.0
+45-1,Liberal,private_members_business,all,23,2,8.7
+45-1,Liberal,private_members_business,contested,18,2,11.11
+45-1,Liberal,procedural,all,23,1,4.35
+45-1,Liberal,procedural,contested,22,1,4.55
+45-1,Liberal,supply,all,16,0,0.0
+45-1,Liberal,supply,contested,15,0,0.0
+45-1,Liberal,throne_speech,all,3,0,0.0
+45-1,Liberal,throne_speech,contested,1,0,0.0
+45-1,NDP,appointment,all,1,0,0.0
+45-1,NDP,appointment,contested,1,0,0.0
+45-1,NDP,committee_report,all,6,0,0.0
+45-1,NDP,committee_report,contested,4,0,0.0
+45-1,NDP,government_bill,all,60,0,0.0
+45-1,NDP,government_bill,contested,49,0,0.0
+45-1,NDP,government_motion,all,11,0,0.0
+45-1,NDP,government_motion,contested,11,0,0.0
+45-1,NDP,opposition_motion,all,29,0,0.0
+45-1,NDP,opposition_motion,contested,27,0,0.0
+45-1,NDP,private_members_business,all,23,0,0.0
+45-1,NDP,private_members_business,contested,18,0,0.0
+45-1,NDP,procedural,all,23,0,0.0
+45-1,NDP,procedural,contested,22,0,0.0
+45-1,NDP,supply,all,16,0,0.0
+45-1,NDP,supply,contested,15,0,0.0
+45-1,NDP,throne_speech,all,3,0,0.0
+45-1,NDP,throne_speech,contested,1,0,0.0
