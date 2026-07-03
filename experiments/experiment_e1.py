@@ -29,17 +29,20 @@ Usage: python3 experiment_e1.py
 
 import csv
 import os
+import sys
 
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, PROJECT_ROOT)
+
 import bill_info
 from visualize_parliament import (PARTY_COLORS, WHIPPED_PARTIES,
                                   find_rebels, load_parliament, vote_number)
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-RESULTS_DIR = os.path.join(PROJECT_ROOT, "results_e1")
+RESULTS_DIR = os.path.join(PROJECT_ROOT, "experiments", "results_e1")
 
 # Governing party per session. 45-1: Liberal (Carney).
 SESSION_GOVERNMENT = {
