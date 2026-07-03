@@ -195,6 +195,41 @@ def classify_vote(subject, bill_number, bill_types):
 # Categories where MPs traditionally vote freely (no whip, or a loose one).
 FREE_VOTE_CATEGORIES = {"private_members_business"}
 
+# ---------------------------------------------------------------------------
+# Designated free votes
+#
+# Category is a proxy for whip status, and governments occasionally free
+# their members on specific government business. Documented cases are
+# recorded here so the whip analyses don't count sanctioned dissent as
+# rebellion. "Free" here means free for backbenchers; cabinet typically
+# remained whipped, so some conformity on these votes is still whip-driven.
+#
+# Only add entries verified against the record (Journals, Hansard, or
+# contemporary reporting). Bill-level entries cover every division on the
+# bill's stages (procedural motions about the bill, e.g. closure, classify
+# as procedural and are unaffected).
+# ---------------------------------------------------------------------------
+
+FREE_VOTE_BILLS = {
+    # Civil Marriage Act (same-sex marriage), 2005: PM Martin declared a
+    # free vote for Liberal MPs outside cabinet at all stages.
+    "38-1": {"C-38"},
+    # TODO pending spot-check against the record:
+    #   38-1 C-30 (Parliament of Canada Act / Salaries Act) — 11-14 Liberal
+    #     rebels across three stages; free vote or pay revolt?
+    #   42-1 C-14 (medical assistance in dying) — Liberal backbenchers were
+    #     reportedly freed; verify scope before adding.
+}
+
+FREE_VOTE_DIVISIONS = {
+    # For designated free votes not tied to a bill: session -> {division numbers}
+}
+
+
+def is_free_vote(meta_row):
+    """True if a division was free: unwhipped by category or by designation."""
+    return bool(meta_row.get("free_vote"))
+
 
 # ---------------------------------------------------------------------------
 # Metadata loading and joining
@@ -214,6 +249,8 @@ def load_vote_metadata(directory):
     session = os.path.basename(os.path.normpath(directory)).replace(
         "Parliament_", "")
     bill_types = load_bill_types(session)
+    free_bills = FREE_VOTE_BILLS.get(session, set())
+    free_divisions = FREE_VOTE_DIVISIONS.get(session, set())
 
     metadata = {}
     with open(path, encoding="utf-8-sig") as f:
@@ -224,5 +261,9 @@ def load_vote_metadata(directory):
             row.update(classify_vote(row.get("subject", ""),
                                      row.get("bill_number", "").strip(),
                                      bill_types))
+            row["designated_free"] = (row["bill_number"] in free_bills
+                                      or number in free_divisions)
+            row["free_vote"] = (row["designated_free"]
+                                or row["category"] in FREE_VOTE_CATEGORIES)
             metadata[number] = row
     return metadata
