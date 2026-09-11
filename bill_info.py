@@ -49,6 +49,12 @@ def load_bill_types(session):
     formatted number (e.g. "C-30"), or {} if no XML exists for the session.
     """
     path = os.path.join(BILL_XML_DIR, f"{session}.xml")
+    # The original archive stops at 44-1. The separately archived 45-1 export
+    # was reviewed for coverage/type agreement; historical archives stay intact.
+    if not os.path.exists(path) and session == '45-1':
+        path = os.path.join(PROJECT_ROOT, 'evidence', 'legisinfo-45-1-current.xml')
+        if not os.path.exists(path):
+            raise FileNotFoundError('Missing reviewed 45-1 bill supplement')
     if not os.path.exists(path):
         return {}
 

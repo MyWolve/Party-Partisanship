@@ -24,7 +24,7 @@ def input_fingerprints(root=ROOT):
              'experiments/experiment_7_data/*', 'evidence/*', 'audit/derived/*')
              for p in root.glob(pattern) if p.is_file()]
     paths += [root / p for p in ('audit/baseline_discrepancies.json', 'audit/data_decisions.json',
-                                'audit/whip_designations.json', 'experiments/benchmarks_e7.csv')]
+                                'audit/whip_designations.json', 'audit/source_review_selection.json', 'experiments/benchmarks_e7.csv')]
     return {p.relative_to(root).as_posix(): digest(p, binary=p.parent.name == 'evidence')
             for p in sorted(paths)}
 

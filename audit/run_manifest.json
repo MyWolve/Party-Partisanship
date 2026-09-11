@@ -2,39 +2,42 @@
   "code_files": {
     ".github/workflows/reproducibility.yml": "bc963f7342096a97c593f3d2159e7ecb4f04ce379444e8f7b58d15ba9fcbb1f5",
     "bill_data.py": "f9d57c2624a1ed55e175cf9af22f4a77ea5e651aca8a7f64e2a70361b80bd0e5",
-    "bill_info.py": "418428d2b1ccb67a3af433a69f06534eb61c73e19b3ecb8041e6b562d82a7f93",
+    "bill_info.py": "6921d163581c057abeab7385bee2b0970b35c7a817e6234e44c8dbe10a311aed",
     "can_scrape.py": "085240237feb29cd59e46e121ca42db59f0ec49d342164df78ae1a4ddba269c3",
     "check_data.py": "e70a93f7f3376db0a8fed81e924f406cd89470ed40923721ecf2cd43b865da89",
     "experiment_io.py": "1ac7d99bbf3e51b3b1f68f2924b96b803572d54641a5824a55c3ba6cb89a4b28",
     "experiments/build_benchmarks_e7.py": "f0b6f505fb4ba212ad3755ddf0843b1f535fc8e3b55fcc8eaafcc111986461f2",
     "experiments/experiment_e1.py": "d4d642dbcb4e226b6538ff21b39dda973ff5e6d1b236301fd66455bbba616b7c",
     "experiments/experiment_e7.py": "74c0017c797aaffee5331aa70950064722c502240ade3062cab1c13ef9e8c5ba",
-    "provenance.py": "1192c93f4f136aa844a05421cdf5e0621d8d6500e12b50144f149d006221801f",
-    "reproduce.py": "805fbfeee9a88de6d9911b10a4218d366d7e8ad95afcecbb3830287c04224185",
+    "provenance.py": "087f32905dcc64f77ff0ef9f420fa590937ac596bbb64229f963e244225e500a",
+    "reproduce.py": "9bd52d27ac83d2dbd2cf5e5f138706898e7617e4e860d40f0febf1b475acaff6",
     "requirements-lock.txt": "c731839447bd2d8e216ca8436a7d25da53bffb46aee26f3c503dc7271b7619d1",
     "requirements.txt": "c5c47ecfbac90e9ce72b9e8a547f723374dc09af7dd51685093d122c8199671f",
     "tests/test_collection.py": "fc932f770ca3a16c0a92f9e894ba9fd429d6f74be726a094fd0db6b1428c9e23",
     "tests/test_pipeline.py": "b9449141fbbdb82564891be0f3678db273e5256e70edfc117bfffe81fa959199",
     "tests/test_reconciliation.py": "878a1bca30753a42eebd890b43e52800750ab4e506ee46cf7084ed5da970d9e5",
+    "tests/test_source_coverage.py": "0feef5ff62482a20956019ec4db4e862ac7d673f398b01e184bec90fef007769",
     "tools/build_audit_data.py": "2f088f87e78f77c61456e4cf2367b4b939a795bf1fd6a2c955011226393b9533",
     "tools/collect_bills.py": "2b85bf7fac95c309f8c10288203bc5ede04dd86aef60ee37206af81457329c57",
     "tools/fetch_audit_evidence.py": "62942268a4cae0328785b10e2d24f95738189a3b6571f9c7fb8afbc8dcf11f1e",
     "tools/freeze_inputs.py": "f42ef4b447d0e0b3ee005120a5474509f571591a34ab4c0dc69ec38e6afc7962",
     "tools/reconcile_members.py": "5c083e240c809f2e9f3855c25030a926cb053d00e18eaae9469ab686cbce0458",
+    "tools/review_source_coverage.py": "0e4c92b2343d5cfacb385d764c9c26b7a94e2fe92fa2d1c2a405b6dae6436c5d",
     "visualize_parliament.py": "16ba7296cd8bbc322c9b4c52a5caef204bee779588a08cdf8de04d63373ab37d",
     "vote_data.py": "5c0d4c07e0f8089db697c3881264489193fabc2c278319ffe2c83129b15518f3"
   },
-  "code_sha256": "e14991b842711ba59e0056b4e35dd3bbcd3495af7bb71878b46590f38a8a7653",
+  "code_sha256": "0ad52385229e8057ddb5eabb55a669a1cbae750de485aa393907ba44d42f2a6a",
   "commands": [
     "tools/build_audit_data.py --check",
     "-m unittest discover -s tests -v",
     "check_data.py",
     "experiments/build_benchmarks_e7.py --check",
     "tools/reconcile_members.py --check",
+    "tools/review_source_coverage.py --check",
     "experiments/experiment_e1.py",
     "experiments/experiment_e7.py"
   ],
-  "corpus_sha256": "88a1f4a3ed964d5786e6fc7e205d600ca5d4a3c1fe060bb7e69ef1e4d39eb4f4",
+  "corpus_sha256": "794ebd9dee51cc7b1b3f017f2cc24acd1a6e2af8cf2ab5c4bb9c6fc8aed4d991",
   "dependencies": {
     "certifi": "2026.7.22",
     "charset-normalizer": "3.5.1",
@@ -54,10 +57,10 @@
     "six": "1.17.0",
     "urllib3": "2.7.0"
   },
-  "git_base_revision": "17b52de43b6283a68283ce7b015d8931ad08e1ae",
+  "git_base_revision": "628cf221b63c1d4677bd1905f6fc5cd5c6e896ff",
   "outputs": {
     "results_e1/FINDINGS_E1.md": "4b89f5db8330e431dc2fc770e863314d036540377c0cb457d7b0fcc11eacf81f",
-    "results_e1/classification_audit.csv": "786b830cc30ca49a736fb1e34164a5a2393959d982d994d36592723db6ce6ccd",
+    "results_e1/classification_audit.csv": "b44ec1d7312542e0bdff2691b110d123a5cb1fd68e547c7f3e093486ffe5532c",
     "results_e1/dissent_by_category_pooled.png": "8ff08cad5e9ffeb8178b53f4d1466f7c5ac56f82cb91417869206e83f982c106",
     "results_e1/headline.json": "0b44664b672311e30b85cb1ff263eafd2e18b4f6569e94d930f4b1166830c6b9",
     "results_e1/outliers.csv": "0e90deda9276c4e42d9f69ad71c203faf6af5cd27810307ae3f1fc0e2f23f54a",
@@ -75,5 +78,5 @@
   "repeat_check": null,
   "saved_results_match": true,
   "status": "pass",
-  "table_sha256": "85aafc6d788113050005124a479956fc80814192b02edfa718ccc340f892ca05"
+  "table_sha256": "d2ee13852db44ea08654d3cc72c5651f79a5f540f4a4d2c3c69fd938dfd7e89e"
 }

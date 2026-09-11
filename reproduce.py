@@ -57,6 +57,7 @@ def main():
         logs['integrity'] = run('check_data.py', '--output', staging/'integrity.json')
         logs['benchmark_rebuild'] = run('experiments/build_benchmarks_e7.py', '--check')
         logs['reconciliation'] = run('tools/reconcile_members.py', '--check')
+        logs['source_coverage'] = run('tools/review_source_coverage.py', '--check')
         first = staging/'first'
         experiments(first)
         tables = outputs(first, numeric_only=True)
@@ -91,6 +92,7 @@ def main():
             'dependencies': {d.metadata['Name']: d.version for d in importlib.metadata.distributions()},
             'commands': ['tools/build_audit_data.py --check', '-m unittest discover -s tests -v',
                          'check_data.py', 'experiments/build_benchmarks_e7.py --check', 'tools/reconcile_members.py --check',
+                         'tools/review_source_coverage.py --check',
                          'experiments/experiment_e1.py', 'experiments/experiment_e7.py'],
             'table_sha256': aggregate(tables), 'outputs': outputs(first), 'repeat_check': repeats,
             'saved_results_match': args.check, 'status': 'pass'}

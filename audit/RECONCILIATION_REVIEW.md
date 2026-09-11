@@ -60,3 +60,5 @@ The input manifest was deliberately extended with four supporting source snapsho
 - Methodological extensions such as bill-level weighting and caucus-size effects after source review.
 
 This closes the absence of a reconciliation product and a reviewed refresh mechanism. It does not erase documented source disagreements or claim that every later parliamentary record has independent corroboration.
+
+Update: the [source coverage review](SOURCE_COVERAGE_REVIEW.md) extends bill comparisons across all sessions and checks a fixed later-session XML sample. It closes the missing 45-1 type archive using a reviewed supplement; widespread missing sponsor fields and independent later-session corroboration remain open.

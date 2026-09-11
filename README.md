@@ -90,3 +90,5 @@ The [House of Commons vote exports](https://www.ourcommons.ca/members/en/votes),
 The [collection and legacy review](audit/COLLECTION_AND_LEGACY_REVIEW.md) records the next engineering pass, including separate raw collection snapshots, stable MP identifiers, deterministic diagnostics, and cross-platform CI. It also identifies the source and record-level checks that remain open.
 
 The [record-level reconciliation and bill-refresh review](audit/RECONCILIATION_REVIEW.md) extends verification beyond aggregate scores and documents a current export schema change and loss of historical sponsor fields.
+
+The [later-session and bill-coverage review](audit/SOURCE_COVERAGE_REVIEW.md) adds a fixed XML sample and session-wide bill checks. A reviewed 45-1 bill supplement improves classification provenance without changing the results.

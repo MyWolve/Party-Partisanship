@@ -117,3 +117,9 @@ See [collection and legacy review](audit/COLLECTION_AND_LEGACY_REVIEW.md) for re
 [The record-level review](audit/RECONCILIATION_REVIEW.md) now covers all 933 divisions in the comparison deposit: 256,676 joined observations match vote flags and analytic party, with one extra deposit observation and one sitting/calendar date difference documented. `reproduce.py` also checks the saved crosswalk and discrepancy outputs.
 
 Use `python tools/collect_bills.py --session 40-1 --output incoming/new-bill-review` for a separate bill refresh snapshot. The shared parser supports archived and current LEGISinfo schemas and refuses unknown schemas. The historical live check exposed missing sponsors in the new response; no bill archive was replaced. See the review for an offline replay command and evidence.
+
+## Later-session and bill coverage checks
+
+The [source coverage review](audit/SOURCE_COVERAGE_REVIEW.md) checks 35 fixed later-session divisions (10,178 matching member records) and bill exports across all 13 sessions. All 4,411 historical bill numbers/types/titles agree, but the new exports lose their sponsor names, so historical archives are retained. A reviewed 45-1 supplement replaces numbering inference for 107 divisions without changing categories.
+
+`python tools/review_source_coverage.py --check` reproduces the saved comparison tables offline and is included in `reproduce.py`. The separately invoked `--fetch` mode retrieves absent snapshots and verifies existing hashes. This sample is a same-publisher format/stability check, not full independent verification of later parliaments.

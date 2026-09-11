@@ -1,0 +1,145 @@
+{
+  "method": "First, quarter, middle, three-quarter and last division by sorted division number in each session from 41-1 onward; floor index (N-1)*i/4 for i=0..4. Purposive coverage sample, not random.",
+  "votes": [
+    {
+      "session": "41-1",
+      "division": 1
+    },
+    {
+      "session": "41-1",
+      "division": 190
+    },
+    {
+      "session": "41-1",
+      "division": 380
+    },
+    {
+      "session": "41-1",
+      "division": 570
+    },
+    {
+      "session": "41-1",
+      "division": 760
+    },
+    {
+      "session": "41-2",
+      "division": 1
+    },
+    {
+      "session": "41-2",
+      "division": 117
+    },
+    {
+      "session": "41-2",
+      "division": 234
+    },
+    {
+      "session": "41-2",
+      "division": 350
+    },
+    {
+      "session": "41-2",
+      "division": 467
+    },
+    {
+      "session": "42-1",
+      "division": 1
+    },
+    {
+      "session": "42-1",
+      "division": 345
+    },
+    {
+      "session": "42-1",
+      "division": 690
+    },
+    {
+      "session": "42-1",
+      "division": 1034
+    },
+    {
+      "session": "42-1",
+      "division": 1379
+    },
+    {
+      "session": "43-1",
+      "division": 1
+    },
+    {
+      "session": "43-1",
+      "division": 7
+    },
+    {
+      "session": "43-1",
+      "division": 13
+    },
+    {
+      "session": "43-1",
+      "division": 19
+    },
+    {
+      "session": "43-1",
+      "division": 26
+    },
+    {
+      "session": "43-2",
+      "division": 1
+    },
+    {
+      "session": "43-2",
+      "division": 47
+    },
+    {
+      "session": "43-2",
+      "division": 93
+    },
+    {
+      "session": "43-2",
+      "division": 139
+    },
+    {
+      "session": "43-2",
+      "division": 185
+    },
+    {
+      "session": "44-1",
+      "division": 1
+    },
+    {
+      "session": "44-1",
+      "division": 232
+    },
+    {
+      "session": "44-1",
+      "division": 464
+    },
+    {
+      "session": "44-1",
+      "division": 696
+    },
+    {
+      "session": "44-1",
+      "division": 928
+    },
+    {
+      "session": "45-1",
+      "division": 1
+    },
+    {
+      "session": "45-1",
+      "division": 44
+    },
+    {
+      "session": "45-1",
+      "division": 87
+    },
+    {
+      "session": "45-1",
+      "division": 130
+    },
+    {
+      "session": "45-1",
+      "division": 173
+    }
+  ]
+}

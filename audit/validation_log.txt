@@ -53,9 +53,14 @@ test_split_bill_suffix (test_reconciliation.BillSchemaTests.test_split_bill_suff
 test_middle_name_fallback (test_reconciliation.ReconciliationTests.test_middle_name_fallback) ... ok
 test_real_record_level_discrepancy_stays_visible (test_reconciliation.ReconciliationTests.test_real_record_level_discrepancy_stays_visible) ... ok
 test_same_name_requires_constituency (test_reconciliation.ReconciliationTests.test_same_name_requires_constituency) ... ok
+test_45_supplement_is_used (test_source_coverage.CoverageTests.test_45_supplement_is_used) ... ok
+test_missing_supplement_cannot_silently_revert (test_source_coverage.CoverageTests.test_missing_supplement_cannot_silently_revert) ... ok
+test_real_sample_and_type_upgrade (test_source_coverage.CoverageTests.test_real_sample_and_type_upgrade) ... ok
+test_xml_rejects_duplicate_missing_and_html (test_source_coverage.CoverageTests.test_xml_rejects_duplicate_missing_and_html) ... ok
+test_xml_rejects_wrong_division_and_flags (test_source_coverage.CoverageTests.test_xml_rejects_wrong_division_and_flags) ... ok
 
 ----------------------------------------------------------------------
-Ran 50 tests in 2.115s
+Ran 55 tests in 2.915s
 
 OK
 
@@ -100,3 +105,6 @@ Verified all 36 benchmark rows without overwriting the baseline
 
 reconciliation
 [{'parliament': 38, 'divisions': 190, 'deposit_terms': 314, 'unmatched_nonobserved_terms': 1, 'union_observable_records': 54220, 'joined_records': 54220, 'exact_flag_and_analytic_party_matches': 54220}, {'parliament': 39, 'divisions': 380, 'deposit_terms': 327, 'unmatched_nonobserved_terms': 1, 'union_observable_records': 101643, 'joined_records': 101643, 'exact_flag_and_analytic_party_matches': 101643}, {'parliament': 40, 'divisions': 363, 'deposit_terms': 316, 'unmatched_nonobserved_terms': 1, 'union_observable_records': 100814, 'joined_records': 100813, 'exact_flag_and_analytic_party_matches': 100813, 'deposit_only_observation': 1}]
+
+source_coverage
+Reviewed 13 bill sessions and 35 sampled divisions; 0 member differences

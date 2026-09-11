@@ -134,10 +134,245 @@
     "sha256": "5359bd1aa3d7e930e805dbb4e999fd081822e2368951b3ba85d976f74a8a21a2",
     "url": "https://www.ourcommons.ca/members/en/votes/42/1/872/xml"
   },
+  "legisinfo-38-1-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "8a10bd7db239a21944ddcfd70d0301879679678c4f8c30d818bcfa5c849f1790",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=38-1"
+  },
+  "legisinfo-39-1-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "6eb7a831752df5d42d41185aeba7511bd625e9389ca5a30f46c490702c7d2fe5",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=39-1"
+  },
+  "legisinfo-39-2-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "7b6a410329607af52c25628a88838d3e03cae4742c5e559657146629167ef141",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=39-2"
+  },
   "legisinfo-40-1-current.xml": {
     "retrieved_date": "2026-09-11",
     "sha256": "e6183db972335af184e737efa0842376f562e907d064c1bbe8ad76fddf6de8d8",
     "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=40-1"
+  },
+  "legisinfo-40-2-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "ca012dbdfd3a253c068154544bcba54fa5d4e1d2e391e0c102aa935df89eef9b",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=40-2"
+  },
+  "legisinfo-40-3-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "19a4972b07bbe3b290c72099383dc19e7d6cdb0952ac4652d71f02649eda47e8",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=40-3"
+  },
+  "legisinfo-41-1-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "12307c1bfaec8502556a720d1d4b4bb56d9cdb5f19b1f352b6237953a08f2d89",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=41-1"
+  },
+  "legisinfo-41-2-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "d444247244d00147e64557c40b4e340e49c1761e0c2da90766bc18b5abb49843",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=41-2"
+  },
+  "legisinfo-42-1-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "363bd87accb1c78d0683676902bffc98312f9111d68857da4daba750a04b6fec",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=42-1"
+  },
+  "legisinfo-43-1-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "b85f935866d0676b20417485c12d768ad3e9c6b43cb4267293805b70f7dd9226",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=43-1"
+  },
+  "legisinfo-43-2-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "3615875a9e9ad65c56e913eec2f5f3c30612810724775800706559d0b8d00641",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=43-2"
+  },
+  "legisinfo-44-1-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "d31d2380ec81982d63e222089d6b403ce77c02c2162ecfdde83056707c8ec434",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=44-1"
+  },
+  "legisinfo-45-1-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "146a2773ac18d43f7b4829ddbb2ba330d196400c9371c6a0bc1330b845082637",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=45-1"
+  },
+  "review-41-1-1.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "0f88b5e8964a501dd66577dd7b2caa1ea47ea3735d3b25f49eff094c27820d2e",
+    "url": "https://www.ourcommons.ca/members/en/votes/41/1/1/xml"
+  },
+  "review-41-1-190.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "3ba1f8cc3e4c0055fce336b7f5a4a13d6bac1080c52bf02eae851a5ca37d075c",
+    "url": "https://www.ourcommons.ca/members/en/votes/41/1/190/xml"
+  },
+  "review-41-1-380.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "5b17a14900788c3c79e5ada4f8734d21e9a875c4411257cbec18eca1292b9823",
+    "url": "https://www.ourcommons.ca/members/en/votes/41/1/380/xml"
+  },
+  "review-41-1-570.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "8d971ce9f4c921c3ad2b6c3e010cbb5ef37c1eaa3239a1f5f09b8d0434d7edfe",
+    "url": "https://www.ourcommons.ca/members/en/votes/41/1/570/xml"
+  },
+  "review-41-1-760.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "5e817d707fc08cfd0ca099d8ca7e2ff76c4570fced32a00a22f28bf8e99a810e",
+    "url": "https://www.ourcommons.ca/members/en/votes/41/1/760/xml"
+  },
+  "review-41-2-1.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "519c743d71c79f5ea0b1dd18c513fa820555184234b19aa3f447c36d6f40608f",
+    "url": "https://www.ourcommons.ca/members/en/votes/41/2/1/xml"
+  },
+  "review-41-2-117.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "b4c35078aeb369a85b4875307d2ba6b2a331e31211746cdaba0e42d28290b383",
+    "url": "https://www.ourcommons.ca/members/en/votes/41/2/117/xml"
+  },
+  "review-41-2-234.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "4ae5460be03859b14802b158bbdac732f7bb06e0695abb7d026ece599c51b275",
+    "url": "https://www.ourcommons.ca/members/en/votes/41/2/234/xml"
+  },
+  "review-41-2-350.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "483e2ebf7065f6908745d93180fa86874ee2efc827278a90d9f6be82d57fc9ae",
+    "url": "https://www.ourcommons.ca/members/en/votes/41/2/350/xml"
+  },
+  "review-41-2-467.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "d5a25a96090496e3c2656cb9b7834773e01baa007af3d07e221ea10d8a27d35d",
+    "url": "https://www.ourcommons.ca/members/en/votes/41/2/467/xml"
+  },
+  "review-42-1-1.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "1aa8b7b7fcecc596e891d0f15cf56e0ee6693ad7a3d3b0614d4ef611d7bb31c4",
+    "url": "https://www.ourcommons.ca/members/en/votes/42/1/1/xml"
+  },
+  "review-42-1-1034.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "8e764b44bf6364ed51c8f5367327a27ab36850ad308422bba707eb7cecab3bed",
+    "url": "https://www.ourcommons.ca/members/en/votes/42/1/1034/xml"
+  },
+  "review-42-1-1379.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "e63168c90cc456a737ebb4921bc0ba8441aef4752e16b4350e276b584b5d0137",
+    "url": "https://www.ourcommons.ca/members/en/votes/42/1/1379/xml"
+  },
+  "review-42-1-345.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "1f43829a12df265f5371ec289c23aa2bbcce2ccc38e089b2a56d7a503156c688",
+    "url": "https://www.ourcommons.ca/members/en/votes/42/1/345/xml"
+  },
+  "review-42-1-690.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "0d455da7953a44eb13a6b4da76e1b1cd2aa9522ff752530ad0796e49a714e390",
+    "url": "https://www.ourcommons.ca/members/en/votes/42/1/690/xml"
+  },
+  "review-43-1-1.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "da299b0483ec5361ef5d01b033e9c5d7cf0cefda3572d53f492a2f4d407015e7",
+    "url": "https://www.ourcommons.ca/members/en/votes/43/1/1/xml"
+  },
+  "review-43-1-13.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "0c2c82194d8ffec656d2097998c009754f8454c2ac43e76623f1637cab5377c5",
+    "url": "https://www.ourcommons.ca/members/en/votes/43/1/13/xml"
+  },
+  "review-43-1-19.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "4845cb1c5c508a514554d29b42c2cd4c67ab7d01ca6dc4166c71674fd1fe356a",
+    "url": "https://www.ourcommons.ca/members/en/votes/43/1/19/xml"
+  },
+  "review-43-1-26.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "cb7a08b4687e311a89cd7c1d32a740b59363304eded7b4f641e505427bfc9bb4",
+    "url": "https://www.ourcommons.ca/members/en/votes/43/1/26/xml"
+  },
+  "review-43-1-7.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "bae09cef088ec980bbc90ef07df2eb343831d0f06d13d980f66d7fe3c4e68824",
+    "url": "https://www.ourcommons.ca/members/en/votes/43/1/7/xml"
+  },
+  "review-43-2-1.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "ba756fd7f62ff84cdcf358a9632be5174075070598a989be9355b49b7e0896af",
+    "url": "https://www.ourcommons.ca/members/en/votes/43/2/1/xml"
+  },
+  "review-43-2-139.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "fb8dc79427ace4d82fdd53b650c02e0ccd7aa3009f5b6a21b02bb02af2329fd5",
+    "url": "https://www.ourcommons.ca/members/en/votes/43/2/139/xml"
+  },
+  "review-43-2-185.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "fe5657031403dda1b46e5d3c58f46aeee459196cf61f99035d49c677c78aa4e9",
+    "url": "https://www.ourcommons.ca/members/en/votes/43/2/185/xml"
+  },
+  "review-43-2-47.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "17ffc438d370d4101b0302447f73cda332921636ec9ec266c1eb255a0ffc5b62",
+    "url": "https://www.ourcommons.ca/members/en/votes/43/2/47/xml"
+  },
+  "review-43-2-93.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "3bf158d6b91b7b6dc04efa34bd69da7504466b520d2a4aa86479526966409371",
+    "url": "https://www.ourcommons.ca/members/en/votes/43/2/93/xml"
+  },
+  "review-44-1-1.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "80381c1779c7bd977c0273bb65dd08c90bbb80930aa77c2d2a9b589f85773d7d",
+    "url": "https://www.ourcommons.ca/members/en/votes/44/1/1/xml"
+  },
+  "review-44-1-232.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "67576d2b77dc7c2856815a9a94f8951aa29101514c6f587738c23cd5bec756ee",
+    "url": "https://www.ourcommons.ca/members/en/votes/44/1/232/xml"
+  },
+  "review-44-1-464.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "cd04d75164c9839021eb5c306ec65da9e476777ff0059831ea3c42178c35aa77",
+    "url": "https://www.ourcommons.ca/members/en/votes/44/1/464/xml"
+  },
+  "review-44-1-696.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "2f7f5503a7f49bb6d0e1196014bd5a0d47c593907f9518a2e5de7ae563e40f12",
+    "url": "https://www.ourcommons.ca/members/en/votes/44/1/696/xml"
+  },
+  "review-44-1-928.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "e04cfe34f2c3a4225cdea03e46f22f376ee5c5f551e4d8a140e3a22d65e2b5fa",
+    "url": "https://www.ourcommons.ca/members/en/votes/44/1/928/xml"
+  },
+  "review-45-1-1.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "3c1b32634949e318daea861f35ceede06fec60be48ea5f15e29d1fccde84f642",
+    "url": "https://www.ourcommons.ca/members/en/votes/45/1/1/xml"
+  },
+  "review-45-1-130.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "27c90b468446ed2c8d6c62f2a7dc5bfc1e42360ca51de640c611adbbbd19bb83",
+    "url": "https://www.ourcommons.ca/members/en/votes/45/1/130/xml"
+  },
+  "review-45-1-173.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "3ddcf72a50ad26b158c1c388733c0e9eb0b20f6d37f108af2b7371453ba3285a",
+    "url": "https://www.ourcommons.ca/members/en/votes/45/1/173/xml"
+  },
+  "review-45-1-44.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "75581dff05ea98676fc36f8274dbd4311c47bc823268d0099bb1ac7524fe67cc",
+    "url": "https://www.ourcommons.ca/members/en/votes/45/1/44/xml"
+  },
+  "review-45-1-87.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "77c0898b5e89c401798c54df3687cdc1aef2b95d58c0851720519d277eb86e43",
+    "url": "https://www.ourcommons.ca/members/en/votes/45/1/87/xml"
   },
   "whip-02dc8941254c.html": {
     "retrieved_date": "2026-09-11",
