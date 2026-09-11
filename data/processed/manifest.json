@@ -1,16 +1,17 @@
 {
-  "corpus_sha256": "794ebd9dee51cc7b1b3f017f2cc24acd1a6e2af8cf2ab5c4bb9c6fc8aed4d991",
+  "corpus_sha256": "18f61060bc81242bcf92a55b0538e6ac281193f845ef2eb57703e2258f9a8135",
   "documentation": "data/README.md",
   "files": {
+    "bill_sponsors.csv": "b19ff1bef98fdcfdffc99c06e241552f090ad0328d9d60a71843806220be7bec",
     "divisions.csv": "c5ee6f72c3314880d5bd37fb723935ec957d77c616921fc98630ecbf138e6c3d",
     "members.csv.gz": "a8d0f629436c12abadfc5011f04c02d25cae9a1d518b50bc502105d47ca81302",
     "repairs.json": "f164d15305e4dd8f996558b0ac28de3e145836a02bef52fefbe6c78e561e32cb",
-    "sources.json": "ddaa03ca89ab32df7f196e07fbb2e9a9dbe5228c8b5967d10ed30ac93fc6ef86"
+    "sources.json": "31e4b08b578d053485b7fab6d0c4deac608500d72ede1d668195dfc0a472e753"
   },
   "hash_convention": "SHA256 of UTF-8 LF content; decompress gzip before hashing",
   "members_csv_sha256": "a8d0f629436c12abadfc5011f04c02d25cae9a1d518b50bc502105d47ca81302",
   "note": "Observed member records only; absence is not a recorded abstention. 45-1 is incomplete.",
-  "schema_version": 1,
+  "schema_version": 2,
   "sessions": {
     "38-1": {
       "divisions": 190,
@@ -91,5 +92,5 @@
       "member_observations": 58266
     }
   },
-  "snapshot_id": "corpus-794ebd9dee51"
+  "snapshot_id": "corpus-18f61060bc81"
 }

@@ -44,7 +44,7 @@ Record-level comparison across those parliaments matches **256,676 joined observ
 | Reproduce and export | `reproduce.py --check --repeat` | Tests, integrity, source comparisons, E1/E7 and corrected export match saved results and repeat |
 | Interpret | E1/E7 findings and sensitivity tables | Descriptive conclusions with visible denominators and remaining uncertainty |
 
-Live vote collection has been demonstrated on the one-division 40-1 session; larger live refreshes still need review. Current bill exports omit all 4,411 historical sponsor values, so richer historical archives are retained. See [the workflow and update procedure](REPRODUCING.md).
+Live vote collection has been demonstrated on the one-division 40-1 session; larger live refreshes still need review. Bulk bill exports omit sponsor fields, but [sponsor recovery](audit/SPONSOR_RECOVERY_REVIEW.md) now links all **4,596 bills to 783 official Person IDs** using sponsor-filtered records and direct-detail checks. Original sponsor labels remain available, and dated sponsor histories are not inferred. See [the workflow and update procedure](REPRODUCING.md).
 
 ## Reproduce the results
 
@@ -76,6 +76,7 @@ Read [REPRODUCING.md](REPRODUCING.md) for the data contract, commands, output sc
 
 | Document | Purpose |
 | --- | --- |
+| [Sponsor recovery](audit/SPONSOR_RECOVERY_REVIEW.md) | Bill-to-Person-ID links, source discrepancies, direct-detail checks and temporal limits |
 | [Current project review](audit/PACKAGING_AND_STORY_REVIEW.md) | Dataset packaging, denominator checks, current findings and open work |
 | [Dataset dictionary](data/README.md) | Corrected tables, joins, provenance, versions and citation guidance |
 | [Implementation audit](audit/IMPLEMENTATION_AUDIT.md) | Changes against the reviewed baseline, evidence, tests, and remaining uncertainty |

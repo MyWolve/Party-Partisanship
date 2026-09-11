@@ -61,6 +61,7 @@ def main():
         logs['benchmark_rebuild'] = run('experiments/build_benchmarks_e7.py', '--check')
         logs['reconciliation'] = run('tools/reconcile_members.py', '--check')
         logs['source_coverage'] = run('tools/review_source_coverage.py', '--check')
+        logs['sponsors'] = run('tools/recover_sponsors.py', '--check')
         first = staging/'first'
         experiments(first)
         tables = outputs(first, numeric_only=True)
@@ -96,6 +97,7 @@ def main():
             'commands': ['tools/build_audit_data.py --check', '-m unittest discover -s tests -v',
                          'check_data.py', 'experiments/build_benchmarks_e7.py --check', 'tools/reconcile_members.py --check',
                          'tools/review_source_coverage.py --check',
+                         'tools/recover_sponsors.py --check',
                          'experiments/experiment_e1.py', 'experiments/experiment_e7.py',
                          'tools/export_dataset.py', 'tools/verify_dataset.py'],
             'table_sha256': aggregate(tables), 'outputs': outputs(first), 'repeat_check': repeats,

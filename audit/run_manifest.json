@@ -1,7 +1,7 @@
 {
   "code_files": {
     ".github/workflows/reproducibility.yml": "bc963f7342096a97c593f3d2159e7ecb4f04ce379444e8f7b58d15ba9fcbb1f5",
-    "bill_data.py": "f9d57c2624a1ed55e175cf9af22f4a77ea5e651aca8a7f64e2a70361b80bd0e5",
+    "bill_data.py": "6d3c0475641df7ed7ae15b4385b6ddfac91f063899b12804a991303ae05ea0d9",
     "bill_info.py": "6921d163581c057abeab7385bee2b0970b35c7a817e6234e44c8dbe10a311aed",
     "can_scrape.py": "085240237feb29cd59e46e121ca42db59f0ec49d342164df78ae1a4ddba269c3",
     "check_data.py": "e70a93f7f3376db0a8fed81e924f406cd89470ed40923721ecf2cd43b865da89",
@@ -11,7 +11,7 @@
     "experiments/experiment_e1.py": "3a3947eb2f89650886ff72b7d62c98cbb5ffe33702445646a7acc6b11042707b",
     "experiments/experiment_e7.py": "74c0017c797aaffee5331aa70950064722c502240ade3062cab1c13ef9e8c5ba",
     "provenance.py": "d926f81b7c8f4b798167cfb4bdc6dde81cb5b4a1a527db657a883dfd3be3da86",
-    "reproduce.py": "67f600940c327fc2613f455c8456f5892c7a366d941e9867809f0d6477bf2312",
+    "reproduce.py": "6d952078bda8c4377006386d34b234840f508112efdf2b33defb4f38c1f4be80",
     "requirements-lock.txt": "c731839447bd2d8e216ca8436a7d25da53bffb46aee26f3c503dc7271b7619d1",
     "requirements.txt": "c5c47ecfbac90e9ce72b9e8a547f723374dc09af7dd51685093d122c8199671f",
     "tests/test_collection.py": "fc932f770ca3a16c0a92f9e894ba9fd429d6f74be726a094fd0db6b1428c9e23",
@@ -19,18 +19,20 @@
     "tests/test_pipeline.py": "b9449141fbbdb82564891be0f3678db273e5256e70edfc117bfffe81fa959199",
     "tests/test_reconciliation.py": "878a1bca30753a42eebd890b43e52800750ab4e506ee46cf7084ed5da970d9e5",
     "tests/test_source_coverage.py": "0feef5ff62482a20956019ec4db4e862ac7d673f398b01e184bec90fef007769",
+    "tests/test_sponsors.py": "e39208559850419998f61ed22eeb4d2f9d00632ec92d437b19f8dd0f86741133",
     "tools/build_audit_data.py": "2f088f87e78f77c61456e4cf2367b4b939a795bf1fd6a2c955011226393b9533",
-    "tools/collect_bills.py": "2b85bf7fac95c309f8c10288203bc5ede04dd86aef60ee37206af81457329c57",
-    "tools/export_dataset.py": "77c7118964d75ac38e19adcdc105c3e0e1fc17fbdbdfd4831fdeecbf5a022db1",
+    "tools/collect_bills.py": "534ae732524fd5c1457a6e725f51d9afd6fdf13eff08a4ffc7677c35b34dc9c4",
+    "tools/export_dataset.py": "f185eaf3e794817fe171ce8f76734604e63565730e4b4d0d8319a11a8128be53",
     "tools/fetch_audit_evidence.py": "62942268a4cae0328785b10e2d24f95738189a3b6571f9c7fb8afbc8dcf11f1e",
     "tools/freeze_inputs.py": "f42ef4b447d0e0b3ee005120a5474509f571591a34ab4c0dc69ec38e6afc7962",
     "tools/reconcile_members.py": "5c083e240c809f2e9f3855c25030a926cb053d00e18eaae9469ab686cbce0458",
+    "tools/recover_sponsors.py": "81ed320ec7ef9814799a9dc52ea50238033c040468559facf1b4ff8fc74c0cb3",
     "tools/review_source_coverage.py": "0e4c92b2343d5cfacb385d764c9c26b7a94e2fe92fa2d1c2a405b6dae6436c5d",
-    "tools/verify_dataset.py": "37a564d9dd21fba863e578df3ab85c7bfa368737ea33b996eb3f4894a3e9eed3",
+    "tools/verify_dataset.py": "ef82173418922152926ad104a3e5e7466e9f01a7151bf419f3b318c40d05d025",
     "visualize_parliament.py": "16ba7296cd8bbc322c9b4c52a5caef204bee779588a08cdf8de04d63373ab37d",
     "vote_data.py": "5c0d4c07e0f8089db697c3881264489193fabc2c278319ffe2c83129b15518f3"
   },
-  "code_sha256": "058c3d672fe2db6721be09c06a259f8e7d369b19c726c0c652950f017be8cb2c",
+  "code_sha256": "58e56ed6b1a3ad850196af451ec2c132c2405b206da29c814e558bdeff652798",
   "commands": [
     "tools/build_audit_data.py --check",
     "-m unittest discover -s tests -v",
@@ -38,12 +40,13 @@
     "experiments/build_benchmarks_e7.py --check",
     "tools/reconcile_members.py --check",
     "tools/review_source_coverage.py --check",
+    "tools/recover_sponsors.py --check",
     "experiments/experiment_e1.py",
     "experiments/experiment_e7.py",
     "tools/export_dataset.py",
     "tools/verify_dataset.py"
   ],
-  "corpus_sha256": "794ebd9dee51cc7b1b3f017f2cc24acd1a6e2af8cf2ab5c4bb9c6fc8aed4d991",
+  "corpus_sha256": "18f61060bc81242bcf92a55b0538e6ac281193f845ef2eb57703e2258f9a8135",
   "dependencies": {
     "certifi": "2026.7.22",
     "charset-normalizer": "3.5.1",
@@ -63,13 +66,14 @@
     "six": "1.17.0",
     "urllib3": "2.7.0"
   },
-  "git_base_revision": "8fb08c15fe33023c2f138e38496dcbb4df944f00",
+  "git_base_revision": "d0ebbdd0a387682cca82d532df5910d0e938a0bf",
   "outputs": {
+    "data/processed/bill_sponsors.csv": "b19ff1bef98fdcfdffc99c06e241552f090ad0328d9d60a71843806220be7bec",
     "data/processed/divisions.csv": "c5ee6f72c3314880d5bd37fb723935ec957d77c616921fc98630ecbf138e6c3d",
-    "data/processed/manifest.json": "77326e2411fe8c3bb5747bf9af02d6385c6e1161368ec8bf573865b0b25feaaa",
+    "data/processed/manifest.json": "e95a1d5a7f3f9c6585029954ad20ad83815ed8783b8d1a761ba0841b29397a51",
     "data/processed/members.csv.gz": "a8d0f629436c12abadfc5011f04c02d25cae9a1d518b50bc502105d47ca81302",
     "data/processed/repairs.json": "f164d15305e4dd8f996558b0ac28de3e145836a02bef52fefbe6c78e561e32cb",
-    "data/processed/sources.json": "ddaa03ca89ab32df7f196e07fbb2e9a9dbe5228c8b5967d10ed30ac93fc6ef86",
+    "data/processed/sources.json": "31e4b08b578d053485b7fab6d0c4deac608500d72ede1d668195dfc0a472e753",
     "experiments/results_e1/FINDINGS_E1.md": "f589b6512132d23b1793105aa6063c16e6171f5d850773ec1a99248ed86f803e",
     "experiments/results_e1/bill_units.csv": "17bd32f797829ab23916ab49be4d2be24072ceaf23d3064d7c206abf4f344437",
     "experiments/results_e1/classification_audit.csv": "72d85ae1877bf2095e475b3e094f18191f79827980b9be482d95a892b228946a",
@@ -95,5 +99,5 @@
   },
   "saved_results_match": true,
   "status": "pass",
-  "table_sha256": "1af377ea3a81fdf5d7bbcc4ff128a1bad97cb4de2ea936718942c8fc75b86703"
+  "table_sha256": "9ee13d629f4a474feae84c23bcd725ed7aabf3b1a938107c76ac00d0d3dd122b"
 }

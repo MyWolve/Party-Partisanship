@@ -70,6 +70,17 @@ def verify(dataset, classification):
                      for p in ('Conservative', 'Liberal', 'NDP', 'Bloc Québécois', 'Green Party')}
     if checked != expected_keys:
         raise ValueError('Incomplete E1 comparison universe')
+    if manifest.get('schema_version', 1) >= 2:
+        with (dataset/'bill_sponsors.csv').open(encoding='utf-8', newline='') as handle:
+            sponsors = {}
+            for r in csv.DictReader(handle):
+                key = r['session'], r['bill']
+                if key in sponsors or not r['sponsor_person_id'].isdigit() or int(r['sponsor_person_id']) <= 0:
+                    raise ValueError('Duplicate bill or invalid sponsor identity in export')
+                sponsors[key] = r
+        referenced = {(r['session'], r['bill']) for r in divisions.values() if r['bill_type_source'] == 'legisinfo'}
+        if not referenced.issubset(sponsors):
+            raise ValueError('Export lacks sponsor coverage for official bill lookups')
     print(f'Export round-trip: {sum(counts.values())} members; {len(checked)} E1 party/division denominators match')
 
 

@@ -21,7 +21,7 @@ This command performs the following stages and fails on the first unsuccessful s
 3. Run the hand-calculated and failure-path tests.
 4. Check metadata/member coverage, CSV schemas, identities, dates, and exact official flag totals in all 13 sessions.
 5. Rebuild all 36 benchmark values from the deposited matrices and compare their CSV records with the baseline without overwriting it.
-6. Rebuild member reconciliation and later-session/bill coverage tables and compare them with saved reviews.
+6. Rebuild member reconciliation, later-session/bill coverage and sponsor identity/count tables and compare them with saved reviews.
 7. Run E1 and E7 into temporary directories. E1 includes bill-weighting and observed-party-voter checks. Each experiment also performs its own integrity preflight.
 8. Export the corrected member/division package into staging, read the CSVs back independently, verify tallies and compare party denominators/minority counts with E1's classification table.
 9. Run both experiments and the export a second time and compare generated tables, findings and decompressed member CSV content. Compare PNG bytes separately.
@@ -130,3 +130,9 @@ Use `python tools/collect_bills.py --session 40-1 --output incoming/new-bill-rev
 The [source coverage review](audit/SOURCE_COVERAGE_REVIEW.md) checks 35 fixed later-session divisions (10,178 matching member records) and bill exports across all 13 sessions. All 4,411 historical bill numbers/types/titles agree, but the new exports lose their sponsor names, so historical archives are retained. A reviewed 45-1 supplement replaces numbering inference for 107 divisions without changing categories.
 
 `python tools/review_source_coverage.py --check` reproduces the saved comparison tables offline and is included in `reproduce.py`. The separately invoked `--fetch` mode retrieves absent snapshots and verifies existing hashes. This sample is a same-publisher format/stability check, not full independent verification of later parliaments.
+
+## Sponsor identity recovery
+
+`python tools/recover_sponsors.py --check` reconstructs all 4,596 bill/sponsor links from frozen official indexes and filtered lists, including 113 direct bill-detail checks. Six exact index-count discrepancies and their session-specific responses are preserved, while full bill membership must still match the frozen universe uniquely. The resulting `audit/sponsors` tables and exported `data/processed/bill_sponsors.csv` reproduce offline. Source evidence uses gzip with separate stored-file and decompressed-response hashes in the ledger.
+
+For future collection, add `--with-sponsors` to `tools/collect_bills.py` to retrieve bill-detail JSON and produce a sponsor identity sidecar in a new review directory. It is an explicit live operation and cannot be combined with the offline `--source-xml` option. This does not overwrite the frozen bill archive. See [the sponsor review](audit/SPONSOR_RECOVERY_REVIEW.md) and [field dictionary](data/README.md#bill-sponsor-dictionary) before attributing a sponsor's party or role to a historical division.

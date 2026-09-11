@@ -1,5 +1,7 @@
 # Later-session source coverage and bill archive review
 
+Subsequent update: [sponsor recovery](SPONSOR_RECOVERY_REVIEW.md) restores bill-level sponsor names and official Person IDs through separately archived interfaces. The bulk-export sponsor omissions documented below remain observable; richer original archives are preserved.
+
 ## Outcome
 
 A fixed later-session XML sample matches the frozen corpus, and bill-refresh coverage is now checked across all 13 sessions. The review also closes a concrete archive gap: 45-1 now uses a reviewed official bill-type supplement instead of relying solely on numbering inference. Original exports and historical bill XMLs remain untouched.

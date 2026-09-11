@@ -15,6 +15,7 @@ from experiment_io import write_csv, write_json
 from provenance import digest, verify_inputs
 from vote_data import binary_vote, decisions, read_vote_rows, tally
 from visualize_parliament import AFFILIATION_ALIASES, PARTIES
+from tools.recover_sponsors import build as build_sponsors
 
 MEMBER_FIELDS = ['session', 'division', 'person_id', 'member', 'party_raw', 'party_analytic',
                  'yea', 'nay', 'paired', 'binary_vote', 'repair_id', 'source_file']
@@ -71,6 +72,7 @@ def export(destination):
                                            first_date=min(m['date'] for m in meta.values()),
                                            last_date=max(m['date'] for m in meta.values()))
     write_csv(destination/'divisions.csv', metadata)
+    write_csv(destination/'bill_sponsors.csv', build_sponsors())
     write_json(destination/'repairs.json', decisions())
     for name in ('sources.json',):
         write_json(destination/name, json.loads((ROOT/'evidence'/name).read_text(encoding='utf-8')))
@@ -81,7 +83,7 @@ def export(destination):
     with gzip.open(destination/'members.csv.gz', 'rb') as handle:
         import hashlib
         member_content = hashlib.file_digest(handle, 'sha256').hexdigest()
-    write_json(destination/'manifest.json', dict(schema_version=1, corpus_sha256=corpus,
+    write_json(destination/'manifest.json', dict(schema_version=2, corpus_sha256=corpus,
         snapshot_id=f'corpus-{corpus[:12]}', sessions=counts,
         members_csv_sha256=member_content,
         files=files, hash_convention='SHA256 of UTF-8 LF content; decompress gzip before hashing',

@@ -1,5 +1,7 @@
 # Dataset packaging and research presentation review
 
+Subsequent update: [sponsor recovery](SPONSOR_RECOVERY_REVIEW.md) resolves the missing bill-level sponsor/Person-ID mapping and adds export schema version 2. The validation counts and digest below describe this earlier packaging pass.
+
 ## Outcome
 
 The project now supplies the corrected corpus as ordinary CSV tables, connects the collection/review/reproduction workflow in the README, and tests two important denominator choices before presenting the headline contrast. The original frozen inputs, E1 headline and E7 benchmark results are unchanged.

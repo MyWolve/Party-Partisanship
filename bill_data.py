@@ -1,9 +1,40 @@
 """Strict adapters for the archived and current LEGISinfo XML schemas."""
 import re
+import json
 import xml.etree.ElementTree as ET
 
 TYPES={'House Government Bill', 'Senate Government Bill', 'Private Member’s Bill',
        "Private Member's Bill", 'Senate Public Bill', 'Senate Private Bill'}
+
+
+def xml_text(value):
+    """Match XML's newline normalization and this adapter's outer trimming."""
+    return value.replace('\r\n', '\n').replace('\r', '\n').strip()
+
+
+def parse_bill_detail(data, session, number):
+    """The per-bill JSON supplies sponsor IDs absent from bulk exports."""
+    records = json.loads(data)
+    if not isinstance(records, list) or len(records) != 1:
+        raise ValueError('Expected exactly one detailed bill')
+    r = records[0]
+    if (f"{r.get('ParliamentNumber')}-{r.get('SessionNumber')}" != session
+            or r.get('NumberCode') != number):
+        raise ValueError('Wrong detailed bill/session')
+    person = r.get('SponsorPersonId')
+    name = (r.get('SponsorPersonName') or '').strip()
+    if type(person) is not int or person <= 0 or not name:
+        raise ValueError('Missing detailed sponsor identity')
+    if (r.get('BillDocumentTypeNameEn') not in TYPES or not r.get('LongTitleEn')
+            or type(r.get('Id')) is not int or r['Id'] <= 0
+            or r.get('OriginatingChamberOrganizationId') != (1 if number.startswith('C-') else 2)):
+        raise ValueError('Invalid detailed bill metadata')
+    return dict(bill=number, bill_id=r['Id'], type=r['BillDocumentTypeNameEn'], title=xml_text(r['LongTitleEn']),
+        sponsor=name, sponsor_person_id=str(person),
+        originating_chamber='House' if r['OriginatingChamberOrganizationId'] == 1 else 'Senate',
+        sponsor_senate_affiliation_id=r.get('SponsorSenateSystemAffiliationId'),
+        sponsor_role=(r.get('SponsorAffiliationTitleEn') or '').strip(),
+        temporal_scope='bill_record_at_retrieval')
 
 def parse_bill_xml(data, session):
     root=ET.fromstring(data)

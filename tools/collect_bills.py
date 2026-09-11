@@ -8,7 +8,7 @@ import re
 import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from bill_data import parse_bill_xml
+from bill_data import parse_bill_xml, parse_bill_detail
 from can_scrape import fetch
 from experiment_io import write_json
 
@@ -22,7 +22,9 @@ def compare_bills(old,new):
     return changes
 
 
-def collect(session, output, source_xml=None, root=ROOT):
+def collect(session, output, source_xml=None, root=ROOT, with_sponsors=False):
+    if with_sponsors and source_xml is not None:
+        raise ValueError('Sponsor retrieval is a live operation; omit --source-xml')
     if not re.fullmatch(r'[1-9]\d*-[1-9]\d*',session): raise ValueError('Invalid session')
     output=Path(output).resolve();output.mkdir(parents=True,exist_ok=False)
     url=f'https://www.parl.ca/legisinfo/en/bills/xml?parlsession={session}'
@@ -36,6 +38,27 @@ def collect(session, output, source_xml=None, root=ROOT):
         (output/'bills.xml').write_bytes(data)
         report.update(sha256=hashlib.sha256(data).hexdigest(),bytes=len(data))
         bills=parse_bill_xml(data,session)
+        if with_sponsors:
+            details=output/'details';details.mkdir()
+            sponsors={}
+            report['sponsor_responses']=[]
+            for number in sorted(bills):
+                detail_url=f'https://www.parl.ca/legisinfo/en/bill/{session}/{number.lower()}/json'
+                response=fetch(detail_url)
+                raw=response.content
+                (details/f'{number}.json').write_bytes(raw)
+                report['sponsor_responses'].append(dict(bill=number,url=detail_url,
+                    resolved_url=response.url,http_status=response.status_code,
+                    received_utc=datetime.now(timezone.utc).isoformat(),
+                    content_type=response.headers.get('Content-Type',''),
+                    bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest()))
+                detail=parse_bill_detail(raw,session,number)
+                if any(detail[k]!=bills[number][k] for k in ('type','title')):
+                    raise ValueError(f'Sponsor detail title/type differs: {number}')
+                sponsors[number]=detail
+                bills[number]['sponsor']=detail['sponsor']
+            write_json(output/'bill_sponsors.json',sponsors)
+            report['sponsor_identity_records']=len(sponsors)
         baseline=Path(root)/'House of Commons'/f'{session}.xml'
         old=parse_bill_xml(baseline.read_bytes(),session) if baseline.exists() else {}
         changes=compare_bills(old,bills)
@@ -60,8 +83,10 @@ def main():
     parser.add_argument('--session',required=True)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--source-xml',type=Path,help='Validate an existing download offline')
+    parser.add_argument('--with-sponsors',action='store_true',
+                        help='Also archive per-bill JSON and recover sponsor Person IDs (extra live requests)')
     args=parser.parse_args()
-    report=collect(args.session,args.output,args.source_xml)
+    report=collect(args.session,args.output,args.source_xml,with_sponsors=args.with_sponsors)
     print(f"{report['status']}: {report['bills']} bills, {report['changed_bills']} changed; no corpus files replaced")
 
 if __name__=='__main__': main()

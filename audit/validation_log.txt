@@ -64,9 +64,17 @@ test_missing_supplement_cannot_silently_revert (test_source_coverage.CoverageTes
 test_real_sample_and_type_upgrade (test_source_coverage.CoverageTests.test_real_sample_and_type_upgrade) ... ok
 test_xml_rejects_duplicate_missing_and_html (test_source_coverage.CoverageTests.test_xml_rejects_duplicate_missing_and_html) ... ok
 test_xml_rejects_wrong_division_and_flags (test_source_coverage.CoverageTests.test_xml_rejects_wrong_division_and_flags) ... ok
+test_detailed_identity_and_namespace (test_sponsors.SponsorTests.test_detailed_identity_and_namespace) ... ok
+test_filtered_list_rejects_duplicate_and_wrong_shape (test_sponsors.SponsorTests.test_filtered_list_rejects_duplicate_and_wrong_shape) ... ok
+test_index_identity_and_count (test_sponsors.SponsorTests.test_index_identity_and_count) ... ok
+test_index_rejects_missing_duplicate_or_conflicting_identity (test_sponsors.SponsorTests.test_index_rejects_missing_duplicate_or_conflicting_identity) ... ok
+test_json_title_normalizes_only_xml_newlines_and_outer_space (test_sponsors.SponsorTests.test_json_title_normalizes_only_xml_newlines_and_outer_space) ... ok
+test_name_comparison_is_conservative (test_sponsors.SponsorTests.test_name_comparison_is_conservative) ... ok
+test_same_id_spacing_variant_preserves_aliases_and_count (test_sponsors.SponsorTests.test_same_id_spacing_variant_preserves_aliases_and_count) ... ok
+test_sponsor_collection_retains_identity_and_rejects_wrong_detail (test_sponsors.SponsorTests.test_sponsor_collection_retains_identity_and_rejects_wrong_detail) ... ok
 
 ----------------------------------------------------------------------
-Ran 61 tests in 2.938s
+Ran 69 tests in 2.941s
 
 OK
 Export round-trip: 4 members; 5 E1 party/division denominators match
@@ -115,3 +123,6 @@ reconciliation
 
 source_coverage
 Reviewed 13 bill sessions and 35 sampled divisions; 0 member differences
+
+sponsors
+Recovered 4596 bill sponsors without name-based identity inference
