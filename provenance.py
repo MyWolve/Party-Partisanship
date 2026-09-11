@@ -1,5 +1,6 @@
 """Portable input fingerprints, separate from environment-specific run metadata."""
 import hashlib
+import gzip
 import json
 from pathlib import Path
 
@@ -10,6 +11,8 @@ MANIFEST = ROOT / 'audit/input_manifest.json'
 def digest(path, binary=False):
     data = path.read_bytes()
     if not binary:
+        if path.suffix == '.gz':
+            data = gzip.decompress(data)
         data = data.replace(b'\r\n', b'\n')
     return hashlib.sha256(data).hexdigest()
 

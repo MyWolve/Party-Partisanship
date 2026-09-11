@@ -21,9 +21,11 @@ This command performs the following stages and fails on the first unsuccessful s
 3. Run the hand-calculated and failure-path tests.
 4. Check metadata/member coverage, CSV schemas, identities, dates, and exact official flag totals in all 13 sessions.
 5. Rebuild all 36 benchmark values from the deposited matrices and compare their CSV records with the baseline without overwriting it.
-6. Run E1 and E7 into temporary directories. Each experiment also performs its own integrity preflight.
-7. Run both experiments a second time and compare the generated tables and findings. Compare PNG bytes separately.
-8. Verify that the inputs did not change during execution, then compare the generated tables and findings with the saved results.
+6. Rebuild member reconciliation and later-session/bill coverage tables and compare them with saved reviews.
+7. Run E1 and E7 into temporary directories. E1 includes bill-weighting and observed-party-voter checks. Each experiment also performs its own integrity preflight.
+8. Export the corrected member/division package into staging, read the CSVs back independently, verify tallies and compare party denominators/minority counts with E1's classification table.
+9. Run both experiments and the export a second time and compare generated tables, findings and decompressed member CSV content. Compare PNG bytes separately.
+10. Verify that the inputs did not change during execution, then compare generated tables, findings and the dataset package with saved results.
 
 A failed integrity check or benchmark comparison cannot replace experiment outputs. `--check` leaves saved analytical outputs intact; the separate run manifest and validation log are refreshed to describe the completed audit. A failure leaves any previous manifest as a historical record, not a success record for the failed attempt.
 
@@ -33,7 +35,7 @@ To regenerate outputs after a deliberate reviewed change:
 python reproduce.py --repeat
 ```
 
-Results are staged and copied into `experiments/results_e1` and `experiments/results_e7` only after the preceding checks succeed. This protects against analytical validation failures, not hardware failure during the final file copies.
+Results are staged and copied into `experiments/results_e1`, `experiments/results_e7` and `data/processed` only after the preceding checks succeed. This protects against analytical validation failures, not hardware failure during the final file copies.
 
 ## Individual commands
 
@@ -49,6 +51,8 @@ python experiments/experiment_e7.py
 The experiment scripts accept `--output-dir PATH`. Both stop before writing results when the corpus is invalid. E7 also rejects missing, duplicate, invalid, unexpected, or out-of-tolerance benchmark records before output creation. Do not invoke the audit builder with Python optimization (`-O`); its evidence assertions must remain enabled, and it explicitly rejects that mode.
 
 ## Data contract
+
+For the ready-to-use corrected member/division tables, field dictionary, composite keys, snapshot IDs and citation guidance, see [data/README.md](data/README.md). Reproduction verifies their decompressed content as well as the experiment tables. E1's `binary_members` field counts observed unpaired single-sided party voters; its new design checks use the main documented-free-excluded population.
 
 Raw parliamentary CSVs and XMLs are preserved. `audit/data_decisions.json` binds each correction to the exact raw member file and metadata row. A changed source record requires re-audit. `vote_data.py` applies the following evidence-based transformations in memory:
 
@@ -81,6 +85,9 @@ E7 averages Rice over divisions with observed party votes. MP loyalty gives each
 | E1 `sensitivity.csv` | Pooled governing-party comparison × scope × variant; both denominators, counts, rates, ratio |
 | E1 `outliers.csv` | Governing-party government-bill divisions with dissent; names and status included for inspection |
 | E1 `headline.json` | Main comparison and counts used by the generated findings |
+| E1 `bill_units.csv` | Session × category × numbered bill; eligible divisions and dissent fraction |
+| E1 `design_checks.csv` | Category; full and numbered-only division rates, equal session–bill means and selection counts |
+| E1 `participation_checks.csv` | Category × observed-party-voter band; division incidence and minority member-vote intensity |
 | E7 `unity_by_parliament.csv` | Parliament × party; Rice variants, loyalty, qualifying MP count, contested House-division count |
 | E7 `benchmark_comparison.csv` | Parliament × party × metric; observed/reference values, difference, tolerance, pass status, source |
 | E7 `validation_summary.json` | Expected comparison count, exact matches, largest difference, tolerance, overall status |

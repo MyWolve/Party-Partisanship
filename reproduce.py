@@ -35,12 +35,15 @@ def run(script, *args):
 def outputs(directory, numeric_only=False):
     return {p.relative_to(directory).as_posix(): digest(p, binary=p.suffix=='.png')
             for p in sorted(directory.rglob('*')) if p.is_file()
-            and (not numeric_only or p.suffix in ('.csv', '.json', '.md'))}
+            and (not numeric_only or p.suffix in ('.csv', '.json', '.md', '.gz'))}
 
 
 def experiments(destination):
-    run('experiments/experiment_e1.py', '--output-dir', destination/'results_e1')
-    run('experiments/experiment_e7.py', '--output-dir', destination/'results_e7')
+    run('experiments/experiment_e1.py', '--output-dir', destination/'experiments/results_e1')
+    run('experiments/experiment_e7.py', '--output-dir', destination/'experiments/results_e7')
+    run('tools/export_dataset.py', '--output-dir', destination/'data/processed')
+    run('tools/verify_dataset.py', '--dataset', destination/'data/processed',
+        '--classification', destination/'experiments/results_e1/classification_audit.csv')
 
 
 def main():
@@ -71,15 +74,15 @@ def main():
         if verify_inputs() != corpus:
             raise ValueError('Inputs changed during reproduction')
         if args.check:
-            differences = [p for p, sha in tables.items() if not (ROOT/'experiments'/p).exists()
-                           or digest(ROOT/'experiments'/p) != sha]
+            differences = [p for p, sha in tables.items() if not (ROOT/p).exists()
+                           or digest(ROOT/p) != sha]
             if differences:
                 raise ValueError(f'Saved results differ: {differences}')
             print('PASS: all regenerated tables and findings match the saved outputs')
         else:
             for p in first.rglob('*'):
                 if p.is_file():
-                    dest = ROOT/'experiments'/p.relative_to(first)
+                    dest = ROOT/p.relative_to(first)
                     dest.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copyfile(p, dest)
             shutil.copyfile(staging/'integrity.json', ROOT/'audit/integrity.json')
@@ -93,7 +96,8 @@ def main():
             'commands': ['tools/build_audit_data.py --check', '-m unittest discover -s tests -v',
                          'check_data.py', 'experiments/build_benchmarks_e7.py --check', 'tools/reconcile_members.py --check',
                          'tools/review_source_coverage.py --check',
-                         'experiments/experiment_e1.py', 'experiments/experiment_e7.py'],
+                         'experiments/experiment_e1.py', 'experiments/experiment_e7.py',
+                         'tools/export_dataset.py', 'tools/verify_dataset.py'],
             'table_sha256': aggregate(tables), 'outputs': outputs(first), 'repeat_check': repeats,
             'saved_results_match': args.check, 'status': 'pass'}
         # Environment/log metadata is separate from deterministic analytical outputs.

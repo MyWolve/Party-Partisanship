@@ -18,6 +18,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 import bill_info
 from check_data import require_valid_corpus, SESSIONS
 from experiment_io import write_csv, write_json, plot_style
+from experiments.design_checks import summarize
 from visualize_parliament import WHIPPED_PARTIES, PARTY_COLORS, load_parliament, find_rebels, vote_number, count_yea_nay
 
 RESULTS_DIR = PROJECT_ROOT / 'experiments/results_e1'
@@ -59,6 +60,7 @@ def gather_session(directory):
                 stage=meta['stage'] or '', bill=meta['bill_number'], bill_type_source=meta['bill_type_source'],
                 whip_status=status['status'], member_scope=status['scope'], source_id=status['source_id'],
                 majority_defined=r is not None, dissenters=len(r) if r is not None else '',
+                binary_members=sum(count_yea_nay(votes[party])),
                 contested=contested, subject=meta['subject']))
             if r is None:
                 continue
@@ -113,6 +115,10 @@ def main(output_dir=None):
     write_csv(destination / 'classification_audit.csv', classifications)
     write_csv(destination / 'sensitivity.csv', sensitivity)
     write_csv(destination / 'outliers.csv', sorted(outliers, key=lambda r: (-r['dissenters'], r['session'], r['division'])))
+    bill_units, weighting, participation = summarize(classifications)
+    write_csv(destination / 'bill_units.csv', bill_units)
+    write_csv(destination / 'design_checks.csv', weighting)
+    write_csv(destination / 'participation_checks.csv', participation)
     main_result = next(r for r in sensitivity if r['scope'] == MAIN_SCOPE and r['variant'] == 'all')
     supply = pooled['supply', MAIN_SCOPE, 'all']
     headline = dict(main_result, supply_divisions=supply[0], supply_with_dissent=supply[1],
@@ -170,6 +176,29 @@ def main(output_dir=None):
         'Uncertain excluded additionally removes audited unresolved cases; it does not imply that the remainder has verified whip instructions. '
         'Unknown bill as government tests the malformed bill subject separately. The CSV also contains contested-only versions '
         '(no more than 95% of observed binary House votes on either side).', '',
+        '## Repeated bills and participating caucus size', '',
+        '| Category | All divisions | Numbered-bill divisions | Equal bill mean | Session–bill units | Unnumbered divisions omitted from bill check |',
+        '| --- | --- | --- | --- | --- | --- |']
+    for r in weighting:
+        lines.append(f"| {r['category']} | {r['all_division_rate']:.2f}% | {r['numbered_division_rate']:.2f}% | "
+                     f"{r['equal_bill_mean_rate']:.2f}% | {r['session_bill_units']} | {r['unnumbered_divisions']} |")
+    lines += ['', 'The equal-bill mean first computes each session–bill’s fraction of eligible divisions containing dissent, '
+        'then weights those bills equally. It is not the fraction of bills with any dissent. Bill numbers restart across sessions; '
+        'the key includes session. The numbered-only division rate separates selection changes from weighting changes. '
+        'Private members’ motions without a bill number remain in the headline but cannot enter this bill-level comparison. '
+        'Reintroduced bills can still be related across sessions; no independence or causal claim follows.', '',
+        '| Category | Observed party voters | Divisions | Divisions with dissent | Minority member-votes |',
+        '| --- | --- | --- | --- | --- |']
+    for r in participation:
+        dr = f"{r['division_dissent_rate']:.2f}%" if r['divisions'] else 'undefined'
+        mr = f"{r['minority_member_vote_rate']:.2f}%" if r['binary_member_votes'] else 'undefined'
+        lines.append(f"| {r['category']} | {r['observed_party_voters']} | {r['divisions']} | {dr} | {mr} |")
+    lines += ['', 'Size bands count observed unpaired binary voters in the governing party, not seats or the full caucus roster. '
+        'Bands (1–100, 101–150, 151+) are descriptive; they do not adjust for session, issue, attendance or bill composition. '
+        'The minority member-vote rate divides minority votes by all eligible binary member-votes, so it measures intensity '
+        'and weights larger participating groups more heavily. Tied majorities and documented free stages are excluded throughout. '
+        'These are diagnostics of denominator choices, not an estimated effect of caucus size. '
+        'Inspect [bill units](bill_units.csv), [weighting](design_checks.csv), and [participation](participation_checks.csv).', '',
         '## Interpretation and limits', '',
         'These are descriptive associations between business types and caucus voting patterns. They do not isolate the effect of whip enforcement. '
         'Issues, participating MPs, caucus size, repeated divisions on the same bill, and party policy can all differ across categories. '

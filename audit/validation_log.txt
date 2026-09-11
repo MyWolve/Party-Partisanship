@@ -14,6 +14,12 @@ test_exact_division_lookup (test_collection.LegacyTests.test_exact_division_look
 test_floor_crossing_and_ties (test_collection.LegacyTests.test_floor_crossing_and_ties) ... ok
 test_identity_survives_display_name_change (test_collection.LegacyTests.test_identity_survives_display_name_change) ... ok
 test_metadata_headers_are_required_and_unique (test_collection.LegacyTests.test_metadata_headers_are_required_and_unique) ... ok
+test_repeated_bill_and_session_keys (test_design_and_export.DesignChecks.test_repeated_bill_and_session_keys) ... ok
+test_scope_exclusions_and_size_boundaries (test_design_and_export.DesignChecks.test_scope_exclusions_and_size_boundaries) ... ok
+test_unnumbered_and_undefined_are_not_zero (test_design_and_export.DesignChecks.test_unnumbered_and_undefined_are_not_zero) ... ok
+test_compression_metadata_does_not_change_content_hash (test_design_and_export.ExportChecks.test_compression_metadata_does_not_change_content_hash) ... ok
+test_flags_and_repair_provenance (test_design_and_export.ExportChecks.test_flags_and_repair_provenance) ... ok
+test_round_trip_rejects_wrong_analysis_denominator_and_changed_content (test_design_and_export.ExportChecks.test_round_trip_rejects_wrong_analysis_denominator_and_changed_content) ... ok
 test_complete_and_boundary (test_pipeline.BenchmarkTests.test_complete_and_boundary) ... ok
 test_missing_duplicate_unexpected_invalid (test_pipeline.BenchmarkTests.test_missing_duplicate_unexpected_invalid) ... ok
 test_curly_apostrophe (test_pipeline.ClassificationTests.test_curly_apostrophe) ... ok
@@ -60,9 +66,10 @@ test_xml_rejects_duplicate_missing_and_html (test_source_coverage.CoverageTests.
 test_xml_rejects_wrong_division_and_flags (test_source_coverage.CoverageTests.test_xml_rejects_wrong_division_and_flags) ... ok
 
 ----------------------------------------------------------------------
-Ran 55 tests in 2.915s
+Ran 61 tests in 2.938s
 
 OK
+Export round-trip: 4 members; 5 E1 party/division denominators match
 
 integrity
 Integrity: PASS

@@ -1,0 +1,95 @@
+{
+  "corpus_sha256": "794ebd9dee51cc7b1b3f017f2cc24acd1a6e2af8cf2ab5c4bb9c6fc8aed4d991",
+  "documentation": "data/README.md",
+  "files": {
+    "divisions.csv": "c5ee6f72c3314880d5bd37fb723935ec957d77c616921fc98630ecbf138e6c3d",
+    "members.csv.gz": "a8d0f629436c12abadfc5011f04c02d25cae9a1d518b50bc502105d47ca81302",
+    "repairs.json": "f164d15305e4dd8f996558b0ac28de3e145836a02bef52fefbe6c78e561e32cb",
+    "sources.json": "ddaa03ca89ab32df7f196e07fbb2e9a9dbe5228c8b5967d10ed30ac93fc6ef86"
+  },
+  "hash_convention": "SHA256 of UTF-8 LF content; decompress gzip before hashing",
+  "members_csv_sha256": "a8d0f629436c12abadfc5011f04c02d25cae9a1d518b50bc502105d47ca81302",
+  "note": "Observed member records only; absence is not a recorded abstention. 45-1 is incomplete.",
+  "schema_version": 1,
+  "sessions": {
+    "38-1": {
+      "divisions": 190,
+      "first_date": "2004-10-18T15:20:58",
+      "last_date": "2005-11-28T17:45:24",
+      "member_observations": 54220
+    },
+    "39-1": {
+      "divisions": 219,
+      "first_date": "2006-05-08T18:30:50",
+      "last_date": "2007-06-20T18:40:01",
+      "member_observations": 60521
+    },
+    "39-2": {
+      "divisions": 161,
+      "first_date": "2007-10-18T17:30:45",
+      "last_date": "2008-06-19T11:05:07",
+      "member_observations": 41122
+    },
+    "40-1": {
+      "divisions": 1,
+      "first_date": "2008-11-24T18:30:00",
+      "last_date": "2008-11-24T18:30:00",
+      "member_observations": 288
+    },
+    "40-2": {
+      "divisions": 158,
+      "first_date": "2009-01-29T18:30:00",
+      "last_date": "2009-12-10T18:32:00",
+      "member_observations": 44303
+    },
+    "40-3": {
+      "divisions": 204,
+      "first_date": "2010-03-09T17:35:52",
+      "last_date": "2011-03-25T13:45:00",
+      "member_observations": 56222
+    },
+    "41-1": {
+      "divisions": 760,
+      "first_date": "2011-06-08T18:30:00",
+      "last_date": "2013-06-18T17:01:56",
+      "member_observations": 205834
+    },
+    "41-2": {
+      "divisions": 467,
+      "first_date": "2013-10-21T16:20:22",
+      "last_date": "2015-06-18T15:35:42",
+      "member_observations": 123356
+    },
+    "42-1": {
+      "divisions": 1379,
+      "first_date": "2015-12-08T18:30:34",
+      "last_date": "2019-06-19T20:30:47",
+      "member_observations": 336577
+    },
+    "43-1": {
+      "divisions": 26,
+      "first_date": "2019-12-10T18:45:10",
+      "last_date": "2020-05-26T19:30:00",
+      "member_observations": 6252
+    },
+    "43-2": {
+      "divisions": 185,
+      "first_date": "2020-09-28T19:00:00",
+      "last_date": "2021-06-23T15:45:35",
+      "member_observations": 59813
+    },
+    "44-1": {
+      "divisions": 928,
+      "first_date": "2021-11-25T11:15:00",
+      "last_date": "2024-12-17T15:50:01",
+      "member_observations": 296291
+    },
+    "45-1": {
+      "divisions": 173,
+      "first_date": "2025-05-29T18:45:00",
+      "last_date": "2026-06-18T13:00:00",
+      "member_observations": 58266
+    }
+  },
+  "snapshot_id": "corpus-794ebd9dee51"
+}
