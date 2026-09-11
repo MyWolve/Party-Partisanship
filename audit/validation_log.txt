@@ -1,0 +1,79 @@
+derivation
+Verified audit/derived/42-1-871.csv
+Verified audit/data_decisions.json
+
+tests
+test_complete_and_boundary (test_pipeline.BenchmarkTests.test_complete_and_boundary) ... ok
+test_missing_duplicate_unexpected_invalid (test_pipeline.BenchmarkTests.test_missing_duplicate_unexpected_invalid) ... ok
+test_curly_apostrophe (test_pipeline.ClassificationTests.test_curly_apostrophe) ... ok
+test_party_and_cabinet_scope (test_pipeline.ClassificationTests.test_party_and_cabinet_scope) ... ok
+test_procedural_never_inherits (test_pipeline.ClassificationTests.test_procedural_never_inherits) ... ok
+test_senate_and_recommittal_unresolved (test_pipeline.ClassificationTests.test_senate_and_recommittal_unresolved) ... ok
+test_uncertainty_sensitivity (test_pipeline.ClassificationTests.test_uncertainty_sensitivity) ... ok
+test_unknown_bill_not_government (test_pipeline.ClassificationTests.test_unknown_bill_not_government) ... ok
+test_duplicate_metadata_fails (test_pipeline.IntegrityTests.test_duplicate_metadata_fails) ... ok
+test_empty_file_fails (test_pipeline.IntegrityTests.test_empty_file_fails) ... ok
+test_missing_file_and_orphan_fail (test_pipeline.IntegrityTests.test_missing_file_and_orphan_fail) ... ok
+test_real_repairs (test_pipeline.IntegrityTests.test_real_repairs) ... ok
+test_unlisted_small_and_large_mismatch_fail (test_pipeline.IntegrityTests.test_unlisted_small_and_large_mismatch_fail) ... ok
+test_valid_fixture (test_pipeline.IntegrityTests.test_valid_fixture) ... ok
+test_dual_excluded_not_arbitrarily_yea (test_pipeline.MetricTests.test_dual_excluded_not_arbitrarily_yea) ... ok
+test_hand_calculated_3_to_1 (test_pipeline.MetricTests.test_hand_calculated_3_to_1) ... ok
+test_lopsided_boundary (test_pipeline.MetricTests.test_lopsided_boundary) ... ok
+test_small_group_enumeration (test_pipeline.MetricTests.test_small_group_enumeration) ... ok
+test_tie_and_empty (test_pipeline.MetricTests.test_tie_and_empty) ... ok
+test_failed_benchmark_does_not_write_outputs (test_pipeline.OutputProtectionTests.test_failed_benchmark_does_not_write_outputs) ... ok
+test_preflight_stops_both_experiments_before_writing (test_pipeline.OutputProtectionTests.test_preflight_stops_both_experiments_before_writing) ... ok
+test_changed_audited_file_fails (test_pipeline.ParsingTests.test_changed_audited_file_fails) ... ok
+test_current_and_legacy_headers (test_pipeline.ParsingTests.test_current_and_legacy_headers) ... ok
+test_invalid_inputs_fail (test_pipeline.ParsingTests.test_invalid_inputs_fail) ... ok
+test_paired_and_dual_flags (test_pipeline.ParsingTests.test_paired_and_dual_flags) ... ok
+test_paired_binary_combination_is_excluded (test_pipeline.ParsingTests.test_paired_binary_combination_is_excluded) ... ok
+test_reordered_columns (test_pipeline.ParsingTests.test_reordered_columns) ... ok
+test_text_hash_portable (test_pipeline.ParsingTests.test_text_hash_portable) ... ok
+test_html_cannot_masquerade_as_vote_xml (test_pipeline.SourceArchiveTests.test_html_cannot_masquerade_as_vote_xml) ... ok
+test_pdf_archive_interstitial_is_rejected (test_pipeline.SourceArchiveTests.test_pdf_archive_interstitial_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.080s
+
+OK
+
+integrity
+Integrity: PASS
+38-1: 0 problems, 0 classification warnings
+39-1: 0 problems, 0 classification warnings
+39-2: 0 problems, 0 classification warnings
+40-1: 0 problems, 0 classification warnings
+40-2: 0 problems, 0 classification warnings
+40-3: 0 problems, 0 classification warnings
+41-1: 0 problems, 0 classification warnings
+41-2: 0 problems, 0 classification warnings
+42-1: 0 problems, 1 classification warnings
+  247: unresolved business category (unknown_bill)
+43-1: 0 problems, 0 classification warnings
+43-2: 0 problems, 0 classification warnings
+44-1: 0 problems, 0 classification warnings
+45-1: 0 problems, 0 classification warnings
+19 documented source repairs; no blanket tolerance
+
+benchmark_rebuild
+House-38: 190 divisions (181 contested), 5 combo-coded member-votes excluded
+  Conservative     rice 97.13, contested 96.99, loyalty 98.58 (99 MPs)
+  Liberal          rice 92.73, contested 92.39, loyalty 96.19 (134 MPs)
+  NDP              rice 96.93, contested 96.78, loyalty 98.64 (19 MPs)
+  Bloc Québécois   rice 98.58, contested 98.51, loyalty 99.24 (54 MPs)
+  Green Party      rice None, contested None, loyalty None (0 MPs)
+House-39: 380 divisions (350 contested), 7 combo-coded member-votes excluded
+  Conservative     rice 99.08, contested 99.02, loyalty 99.5 (129 MPs)
+  Liberal          rice 95.47, contested 95.09, loyalty 97.25 (105 MPs)
+  NDP              rice 99.02, contested 98.97, loyalty 99.49 (30 MPs)
+  Bloc Québécois   rice 99.61, contested 99.58, loyalty 99.83 (53 MPs)
+  Green Party      rice None, contested None, loyalty None (0 MPs)
+House-40: 363 divisions (334 contested), 25 combo-coded member-votes excluded
+  Conservative     rice 99.26, contested 99.21, loyalty 99.58 (147 MPs)
+  Liberal          rice 96.02, contested 95.71, loyalty 97.9 (77 MPs)
+  NDP              rice 98.83, contested 98.72, loyalty 99.35 (38 MPs)
+  Bloc Québécois   rice 99.96, contested 99.96, loyalty 99.98 (50 MPs)
+  Green Party      rice None, contested None, loyalty None (0 MPs)
+Verified all 36 benchmark rows without overwriting the baseline

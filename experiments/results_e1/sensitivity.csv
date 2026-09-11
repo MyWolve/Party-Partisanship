@@ -1,0 +1,9 @@
+scope,variant,government_divisions,government_with_dissent,government_rate,private_divisions,private_with_dissent,private_rate,ratio
+category_only,all,1513,61,4.031725,848,225,26.533019,6.581059
+category_only,contested,1364,57,4.178886,623,207,33.226324,7.951001
+documented_free_excluded,all,1491,41,2.749832,848,225,26.533019,9.648959
+documented_free_excluded,contested,1342,37,2.757079,623,207,33.226324,12.051278
+uncertain_excluded,all,1482,32,2.159244,848,225,26.533019,12.288104
+uncertain_excluded,contested,1333,28,2.100525,623,207,33.226324,15.818104
+unknown_bill_as_government,all,1492,41,2.747989,848,225,26.533019,9.65543
+unknown_bill_as_government,contested,1342,37,2.757079,623,207,33.226324,12.051278

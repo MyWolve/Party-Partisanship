@@ -1,264 +1,193 @@
-"""Experiment 1: The whip test.
+"""E1: descriptive dissent by parliamentary business, with scope sensitivity.
 
-Are Whips that successful? If party discipline is doing the work, dissent
-should concentrate almost entirely where the whip is off. The cleanest
-comparison is the GOVERNING party's dissent rate on government bills
-versus private members' business: the same caucus under two whip
-conditions, controlling for party culture.
-
-For every session this script computes, per party and per vote category:
-the number of divisions, the number with at least one rebel, and the
-dissent rate. It reports:
-
-  1. The headline: governing-party dissent on government bills vs.
-     private members' business, per session and pooled.
-  2. A robustness variant excluding near-unanimous divisions (where more
-     than UNANIMITY_THRESHOLD of the whole House voted the same way).
-  3. The largest governing-party rebellions on government bills, for
-     manual spot-checking: category is a proxy for whip status, so the
-     biggest outliers should be verified against the historical record
-     (some may be formally designated free votes).
-
-Outputs (in results_e1/):
-  summary.csv                    per session x party x category dissent table
-  whip_test_by_session.png      governing-party whipped vs free dissent rates
-  dissent_by_category_pooled.png all parties, all sessions pooled
-
-Usage: python3 experiment_e1.py
+A division counts once when at least one binary voter opposes their caucus
+majority. This is not an estimate of the causal effect of a whip instruction.
 """
-
+import argparse
 import csv
-import os
+from collections import defaultdict
+from pathlib import Path
 import sys
 
 import matplotlib
-matplotlib.use("Agg")
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, PROJECT_ROOT)
-
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROJECT_ROOT))
 import bill_info
-from visualize_parliament import (PARTY_COLORS, WHIPPED_PARTIES,
-                                  find_rebels, load_parliament, vote_number)
+from check_data import require_valid_corpus, SESSIONS
+from experiment_io import write_csv, write_json, plot_style
+from visualize_parliament import WHIPPED_PARTIES, PARTY_COLORS, load_parliament, find_rebels, vote_number, count_yea_nay
 
-RESULTS_DIR = os.path.join(PROJECT_ROOT, "experiments", "results_e1")
-
-# Governing party per session. 45-1: Liberal (Carney).
-SESSION_GOVERNMENT = {
-    "38-1": "Liberal",
-    "39-1": "Conservative", "39-2": "Conservative",
-    "40-1": "Conservative", "40-2": "Conservative", "40-3": "Conservative",
-    "41-1": "Conservative", "41-2": "Conservative",
-    "42-1": "Liberal",
-    "43-1": "Liberal", "43-2": "Liberal",
-    "44-1": "Liberal",
-    "45-1": "Liberal",
-}
-
-# Sessions excluded from per-session statistics (see README).
-EXCLUDED_SESSIONS = {"40-1"}
-
-# A division is "near-unanimous" if more than this share of all votes cast
-# in the House fell on one side.
-UNANIMITY_THRESHOLD = 0.95
-
-FREE_CATEGORY = "private_members_business"
-WHIPPED_CATEGORY = "government_bill"
+RESULTS_DIR = PROJECT_ROOT / 'experiments/results_e1'
+SESSION_GOVERNMENT = {s: 'Conservative' if s.split('-')[0] in ('39', '40', '41') else 'Liberal' for s in SESSIONS}
+EXCLUDED_SESSIONS = {'40-1'}
+UNANIMITY_THRESHOLD = .95
+SCOPES = ('category_only', 'documented_free_excluded', 'uncertain_excluded', 'unknown_bill_as_government')
+MAIN_SCOPE = 'documented_free_excluded'
 
 
-def is_near_unanimous(meta_row):
-    yeas, nays = int(meta_row["yeas"] or 0), int(meta_row["nays"] or 0)
-    total = yeas + nays
-    return total > 0 and max(yeas, nays) / total > UNANIMITY_THRESHOLD
+def eligible_category(meta, status, scope):
+    category = meta['category']
+    if scope != 'category_only' and status == 'documented_free':
+        return None
+    if scope == 'uncertain_excluded' and status == 'unresolved':
+        return None
+    if scope == 'unknown_bill_as_government' and category == 'unknown_bill':
+        return 'government_bill'
+    return category
 
 
 def gather_session(directory):
-    """Count divisions and dissent per (party, category), with and without
-    near-unanimous divisions, and collect governing-party rebellions on
-    government bills for the outlier list.
-
-    Returns (counts, outliers) where counts[(party, category, variant)] =
-    [divisions, with_dissent] for variant in ("all", "contested").
-    """
-    session = os.path.basename(os.path.normpath(directory)).replace(
-        "Parliament_", "")
-    government = SESSION_GOVERNMENT.get(session)
     metadata = bill_info.load_vote_metadata(directory)
-    bills = load_parliament(directory)
-
-    counts = {}
-    outliers = []
-    designated_free = []  # (number, rebels, subject) — reported separately
-
-    for bill_name, votes in bills:
-        number = vote_number(bill_name)
-        if number not in metadata:
-            continue
-        meta = metadata[number]
-        category = meta["category"]
-        contested = not is_near_unanimous(meta)
+    session = Path(directory).name.replace('Parliament_', '')
+    counts = defaultdict(lambda: [0, 0])
+    classifications, outliers = [], []
+    for filename, votes in load_parliament(directory):
+        number = vote_number(filename)
+        meta = metadata[number]  # missing joins are errors, not silent omissions
+        binary = [count_yea_nay(v) for v in votes.values()]
+        yeas, nays = sum(v[0] for v in binary), sum(v[1] for v in binary)
+        contested = bool(yeas + nays) and max(yeas, nays) / (yeas + nays) <= UNANIMITY_THRESHOLD
         rebels = find_rebels(votes, WHIPPED_PARTIES)
-        gov_rebels = rebels.get(government) if government else None
-
-        # Designated free votes (e.g. C-38 in 38-1) are sanctioned dissent:
-        # keep them out of the whipped column entirely and report them.
-        if category == WHIPPED_CATEGORY and meta.get("designated_free"):
-            designated_free.append((number,
-                                    len(gov_rebels) if gov_rebels else 0,
-                                    meta["subject"][:70]))
-            continue
-
         for party in WHIPPED_PARTIES:
-            party_rebels = rebels[party]
-            if party_rebels is None:
+            status = bill_info.whip_status(meta, party)
+            r = rebels[party]
+            classifications.append(dict(session=session, division=number, party=party,
+                governing=party == SESSION_GOVERNMENT[session], category=meta['category'],
+                stage=meta['stage'] or '', bill=meta['bill_number'], bill_type_source=meta['bill_type_source'],
+                whip_status=status['status'], member_scope=status['scope'], source_id=status['source_id'],
+                majority_defined=r is not None, dissenters=len(r) if r is not None else '',
+                contested=contested, subject=meta['subject']))
+            if r is None:
                 continue
-            for variant in ("all",) + (("contested",) if contested else ()):
-                cell = counts.setdefault((party, category, variant), [0, 0])
-                cell[0] += 1
-                if party_rebels:
-                    cell[1] += 1
-
-        if (government and category == WHIPPED_CATEGORY
-                and gov_rebels):
-            outliers.append((session, number, len(gov_rebels),
-                             meta["subject"][:90],
-                             meta.get("confidence", False)))
-
-    return session, government, counts, outliers, designated_free
-
-
-def rate(cell):
-    """Dissent rate from a [divisions, with_dissent] cell, or None."""
-    if not cell or not cell[0]:
-        return None
-    return round(cell[1] / cell[0] * 100, 2)
+            for scope in SCOPES:
+                category = eligible_category(meta, status['status'], scope)
+                if category is None:
+                    continue
+                for variant in ('all', 'contested') if contested else ('all',):
+                    cell = counts[party, category, scope, variant]
+                    cell[0] += 1
+                    cell[1] += bool(r)
+            if r and party == SESSION_GOVERNMENT[session] and meta['category'] == 'government_bill':
+                outliers.append(dict(session=session, division=number, party=party,
+                    dissenters=len(r), names='; '.join(r), whip_status=status['status'], subject=meta['subject']))
+    return counts, classifications, outliers
 
 
-def main():
-    os.makedirs(RESULTS_DIR, exist_ok=True)
-
-    directories = sorted(
-        os.path.join(PROJECT_ROOT, d) for d in os.listdir(PROJECT_ROOT)
-        if d.startswith("Parliament_")
-        and os.path.isdir(os.path.join(PROJECT_ROOT, d))
-        and d.replace("Parliament_", "") not in EXCLUDED_SESSIONS)
-
-    all_rows = []          # for summary.csv
-    headline = []          # (session, gov party, whipped rate, free rate) x variant
-    pooled = {}            # (party, category, variant) -> [divisions, with_dissent]
-    all_outliers = []
-
-    for directory in directories:
-        (session, government, counts,
-         outliers, designated_free) = gather_session(directory)
-        all_outliers.extend(outliers)
-        if designated_free:
-            with_dissent = sum(1 for _, r, _ in designated_free if r)
-            print(f"note: {session}: excluded "
-                  f"{len(designated_free)} designated-free government-bill "
-                  f"divisions from the whipped column "
-                  f"(dissent on {with_dissent}); see "
-                  f"bill_info.FREE_VOTE_BILLS.")
-
-        for (party, category, variant), cell in counts.items():
-            all_rows.append({
-                "session": session, "party": party, "category": category,
-                "variant": variant, "divisions": cell[0],
-                "with_dissent": cell[1], "dissent_rate": rate(cell)})
-            pooled_cell = pooled.setdefault((party, category, variant), [0, 0])
-            pooled_cell[0] += cell[0]
-            pooled_cell[1] += cell[1]
-
-        if government:
-            entry = {"session": session, "government": government}
-            for variant in ("all", "contested"):
-                entry[f"whipped_{variant}"] = rate(
-                    counts.get((government, WHIPPED_CATEGORY, variant)))
-                entry[f"free_{variant}"] = rate(
-                    counts.get((government, FREE_CATEGORY, variant)))
-            headline.append(entry)
-
-    # ---- summary.csv ----------------------------------------------------
-    summary_path = os.path.join(RESULTS_DIR, "summary.csv")
-    with open(summary_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=[
-            "session", "party", "category", "variant",
-            "divisions", "with_dissent", "dissent_rate"])
-        writer.writeheader()
-        writer.writerows(sorted(all_rows, key=lambda r: (
-            r["session"], r["party"], r["category"], r["variant"])))
-
-    # ---- console report -------------------------------------------------
-    print("E1: The whip test — governing party, government bills vs. "
-          "private members' business")
-    print("=" * 78)
-    print(f"{'session':8} {'gov party':13} "
-          f"{'whipped%':>9} {'free%':>7}   {'(contested-only variant)':>26}")
-    for h in headline:
-        contested = (f"whipped {h['whipped_contested']}%, "
-                     f"free {h['free_contested']}%")
-        print(f"{h['session']:8} {h['government']:13} "
-              f"{str(h['whipped_all']):>9} {str(h['free_all']):>7}   "
-              f"{contested:>26}")
-
-    print("\nLargest governing-party rebellions on government bills "
-          "(spot-check these against the record;")
-    print("category is a proxy for whip status and some may be designated "
-          "free votes):")
-    for session, number, n_rebels, subject, confidence in sorted(
-            all_outliers, key=lambda o: -o[2])[:10]:
-        conf = " [confidence]" if confidence else ""
-        print(f"  {session} vote {number}: {n_rebels} rebels{conf} — {subject}")
-
-    # ---- figure 1: whipped vs free by session ---------------------------
-    sessions = [h["session"] for h in headline]
-    x = range(len(sessions))
-    width = 0.38
-    plt.figure(figsize=(14, 7))
-    plt.bar([i - width / 2 for i in x],
-            [h["whipped_all"] or 0 for h in headline], width,
-            label="Government bills (whipped)", color="#444444")
-    plt.bar([i + width / 2 for i in x],
-            [h["free_all"] or 0 for h in headline], width,
-            label="Private members' business (free)", color="#BBBBBB")
-    for i, h in enumerate(headline):
-        color = PARTY_COLORS[h["government"]]
-        plt.plot([i - width, i + width], [-2.5, -2.5], color=color, lw=6,
-                 solid_capstyle="butt", clip_on=False)
-    plt.xticks(list(x), sessions)
-    plt.ylabel("Divisions with any governing-party dissent (%)")
-    plt.title("The Whip Test: governing-party dissent, whipped vs. free "
-              "business\n(coloured underline = governing party)")
-    plt.legend()
-    plt.tight_layout()
-    plt.savefig(os.path.join(RESULTS_DIR, "whip_test_by_session.png"))
-    plt.close()
-
-    # ---- figure 2: pooled dissent by category, all parties --------------
-    categories = sorted({c for (_, c, v) in pooled if v == "all"})
-    parties = [p for p in WHIPPED_PARTIES
-               if any((p, c, "all") in pooled for c in categories)]
-    plt.figure(figsize=(15, 7))
-    bar_width = 0.8 / max(len(parties), 1)
-    for i, party in enumerate(parties):
-        xs = [j + i * bar_width for j in range(len(categories))]
-        ys = [rate(pooled.get((party, c, "all"))) or 0 for c in categories]
-        plt.bar(xs, ys, width=bar_width, label=party,
-                color=PARTY_COLORS[party])
-    plt.xticks([j + bar_width * (len(parties) - 1) / 2
-                for j in range(len(categories))],
-               [c.replace("_", "\n") for c in categories])
-    plt.ylabel("Divisions with any dissent (%)")
-    plt.title("Dissent rate by vote category, all sessions pooled "
-              "(2004–present)")
-    plt.legend()
-    plt.tight_layout()
-    plt.savefig(os.path.join(RESULTS_DIR, "dissent_by_category_pooled.png"))
-    plt.close()
-
-    print(f"\nWrote {summary_path} and two figures to {RESULTS_DIR}/")
+def rate(numerator, denominator):
+    return round(100 * numerator / denominator, 6) if denominator else None
 
 
-if __name__ == "__main__":
-    main()
+def main(output_dir=None):
+    require_valid_corpus()  # fail before creating/replacing any experiment output
+    rows, classifications, outliers = [], [], []
+    for session in SESSIONS:
+        if session in EXCLUDED_SESSIONS:
+            continue
+        counts, audit, extremes = gather_session(PROJECT_ROOT / f'Parliament_{session}')
+        classifications.extend(audit)
+        outliers.extend(extremes)
+        for (party, category, scope, variant), (divisions, dissent) in sorted(counts.items()):
+            rows.append(dict(session=session, party=party, category=category, scope=scope,
+                variant=variant, divisions=divisions, with_dissent=dissent, dissent_rate=rate(dissent, divisions)))
+    gov = [r for r in rows if r['party'] == SESSION_GOVERNMENT[r['session']]]
+    pooled = defaultdict(lambda: [0, 0])
+    for r in gov:
+        cell = pooled[r['category'], r['scope'], r['variant']]
+        cell[0] += r['divisions']
+        cell[1] += r['with_dissent']
+    sensitivity = []
+    for scope in SCOPES:
+        for variant in ('all', 'contested'):
+            g, p = pooled['government_bill', scope, variant], pooled['private_members_business', scope, variant]
+            gr, pr = rate(g[1], g[0]), rate(p[1], p[0])
+            sensitivity.append(dict(scope=scope, variant=variant, government_divisions=g[0],
+                government_with_dissent=g[1], government_rate=gr, private_divisions=p[0],
+                private_with_dissent=p[1], private_rate=pr,
+                ratio=(round((p[1]/p[0])/(g[1]/g[0]), 6) if g[1] and p[0] else None)))
+    destination = Path(output_dir or RESULTS_DIR)
+    destination.mkdir(parents=True, exist_ok=True)
+    write_csv(destination / 'summary.csv', rows)
+    write_csv(destination / 'classification_audit.csv', classifications)
+    write_csv(destination / 'sensitivity.csv', sensitivity)
+    write_csv(destination / 'outliers.csv', sorted(outliers, key=lambda r: (-r['dissenters'], r['session'], r['division'])))
+    main_result = next(r for r in sensitivity if r['scope'] == MAIN_SCOPE and r['variant'] == 'all')
+    supply = pooled['supply', MAIN_SCOPE, 'all']
+    headline = dict(main_result, supply_divisions=supply[0], supply_with_dissent=supply[1],
+        unresolved_governing_divisions=sum(r['governing'] and r['whip_status'] == 'unresolved' for r in classifications),
+        documented_free_governing_divisions=sum(r['governing'] and r['whip_status'] == 'documented_free' for r in classifications))
+    write_json(destination / 'headline.json', headline)
+    plot_style()
+    sessions = [s for s in SESSIONS if s not in EXCLUDED_SESSIONS]
+    fig, ax = plt.subplots(figsize=(11.5, 5.8))
+    for offset, category, label, color in [(-.19, 'government_bill', 'Government bills', '#254B69'),
+                                          (.19, 'private_members_business', "Private members’ business", '#D49A32')]:
+        selected = {r['session']: r for r in gov if r['category'] == category and r['scope'] == MAIN_SCOPE and r['variant'] == 'all'}
+        for i, session in enumerate(sessions):
+            r = selected.get(session)
+            if r:
+                ax.bar(i+offset, r['dissent_rate'], width=.36, color=color, label=label if i==0 else None)
+                ax.text(i+offset, r['dissent_rate']+1, f"{r['with_dissent']}/{r['divisions']}", rotation=90, ha='center', va='bottom', fontsize=8)
+            else:
+                ax.text(i+offset, 1, 'N/A', ha='center', fontsize=8)
+    ax.set(xticks=range(len(sessions)), xticklabels=sessions, ylim=(0, 95),
+           ylabel='Divisions with governing-party dissent (%)', xlabel='Parliamentary session',
+           title='Dissent is more frequent on private members’ business')
+    ax.legend(loc='upper right', frameon=False)
+    fig.text(.08,.015,'Labels: dissenting divisions / eligible divisions. Documented free stages excluded. P45–1 is incomplete. Category is a proxy.',fontsize=9)
+    fig.tight_layout(rect=(0,.05,1,1))
+    fig.savefig(destination / 'whip_test_by_session.png', dpi=180)
+    plt.close(fig)
+    categories = sorted({r['category'] for r in gov if r['scope'] == MAIN_SCOPE and r['variant'] == 'all'})
+    fig, ax = plt.subplots(figsize=(10.5, 5.8))
+    values = [pooled[c, MAIN_SCOPE, 'all'] for c in categories]
+    ax.barh([c.replace('_',' ') for c in categories], [rate(d,n) for n,d in values], color='#254B69')
+    for i,(n,d) in enumerate(values):
+        ax.text(rate(d,n)+.4,i,f'{d}/{n}',va='center',fontsize=9)
+    ax.set(xlabel='Divisions with governing-party dissent (%)', xlim=(0, max(rate(d,n) for n,d in values)+8),
+           title='Governing-party dissent by business category')
+    fig.text(.08,.015,'Pooled across sessions 38–1 to 45–1, excluding 40–1. Counts are divisions, not independent bills.',fontsize=9)
+    fig.tight_layout(rect=(0,.05,1,1))
+    fig.savefig(destination / 'dissent_by_category_pooled.png', dpi=180)
+    plt.close(fig)
+    h = headline
+    lines = ['# E1 Dissent by parliamentary business', '',
+        f"Government bills: **{h['government_with_dissent']}/{h['government_divisions']}** divisions with governing-party dissent "
+        f"({h['government_rate']:.2f}%). Private members’ business: **{h['private_with_dissent']}/{h['private_divisions']}** "
+        f"({h['private_rate']:.2f}%). The descriptive ratio is **{h['ratio']:.2f}**.", '',
+        f"Supply: **{supply[1]}/{supply[0]}**. The main comparison excludes {h['documented_free_governing_divisions']} "
+        f"documented free stages for the governing party. There are {h['unresolved_governing_divisions']} "
+        'governing-party divisions with explicitly unresolved status; see sensitivity below.', '',
+        '## Sensitivity', '',
+        '| Scope | Government dissent | Private business dissent | Ratio |', '| --- | --- | --- | --- |']
+    for r in sensitivity:
+        if r['variant']=='all':
+            lines.append(f"| {r['scope'].replace('_',' ')} | {r['government_with_dissent']}/{r['government_divisions']} | "
+                         f"{r['private_with_dissent']}/{r['private_divisions']} | {r['ratio']:.2f} |")
+    lines += ['', 'Category only retains documented free stages. The main comparison removes them. '
+        'Uncertain excluded additionally removes audited unresolved cases; it does not imply that the remainder has verified whip instructions. '
+        'Unknown bill as government tests the malformed bill subject separately. The CSV also contains contested-only versions '
+        '(no more than 95% of observed binary House votes on either side).', '',
+        '## Interpretation and limits', '',
+        'These are descriptive associations between business types and caucus voting patterns. They do not isolate the effect of whip enforcement. '
+        'Issues, participating MPs, caucus size, repeated divisions on the same bill, and party policy can all differ across categories. '
+        'One dissenter and many dissenters count equally. Tied caucus divisions have no majority and are excluded from this outcome. '
+        'Paired and dual-coded member-votes are omitted from binary analysis. No uncertainty interval assuming independent divisions is asserted.', '',
+        'C-38 and C-14 designations are party- and stage-specific. Liberal designations cover backbenchers, not cabinet; '
+        'the exclusion applies at the caucus-division level and is not an MP-level freedom label. C-30, C-17, recommittal, '
+        'and C-14 Senate-amendment coverage remain unresolved where listed. Business category and confidence keywords are proxies. '
+        'The observed government-bill rate is not asserted to be an upper bound on true whipped dissent.', '',
+        'See [classification audit](classification_audit.csv), [outliers and names](outliers.csv), '
+        '[all counts](summary.csv), [sensitivity](sensitivity.csv), [source decisions](../../audit/whip_designations.json), '
+        'and [reproduction instructions](../../REPRODUCING.md).']
+    (destination / 'FINDINGS_E1.md').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\n')
+    print('E1:', headline)
+    return headline
+
+
+if __name__ == '__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output-dir',type=Path)
+    main(parser.parse_args().output_dir)

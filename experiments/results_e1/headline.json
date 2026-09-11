@@ -1,0 +1,15 @@
+{
+  "documented_free_governing_divisions": 22,
+  "government_divisions": 1491,
+  "government_rate": 2.749832,
+  "government_with_dissent": 41,
+  "private_divisions": 848,
+  "private_rate": 26.533019,
+  "private_with_dissent": 225,
+  "ratio": 9.648959,
+  "scope": "documented_free_excluded",
+  "supply_divisions": 1118,
+  "supply_with_dissent": 1,
+  "unresolved_governing_divisions": 10,
+  "variant": "all"
+}

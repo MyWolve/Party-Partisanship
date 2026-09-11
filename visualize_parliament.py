@@ -9,7 +9,7 @@ Two cohesion metrics are available:
   "rice"      -- the Rice Index: |yea - nay| / (yea + nay) * 100.
                  Ranges from 0 (perfect split) to 100 (unanimous). This is the
                  standard cohesion measure that I could find in the political science literature,
-                 so results are directly comparable to published work.
+                 for comparison with deposited data using shared definitions.
 
 Members who did not vote Yea or Nay (e.g. paired members) are excluded from
 both metrics. A party with no votes cast on a division gets a score of None,
@@ -46,6 +46,7 @@ AFFILIATION_ALIASES = {
     "Independent Conservative": "Independent",       # Goldring, Guergis (40-3, 41-1)
     "Conservative Independent": "Independent",       # Del Mastro (41-2)
     "Co-operative Commonwealth Federation": "Independent",  # Weir, ex-NDP (42-1)
+    "Groupe parlementaire québécois": "Independent",
     "Québec debout": "Independent",                  # ex-Bloc caucus split (42-1)
     "Forces et Démocratie": "Independent",           # Fortin, Larose (41-2)
     "People's Party": "Independent",                 # Bernier (42-1)
@@ -55,49 +56,7 @@ AFFILIATION_ALIASES = {
 # Data Loading
 # ----------------------------------------------------------------------
 
-def _find_column(header, *fragments, default=None):
-    """Locate a column index by substring match on the header (case-insensitive)."""
-    for index, name in enumerate(header):
-        lowered = name.lower()
-        if any(fragment in lowered for fragment in fragments):
-            return index
-    return default
-
-
-def read_vote_rows(file_path):
-    """Read one vote CSV into [{"member", "party", "vote", "paired"}, ...].
-
-    Column positions are located from the header row, because the House's
-    export format has changed over time: older files are
-    (Member, Affiliation, Voted, Paired) while the current endpoint
-    prepends a Person ID column. Reading by header name handles both,
-    plus any future reshuffle. Falls back to the legacy positions if the
-    header is unrecognizable.
-    """
-    with open(file_path, "r", encoding="utf-8-sig", errors="ignore") as file:
-        reader = csv.reader(file)
-        header = next(reader, None)
-        if header is None:
-            return []
-
-        member_col = _find_column(header, "member of parliament", default=0)
-        party_col = _find_column(header, "affiliation", "political party",
-                                 default=1)
-        vote_col = _find_column(header, "voted", "member voted", default=2)
-        paired_col = _find_column(header, "paired", default=3)
-
-        rows = []
-        for row in reader:
-            if len(row) <= vote_col:
-                continue
-            rows.append({
-                "member": row[member_col],
-                "party": row[party_col],
-                "vote": row[vote_col],
-                "paired": (len(row) > paired_col
-                           and row[paired_col].strip() == "Paired"),
-            })
-        return rows
+from vote_data import read_vote_rows, binary_vote
 
 
 def load_vote_file(file_path):
@@ -111,7 +70,7 @@ def load_vote_file(file_path):
     for row in read_vote_rows(file_path):
         affiliation = AFFILIATION_ALIASES.get(row["party"], row["party"])
         party = affiliation if affiliation in PARTIES else "Independent"
-        votes[party].append((row["member"], row["vote"]))
+        votes[party].append((row["member"], binary_vote(row)))
 
     return votes
 
@@ -585,10 +544,8 @@ def plot_top_rebels(directory, parties=None, top_n=15, save_path=None):
 # ----------------------------------------------------------------------
 # Dissent by vote category (requires votes_metadata.csv; see bill_info.py)
 #
-# This is the direct test of the whip: if party discipline is doing the
-# work, dissent should concentrate almost entirely in private members'
-# business (traditionally unwhipped) and be near zero on government
-# bills and confidence matters.
+# These are descriptive business-category comparisons. They do not isolate
+# the causal effect of whip instructions.
 # ----------------------------------------------------------------------
 
 def dissent_by_category(directory, parties=None):
@@ -638,15 +595,12 @@ def dissent_by_category(directory, parties=None):
 
 def mp_loyalty_split(directory, parties=None, min_votes=10,
                      free_categories=None):
-    """
-    Per-MP loyalty computed separately for whipped and free business.
+    """Legacy split API: keys 'whipped'/'free' are proxies, not verified orders.
 
-    An MP at 99% whipped / 75% free is a conscientious backbencher who
-    respects the whip; one rebelling on whipped business is a different
-    animal entirely. Returns
-    {member: {"party", "whipped": {"votes", "rebellions", "loyalty"},
-              "free": {...}}}
-    sorted by whipped-business rebellions.
+    Party-specific designations supplement the business-category proxy.
+    Unresolved audited cases are omitted. Backbench-only designations label
+    a caucus-level division, not each MP; no cabinet roster is inferred.
+    Prefer E1's explicit classification and sensitivity outputs for reporting.
     """
     if parties is None:
         parties = WHIPPED_PARTIES
@@ -662,14 +616,13 @@ def mp_loyalty_split(directory, parties=None, min_votes=10,
         number = vote_number(bill_name)
         if number not in metadata:
             continue
-        if free_categories is None:
-            # Default: category-based free votes plus documented designated
-            # free votes (bill_info.FREE_VOTE_BILLS / FREE_VOTE_DIVISIONS).
-            free = bill_info.is_free_vote(metadata[number])
-        else:
-            free = metadata[number]["category"] in free_categories
-        bucket = "free" if free else "whipped"
         for party in parties:
+            status = bill_info.whip_status(metadata[number], party)
+            if status['status'] == 'unresolved':
+                continue
+            free = (bill_info.is_free_vote(metadata[number], party)
+                    if free_categories is None else metadata[number]['category'] in free_categories)
+            bucket = "free" if free else "whipped"
             majority = party_majority_side(votes[party])
             if majority is None:
                 continue
@@ -725,7 +678,7 @@ def print_whip_report(directory, parties=None, top_n=10):
                   f"divisions with dissent ({cell['dissent_rate']}%), "
                   f"{cell['total_rebel_votes']} rebel votes")
 
-    print(f"\n  Top {top_n} whipped-business rebels:")
+    print(f"\n  Top {top_n} dissenters on other business (proxy):")
     shown = 0
     for member, record in loyalty.items():
         if record["whipped"]["rebellions"] == 0 or shown >= top_n:
@@ -734,7 +687,7 @@ def print_whip_report(directory, parties=None, top_n=10):
         free_text = (f"free loyalty {free['loyalty']}% ({free['votes']} votes)"
                      if free["votes"] else "no free votes")
         print(f"    {member} [{record['party']}]: "
-              f"{record['whipped']['rebellions']} whipped rebellions "
+              f"{record['whipped']['rebellions']} dissenting votes on other business "
               f"(loyalty {record['whipped']['loyalty']}%), {free_text}")
         shown += 1
     return table, loyalty
