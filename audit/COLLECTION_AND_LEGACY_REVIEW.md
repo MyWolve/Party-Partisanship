@@ -44,3 +44,5 @@ The following research/engineering items remain explicitly open:
 The old `scrape_all()` and implicit in-place scraper interfaces have been removed deliberately. Use the explicit collection command in REPRODUCING.md. This branch remains a review package; no merge or wholesale live refresh is performed.
 
 The first CI run exposed unavailable Python 3.12.14 builds on Windows/macOS. GitHub's official versions manifest provides 3.12.10 for those platforms; the matrix now pins those available builds and retains 3.12.14 on Ubuntu. The local reference uses bundled Windows 3.12.14. No analytical tolerance or dependency was changed to address the setup failure.
+
+Update: [the next review](RECONCILIATION_REVIEW.md) implements the member-level comparison and bill-refresh mechanism. It resolves the comparison window to one documented observation difference and one date-convention difference, and identifies missing historical sponsors in a live bill export. The remaining source questions are listed there.

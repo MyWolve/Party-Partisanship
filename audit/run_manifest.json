@@ -1,35 +1,40 @@
 {
   "code_files": {
-    ".github/workflows/reproducibility.yml": "7e25679dafc344cb429a8d3abee536732c6950fb76d78cdd3ecdf9a4ef068969",
-    "bill_info.py": "f2889a674d29c009a44030539d817f93ae5c7149e6c11f4d9680bac60d352dbf",
+    ".github/workflows/reproducibility.yml": "bc963f7342096a97c593f3d2159e7ecb4f04ce379444e8f7b58d15ba9fcbb1f5",
+    "bill_data.py": "f9d57c2624a1ed55e175cf9af22f4a77ea5e651aca8a7f64e2a70361b80bd0e5",
+    "bill_info.py": "418428d2b1ccb67a3af433a69f06534eb61c73e19b3ecb8041e6b562d82a7f93",
     "can_scrape.py": "085240237feb29cd59e46e121ca42db59f0ec49d342164df78ae1a4ddba269c3",
     "check_data.py": "e70a93f7f3376db0a8fed81e924f406cd89470ed40923721ecf2cd43b865da89",
     "experiment_io.py": "1ac7d99bbf3e51b3b1f68f2924b96b803572d54641a5824a55c3ba6cb89a4b28",
     "experiments/build_benchmarks_e7.py": "f0b6f505fb4ba212ad3755ddf0843b1f535fc8e3b55fcc8eaafcc111986461f2",
     "experiments/experiment_e1.py": "d4d642dbcb4e226b6538ff21b39dda973ff5e6d1b236301fd66455bbba616b7c",
-    "experiments/experiment_e7.py": "29e7539507e294e3d0accfe6acb5610481a852c2b3adc939e359b4a521c4bf1b",
+    "experiments/experiment_e7.py": "74c0017c797aaffee5331aa70950064722c502240ade3062cab1c13ef9e8c5ba",
     "provenance.py": "1192c93f4f136aa844a05421cdf5e0621d8d6500e12b50144f149d006221801f",
-    "reproduce.py": "47782e8904cbff9a1fc141770557f7836a2b819bdc4dab3432c9876dffd1cd5b",
+    "reproduce.py": "805fbfeee9a88de6d9911b10a4218d366d7e8ad95afcecbb3830287c04224185",
     "requirements-lock.txt": "c731839447bd2d8e216ca8436a7d25da53bffb46aee26f3c503dc7271b7619d1",
     "requirements.txt": "c5c47ecfbac90e9ce72b9e8a547f723374dc09af7dd51685093d122c8199671f",
     "tests/test_collection.py": "fc932f770ca3a16c0a92f9e894ba9fd429d6f74be726a094fd0db6b1428c9e23",
     "tests/test_pipeline.py": "b9449141fbbdb82564891be0f3678db273e5256e70edfc117bfffe81fa959199",
+    "tests/test_reconciliation.py": "878a1bca30753a42eebd890b43e52800750ab4e506ee46cf7084ed5da970d9e5",
     "tools/build_audit_data.py": "2f088f87e78f77c61456e4cf2367b4b939a795bf1fd6a2c955011226393b9533",
-    "tools/fetch_audit_evidence.py": "fdf4d1f83614d0ec8dc96ea1a613cea33b16b4d899fb79f63b283b645e316df5",
+    "tools/collect_bills.py": "2b85bf7fac95c309f8c10288203bc5ede04dd86aef60ee37206af81457329c57",
+    "tools/fetch_audit_evidence.py": "62942268a4cae0328785b10e2d24f95738189a3b6571f9c7fb8afbc8dcf11f1e",
     "tools/freeze_inputs.py": "f42ef4b447d0e0b3ee005120a5474509f571591a34ab4c0dc69ec38e6afc7962",
+    "tools/reconcile_members.py": "5c083e240c809f2e9f3855c25030a926cb053d00e18eaae9469ab686cbce0458",
     "visualize_parliament.py": "16ba7296cd8bbc322c9b4c52a5caef204bee779588a08cdf8de04d63373ab37d",
     "vote_data.py": "5c0d4c07e0f8089db697c3881264489193fabc2c278319ffe2c83129b15518f3"
   },
-  "code_sha256": "851279ad9ea0e04fe691f365797a32ae76837becad588c4eb7fef756fb6cca8e",
+  "code_sha256": "e14991b842711ba59e0056b4e35dd3bbcd3495af7bb71878b46590f38a8a7653",
   "commands": [
     "tools/build_audit_data.py --check",
     "-m unittest discover -s tests -v",
     "check_data.py",
     "experiments/build_benchmarks_e7.py --check",
+    "tools/reconcile_members.py --check",
     "experiments/experiment_e1.py",
     "experiments/experiment_e7.py"
   ],
-  "corpus_sha256": "5f930ceff3617e933c8cecddfe1f1f302abeb933bde90a9fa8ffd969ba00e78a",
+  "corpus_sha256": "88a1f4a3ed964d5786e6fc7e205d600ca5d4a3c1fe060bb7e69ef1e4d39eb4f4",
   "dependencies": {
     "certifi": "2026.7.22",
     "charset-normalizer": "3.5.1",
@@ -49,7 +54,7 @@
     "six": "1.17.0",
     "urllib3": "2.7.0"
   },
-  "git_base_revision": "a2a9b6a4ed3e62486e757bf1ab515235c489a058",
+  "git_base_revision": "17b52de43b6283a68283ce7b015d8931ad08e1ae",
   "outputs": {
     "results_e1/FINDINGS_E1.md": "4b89f5db8330e431dc2fc770e863314d036540377c0cb457d7b0fcc11eacf81f",
     "results_e1/classification_audit.csv": "786b830cc30ca49a736fb1e34164a5a2393959d982d994d36592723db6ce6ccd",
@@ -59,7 +64,7 @@
     "results_e1/sensitivity.csv": "7644b87d7d92a194d02fc2c9bde00789f79ff2bbaae44b6d2c436a78a3256827",
     "results_e1/summary.csv": "4c7f70833e3d6a65cc037de7b470ecfbd635694306cd11ca9c3a7729571c5595",
     "results_e1/whip_test_by_session.png": "90d8507ee35e7471e3ce791cdbdc9d87847df3b4cd15a1b35a4b7d2cb38ab7e8",
-    "results_e7/FINDINGS_E7.md": "904542d033b23acf88b77a5f229f41e3c39f29604907c80e79b69e18568c5eea",
+    "results_e7/FINDINGS_E7.md": "a1d91181cb2b48ca12d72758ad98295cc1ce0fd12be0b30d787633cf08d616e3",
     "results_e7/benchmark_comparison.csv": "8c4d0bcad4dcc63cae481ce7df09582769c3e5341a7108d8860f99d6248564a2",
     "results_e7/unity_by_parliament.csv": "9c502590f18a0c5d84a5ee8750e1556079a65eec32b6c46b882d13defb488ef2",
     "results_e7/unity_robustness.png": "a5c33fb8a2ff09b7de6c5293449d4ab1f96abdc3ba7ffd3ea5f880692a2295ef",
@@ -67,11 +72,8 @@
   },
   "platform": "Windows-11-10.0.26200-SP0",
   "python": "3.12.14",
-  "repeat_check": {
-    "images_identical": true,
-    "tables_identical": true
-  },
+  "repeat_check": null,
   "saved_results_match": true,
   "status": "pass",
-  "table_sha256": "3ec5ad9e7577dde0c1f17a013a6ca0299a5204a3ad99cc791a0b0986b6e266c0"
+  "table_sha256": "85aafc6d788113050005124a479956fc80814192b02edfa718ccc340f892ca05"
 }

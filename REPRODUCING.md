@@ -111,3 +111,9 @@ The diagnostic command requires an explicit session and validates it before gene
 The GitHub workflow runs the full offline reproduction check on Windows, Ubuntu and macOS after dependency installation. Actions are pinned to immutable revisions; workflow files are included in the tested-code fingerprint. Successful jobs upload their run manifest and validation log. The latest PR checks are the authority on platform outcomes.
 
 See [collection and legacy review](audit/COLLECTION_AND_LEGACY_REVIEW.md) for repairs, live-test scope, API changes and the remaining verification register.
+
+## Record-level comparison and bill refresh
+
+[The record-level review](audit/RECONCILIATION_REVIEW.md) now covers all 933 divisions in the comparison deposit: 256,676 joined observations match vote flags and analytic party, with one extra deposit observation and one sitting/calendar date difference documented. `reproduce.py` also checks the saved crosswalk and discrepancy outputs.
+
+Use `python tools/collect_bills.py --session 40-1 --output incoming/new-bill-review` for a separate bill refresh snapshot. The shared parser supports archived and current LEGISinfo schemas and refuses unknown schemas. The historical live check exposed missing sponsors in the new response; no bill archive was replaced. See the review for an offline replay command and evidence.

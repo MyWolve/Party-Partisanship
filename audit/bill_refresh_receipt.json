@@ -1,0 +1,16 @@
+{
+  "baseline_sha256": "72225aeeffa0c48801efe801fc0db3dc0602d9dc0a2d6b36113a7c16ca441e1a",
+  "bills": 77,
+  "bytes": 495415,
+  "changed_bills": 77,
+  "content_type": "text/xml; charset=utf-8",
+  "finished_utc": "2026-09-11T19:32:58.322226+00:00",
+  "http_status": 200,
+  "requested_url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=40-1",
+  "resolved_url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=40-1",
+  "session": "40-1",
+  "sha256": "e6183db972335af184e737efa0842376f562e907d064c1bbe8ad76fddf6de8d8",
+  "source": "live",
+  "started_utc": "2026-09-11T19:32:57.516024+00:00",
+  "status": "validated_review_snapshot"
+}

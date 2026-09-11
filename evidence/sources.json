@@ -1,4 +1,9 @@
 {
+  "38-1-153-journals.html": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "293d0d80bac0bbc79312501ab8db93118fe32c1e6100ae3bb05c2d87f05e8ee8",
+    "url": "https://www.ourcommons.ca/documentviewer/en/38-1/house/sitting-123/journals"
+  },
   "38-1-159.xml": {
     "retrieved_date": "2026-09-11",
     "sha256": "e3608a69b764a620583c953160bb4564a3131acbe58bdf765393ad8011da319e",
@@ -13,6 +18,16 @@
     "retrieved_date": "2026-09-11",
     "sha256": "f374def2f6c34957df981fb827bd80bbaa710544e45401b8970be1d77663ba83",
     "url": "https://www.ourcommons.ca/members/en/votes/39/2/57/xml"
+  },
+  "40-2-157-journals.html": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "f8964448dcd75903e540e261673d557fbb42d4d7e6d6b960218234facd45c1c6",
+    "url": "https://www.ourcommons.ca/documentviewer/en/40-2/house/sitting-128/journals"
+  },
+  "40-2-157.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "3010310e990b940e422d979e7e2488df5dbdaf1a77b2cd36059302592ba440eb",
+    "url": "https://www.ourcommons.ca/members/en/votes/40/2/157/xml"
   },
   "40-3-12.xml": {
     "retrieved_date": "2026-09-11",
@@ -118,6 +133,11 @@
     "retrieved_date": "2026-09-11",
     "sha256": "5359bd1aa3d7e930e805dbb4e999fd081822e2368951b3ba85d976f74a8a21a2",
     "url": "https://www.ourcommons.ca/members/en/votes/42/1/872/xml"
+  },
+  "legisinfo-40-1-current.xml": {
+    "retrieved_date": "2026-09-11",
+    "sha256": "e6183db972335af184e737efa0842376f562e907d064c1bbe8ad76fddf6de8d8",
+    "url": "https://www.parl.ca/legisinfo/en/bills/xml?parlsession=40-1"
   },
   "whip-02dc8941254c.html": {
     "retrieved_date": "2026-09-11",

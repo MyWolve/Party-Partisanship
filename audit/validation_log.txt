@@ -44,9 +44,18 @@ test_reordered_columns (test_pipeline.ParsingTests.test_reordered_columns) ... o
 test_text_hash_portable (test_pipeline.ParsingTests.test_text_hash_portable) ... ok
 test_html_cannot_masquerade_as_vote_xml (test_pipeline.SourceArchiveTests.test_html_cannot_masquerade_as_vote_xml) ... ok
 test_pdf_archive_interstitial_is_rejected (test_pipeline.SourceArchiveTests.test_pdf_archive_interstitial_is_rejected) ... ok
+test_both_schemas_agree (test_reconciliation.BillSchemaTests.test_both_schemas_agree) ... ok
+test_invalid_refresh_retains_failure (test_reconciliation.BillSchemaTests.test_invalid_refresh_retains_failure) ... ok
+test_invalid_schemas_and_wrong_session (test_reconciliation.BillSchemaTests.test_invalid_schemas_and_wrong_session) ... ok
+test_lost_sponsor_is_a_change (test_reconciliation.BillSchemaTests.test_lost_sponsor_is_a_change) ... ok
+test_refresh_refuses_overwrite (test_reconciliation.BillSchemaTests.test_refresh_refuses_overwrite) ... ok
+test_split_bill_suffix (test_reconciliation.BillSchemaTests.test_split_bill_suffix) ... ok
+test_middle_name_fallback (test_reconciliation.ReconciliationTests.test_middle_name_fallback) ... ok
+test_real_record_level_discrepancy_stays_visible (test_reconciliation.ReconciliationTests.test_real_record_level_discrepancy_stays_visible) ... ok
+test_same_name_requires_constituency (test_reconciliation.ReconciliationTests.test_same_name_requires_constituency) ... ok
 
 ----------------------------------------------------------------------
-Ran 41 tests in 0.084s
+Ran 50 tests in 2.115s
 
 OK
 
@@ -88,3 +97,6 @@ House-40: 363 divisions (334 contested), 25 combo-coded member-votes excluded
   Bloc Québécois   rice 99.96, contested 99.96, loyalty 99.98 (50 MPs)
   Green Party      rice None, contested None, loyalty None (0 MPs)
 Verified all 36 benchmark rows without overwriting the baseline
+
+reconciliation
+[{'parliament': 38, 'divisions': 190, 'deposit_terms': 314, 'unmatched_nonobserved_terms': 1, 'union_observable_records': 54220, 'joined_records': 54220, 'exact_flag_and_analytic_party_matches': 54220}, {'parliament': 39, 'divisions': 380, 'deposit_terms': 327, 'unmatched_nonobserved_terms': 1, 'union_observable_records': 101643, 'joined_records': 101643, 'exact_flag_and_analytic_party_matches': 101643}, {'parliament': 40, 'divisions': 363, 'deposit_terms': 316, 'unmatched_nonobserved_terms': 1, 'union_observable_records': 100814, 'joined_records': 100813, 'exact_flag_and_analytic_party_matches': 100813, 'deposit_only_observation': 1}]

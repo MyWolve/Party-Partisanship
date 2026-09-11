@@ -52,16 +52,8 @@ def load_bill_types(session):
     if not os.path.exists(path):
         return {}
 
-    bills = {}
-    for bill in ET.parse(path).getroot().findall("Bill"):
-        number = (bill.findtext("BillNumberFormatted") or "").strip()
-        if number:
-            bills[number] = {
-                "type": (bill.findtext("BillTypeEn") or "").strip(),
-                "sponsor": (bill.findtext("SponsorEn") or "").strip(),
-                "title": (bill.findtext("LongTitleEn") or "").strip(),
-            }
-    return bills
+    from bill_data import parse_bill_xml
+    return parse_bill_xml(Path(path).read_bytes(), session)
 
 
 def infer_bill_type(bill_number):

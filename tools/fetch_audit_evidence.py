@@ -39,6 +39,8 @@ def main():
     for url in sorted({u for rule in designations for u in rule['sources']}):
         extension = '.pdf' if url.lower().endswith('.pdf') else '.html'
         urls['whip-' + hashlib.sha256(url.encode()).hexdigest()[:12] + extension] = url
+    for name, record in records.items():
+        urls.setdefault(name, record['url'])
     for name, url in urls.items():
         path = dest / name
         if name in records and records[name]['url'] != url:
