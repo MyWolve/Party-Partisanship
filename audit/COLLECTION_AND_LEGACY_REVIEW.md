@@ -15,7 +15,7 @@ This follow-up to the initial implementation audit reviews the collection and di
 | MP tracking used display names, including changing constituency labels | E7 and legacy loyalty reports now group by Person ID, with latest observed names used for display | Renamed-member and floor-crossing fixtures; corpus scan found no missing Person IDs |
 | Metadata loader did not reject duplicate/missing headers | Require unique headers and all eight contracted fields | Header-only failure fixtures |
 | Missing category cells were plotted as zero dissent | Undefined observations plot as gaps | Plot implementation inspection and category-chart smoke run |
-| Reproduction only demonstrated on local Windows | Add immutable-pinned GitHub Actions matrix for Windows, Ubuntu and macOS, Python 3.12.14 | Each job executes the same full reproduction command and uploads its environment/log evidence |
+| Reproduction only demonstrated on local Windows | Add immutable-pinned GitHub Actions matrix for Windows/macOS Python 3.12.10 and Ubuntu Python 3.12.14 | Each job executes the same full reproduction command and uploads its environment/log evidence |
 
 ## Numerical consequences
 
@@ -42,3 +42,5 @@ The following research/engineering items remain explicitly open:
 - Bill-level weighting, caucus-size effects and later experiments. These are methodological changes and should follow the collection and validation review.
 
 The old `scrape_all()` and implicit in-place scraper interfaces have been removed deliberately. Use the explicit collection command in REPRODUCING.md. This branch remains a review package; no merge or wholesale live refresh is performed.
+
+The first CI run exposed unavailable Python 3.12.14 builds on Windows/macOS. GitHub's official versions manifest provides 3.12.10 for those platforms; the matrix now pins those available builds and retains 3.12.14 on Ubuntu. The local reference uses bundled Windows 3.12.14. No analytical tolerance or dependency was changed to address the setup failure.
