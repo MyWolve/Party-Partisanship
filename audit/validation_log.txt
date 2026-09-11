@@ -3,6 +3,17 @@ Verified audit/derived/42-1-871.csv
 Verified audit/data_decisions.json
 
 tests
+test_bad_downloads_remain_failed_with_raw_evidence (test_collection.CollectionTests.test_bad_downloads_remain_failed_with_raw_evidence) ... ok
+test_bad_metadata_fails_before_members (test_collection.CollectionTests.test_bad_metadata_fails_before_members) ... ok
+test_changing_session_fails (test_collection.CollectionTests.test_changing_session_fails) ... ok
+test_existing_directory_is_never_overwritten (test_collection.CollectionTests.test_existing_directory_is_never_overwritten) ... ok
+test_invalid_session_cannot_create_paths (test_collection.CollectionTests.test_invalid_session_cannot_create_paths) ... ok
+test_successful_snapshot_and_receipts (test_collection.CollectionTests.test_successful_snapshot_and_receipts) ... ok
+test_transport_failure_is_not_reported_as_skipped (test_collection.CollectionTests.test_transport_failure_is_not_reported_as_skipped) ... ok
+test_exact_division_lookup (test_collection.LegacyTests.test_exact_division_lookup) ... ok
+test_floor_crossing_and_ties (test_collection.LegacyTests.test_floor_crossing_and_ties) ... ok
+test_identity_survives_display_name_change (test_collection.LegacyTests.test_identity_survives_display_name_change) ... ok
+test_metadata_headers_are_required_and_unique (test_collection.LegacyTests.test_metadata_headers_are_required_and_unique) ... ok
 test_complete_and_boundary (test_pipeline.BenchmarkTests.test_complete_and_boundary) ... ok
 test_missing_duplicate_unexpected_invalid (test_pipeline.BenchmarkTests.test_missing_duplicate_unexpected_invalid) ... ok
 test_curly_apostrophe (test_pipeline.ClassificationTests.test_curly_apostrophe) ... ok
@@ -35,7 +46,7 @@ test_html_cannot_masquerade_as_vote_xml (test_pipeline.SourceArchiveTests.test_h
 test_pdf_archive_interstitial_is_rejected (test_pipeline.SourceArchiveTests.test_pdf_archive_interstitial_is_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 30 tests in 0.080s
+Ran 41 tests in 0.084s
 
 OK
 

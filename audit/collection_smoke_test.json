@@ -1,0 +1,40 @@
+{
+  "session": "40-1",
+  "status": "validated_raw_snapshot",
+  "responses": [
+    {
+      "requested_url": "https://www.ourcommons.ca/members/en/votes/xml?parlSession=40-1",
+      "resolved_url": "https://www.ourcommons.ca/members/en/votes/xml?parlSession=40-1",
+      "retrieved_utc": "2026-09-11T18:45:31.227940+00:00",
+      "path": "session-before.xml",
+      "http_status": 200,
+      "content_type": "application/xml; charset=utf-8",
+      "bytes": 874,
+      "sha256": "ffba318095ab781a1e52d90adce45c574f49f99a3df3e25d4e04c4351ca28db7"
+    },
+    {
+      "requested_url": "https://www.ourcommons.ca/members/en/votes/40/1/1/csv",
+      "resolved_url": "https://www.ourcommons.ca/members/en/votes/40/1/1/csv",
+      "retrieved_utc": "2026-09-11T18:45:31.866943+00:00",
+      "path": "Parliament_40-1/file_1.csv",
+      "http_status": 200,
+      "content_type": "text/csv",
+      "bytes": 16869,
+      "sha256": "03b4bfd79dd89328fe0c04b33b10ecfacb8938cc84709da2ddeb46328dd3c2fd"
+    },
+    {
+      "requested_url": "https://www.ourcommons.ca/members/en/votes/xml?parlSession=40-1",
+      "resolved_url": "https://www.ourcommons.ca/members/en/votes/xml?parlSession=40-1",
+      "retrieved_utc": "2026-09-11T18:45:32.461160+00:00",
+      "path": "session-after.xml",
+      "http_status": 200,
+      "content_type": "application/xml; charset=utf-8",
+      "bytes": 874,
+      "sha256": "ffba318095ab781a1e52d90adce45c574f49f99a3df3e25d4e04c4351ca28db7"
+    }
+  ],
+  "started_utc": "2026-09-11T18:45:30.546812+00:00",
+  "note": "Separate raw snapshot; no audit overlays or corpus promotion.",
+  "divisions": 1,
+  "finished_utc": "2026-09-11T18:45:32.462160+00:00"
+}

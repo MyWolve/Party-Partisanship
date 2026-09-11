@@ -256,7 +256,12 @@ def load_vote_metadata(directory):
 
     metadata = {}
     with open(path, encoding="utf-8-sig") as f:
-        for row in csv.DictReader(f):
+        reader = csv.DictReader(f)
+        required = {'vote_number', 'date', 'subject', 'bill_number', 'result', 'yeas', 'nays', 'paired'}
+        fields = reader.fieldnames or []
+        if len(fields) != len(set(fields)) or not required.issubset(fields):
+            raise ValueError('Missing or duplicate metadata columns')
+        for row in reader:
             if not row.get("vote_number", "").strip():
                 raise ValueError("Missing vote number")
             number = int(row["vote_number"])

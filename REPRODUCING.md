@@ -94,3 +94,20 @@ Make changes in a separate branch. Retrieve new evidence explicitly with `tools/
 The full-session gate expects the current 13-session universe. Adding another session requires updating the session list and governing-party map along with the manifest and tests. Neither a new baseline nor a larger tolerance should be introduced merely to make a failing comparison pass.
 
 After the deliberate update, run `python reproduce.py --repeat`, review the numeric and visual differences, then run `python reproduce.py --check --repeat`. Record changed denominators and conclusions in the implementation audit. The code fingerprint disambiguates uncommitted work from the base Git revision.
+
+## Separate collection and session diagnostics
+
+Collection is deliberately separate from reproduction. Choose a new output directory:
+
+```text
+python can_scrape.py --session 40-1 --output incoming/40-1-review
+python visualize_parliament.py --session 38-1 --output-dir diagnostics/38-1
+```
+
+The collector refuses existing output directories. It saves the raw responses and a collection manifest, validates schemas and exact tallies, and verifies that session metadata stayed stable during the run. Failures return a nonzero exit and retain a failed manifest for diagnosis. `validated_raw_snapshot` is not permission to replace the frozen corpus: bill metadata, source discrepancies and historical corrections still need review before promotion. Incoming snapshots and exploratory diagnostics are ignored by Git.
+
+The diagnostic command requires an explicit session and validates it before generating charts with a noninteractive backend. E7 and session loyalty reports use Person IDs so name or constituency changes do not split one MP into multiple records. Default single-division loaders still return display names; longitudinal callers should pass `member_ids=True` or use `load_member_history`.
+
+The GitHub workflow runs the full offline reproduction check on Windows, Ubuntu and macOS after dependency installation. Actions are pinned to immutable revisions; workflow files are included in the tested-code fingerprint. Successful jobs upload their run manifest and validation log. The latest PR checks are the authority on platform outcomes.
+
+See [collection and legacy review](audit/COLLECTION_AND_LEGACY_REVIEW.md) for repairs, live-test scope, API changes and the remaining verification register.

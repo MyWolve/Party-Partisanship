@@ -40,6 +40,6 @@ def verify_inputs(root=ROOT):
 
 
 def code_fingerprints(root=ROOT):
-    paths = [p for pattern in ('*.py', 'experiments/*.py', 'tools/*.py', 'tests/*.py', 'requirements*.txt')
+    paths = [p for pattern in ('*.py', 'experiments/*.py', 'tools/*.py', 'tests/*.py', 'requirements*.txt', '.github/workflows/*.yml')
              for p in root.glob(pattern)]
     return {p.relative_to(root).as_posix(): digest(p) for p in sorted(paths)}

@@ -96,7 +96,7 @@ def parliament_unity(directories):
     divisions_contested = 0
 
     for directory in directories:
-        for _, votes in load_parliament(directory):
+        for _, votes in load_parliament(directory, member_ids=True):
             lopsided = is_lopsided(votes)
             if not lopsided:
                 divisions_contested += 1

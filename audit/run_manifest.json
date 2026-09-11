@@ -1,24 +1,26 @@
 {
   "code_files": {
-    "bill_info.py": "077a0dfcb9a9ddcfc328d677ca47297bad640f5eaf9562dbc97909a374c980c5",
-    "can_scrape.py": "7b86e0e3196be0846c7dc69c37b7e669ffb8efa5a77a9413de7a76941b379768",
+    ".github/workflows/reproducibility.yml": "7e25679dafc344cb429a8d3abee536732c6950fb76d78cdd3ecdf9a4ef068969",
+    "bill_info.py": "f2889a674d29c009a44030539d817f93ae5c7149e6c11f4d9680bac60d352dbf",
+    "can_scrape.py": "085240237feb29cd59e46e121ca42db59f0ec49d342164df78ae1a4ddba269c3",
     "check_data.py": "e70a93f7f3376db0a8fed81e924f406cd89470ed40923721ecf2cd43b865da89",
     "experiment_io.py": "1ac7d99bbf3e51b3b1f68f2924b96b803572d54641a5824a55c3ba6cb89a4b28",
     "experiments/build_benchmarks_e7.py": "f0b6f505fb4ba212ad3755ddf0843b1f535fc8e3b55fcc8eaafcc111986461f2",
     "experiments/experiment_e1.py": "d4d642dbcb4e226b6538ff21b39dda973ff5e6d1b236301fd66455bbba616b7c",
-    "experiments/experiment_e7.py": "c1f4fc1b5d0271a2ed8b8246113efc4a91b9ad620489dbfda60e1e9672cd7d49",
-    "provenance.py": "df36b9ba1d024c353f7cc38dd4da34caa5c8daa13db771aec09edff0a7cd2a5f",
+    "experiments/experiment_e7.py": "29e7539507e294e3d0accfe6acb5610481a852c2b3adc939e359b4a521c4bf1b",
+    "provenance.py": "1192c93f4f136aa844a05421cdf5e0621d8d6500e12b50144f149d006221801f",
     "reproduce.py": "47782e8904cbff9a1fc141770557f7836a2b819bdc4dab3432c9876dffd1cd5b",
     "requirements-lock.txt": "c731839447bd2d8e216ca8436a7d25da53bffb46aee26f3c503dc7271b7619d1",
     "requirements.txt": "c5c47ecfbac90e9ce72b9e8a547f723374dc09af7dd51685093d122c8199671f",
+    "tests/test_collection.py": "fc932f770ca3a16c0a92f9e894ba9fd429d6f74be726a094fd0db6b1428c9e23",
     "tests/test_pipeline.py": "b9449141fbbdb82564891be0f3678db273e5256e70edfc117bfffe81fa959199",
     "tools/build_audit_data.py": "2f088f87e78f77c61456e4cf2367b4b939a795bf1fd6a2c955011226393b9533",
     "tools/fetch_audit_evidence.py": "fdf4d1f83614d0ec8dc96ea1a613cea33b16b4d899fb79f63b283b645e316df5",
     "tools/freeze_inputs.py": "f42ef4b447d0e0b3ee005120a5474509f571591a34ab4c0dc69ec38e6afc7962",
-    "visualize_parliament.py": "0e38cc95ec814c8aace1a46edf3bf7ea927cac47faeba59ba735dd365865aa05",
+    "visualize_parliament.py": "16ba7296cd8bbc322c9b4c52a5caef204bee779588a08cdf8de04d63373ab37d",
     "vote_data.py": "5c0d4c07e0f8089db697c3881264489193fabc2c278319ffe2c83129b15518f3"
   },
-  "code_sha256": "fa206c438597a74c5b3ada3334a9786e042347cc0805cd09fd826650ddce9d70",
+  "code_sha256": "851279ad9ea0e04fe691f365797a32ae76837becad588c4eb7fef756fb6cca8e",
   "commands": [
     "tools/build_audit_data.py --check",
     "-m unittest discover -s tests -v",
@@ -47,7 +49,7 @@
     "six": "1.17.0",
     "urllib3": "2.7.0"
   },
-  "git_base_revision": "77248bcc97617eb07593723dc8144d9121acb038",
+  "git_base_revision": "a2a9b6a4ed3e62486e757bf1ab515235c489a058",
   "outputs": {
     "results_e1/FINDINGS_E1.md": "4b89f5db8330e431dc2fc770e863314d036540377c0cb457d7b0fcc11eacf81f",
     "results_e1/classification_audit.csv": "786b830cc30ca49a736fb1e34164a5a2393959d982d994d36592723db6ce6ccd",
@@ -59,7 +61,7 @@
     "results_e1/whip_test_by_session.png": "90d8507ee35e7471e3ce791cdbdc9d87847df3b4cd15a1b35a4b7d2cb38ab7e8",
     "results_e7/FINDINGS_E7.md": "904542d033b23acf88b77a5f229f41e3c39f29604907c80e79b69e18568c5eea",
     "results_e7/benchmark_comparison.csv": "8c4d0bcad4dcc63cae481ce7df09582769c3e5341a7108d8860f99d6248564a2",
-    "results_e7/unity_by_parliament.csv": "d1e1f2106bd84e64585df530bf4da1555e273a7b2791ae972803c33058a59fb0",
+    "results_e7/unity_by_parliament.csv": "9c502590f18a0c5d84a5ee8750e1556079a65eec32b6c46b882d13defb488ef2",
     "results_e7/unity_robustness.png": "a5c33fb8a2ff09b7de6c5293449d4ab1f96abdc3ba7ffd3ea5f880692a2295ef",
     "results_e7/validation_summary.json": "dc5ce299095e820ebbd79c15f114bbd476e53d8ea2e635b3edf1c8b50b93a4ea"
   },
@@ -71,5 +73,5 @@
   },
   "saved_results_match": true,
   "status": "pass",
-  "table_sha256": "579a92ce4a3ef9c8b84693749d115cf80ef0cf8d7ee8f6dd8d83e7973d90116a"
+  "table_sha256": "3ec5ad9e7577dde0c1f17a013a6ca0299a5204a3ad99cc791a0b0986b6e266c0"
 }

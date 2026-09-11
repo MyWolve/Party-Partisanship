@@ -84,3 +84,7 @@ E1 and E7 have been implemented and audited. E2—trends over time—remains nex
 ## Sources
 
 The [House of Commons vote exports](https://www.ourcommons.ca/members/en/votes), [Journals](https://www.ourcommons.ca/DocumentViewer/en/house/latest/journals), and [LEGISinfo](https://www.parl.ca/legisinfo/en/overview) provide the parliamentary records. The comparison deposit is Godbout and Høyland’s *Canadian Parliament Voting Data, 1867–2015*; the included Parliaments 38–40 subset and its [codebook](experiments/experiment_7_data/readme.txt) are retained for offline reproduction. Benchmark values are computed from those matrices, not transcribed from published figures.
+
+## Verification work
+
+The [collection and legacy review](audit/COLLECTION_AND_LEGACY_REVIEW.md) records the next engineering pass, including separate raw collection snapshots, stable MP identifiers, deterministic diagnostics, and cross-platform CI. It also identifies the source and record-level checks that remain open.
