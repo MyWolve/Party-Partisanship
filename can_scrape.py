@@ -1,180 +1,141 @@
+"""Collect an explicit session into a NEW review snapshot, never the frozen corpus.
+
+python can_scrape.py --session 40-1 --output incoming/40-1-review
+A failed collection retains responses and a failed manifest for diagnosis.
+No snapshot is automatically promoted to the analytical corpus.
 """
-Scrape recorded division (vote) data from the House of Commons website.
-
-  Session vote list (XML):
-      https://www.ourcommons.ca/members/en/votes/xml?parlSession=44-1
-  Per-vote member votes (CSV):
-      https://www.ourcommons.ca/members/en/votes/44/1/456/csv
-
-For each session this produces:
-  Parliament_<session>/votes_metadata.csv   one row per division: number,
-                                            date, subject, bill number,
-                                            result, yea/nay/paired counts
-  Parliament_<session>/file_<N>.csv         per-member votes for division N
-                                            (same format as before)
-"""
-
+import argparse
 import csv
-import os
+import hashlib
+import json
+import re
 import time
+from datetime import datetime, timezone
+from pathlib import Path
 import xml.etree.ElementTree as ET
 
 import requests
+from vote_data import parse_vote_text, tally
 
-# Project root = the directory this script lives in.
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
-BASE_URL = "https://www.ourcommons.ca"
-
-# Sessions available through the votes interface (verified July 2026).
-KNOWN_SESSIONS = [
-    "38-1",
-    "39-1", "39-2",
-    "40-1", "40-2", "40-3",
-    "41-1", "41-2",
-    "42-1",
-    "43-1", "43-2",
-    "44-1",
-    "45-1",
-]
-
-# Some government sites reject the default python-requests user agent,
-# which can make valid sessions look like they don't exist.
-HEADERS = {
-    "User-Agent": ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-                   "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"),
-    "Accept-Language": "en-CA,en;q=0.9",
-}
-
+BASE_URL = 'https://www.ourcommons.ca'
+HEADERS = {'User-Agent': 'Party-Partisanship research collector', 'Accept-Language': 'en-CA,en;q=0.9'}
 REQUEST_DELAY_SECONDS = 0.5
-
-# Fields to keep from each vote element, in output column order. Tag names
-# are matched case-insensitively and by substring, since the export schema
-# may differ slightly between deployments; run scrape_session() once and
-# check votes_metadata.csv to confirm the columns populated correctly.
 METADATA_FIELDS = [
-    ("vote_number", ("decisiondivisionnumber",)),
-    ("date", ("decisioneventdatetime", "decisiondivisiondatetime")),
-    ("subject", ("decisiondivisionsubject",)),
-    ("bill_number", ("billnumbercode",)),
-    ("result", ("decisionresultname",)),
-    ("yeas", ("decisiondivisionnumberofyeas",)),
-    ("nays", ("decisiondivisionnumberofnays",)),
-    ("paired", ("decisiondivisionnumberofpaired",)),
+    ('vote_number', ('decisiondivisionnumber',)),
+    ('date', ('decisioneventdatetime', 'decisiondivisiondatetime')),
+    ('subject', ('decisiondivisionsubject',)),
+    ('bill_number', ('billnumbercode',)),
+    ('result', ('decisionresultname',)),
+    ('yeas', ('decisiondivisionnumberofyeas',)),
+    ('nays', ('decisiondivisionnumberofnays',)),
+    ('paired', ('decisiondivisionnumberofpaired',)),
 ]
 
 
-def fetch(url, **kwargs):
-    """GET with polite delay, shared headers, and status check."""
+def fetch(url):
+    """Bounded, polite GET; transport errors propagate as collection failures."""
     time.sleep(REQUEST_DELAY_SECONDS)
-    response = requests.get(url, headers=HEADERS, timeout=30, **kwargs)
+    response = requests.get(url, headers=HEADERS, timeout=45)
     response.raise_for_status()
     return response
 
 
-def extract_field(element, tag_fragments):
-    """Find the first child whose tag contains any fragment (case-insensitive)."""
-    for child in element.iter():
-        tag = child.tag.lower().rsplit("}", 1)[-1]  # strip any XML namespace
-        if any(fragment in tag for fragment in tag_fragments):
-            return (child.text or "").strip()
-    return ""
+def extract_field(element, tags):
+    matches = [child for child in element.iter()
+               if child.tag.rsplit('}', 1)[-1].lower() in tags]
+    if len(matches) > 1:
+        raise ValueError(f'Ambiguous metadata field {tags}')
+    return (matches[0].text or '').strip() if matches else ''
 
 
-def get_session_metadata(session):
-    """
-    Download and parse the session's vote list from the XML export.
-
-    Returns a list of dicts with the METADATA_FIELDS keys, or None if the
-    session isn't served (empty export).
-    """
-    url = f"{BASE_URL}/members/en/votes/xml?parlSession={session}"
-    response = fetch(url)
-
-    root = ET.fromstring(response.content)
-    # Vote entries are the repeated child elements of the root; the exact
-    # tag name may vary, so take all direct children uniformly.
-    entries = list(root)
-    if not entries:
-        return None
-
-    votes = []
-    for entry in entries:
-        votes.append({
-            name: extract_field(entry, fragments)
-            for name, fragments in METADATA_FIELDS
-        })
-    return votes
-
-
-def write_metadata_csv(votes, output_dir):
-    """Write the session vote metadata to votes_metadata.csv."""
-    path = os.path.join(output_dir, "votes_metadata.csv")
-    with open(path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=[name for name, _ in METADATA_FIELDS])
-        writer.writeheader()
-        writer.writerows(votes)
-    return path
-
-
-def download_member_votes(session, vote_number, output_dir):
-    """
-    Download the per-member vote CSV for one division.
-
-    Uses the direct CSV endpoint on the vote detail page, so no HTML
-    scraping is needed. Skips the download if the file already exists.
-    Returns True if a file was downloaded, False if skipped or failed.
-    """
-    file_path = os.path.join(output_dir, f"file_{vote_number}.csv")
-    if os.path.exists(file_path):
-        return False
-
-    parliament, session_number = session.split("-")
-    url = f"{BASE_URL}/members/en/votes/{parliament}/{session_number}/{vote_number}/csv"
-
-    try:
-        response = fetch(url)
-    except requests.RequestException as error:
-        print(f"    vote {vote_number}: download failed ({error})")
-        return False
-
-    with open(file_path, "wb") as f:
-        f.write(response.content)
-    return True
-
-
-def scrape_session(session):
-    """Scrape metadata and all per-member vote files for one session."""
-    try:
-        votes = get_session_metadata(session)
-    except (requests.RequestException, ET.ParseError) as error:
-        print(f"Session {session}: metadata fetch failed ({error}), skipping.")
-        return
-
+def parse_metadata(data):
+    root = ET.fromstring(data)
+    if root.tag.rsplit('}', 1)[-1].lower() == 'html':
+        raise ValueError('HTML received instead of session XML')
+    votes, seen = [], set()
+    for entry in root:
+        row = {key: extract_field(entry, tags) for key, tags in METADATA_FIELDS}
+        number = row['vote_number']
+        if not re.fullmatch(r'[1-9]\d*', number) or number in seen:
+            raise ValueError(f'Invalid or duplicate division: {number!r}')
+        seen.add(number)
+        datetime.fromisoformat(row['date'])
+        if not row['subject'] or not row['result']:
+            raise ValueError(f'Missing subject/result in division {number}')
+        for key in ('yeas', 'nays', 'paired'):
+            if not re.fullmatch(r'\d+', row[key]):
+                raise ValueError(f'Invalid {key} in division {number}')
+        votes.append(row)
     if not votes:
-        print(f"Session {session}: no votes returned, skipping.")
-        return
-
-    output_dir = os.path.join(PROJECT_ROOT, f"Parliament_{session}")
-    os.makedirs(output_dir, exist_ok=True)
-
-    metadata_path = write_metadata_csv(votes, output_dir)
-    print(f"Session {session}: {len(votes)} votes; metadata -> {metadata_path}")
-
-    downloaded = 0
-    for vote in votes:
-        number = vote["vote_number"]
-        if number and download_member_votes(session, number, output_dir):
-            downloaded += 1
-    print(f"Session {session}: downloaded {downloaded} new vote files "
-          f"({len(votes) - downloaded} already present or failed).")
+        raise ValueError('Empty session export; completeness cannot be established')
+    return sorted(votes, key=lambda row: int(row['vote_number']))
 
 
-def scrape_all(sessions=None):
-    for session in sessions or KNOWN_SESSIONS:
-        scrape_session(session)
+def collect_session(session, output):
+    if not re.fullmatch(r'[1-9]\d*-[1-9]\d*', session):
+        raise ValueError('Session must be parliament-session, e.g. 40-1')
+    output = Path(output).resolve()
+    # An exclusive directory claim prevents overwrite and unsafe implicit resume.
+    output.mkdir(parents=True, exist_ok=False)
+    manifest = {'session': session, 'status': 'collecting', 'responses': [],
+                'started_utc': datetime.now(timezone.utc).isoformat(),
+                'note': 'Separate raw snapshot; no audit overlays or corpus promotion.'}
+    def save_manifest():
+        (output/'collection_manifest.json').write_text(json.dumps(manifest, indent=2)+'\n', encoding='utf-8')
+    def download(url, relative):
+        response = fetch(url)
+        path = output/relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(response.content)
+        manifest['responses'].append({'requested_url': url, 'resolved_url': response.url,
+            'retrieved_utc': datetime.now(timezone.utc).isoformat(), 'path': relative,
+            'http_status': response.status_code, 'content_type': response.headers.get('Content-Type', ''),
+            'bytes': len(response.content), 'sha256': hashlib.sha256(response.content).hexdigest()})
+        save_manifest()
+        return response.content
+    save_manifest()
+    try:
+        url = f'{BASE_URL}/members/en/votes/xml?parlSession={session}'
+        data = download(url, 'session-before.xml')
+        votes = parse_metadata(data)
+        directory = output/f'Parliament_{session}'
+        directory.mkdir()
+        with (directory/'votes_metadata.csv').open('w', newline='', encoding='utf-8') as stream:
+            writer = csv.DictWriter(stream, fieldnames=[key for key, _ in METADATA_FIELDS], lineterminator='\n')
+            writer.writeheader(); writer.writerows(votes)
+        parliament, sitting = session.split('-')
+        for vote in votes:
+            number = vote['vote_number']
+            data = download(f'{BASE_URL}/members/en/votes/{parliament}/{sitting}/{number}/csv',
+                            f'Parliament_{session}/file_{number}.csv')
+            rows = parse_vote_text(data.decode('utf-8-sig'))
+            if not rows or tally(rows) != tuple(int(vote[k]) for k in ('yeas', 'nays', 'paired')):
+                raise ValueError(f'Division {number}: empty or mismatched raw tally; source audit required')
+        # Detect a changing session during the run, rather than mixing snapshots.
+        after = parse_metadata(download(url, 'session-after.xml'))
+        if votes != after:
+            raise ValueError('Session metadata changed during collection; collect a new snapshot')
+        manifest.update(status='validated_raw_snapshot', divisions=len(votes))
+    except Exception as error:
+        manifest.update(status='failed', error=f'{type(error).__name__}: {error}')
+        raise
+    finally:
+        manifest['finished_utc'] = datetime.now(timezone.utc).isoformat()
+        save_manifest()
+    return manifest
 
 
-if __name__ == "__main__":
-    scrape_all()
-    #scrape_session("45-1")
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--session', required=True)
+    parser.add_argument('--output', required=True, type=Path)
+    args = parser.parse_args()
+    try:
+        result = collect_session(args.session, args.output)
+    except (OSError, ValueError, ET.ParseError, requests.RequestException) as error:
+        parser.exit(1, f'Collection failed: {error}\n')
+    print(f"{result['status']}: {result['divisions']} divisions; inspect before any corpus update")
+
+
+if __name__ == '__main__':
+    main()

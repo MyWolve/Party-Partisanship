@@ -1,85 +1,87 @@
-## Party-Partisanship
+# Party-Partisanship
 
-A data analysis project on party discipline in the Canadian House of Commons, conducted just for fun!
+How strong are party lines in Canada's House of Commons, and when do MPs dissent?
 
-How strong is party unity? How defined are party lines? Are Whips that successful? Or are there other key players? This repository scrapes every recorded vote from the House of Commons since October 2004, verifies the data against independent totals, classifies each vote by the kind of business being decided (à la: theme of the bill), measures party cohesion and dissent at the party, category, and individual-MP level — and validates the whole pipeline against the definitive independently collected dataset in the field.
+This small Python project collects recorded votes, checks their totals, and compares party voting on one bill, several bills, types of business, or whole parliaments. The included snapshot covers **4,851 divisions from 38-1 through 45-1**; 45-1 is incomplete.
 
-## Repository layout
+The question is about whipping and conscience. The observable result is whether an MP voted against their party's majority. Agreement can reflect shared beliefs as well as discipline; dissent can occur on a permitted free vote. These records cannot reveal personal motives or establish a whip instruction by themselves.
 
-```
-Parliament_<P>-<S>/          Vote data, one directory per session (38-1 … 45-1)
-House of Commons/            LEGISinfo bill XMLs (type, sponsor, title)
-can_scrape.py                Scraper (ourcommons.ca XML/CSV export endpoints)
-check_data.py                Integrity checker; gates the pipeline
-bill_info.py                 Division classifier (business category, stage, free-vote overrides)
-visualize_parliament.py      Cohesion metrics, dissent analysis, plotting
-experiments/
-  experiment_e1.py           E1: The Whip Test
-  experiment_e7.py           E7: Validation & robustness
-  build_benchmarks_e7.py     Computes E7 benchmarks from the Godbout & Høyland deposit
-  benchmarks_e7.csv          Benchmark values with provenance (parliament,party,metric,value,source)
-  experiment_7_data/         Godbout & Høyland, Canadian Parliament Voting Data 1867-2015 (CC0)
-  results_e1/                E1 outputs + FINDINGS_E1.md
-  results_e7/                E7 outputs + FINDINGS_E7.md
+## Start here
+
+Use Python 3.12. After cloning this repository:
+
+```sh
+python -m venv .venv
+# Activate: Windows PowerShell: .venv\Scripts\Activate.ps1
+# Activate: macOS/Linux: source .venv/bin/activate
+python -m pip install -r requirements.txt
+python check_data.py
+python analyze.py --parliament 38 39 --output outputs/compare
 ```
 
-## Data
+Open `outputs/compare/dissent.png` for a side-by-side party comparison. Read `summary.csv` for the counts behind it. Every analysis command validates the saved data first and writes to a **new** directory.
 
-Each `Parliament_<P>-<S>/` directory contains:
-- `file_<N>.csv` : how every MP voted on division N (name, affiliation at the time of the vote, Yea/Nay, paired status (mutual abstention from voting))
-- `votes_metadata.csv` : one row per division: number, date, subject, bill number, result, and official Yea/Nay/Paired totals from the XML data.
+## Ask a question
 
-`House of Commons/<session>.xml` holds LEGISinfo bill details used to distinguish government bills from private members' business.
+```sh
+# One bill, including all its recorded stages
+python analyze.py --session 42-1 --bill 42-1/C-89 --group-by bill --output outputs/postal
 
-`experiments/experiment_7_data/` is a CC0 subset (Parliaments 38-40 + codebook) of Godbout & Høyland's *Canadian Parliament Voting Data, 1867–2015* (Harvard Dataverse) — raw member × division matrices used only to validate this pipeline (see E7).
+# Several bills, with a separate result for each
+python analyze.py --session 42-1 --bill 42-1/C-89 42-1/C-14 --group-by bill --output outputs/bills
 
-### Known data issues/quirks
+# Government bills versus other parliamentary business, for every party
+python analyze.py --session 44-1 --group-by category --output outputs/categories
 
-- On ~19 divisions across six sessions, the member-level file contains 1–2 votes fewer than the announced totals. This is largely consistent with votes struck from the record after the call (an MP not in their seat, voting both ways, etc.); the member files reflect the corrected record and are treated as authoritative.
-- The official subject lines contain occasional defects such as typos, placeholder text, and bill references missing their numbers. The classifier handles the known cases explicitly, but it's possible I've missed some.
-- Party affiliation is recorded per vote, so floor-crossers are scored against whichever caucus they belonged to at the time. (E7 showed this convention differs from Godbout's term-date coding by ~0.1 points at most.)
+# An actual LEGISinfo bill type, compared across two parliaments
+python analyze.py --parliament 38 39 --bill-type "House Government Bill" --output outputs/government
 
-## Pipeline
-```
-# Download vote metadata and files
-python3 can_scrape.py
-# Verify data before analysis
-python3 check_data.py
-```
-`check_data.py` confirms every division has both a metadata row and a member file, re-tallies the votes, and lists any vote subjects the classifier couldn't categorize. It exits non-zero on any hard problems so it can gate the pipeline.
+# Explore titles and vote subjects; inspect the matched divisions
+python analyze.py --keyword climate environment --group-by bill --output outputs/topics
 
-## Analysis
-`visualize_parliament.py` provides:
-- **Cohesion metrics** : the Rice Index (|yea−nay|/(yea+nay)) and majority-share, per party per division, with averages that exclude divisions a party did not vote in.
-- **Dissent analysis** : because party discipline in the House of Commons tends to be strong (such that Rice scores saturate ≥ 99) the more informative statistics are *dissent frequency* (share of divisions with any 'rebel'), rebel counts per division, and per-MP loyalty scores.
-- **The Whip Test** : `bill_info.py` classifies every division by business category (government bill, private members' bill, opposition motion, procedural, supply, throne speech, committee report, appointment) plus reading stage and a confidence flag, with a designated-free-vote override list. `print_whip_report()` then cross-tabulates dissent by category, and `mp_loyalty_split()` scores each MP separately on whipped and free business.
-
-Example:
-```
-from visualize_parliament import print_whip_report, plot_dissent_by_category
-print_whip_report("./Parliament_44-1")
-plot_dissent_by_category("./Parliament_44-1")
+# Export the complete corrected snapshot and compare sessions
+python analyze.py --group-by session --output outputs/all
 ```
 
-## Experiments (roadmap)
+Multiple keywords mean **any** case-insensitive substring match; different filters combine with **and**. Keyword searches cover the archived long title and division subject, not bill full text or a separately collected subtitle. A subject may mention a topic without the bill primarily addressing it.
 
-1. **The Whip Test — DONE** (`experiments/results_e1/FINDINGS_E1.md`) : governing-party dissent on government bills vs. private members' business. Headline: an 8.0× free/whipped dissent ratio; Harper-era governments dissented on 2 of 762 government-bill divisions, including a 646-division zero-dissent streak; supply 1/1118; Liberal governments whip ~20× looser than Harper's.
-2. **Twenty years of discipline — NEXT** : cohesion and dissent frequency across all sessions; secular trend and minority-vs-majority parliaments.
-3. **Government-status effect** : the same party's discipline in government vs. opposition / opposition → government transition.
-4. **Where is the Rebel Base?!** : concentration of rebellion across MPs; conscience-caucus vs. free-voters; do MPs who later leave a caucus rebel more beforehand?
-5. **Confidence Gradient** : does dissent fall as the stakes of the vote category rise?
-6. **Stage Effects** : dissent at second reading vs. third reading of the same bills.
-7. **Validation and Robustness — DONE** (`experiments/results_e7/FINDINGS_E7.md`) : the pipeline reproduces party unity computed from Godbout & Høyland's independently collected data (Parliaments 38–40) to within 0.10 points — 30 of 36 comparisons exact to two decimals — under shared metric definitions (lop-sided divisions excluded at ≤ 5, MPs under 25 votes dropped from loyalty). Small-group-corrected Rice and MP-vs-vote weighting confirm the main conclusions are robust.
+A bill key includes the session because numbers restart. One bill can have many divisions; stages remain visible in the export. Parliament selections combine all their sessions. Grouping by bill omits unnumbered business from the summary, but retains it in selected-data exports. Motions and supply are business categories, not bill types.
 
-Per-session statistics exclude Parliament 40-1 (a single recorded vote before the 2008 prorogation). Dissent-rate analyses are run both with and without near-unanimous divisions as a robustness check.
+## How to read dissent
 
-## Longer-term ambitions
+| Measure | Meaning |
+| --- | --- |
+| Dissent frequency | Percentage of divisions with at least one vote against the party majority |
+| Dissent intensity | Minority member-votes as a percentage of member-votes in divisions with a defined party majority |
+| Mean Rice cohesion | Average of `100 × abs(Yea − Nay) / (Yea + Nay)` across divisions; 100 is unanimity, 0 is an even split |
 
-Extending to other voting bodies such as the UK House of Commons, and the United States House of Representatives and Senate.
+Every output includes denominators. Frequency and mean Rice weight divisions equally, so bills with more recorded votes contribute more. Intensity weights member-votes. Paired and dual-coded votes are excluded from binary measures; tied caucus votes have no majority and are excluded from dissent, but enter Rice as zero. A party with no eligible observations has a blank result. Independents remain in the member data but are not treated as one party.
 
-## Requirements
-Python 3.10+ with `requests` and `matplotlib` (see `requirements.txt`).
+The default includes free-vote stages and all matching business. Party/stage-specific documented statuses are exported for closer inspection; business categories alone are not verified whipping labels. Comparisons are descriptive, not estimates of the effect of a whip or of conscience.
 
-## Acknowledgements
+**A small example:** C-89 in 42-1 has three recorded divisions. Two contain Liberal dissent, with eleven minority member-votes across them and six in the largest episode. The bill command above reproduces those counts. Start with an identifiable bill, inspect its stages, then widen the comparison.
 
-Validation data: Godbout, Jean-François and Bjørn Høyland. 2017. *Canadian Parliament Voting Data, 1867–2015.* Harvard Dataverse (CC0). See also Godbout, *Lost on Division: Party Unity in the Canadian Parliament* (University of Toronto Press, 2020).
+## Use the data elsewhere
+
+Each run creates `divisions.csv`, `party_votes.csv`, `summary.csv`, `members.csv.gz`, `manifest.json`, and a chart (up to 30 groups). Unzip the member CSV for a spreadsheet, or load it directly in Python/R. No project-specific loader is needed. [Columns, joins and examples](DATA.md).
+
+Original CSVs remain in `Parliament_<P>-<S>/`. Nineteen source discrepancies are corrected when reading them; raw files are preserved. The small [correction record](audit/DATA_DECISIONS.md) explains the changes and links the official records. Compressed evidence supports just those corrections and the missing 45-1 bill metadata. This is internal tally validation, not independent verification of every historical vote.
+
+## Collect and check
+
+```sh
+python can_scrape.py --session 43-1 --output incoming/43-1-new
+python -m unittest discover -s tests -q
+```
+
+Collection writes a separate snapshot with URLs, retrieval times and hashes. It checks every downloaded tally and rechecks the session listing at the end. Failures remain visibly failed; existing directories cannot be overwritten. Two live downloads of 43-1 on 14 September 2026 UTC returned identical data for all 26 divisions and passed tally checks. This is a short-session demonstration, not a full-corpus live refresh. Live sources can change or contain inconsistencies. Downloaded snapshots require review before replacing the included data; analysis examples above use the included snapshot.
+
+CI runs the tests and full integrity check, then exports the complete dataset as a downloadable `parliament-data` workflow artifact. Artifacts are temporary; the committed sources and command above recreate them.
+
+## Project scope
+
+The original plotting helpers remain in `visualize_parliament.py`. Its historical `analyze_bill` helper selects a division file; use `analyze.py --bill` for a complete bill. `experiments/` preserves the original exploratory work and historical outputs; they are not regenerated or validated by the MVP command and should not be used as its current results.
+
+Sponsor recovery, broader external reconciliation and extended research remain on `codex/reproducibility-audit`, separate from this MVP. The next useful research step is to document instructions for specific dissent episodes, not infer them from vote counts.
+
+Sources: [House votes](https://www.ourcommons.ca/members/en/votes), [LEGISinfo](https://www.parl.ca/legisinfo/en/overview), and official Journals linked in the corrections. Please cite the source, repository commit and selected sessions when reusing an output. This repository does not grant rights to upstream material.

@@ -1,0 +1,149 @@
+[
+  {
+    "id": "civil-marriage-liberal",
+    "session": "38-1",
+    "bill": "C-38",
+    "party": "Liberal",
+    "status": "documented_free",
+    "member_scope": "backbench_only",
+    "stages": [
+      "second_reading",
+      "report_stage",
+      "third_reading"
+    ],
+    "other_stages": "unresolved",
+    "sources": [
+      "https://www.ourcommons.ca/documentviewer/en/38-1/house/sitting-75/hansard",
+      "https://www.ourcommons.ca/documentviewer/en/38-1/house/sitting-121/hansard"
+    ],
+    "note": "Cabinet constraint documented. Recommittal scope unresolved. Caucus-level exclusion does not imply a backbencher-only estimate."
+  },
+  {
+    "id": "civil-marriage-conservative",
+    "session": "38-1",
+    "bill": "C-38",
+    "party": "Conservative",
+    "status": "documented_free",
+    "member_scope": "whole_caucus",
+    "stages": [
+      "second_reading",
+      "report_stage",
+      "third_reading"
+    ],
+    "other_stages": "unresolved",
+    "sources": [
+      "https://www.ourcommons.ca/documentviewer/en/38-1/house/sitting-85/hansard",
+      "https://www.ourcommons.ca/documentviewer/en/38-1/house/sitting-121/hansard"
+    ],
+    "note": "Caucus free-vote policy documented; procedural motions and recommittal not assumed covered."
+  },
+  {
+    "id": "assisted-dying-Liberal",
+    "session": "42-1",
+    "bill": "C-14",
+    "party": "Liberal",
+    "status": "documented_free",
+    "member_scope": "backbench_only",
+    "stages": [
+      "second_reading",
+      "report_stage",
+      "third_reading"
+    ],
+    "other_stages": "unresolved",
+    "sources": [
+      "https://www.publications.gc.ca/collections/collection_2019/bdp-lop/eb/YM32-5-2018-26-eng.pdf",
+      "https://www.ourcommons.ca/documentviewer/en/42-1/house/sitting-66/hansard",
+      "https://elizabethmaymp.ca/report-stage-speech-on-c-14/"
+    ],
+    "note": "Library of Parliament documents party scope and Liberal cabinet exception. Recommittal and Senate-amendment coverage remain unresolved. Later in the June 6 Hansard Peter Julian disputes the claim of an NDP whip."
+  },
+  {
+    "id": "assisted-dying-Conservative",
+    "session": "42-1",
+    "bill": "C-14",
+    "party": "Conservative",
+    "status": "documented_free",
+    "member_scope": "whole_caucus",
+    "stages": [
+      "second_reading",
+      "report_stage",
+      "third_reading"
+    ],
+    "other_stages": "unresolved",
+    "sources": [
+      "https://www.publications.gc.ca/collections/collection_2019/bdp-lop/eb/YM32-5-2018-26-eng.pdf",
+      "https://www.ourcommons.ca/documentviewer/en/42-1/house/sitting-66/hansard",
+      "https://elizabethmaymp.ca/report-stage-speech-on-c-14/"
+    ],
+    "note": "Library of Parliament documents party scope and Liberal cabinet exception. Recommittal and Senate-amendment coverage remain unresolved. Later in the June 6 Hansard Peter Julian disputes the claim of an NDP whip."
+  },
+  {
+    "id": "assisted-dying-NDP",
+    "session": "42-1",
+    "bill": "C-14",
+    "party": "NDP",
+    "status": "documented_free",
+    "member_scope": "whole_caucus",
+    "stages": [
+      "second_reading",
+      "report_stage",
+      "third_reading"
+    ],
+    "other_stages": "unresolved",
+    "sources": [
+      "https://www.publications.gc.ca/collections/collection_2019/bdp-lop/eb/YM32-5-2018-26-eng.pdf",
+      "https://www.ourcommons.ca/documentviewer/en/42-1/house/sitting-66/hansard",
+      "https://elizabethmaymp.ca/report-stage-speech-on-c-14/"
+    ],
+    "note": "Library of Parliament documents party scope and Liberal cabinet exception. Recommittal and Senate-amendment coverage remain unresolved. Later in the June 6 Hansard Peter Julian disputes the claim of an NDP whip."
+  },
+  {
+    "id": "assisted-dying-Bloc Québécois",
+    "session": "42-1",
+    "bill": "C-14",
+    "party": "Bloc Québécois",
+    "status": "documented_free",
+    "member_scope": "whole_caucus",
+    "stages": [
+      "second_reading",
+      "report_stage",
+      "third_reading"
+    ],
+    "other_stages": "unresolved",
+    "sources": [
+      "https://www.publications.gc.ca/collections/collection_2019/bdp-lop/eb/YM32-5-2018-26-eng.pdf",
+      "https://www.ourcommons.ca/documentviewer/en/42-1/house/sitting-66/hansard",
+      "https://elizabethmaymp.ca/report-stage-speech-on-c-14/"
+    ],
+    "note": "Library of Parliament documents party scope and Liberal cabinet exception. Recommittal and Senate-amendment coverage remain unresolved. Later in the June 6 Hansard Peter Julian disputes the claim of an NDP whip."
+  },
+  {
+    "id": "mp-pay-unresolved",
+    "session": "38-1",
+    "bill": "C-30",
+    "party": "Liberal",
+    "status": "unresolved",
+    "member_scope": "unknown",
+    "stages": [],
+    "other_stages": "unresolved",
+    "sources": [
+      "https://www.ourcommons.ca/documentviewer/en/38-1/house/sitting-73/hansard",
+      "https://www.ourcommons.ca/documentviewer/en/38-1/house/sitting-42/hansard"
+    ],
+    "note": "Relevant debates reviewed; no sufficiently specific free-vote designation established. Opposition to the pay formula does not prove whip defiance."
+  },
+  {
+    "id": "cannabis-unresolved",
+    "session": "38-1",
+    "bill": "C-17",
+    "party": "Liberal",
+    "status": "unresolved",
+    "member_scope": "unknown",
+    "stages": [],
+    "other_stages": "unresolved",
+    "sources": [
+      "https://www.parl.ca/legisinfo/en/bill/38-1/c-17"
+    ],
+    "note": "Targeted searches did not establish instructions for the committee-referral division. Bills in other sessions are not evidence for this bill."
+  }
+]

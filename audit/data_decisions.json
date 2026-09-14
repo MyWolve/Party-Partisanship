@@ -1,0 +1,438 @@
+{
+  "38-1/159": {
+    "dual_member_ids": [
+      "1059"
+    ],
+    "raw_metadata": {
+      "bill_number": "",
+      "date": "2005-09-28T18:05:19",
+      "nays": "169",
+      "paired": "4",
+      "result": "Negatived",
+      "subject": "Private Members' Business M-221 (Age of consent)",
+      "vote_number": "159",
+      "yeas": "100"
+    },
+    "raw_sha256": "2d0c791e71235945f53bf2d9664e6e3fdaa501a385e9ecbd62fcb4e520fe7f15",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/38-1-159.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "39-1/166": {
+    "dual_member_ids": [
+      "512"
+    ],
+    "raw_metadata": {
+      "bill_number": "",
+      "date": "2007-04-30T18:40:39",
+      "nays": "225",
+      "paired": "6",
+      "result": "Negatived",
+      "subject": "Opposition Motion (Afghanistan)",
+      "vote_number": "166",
+      "yeas": "29"
+    },
+    "raw_sha256": "dd0b7d2a8079745c0e6eb5caa3d3f04d010a2bc1e8d6df66c76d73c1c1d0cbe3",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/39-1-166.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "39-2/57": {
+    "dual_member_ids": [
+      "9135"
+    ],
+    "raw_metadata": {
+      "bill_number": "C-394",
+      "date": "2008-03-05T19:00:00",
+      "nays": "177",
+      "paired": "4",
+      "result": "Negatived",
+      "subject": "2nd reading of Bill C-394, An Act to amend the Immigration and Refugee Protection Act (sponsorship of relative)",
+      "vote_number": "57",
+      "yeas": "99"
+    },
+    "raw_sha256": "2004600d68ab2bc9f462cb9dd7c2c485f0818e83a72baf7c6f6c27dba014791d",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/39-2-57.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "40-3/12": {
+    "dual_member_ids": [
+      "1059",
+      "1265",
+      "14188",
+      "1589",
+      "1760",
+      "43"
+    ],
+    "raw_metadata": {
+      "bill_number": "",
+      "date": "2010-03-23T17:55:08",
+      "nays": "114",
+      "paired": "4",
+      "result": "Agreed To",
+      "subject": "Concurrence in Interim Supply",
+      "vote_number": "12",
+      "yeas": "148"
+    },
+    "raw_sha256": "5bb0323520944885b11158bd1a6e74fae799eca50194d81d8fa377413150da71",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/40-3-12.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "41-1/208": {
+    "dual_member_ids": [
+      "31295"
+    ],
+    "raw_metadata": {
+      "bill_number": "C-11",
+      "date": "2012-05-15T19:10:00",
+      "nays": "250",
+      "paired": "0",
+      "result": "Negatived",
+      "subject": "Bill C-11, An Act to amend the Copyright Act (report stage amendment)",
+      "vote_number": "208",
+      "yeas": "35"
+    },
+    "raw_sha256": "424b7899884b4ba42136a979b7fc99d347c05260dedcd36df5ecf4ca0e78e119",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/41-1-208.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "41-1/351": {
+    "dual_member_ids": [
+      "31295"
+    ],
+    "raw_metadata": {
+      "bill_number": "C-38",
+      "date": "2012-06-14T03:10:45",
+      "nays": "167",
+      "paired": "0",
+      "result": "Negatived",
+      "subject": "Bill C-38, An Act to implement certain provisions of the budget tabled in Parliament on March 29, 2012 and other measures (report stage amendment)",
+      "vote_number": "351",
+      "yeas": "68"
+    },
+    "raw_sha256": "0025b31011c6fb1f14d751eca4123814b6b8fe5fd438a452966a8fd87fbadaa3",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/41-1-351.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "41-1/425": {
+    "dual_member_ids": [
+      "2897",
+      "31295"
+    ],
+    "raw_metadata": {
+      "bill_number": "C-38",
+      "date": "2012-06-14T04:24:46",
+      "nays": "174",
+      "paired": "0",
+      "result": "Negatived",
+      "subject": "Bill C-38, An Act to implement certain provisions of the budget tabled in Parliament on March 29, 2012 and other measures (report stage amendment)",
+      "vote_number": "425",
+      "yeas": "79"
+    },
+    "raw_sha256": "84d0c4213ee71093c473357f7de44a86f1ba9c9ae475ebaf243591559e9a7aa8",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/41-1-425.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "41-1/699": {
+    "dual_member_ids": [
+      "20816",
+      "25478",
+      "26684",
+      "35665",
+      "36037",
+      "3633",
+      "58626"
+    ],
+    "raw_metadata": {
+      "bill_number": "C-49",
+      "date": "2013-05-28T15:05:00",
+      "nays": "120",
+      "paired": "0",
+      "result": "Agreed To",
+      "subject": "Time allocation for Bill C-49, An Act to amend the Museums Act in order to establish the Canadian Museum of History and to make consequential amendments to other Acts",
+      "vote_number": "699",
+      "yeas": "161"
+    },
+    "raw_sha256": "8705cc76cd371f8b22756210bc81e70f568a03f7d48c21ce9b45b6b7aa7da4d2",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/41-1-699.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "41-1/742": {
+    "dual_member_ids": [
+      "103",
+      "20816",
+      "26684",
+      "35665",
+      "36037",
+      "3633",
+      "58626",
+      "59068"
+    ],
+    "raw_metadata": {
+      "bill_number": "S-8",
+      "date": "2013-06-10T15:15:42",
+      "nays": "115",
+      "paired": "0",
+      "result": "Agreed To",
+      "subject": "3rd reading and adoption of Bill S-8, An Act respecting the safety of drinking water on First Nation lands",
+      "vote_number": "742",
+      "yeas": "165"
+    },
+    "raw_sha256": "04f99a15ad5d835432093eac02825b9dd2b797478001154bdded892e681268b8",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/41-1-742.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "41-1/748": {
+    "dual_member_ids": [
+      "71323"
+    ],
+    "raw_metadata": {
+      "bill_number": "S-2",
+      "date": "2013-06-11T15:05:22",
+      "nays": "125",
+      "paired": "0",
+      "result": "Agreed To",
+      "subject": "3rd reading and adoption of Bill S-2, An Act respecting family homes situated on First Nation reserves and matrimonial interests or rights in or to structures and lands situated on those reserves",
+      "vote_number": "748",
+      "yeas": "149"
+    },
+    "raw_sha256": "eacbd8917c00fe8bb8a2fb54ab8f59174c43ea9612dd3554266d9bfe083ec641",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/41-1-748.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "41-1/752": {
+    "dual_member_ids": [
+      "71611"
+    ],
+    "raw_metadata": {
+      "bill_number": "C-266",
+      "date": "2013-06-12T15:10:05",
+      "nays": "42",
+      "paired": "0",
+      "result": "Agreed To",
+      "subject": "3rd reading and adoption of Bill C-266, An Act to establish Pope John Paul II Day",
+      "vote_number": "752",
+      "yeas": "217"
+    },
+    "raw_sha256": "4c9159520e79e473262012a0b77a32b936907acec9aa209ebbf45f4b6bcee869",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/41-1-752.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "42-1/106": {
+    "dual_member_ids": [
+      "88316"
+    ],
+    "raw_metadata": {
+      "bill_number": "C-221",
+      "date": "2016-09-21T18:10:00",
+      "nays": "156",
+      "paired": "0",
+      "result": "Negatived",
+      "subject": "2nd reading of Bill C-221, An Act to amend the Criminal Code (sports betting)",
+      "vote_number": "106",
+      "yeas": "133"
+    },
+    "raw_sha256": "6216dda0d487c4691b2982839e3ab473599fe68140214950bf3098b2015808c1",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/42-1-106.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "42-1/136": {
+    "dual_member_ids": [
+      "89527"
+    ],
+    "raw_metadata": {
+      "bill_number": "C-240",
+      "date": "2016-10-26T18:10:00",
+      "nays": "81",
+      "paired": "0",
+      "result": "Agreed To",
+      "subject": "2nd reading of Bill C-240, An Act to amend the Income Tax Act (tax credit — first aid)",
+      "vote_number": "136",
+      "yeas": "227"
+    },
+    "raw_sha256": "e16fe6739b8d704fd3ae1fef694310ef61ebc265b039f438a667692296397360",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/42-1-136.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "42-1/150": {
+    "dual_member_ids": [
+      "89198"
+    ],
+    "raw_metadata": {
+      "bill_number": "",
+      "date": "2016-11-16T16:05:50",
+      "nays": "63",
+      "paired": "0",
+      "result": "Agreed To",
+      "subject": "Motion to hear another Member",
+      "vote_number": "150",
+      "yeas": "222"
+    },
+    "raw_sha256": "032c11e6cf5cf64acbc8ac8b0901ef8857edf32982d62660ab7bf5584fe88049",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/42-1-150.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "42-1/175": {
+    "dual_member_ids": [
+      "48292",
+      "86260",
+      "86261"
+    ],
+    "raw_metadata": {
+      "bill_number": "C-228",
+      "date": "2016-12-06T18:05:35",
+      "nays": "215",
+      "paired": "0",
+      "result": "Negatived",
+      "subject": "2nd reading of Bill C-228, An Act to amend the Fisheries Act (closed containment aquaculture)",
+      "vote_number": "175",
+      "yeas": "80"
+    },
+    "raw_sha256": "1d8f9e080202991f055130e20e51abe564532e65c69a51abcc1c34f947a313a1",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/42-1-175.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "42-1/71": {
+    "dual_member_ids": [
+      "15975"
+    ],
+    "raw_metadata": {
+      "bill_number": "C-14",
+      "date": "2016-05-30T19:40:34",
+      "nays": "253",
+      "paired": "0",
+      "result": "Negatived",
+      "subject": "Bill C-14, An Act to amend the Criminal Code and to make related amendments to other Acts (medical assistance in dying) (report stage amendment)",
+      "vote_number": "71",
+      "yeas": "69"
+    },
+    "raw_sha256": "63edf80da8a366a3c5d9f64e15e1e899a16bb6ef31478d6496ba068679ee7d8f",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/42-1-71.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "42-1/713": {
+    "dual_member_ids": [
+      "2897"
+    ],
+    "raw_metadata": {
+      "bill_number": "C-74",
+      "date": "2018-06-04T15:23:17",
+      "nays": "164",
+      "paired": "4",
+      "result": "Negatived",
+      "subject": "Bill C-74, An Act to implement certain provisions of the budget tabled in Parliament on February 27, 2018 and other measures (report stage amendment)",
+      "vote_number": "713",
+      "yeas": "105"
+    },
+    "raw_sha256": "95e2c0c19a6ad9b5880a1ded485a1452e4c6376f99a75d906911ea458125ba4b",
+    "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
+    "source_files": [
+      "evidence/42-1-713.xml.gz"
+    ],
+    "treatment": "exclude_dual_from_binary_metrics"
+  },
+  "42-1/724": {
+    "append_rows": [
+      {
+        "member": "Monique Pauzé (Repentigny)",
+        "member_id": "88595",
+        "paired": false,
+        "party": "Independent",
+        "vote": "Yea"
+      }
+    ],
+    "raw_metadata": {
+      "bill_number": "",
+      "date": "2018-06-05T15:00:00",
+      "nays": "245",
+      "paired": "0",
+      "result": "Negatived",
+      "subject": "Opposition Motion (United Nations Declaration on the Rights of Indigenous Peoples)",
+      "vote_number": "724",
+      "yeas": "40"
+    },
+    "raw_sha256": "2e7275b9c4a83ef18b0d647edc15d66a965db15dd7d28571389f119c4ccc1270",
+    "reason": "Journal includes Monique Pauzé (Yea). Adjacent-day XML rosters use two minor-group labels, both aggregated as Independent; exact June 5 group label remains unresolved.",
+    "source_files": [
+      "evidence/42-1-724.xml.gz",
+      "evidence/42-1-724-journals.html.gz",
+      "evidence/42-1-723.xml.gz",
+      "evidence/42-1-725.xml.gz"
+    ],
+    "treatment": "restore_member"
+  },
+  "42-1/871": {
+    "metadata_override": {
+      "nays": "134",
+      "paired": "0",
+      "result": "Agreed To",
+      "yeas": "172"
+    },
+    "raw_metadata": {
+      "bill_number": "C-59",
+      "date": "2018-06-19T15:20:10",
+      "nays": "",
+      "paired": "",
+      "result": "Tie",
+      "subject": "3rd reading and adoption of Bill C-59, An Act respecting national security matters - Parts 1 to 5, part 9, clauses 169 to 172, the title and the preamble",
+      "vote_number": "871",
+      "yeas": ""
+    },
+    "raw_sha256": "ccb0aec39a737fa7029c926ee0362916f8a3a202455809103ce80c9b13ca313f",
+    "reason": "Journal roll call; identities and affiliations uniquely joined to the same-sitting division 872 roster. No votes copied from 872.",
+    "replacement": "audit/derived/42-1-871.csv",
+    "replacement_sha256": "2bbb0f1a1774b5623d4777686c294db465310841313d171985c74e4244cf51ca",
+    "source_files": [
+      "evidence/42-1-871.xml.gz",
+      "evidence/42-1-871-journals.html.gz",
+      "evidence/42-1-872.xml.gz"
+    ],
+    "treatment": "restore_division"
+  }
+}
