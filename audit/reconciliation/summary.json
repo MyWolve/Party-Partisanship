@@ -1,0 +1,33 @@
+{
+  "corpus_sha256": "18f61060bc81242bcf92a55b0538e6ac281193f845ef2eb57703e2258f9a8135",
+  "parliaments": [
+    {
+      "deposit_terms": 314,
+      "divisions": 190,
+      "exact_flag_and_analytic_party_matches": 54220,
+      "joined_records": 54220,
+      "parliament": 38,
+      "union_observable_records": 54220,
+      "unmatched_nonobserved_terms": 1
+    },
+    {
+      "deposit_terms": 327,
+      "divisions": 380,
+      "exact_flag_and_analytic_party_matches": 101643,
+      "joined_records": 101643,
+      "parliament": 39,
+      "union_observable_records": 101643,
+      "unmatched_nonobserved_terms": 1
+    },
+    {
+      "deposit_only_observation": 1,
+      "deposit_terms": 316,
+      "divisions": 363,
+      "exact_flag_and_analytic_party_matches": 100813,
+      "joined_records": 100813,
+      "parliament": 40,
+      "union_observable_records": 100814,
+      "unmatched_nonobserved_terms": 1
+    }
+  ]
+}

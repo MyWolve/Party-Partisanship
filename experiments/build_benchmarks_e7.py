@@ -19,7 +19,10 @@ Party rows: members who switch affiliation appear as separate rows
 matching our affiliation-at-time-of-vote loyalty keying.
 """
 
+import argparse
 import csv
+import io
+from pathlib import Path
 import os
 import sys
 
@@ -120,7 +123,7 @@ def unity_from_divisions(divisions):
     return result, n_contested
 
 
-def main():
+def main(check=False):
     out_rows = []
     for parl in (38, 39, 40):
         fname = f"House-{parl}.tab"
@@ -142,13 +145,21 @@ def main():
             print(f"  {party:16} rice {entry['rice']}, contested "
                   f"{entry['rice_contested']}, loyalty {entry['loyalty']} "
                   f"({entry['n_mps']} MPs)")
-    with open(OUT, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["parliament", "party", "metric",
-                                          "value", "source"])
-        w.writeheader()
-        w.writerows(out_rows)
-    print(f"\nWrote {len(out_rows)} benchmark rows to {OUT}")
+    buffer = io.StringIO(newline='')
+    w = csv.DictWriter(buffer, fieldnames=['parliament', 'party', 'metric', 'value', 'source'], lineterminator='\n')
+    w.writeheader()
+    w.writerows(out_rows)
+    text = buffer.getvalue()
+    if check:
+        if list(csv.DictReader(io.StringIO(Path(OUT).read_text(encoding='utf-8-sig')))) != list(csv.DictReader(io.StringIO(text))):
+            raise ValueError('Rebuilt benchmarks differ from committed baseline; review before updating')
+        print('Verified all 36 benchmark rows without overwriting the baseline')
+    else:
+        Path(OUT).write_text(text, encoding='utf-8', newline='\n')
+    return out_rows
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--check', action='store_true')
+    main(parser.parse_args().check)

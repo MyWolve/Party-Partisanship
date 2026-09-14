@@ -1,135 +1,101 @@
-# E1 — The Whip Test: Findings
+# E1 Dissent by parliamentary business
 
-*Experiment run: July 2026, on the full verified corpus (sessions 38-1
-through 45-1, ~4,850 divisions). Script: `experiments/experiment_e1.py`;
-classification: `bill_info.py` with the C-38 designated-free-vote override
-active. Parliament 40-1 excluded (one recorded division). 45-1 was in
-progress at time of analysis.*
+Government bills: **41/1491** divisions with governing-party dissent (2.75%). Private members' business: **225/848** (26.53%). The descriptive ratio is **9.65**.
 
-## Question
+Supply: **1/1118**. The main comparison excludes 22 documented free stages for the governing party. There are 10 governing-party divisions with explicitly unresolved status; see sensitivity below.
 
-Are Whips that successful? (README, original question 3.)
+## What stands out
 
-## Method
+- **Longest zero-dissent run:** 658 consecutive eligible Conservative government-bill divisions, from 39-2/113 to 41-2/467 (2008-05-27 to 2015-06-18). Sessions spanned: 39-2, 40-1, 40-2, 40-3, 41-1, 41-2. The same caucus's session rates on private business range from 10.42% to 27.00% in that span. The span crosses omitted session 40-1, whose single Throne Speech division contributes no government-bill observations. Consecutive means within the eligible series; this is not a claim about every House vote or verified whip instructions.
+- **Governing-party comparison:** Harper-era Conservative government bills: 2/762 (0.26%); Trudeau/Carney-era Liberal government bills: 30/669 (4.48%). The later rate is 17.09 times the earlier rate. This pools different sessions and business mixes; it does not identify an effect of leadership or whip policy. Martin is shown separately below.
+- **Highest government-bill dissent rate:** 38-1 (Martin, Liberal), 9/60 (15.00%), among sessions with at least 30 eligible government-bill divisions. It also has the highest private-business rate among sessions meeting that category's 30-division threshold: 28/39 (71.79%).
+- **Supply:** 1/1118 (0.09%) eligible divisions contain governing-party dissent.
+- **Narrow category gap:** 45-1: government bills 5/60 (8.33%), private business 2/23 (8.70%), ratio 1.04. This session is incomplete. E2 remains needed to examine changes over time; this contrast alone does not establish a trend.
 
-For each session, compare the **governing party's** dissent rate (share of
-divisions with at least one member voting against the party majority) on
-**government bills** — whipped by convention — against **private members'
-business** — traditionally free. Same caucus, same parliament, whip on
-vs. whip off, controlling for party culture. Divisions on documented
-designated free votes (currently the Civil Marriage Act, C-38, 38-1) are
-excluded from the whipped column. A robustness variant excludes
-near-unanimous divisions (>95% of the whole House on one side); it does
-not change any conclusion and is omitted from the tables below (full
-numbers in `results_e1/summary.csv`).
+## By session (governing party)
 
-## Headline result
+| Session | Leader and party | Government bills | Private business | Notes |
+| --- | --- | --- | --- | --- |
+| 38-1 | Martin / Liberal | 9/60 (15.00%) | 28/39 (71.79%) | 10 documented free divisions excluded |
+| 39-1 | Harper / Conservative | 1/74 (1.35%) | 24/63 (38.10%) |  |
+| 39-2 | Harper / Conservative | 1/42 (2.38%) | 5/48 (10.42%) |  |
+| 40-2 | Harper / Conservative | 0/42 (0.00%) | 8/47 (17.02%) |  |
+| 40-3 | Harper / Conservative | 0/39 (0.00%) | 16/77 (20.78%) |  |
+| 41-1 | Harper / Conservative | 0/412 (0.00%) | 25/112 (22.32%) |  |
+| 41-2 | Harper / Conservative | 0/153 (0.00%) | 27/100 (27.00%) |  |
+| 42-1 | Trudeau / Liberal | 11/314 (3.50%) | 40/153 (26.14%) | 12 documented free divisions excluded |
+| 43-1 | Trudeau / Liberal | 0/1 (0.00%) | No eligible divisions | No eligible private-business divisions; Small denominator (<30) |
+| 43-2 | Trudeau / Liberal | 6/44 (13.64%) | 16/46 (34.78%) |  |
+| 44-1 | Trudeau / Liberal | 8/250 (3.20%) | 34/140 (24.29%) |  |
+| 45-1 | Carney / Liberal | 5/60 (8.33%) | 2/23 (8.70%) | Small denominator (<30); Incomplete snapshot |
 
-Pooled across all governments, 2004–2026:
+Cells count divisions with dissent / eligible divisions. Session 40-1 is omitted for its single Throne Speech division. Leader names label sessions; calculations use the governing party.
 
-| business                     | divisions with dissent | rate  |
-|------------------------------|------------------------|-------|
-| Government bills (whipped)   | 50 / 1,502             | 3.3%  |
-| Private members' business    | 225 / 848              | 26.5% |
+## Largest governing-party dissent episodes on government bills
 
-**When the whip comes off, the same MPs dissent 8.0× more often.**
-Confidence-adjacent business is stricter still: governing parties dissented
-on **1 of 1,118 supply divisions (0.09%)** across the whole corpus.
+| Session/division | Bill | Stage | Dissenters | Status |
+| --- | --- | --- | --- | --- |
+| 38-1/155 | C-38 | Unclassified | 29 | unresolved |
+| 38-1/57 | C-30 | third_reading | 14 | unresolved |
+| 38-1/30 | C-30 | second_reading | 12 | unresolved |
+| 38-1/50 | C-30 | report_stage | 11 | unresolved |
+| 38-1/49 | C-30 | report_stage | 7 | unresolved |
+| 38-1/9 | C-17 | Unclassified | 6 | unresolved |
+| 42-1/102 | C-14 | senate_amendments | 6 | unresolved |
+| 42-1/950 | C-89 | third_reading | 6 | category proxy |
+| 42-1/948 | C-89 | second_reading | 5 | category proxy |
+| 43-2/71 | C-7 | senate_amendments | 5 | category proxy |
+| 42-1/103 | C-14 | senate_amendments | 3 | unresolved |
+| 43-2/72 | C-7 | senate_amendments | 3 | category proxy |
 
-## Per-session results (governing party)
+These are observed dissent episodes, not confirmed breaches of whip instructions. Documented free stages are excluded; unresolved stages remain visible.
 
-| session | government   | whipped % | free %  | note                        |
-|---------|--------------|-----------|---------|-----------------------------|
-| 38-1    | Liberal      | 13.6      | 71.8    | 11 C-38 divisions excluded  |
-| 39-1    | Conservative | 1.4       | 38.1    |                             |
-| 39-2    | Conservative | 2.4       | 10.4    |                             |
-| 40-2    | Conservative | 0.0       | 17.0    |                             |
-| 40-3    | Conservative | 0.0       | 20.8    |                             |
-| 41-1    | Conservative | 0.0       | 22.3    |                             |
-| 41-2    | Conservative | 0.0       | 27.0    |                             |
-| 42-1    | Liberal      | 6.4       | 26.1    | C-14 override pending       |
-| 43-1    | Liberal      | 0.0       | —       | no PMB divisions (COVID)    |
-| 43-2    | Liberal      | 13.6      | 34.8    |                             |
-| 44-1    | Liberal      | 3.2       | 24.3    |                             |
-| 45-1    | Liberal      | 8.3       | 8.7     | small n; session in progress|
+- 38-1 C-38: The recommittal stage is unresolved; documented substantive free stages are excluded.
+- 38-1 C-30: Pay legislation; the audit does not establish Liberal whip instructions.
+- 38-1 C-17: Committee referral; the audit does not establish whip instructions.
+- 42-1 C-14: Senate-amendment scope remains unresolved; documented substantive free stages are excluded.
+- 42-1 C-89: The division subjects concern resumption and continuation of postal services.
+- 43-2 C-7: The division subjects concern Senate amendments on medical assistance in dying.
 
-## Findings
+The largest episode not already flagged unresolved is **C-89, 42-1/950, with 6 dissenters**. By dissent count, it is the leading candidate for further investigation of a rebellion on whipped business. Its category-proxy status is not evidence of a whip instruction; that instruction still needs a source.
 
-1. **The Harper whip was near-perfect.** Conservative governments
-   dissented on 2 of 762 government-bill divisions across seven sessions
-   (0.26%), including an unbroken run of **646 consecutive government-bill
-   divisions with zero dissenting Conservative votes** (40-2 through 41-2,
-   roughly 2009–2015). The same caucus dissented on 10–27% of private
-   members' business in those sessions.
+## Sensitivity
 
-2. **Liberal and Conservative governments whip differently.** Liberal
-   governments (42-1 onward) show 5.9% government-bill dissent — roughly
-   twenty-fold looser than Harper-era Conservatives — consistent with the
-   2015 Liberal platform commitment to free backbench votes outside
-   confidence, charter, and platform matters. Neither party's government
-   tolerates dissent on supply.
+| Scope | Government dissent | Private business dissent | Ratio |
+| --- | --- | --- | --- |
+| category only | 61/1513 | 225/848 | 6.58 |
+| documented free excluded | 41/1491 | 225/848 | 9.65 |
+| uncertain excluded | 32/1482 | 225/848 | 12.29 |
+| unknown bill as government | 41/1492 | 225/848 | 9.66 |
 
-3. **The Martin minority (38-1) is the loosest government in the corpus**
-   even after excluding its designated free votes: 13.6% whipped dissent,
-   71.8% free — both corpus highs.
+Category only retains documented free stages. The main comparison removes them. Uncertain excluded additionally removes audited unresolved cases; it does not imply that the remainder has verified whip instructions. Unknown bill as government tests the malformed bill subject separately. The CSV also contains contested-only versions (no more than 95% of observed binary House votes on either side).
 
-4. **45-1 (Carney) is an early anomaly**: the only session with no
-   whipped/free gap (8.3% vs 8.7%). Small denominators (60 and 23
-   divisions); flag for re-examination as the session matures, in E2.
+## Repeated bills and participating caucus size
 
-## Outlier audit (largest governing-party rebellions on government bills)
+| Category | All divisions | Numbered-bill divisions | Equal bill mean | Session–bill units | Unnumbered divisions omitted from bill check |
+| --- | --- | --- | --- | --- | --- |
+| government_bill | 2.75% | 2.75% | 5.15% | 281 | 0 |
+| private_members_business | 26.53% | 29.41% | 32.71% | 467 | 185 |
 
-The spot-check list served its purpose twice over: in the first run it
-exposed a classification bug (a curly apostrophe in LEGISinfo's
-"Private Member's Bill" misfiled all PMBs as government bills), and in the
-corrected run it recovered known history:
+The equal-bill mean first computes each session–bill's fraction of eligible divisions containing dissent, then weights those bills equally. It is not the fraction of bills with any dissent. Bill numbers restart across sessions; the key includes session. The numbered-only division rate separates selection changes from weighting changes. Private members' motions without a bill number remain in the headline but cannot enter this bill-level comparison. Reintroduced bills can still be related across sessions; no independence or causal claim follows.
 
-- **C-38 (38-1), Civil Marriage Act** — six of the original top ten; 34–35
-  Liberal rebels at second reading matching the recorded dissent on the
-  declared free vote (backbench free, cabinet whipped). Now excluded via
-  `FREE_VOTE_BILLS`.
-- **C-30 (38-1), MP compensation** — top of the corrected list (11–14
-  rebels across three stages). Identified: the 2005 bill delinking MP
-  salaries from judicial raises; debate records show Liberal members
-  objecting to abandoning the independent (Lumley) process. Free-vote
-  status unconfirmed — either a designated free vote on House matters or
-  a genuine 14-member pay revolt. **TODO: check Journals/contemporary
-  coverage before adding to overrides.**
-- **C-14 (42-1), medical assistance in dying** — 5–7 rebels across three
-  divisions; consistent with reported freeing of Liberal backbenchers
-  (cabinet whipped). **TODO: verify, then add to `FREE_VOTE_BILLS`.**
-- **C-89 (42-1), postal back-to-work legislation** — 5–6 Liberal rebels at
-  second and third reading on emergency whipped business with no known
-  free-vote designation. **Candidate for the corpus's first verified
-  genuine rebellion on whipped government business.** TODO: pull rebel
-  names (`find_rebels`, divisions 948/950) and check against the caucus's
-  labour-aligned members.
-- **C-17 (38-1), cannabis decriminalization** — 6 rebels;
-  conscience-flavoured, free-vote status unverified. TODO.
+| Category | Observed party voters | Divisions | Divisions with dissent | Minority member-votes |
+| --- | --- | --- | --- | --- |
+| government_bill | all | 1491 | 2.75% | 0.06% |
+| government_bill | 1-100 | 3 | 0.00% | 0.00% |
+| government_bill | 101-150 | 919 | 2.29% | 0.08% |
+| government_bill | 151+ | 569 | 3.51% | 0.04% |
+| private_members_business | all | 848 | 26.53% | 1.74% |
+| private_members_business | 1-100 | 5 | 60.00% | 8.07% |
+| private_members_business | 101-150 | 544 | 28.68% | 1.65% |
+| private_members_business | 151+ | 299 | 22.07% | 1.82% |
 
-## Caveats
+Size bands count observed unpaired binary voters in the governing party, not seats or the full caucus roster. Bands (1–100, 101–150, 151+) are descriptive; they do not adjust for session, issue, attendance or bill composition. The minority member-vote rate divides minority votes by all eligible binary member-votes, so it measures intensity and weights larger participating groups more heavily. Tied majorities and documented free stages are excluded throughout. These are diagnostics of denominator choices, not an estimated effect of caucus size. Inspect [bill units](bill_units.csv), [weighting](design_checks.csv), and [participation](participation_checks.csv).
 
-- **Category is a proxy for whip status.** Designated free votes on
-  government bills are handled via documented overrides only; undetected
-  cases bias the whipped rate upward, so 3.3% is an upper bound on true
-  whipped-business dissent.
-- **Opposition-party PMB dissent is partly definitional**: with no whip
-  line on free votes, deviation from the party majority is an emergent
-  preference, not defiance. The headline uses the governing party for this
-  reason; opposition numbers in `summary.csv` are descriptive only.
-- **"Free" means free for backbenchers** — cabinet typically remained
-  whipped on designated free votes, so residual conformity on those
-  divisions is still partly whip-driven.
-- Dissent frequency treats 1 rebel and 30 rebels identically; magnitude
-  analyses (rebel counts, loyalty scores) are E4's task.
+## Interpretation and limits
 
-## Reproduction
+These are descriptive associations between business types and caucus voting patterns. They do not isolate the effect of whip enforcement. Issues, participating MPs, caucus size, repeated divisions on the same bill, and party policy can all differ across categories. One dissenter and many dissenters count equally. Tied caucus divisions have no majority and are excluded from this outcome. Paired and dual-coded member-votes are omitted from binary analysis. No uncertainty interval assuming independent divisions is asserted.
 
-```
-python3 can_scrape.py && python3 check_data.py   # corpus must pass
-python3 experiments/experiment_e1.py             # writes results_e1/
-```
+C-38 and C-14 designations are party- and stage-specific. Liberal designations cover backbenchers, not cabinet; the exclusion applies at the caucus-division level and is not an MP-level freedom label. C-30, C-17, recommittal, and C-14 Senate-amendment coverage remain unresolved where listed. Business category and confidence keywords are proxies. The observed government-bill rate is not asserted to be an upper bound on true whipped dissent.
 
-Outputs referenced here: `results_e1/summary.csv`,
-`results_e1/whip_test_by_session.png`,
-`results_e1/dissent_by_category_pooled.png`.
+See [classification audit](classification_audit.csv), [outliers and names](outliers.csv), [all counts](summary.csv), [sensitivity](sensitivity.csv), [source decisions](../../audit/whip_designations.json), and [reproduction instructions](../../REPRODUCING.md).

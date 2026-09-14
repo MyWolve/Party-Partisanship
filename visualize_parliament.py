@@ -9,7 +9,7 @@ Two cohesion metrics are available:
   "rice"      -- the Rice Index: |yea - nay| / (yea + nay) * 100.
                  Ranges from 0 (perfect split) to 100 (unanimous). This is the
                  standard cohesion measure that I could find in the political science literature,
-                 so results are directly comparable to published work.
+                 for comparison with deposited data using shared definitions.
 
 Members who did not vote Yea or Nay (e.g. paired members) are excluded from
 both metrics. A party with no votes cast on a division gets a score of None,
@@ -46,6 +46,7 @@ AFFILIATION_ALIASES = {
     "Independent Conservative": "Independent",       # Goldring, Guergis (40-3, 41-1)
     "Conservative Independent": "Independent",       # Del Mastro (41-2)
     "Co-operative Commonwealth Federation": "Independent",  # Weir, ex-NDP (42-1)
+    "Groupe parlementaire québécois": "Independent",
     "Québec debout": "Independent",                  # ex-Bloc caucus split (42-1)
     "Forces et Démocratie": "Independent",           # Fortin, Larose (41-2)
     "People's Party": "Independent",                 # Bernier (42-1)
@@ -55,52 +56,10 @@ AFFILIATION_ALIASES = {
 # Data Loading
 # ----------------------------------------------------------------------
 
-def _find_column(header, *fragments, default=None):
-    """Locate a column index by substring match on the header (case-insensitive)."""
-    for index, name in enumerate(header):
-        lowered = name.lower()
-        if any(fragment in lowered for fragment in fragments):
-            return index
-    return default
+from vote_data import read_vote_rows, binary_vote
 
 
-def read_vote_rows(file_path):
-    """Read one vote CSV into [{"member", "party", "vote", "paired"}, ...].
-
-    Column positions are located from the header row, because the House's
-    export format has changed over time: older files are
-    (Member, Affiliation, Voted, Paired) while the current endpoint
-    prepends a Person ID column. Reading by header name handles both,
-    plus any future reshuffle. Falls back to the legacy positions if the
-    header is unrecognizable.
-    """
-    with open(file_path, "r", encoding="utf-8-sig", errors="ignore") as file:
-        reader = csv.reader(file)
-        header = next(reader, None)
-        if header is None:
-            return []
-
-        member_col = _find_column(header, "member of parliament", default=0)
-        party_col = _find_column(header, "affiliation", "political party",
-                                 default=1)
-        vote_col = _find_column(header, "voted", "member voted", default=2)
-        paired_col = _find_column(header, "paired", default=3)
-
-        rows = []
-        for row in reader:
-            if len(row) <= vote_col:
-                continue
-            rows.append({
-                "member": row[member_col],
-                "party": row[party_col],
-                "vote": row[vote_col],
-                "paired": (len(row) > paired_col
-                           and row[paired_col].strip() == "Paired"),
-            })
-        return rows
-
-
-def load_vote_file(file_path):
+def load_vote_file(file_path, member_ids=False):
     """
     Read one vote CSV and return {party: [(member, vote), ...]}.
 
@@ -111,11 +70,14 @@ def load_vote_file(file_path):
     for row in read_vote_rows(file_path):
         affiliation = AFFILIATION_ALIASES.get(row["party"], row["party"])
         party = affiliation if affiliation in PARTIES else "Independent"
-        votes[party].append((row["member"], row["vote"]))
+        member = row['member_id'] if member_ids else row['member']
+        if member_ids and not member:
+            raise ValueError('Stable person ID required for longitudinal analysis')
+        votes[party].append((member, binary_vote(row)))
 
     return votes
 
-def load_parliament(directory, bill=None):
+def load_parliament(directory, bill=None, member_ids=False):
     """
     Load vote data for a parliament session directory.
 
@@ -126,10 +88,10 @@ def load_parliament(directory, bill=None):
     directory, sorted by vote number.
     """
     if bill is not None:
-        for filename in os.listdir(directory):
-            if bill in filename:
-                return load_vote_file(os.path.join(directory, filename))
-        raise FileNotFoundError(f"No file matching '{bill}' in {directory}")
+        if not re.fullmatch(r'file_[1-9]\d*(?:\.csv)?', bill):
+            raise ValueError('Choose an exact division name, e.g. file_23.csv')
+        filename = bill if bill.endswith('.csv') else bill + '.csv'
+        return load_vote_file(os.path.join(directory, filename), member_ids=member_ids)
 
     bills = []
     for filename in os.listdir(directory):
@@ -139,7 +101,7 @@ def load_parliament(directory, bill=None):
         if (os.path.isfile(file_path)
                 and re.fullmatch(r"file_\d+\.csv", filename)):
             bill_name = os.path.splitext(filename)[0]  # e.g. "file_23"
-            bills.append((bill_name, load_vote_file(file_path)))
+            bills.append((bill_name, load_vote_file(file_path, member_ids=member_ids)))
 
     bills.sort(key=lambda item: vote_number(item[0]))
     return bills
@@ -147,6 +109,16 @@ def load_parliament(directory, bill=None):
 def vote_number(bill_name):
     """Extract the vote number from a bill file name like 'file_23'."""
     return int(bill_name.split("_")[1])
+
+
+def load_member_history(directory):
+    """Stable-ID histories with latest observed display labels for reports."""
+    bills = load_parliament(directory, member_ids=True)
+    labels = {}
+    for division, _ in bills:
+        for row in read_vote_rows(os.path.join(directory, division + '.csv')):
+            labels[row['member_id']] = row['member']
+    return bills, labels
 
 # ----------------------------------------------------------------------
 # Cohesion Metrics
@@ -456,7 +428,7 @@ def mp_loyalty(bills, parties=None, min_votes=10):
  
 def print_dissent_report(directory, parties=None, top_n=10):
     """Print a dissent summary and the top rebel MPs for a session."""
-    bills = load_parliament(directory)
+    bills, labels = load_member_history(directory)
     session = os.path.basename(os.path.normpath(directory))
     summary = dissent_summary(bills, parties)
     loyalty = mp_loyalty(bills, parties)
@@ -477,7 +449,7 @@ def print_dissent_report(directory, parties=None, top_n=10):
     for member, record in list(loyalty.items())[:top_n]:
         if record["rebellions"] == 0:
             break
-        print(f"    {member} [{record['party']}]: "
+        print(f"    {labels[member]} [{record['party']}]: "
               f"{record['rebellions']} rebellions in {record['votes']} votes "
               f"(loyalty {record['loyalty']}%)")
     return summary, loyalty
@@ -552,7 +524,7 @@ def plot_rebellions_over_time(directory, parties=None, save_path=None):
  
 def plot_top_rebels(directory, parties=None, top_n=15, save_path=None):
     """Horizontal bar chart of the MPs with the most rebellions in a session."""
-    bills = load_parliament(directory)
+    bills, labels = load_member_history(directory)
     loyalty = mp_loyalty(bills, parties)
     session = os.path.basename(os.path.normpath(directory))
  
@@ -562,12 +534,13 @@ def plot_top_rebels(directory, parties=None, top_n=15, save_path=None):
         return
     top.reverse()  # largest at the top of the chart
  
-    names = [f"{m.split('(')[0].strip()} [{r['party']}]" for m, r in top]
+    names = [f"{labels[m].split('(')[0].strip()} [{r['party']}]" for m, r in top]
     values = [r["rebellions"] for _, r in top]
     colors = [PARTY_COLORS[r["party"]] for _, r in top]
  
     plt.figure(figsize=(12, max(4, 0.45 * len(top))))
     plt.barh(names, values, color=colors)
+    plt.xlim(0, max(values) * 1.25)
     plt.xlabel("Rebellions (votes against party majority)")
     plt.title(f"Most Rebellious MPs: {session}")
     for i, (value, (_, record)) in enumerate(zip(values, top)):
@@ -585,10 +558,8 @@ def plot_top_rebels(directory, parties=None, top_n=15, save_path=None):
 # ----------------------------------------------------------------------
 # Dissent by vote category (requires votes_metadata.csv; see bill_info.py)
 #
-# This is the direct test of the whip: if party discipline is doing the
-# work, dissent should concentrate almost entirely in private members'
-# business (traditionally unwhipped) and be near zero on government
-# bills and confidence matters.
+# These are descriptive business-category comparisons. They do not isolate
+# the causal effect of whip instructions.
 # ----------------------------------------------------------------------
 
 def dissent_by_category(directory, parties=None):
@@ -638,15 +609,12 @@ def dissent_by_category(directory, parties=None):
 
 def mp_loyalty_split(directory, parties=None, min_votes=10,
                      free_categories=None):
-    """
-    Per-MP loyalty computed separately for whipped and free business.
+    """Legacy split API: keys 'whipped'/'free' are proxies, not verified orders.
 
-    An MP at 99% whipped / 75% free is a conscientious backbencher who
-    respects the whip; one rebelling on whipped business is a different
-    animal entirely. Returns
-    {member: {"party", "whipped": {"votes", "rebellions", "loyalty"},
-              "free": {...}}}
-    sorted by whipped-business rebellions.
+    Party-specific designations supplement the business-category proxy.
+    Unresolved audited cases are omitted. Backbench-only designations label
+    a caucus-level division, not each MP; no cabinet roster is inferred.
+    Prefer E1's explicit classification and sensitivity outputs for reporting.
     """
     if parties is None:
         parties = WHIPPED_PARTIES
@@ -655,21 +623,20 @@ def mp_loyalty_split(directory, parties=None, min_votes=10,
     if not metadata:
         raise FileNotFoundError(f"No votes_metadata.csv in {directory}.")
 
-    bills = load_parliament(directory)
+    bills, labels = load_member_history(directory)
     records = {}
 
     for bill_name, votes in bills:
         number = vote_number(bill_name)
         if number not in metadata:
             continue
-        if free_categories is None:
-            # Default: category-based free votes plus documented designated
-            # free votes (bill_info.FREE_VOTE_BILLS / FREE_VOTE_DIVISIONS).
-            free = bill_info.is_free_vote(metadata[number])
-        else:
-            free = metadata[number]["category"] in free_categories
-        bucket = "free" if free else "whipped"
         for party in parties:
+            status = bill_info.whip_status(metadata[number], party)
+            if status['status'] == 'unresolved':
+                continue
+            free = (bill_info.is_free_vote(metadata[number], party)
+                    if free_categories is None else metadata[number]['category'] in free_categories)
+            bucket = "free" if free else "whipped"
             majority = party_majority_side(votes[party])
             if majority is None:
                 continue
@@ -690,7 +657,7 @@ def mp_loyalty_split(directory, parties=None, min_votes=10,
         total = record["whipped"]["votes"] + record["free"]["votes"]
         if total < min_votes:
             continue
-        entry = {"party": max(record["parties"], key=record["parties"].get)}
+        entry = {"member": labels[member], "party": max(record["parties"], key=record["parties"].get)}
         for bucket in ("whipped", "free"):
             votes_cast = record[bucket]["votes"]
             rebellions = record[bucket]["rebellions"]
@@ -708,7 +675,7 @@ def mp_loyalty_split(directory, parties=None, min_votes=10,
 
 
 def print_whip_report(directory, parties=None, top_n=10):
-    """The whip test: dissent rates by category, plus split loyalty."""
+    """Descriptive category report with explicitly qualified loyalty proxies."""
     session = os.path.basename(os.path.normpath(directory))
     table = dissent_by_category(directory, parties)
     loyalty = mp_loyalty_split(directory, parties)
@@ -725,7 +692,7 @@ def print_whip_report(directory, parties=None, top_n=10):
                   f"divisions with dissent ({cell['dissent_rate']}%), "
                   f"{cell['total_rebel_votes']} rebel votes")
 
-    print(f"\n  Top {top_n} whipped-business rebels:")
+    print(f"\n  Top {top_n} dissenters on other business (proxy):")
     shown = 0
     for member, record in loyalty.items():
         if record["whipped"]["rebellions"] == 0 or shown >= top_n:
@@ -733,8 +700,8 @@ def print_whip_report(directory, parties=None, top_n=10):
         free = record["free"]
         free_text = (f"free loyalty {free['loyalty']}% ({free['votes']} votes)"
                      if free["votes"] else "no free votes")
-        print(f"    {member} [{record['party']}]: "
-              f"{record['whipped']['rebellions']} whipped rebellions "
+        print(f"    {record['member']} [{record['party']}]: "
+              f"{record['whipped']['rebellions']} dissenting votes on other business "
               f"(loyalty {record['whipped']['loyalty']}%), {free_text}")
         shown += 1
     return table, loyalty
@@ -752,8 +719,9 @@ def plot_dissent_by_category(directory, parties=None, save_path=None):
     width = 0.8 / max(len(party_names), 1)
     for i, party in enumerate(party_names):
         xs = [j + i * width for j in range(len(categories))]
-        ys = [table[party].get(c, {}).get("dissent_rate", 0)
-              for c in categories]
+        # Missing or undefined categories must not appear as observed zero dissent.
+        rates = [table[party].get(c, {}).get('dissent_rate') for c in categories]
+        ys = [float('nan') if rate is None else rate for rate in rates]
         plt.bar(xs, ys, width=width, label=party, color=PARTY_COLORS[party])
 
     plt.xticks([j + width * (len(party_names) - 1) / 2
@@ -810,7 +778,7 @@ def analyze_parliament(directory, metric="rice"):
 def analyze_random_bill(metric="rice"):
     """Pick a random session and vote, then analyze it."""
     directory = random.choice(parliament_directories())
-    bill = random.choice([f for f in os.listdir(directory) if f.endswith(".csv")])
+    bill = random.choice(sorted(f for f in os.listdir(directory) if re.fullmatch(r'file_[1-9]\d*\.csv', f)))
     analyze_bill(directory, bill, metric)
  
  
@@ -827,10 +795,25 @@ def analyze_dissent(directory, top_n=15):
           f"rebellions_over_time_{session}.png, top_rebels_{session}.png")
  
  
+def main():
+    import argparse
+    from pathlib import Path
+    from check_data import require_valid_corpus, SESSIONS
+    parser = argparse.ArgumentParser(description='Generate deterministic session diagnostics after integrity validation.')
+    parser.add_argument('--session', required=True, choices=SESSIONS)
+    parser.add_argument('--output-dir', required=True, type=Path)
+    args = parser.parse_args()
+    plt.switch_backend('Agg')
+    require_valid_corpus(sessions=[args.session])
+    directory = os.path.join(PROJECT_ROOT, 'Parliament_' + args.session)
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    plot_cohesion_over_time(directory, excluded_parties=['Independent'],
+                           save_path=args.output_dir/'cohesion.png')
+    plot_dissent_rate(directory, save_path=args.output_dir/'dissent.png')
+    plot_rebellions_over_time(directory, save_path=args.output_dir/'dissent_by_division.png')
+    plot_top_rebels(directory, save_path=args.output_dir/'mp_dissent.png')
+    print_dissent_report(directory)
+
+
 if __name__ == "__main__":
-    directory = random.choice(parliament_directories())
-    plot_cohesion_over_time(directory, metric="rice",
-                            excluded_parties=["Independent"],
-                            save_path="cohesion_by_bill_sorted.png")
-    print(f"Saved cohesion_by_bill_sorted.png for {directory}")
-    analyze_dissent(directory)
+    main()

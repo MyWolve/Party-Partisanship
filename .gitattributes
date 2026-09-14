@@ -1,0 +1,11 @@
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+audit/derived/*.csv text eol=lf
+audit/sponsors/*.csv text eol=lf
+data/processed/*.csv text eol=lf
+experiments/results_*/*.csv text eol=lf
+*.txt text eol=lf
+evidence/** -text
+*.png binary
+*.pdf binary

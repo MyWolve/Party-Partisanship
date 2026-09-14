@@ -1,33 +1,17 @@
-"""Experiment 7: Validation and robustness.
+"""E7: aggregate agreement with independently collected voting data.
 
-Before the whip-test findings travel anywhere, certify the pipeline:
-
-  1. Compute party unity per PARLIAMENT (pooling sessions) in forms
-     comparable to the published literature. Godbout & Høyland's filters
-     are mirrored exactly as documented: lop-sided divisions excluded
-     (all but <= 5 MPs on one side) and MPs with fewer than 25 recorded
-     votes dropped from loyalty averages.
-  2. Compare against published benchmarks where available. Fill
-     experiments/benchmarks_e7.csv (parliament, party, metric, value,
-     source) from Lost on Division's figures or the BJPS replication
-     data (dataverse.harvard.edu, Godbout & Høyland 2017); the script
-     prints a side-by-side comparison for any rows present.
-  3. Robustness: recompute unity under a Desposato-style small-group
-     correction (share of possible cohesion above the random-voting
-     baseline for a group of that size) and under MP-weighted vs
-     vote-weighted averaging. Conclusions that survive all variants are
-     robust to the known biases of the raw Rice Index.
-
-Note on the Agreement Index (Hix-Noury-Roland): NOT implemented. The
-House's per-division files record only voters and paired members, so
-abstention/absence is unobservable; with two observable options the
-Agreement Index reduces to a transform of Rice and adds no information.
-
-Outputs (results_e7/): unity_by_parliament.csv, robustness figure,
-console comparison against any provided benchmarks.
+Shared metrics test data agreement, not independent metric correctness or
+whip classification. All 36 expected comparisons must exist and stay within
+1.00 percentage point. Paired and dual-coded votes are excluded from binary
+metrics. The nonnegative small-group adjustment is descriptive, not a full
+replication of a published estimator.
 """
 
+import argparse
 import csv
+import json
+from decimal import Decimal
+from pathlib import Path
 import math
 import os
 import sys
@@ -112,7 +96,7 @@ def parliament_unity(directories):
     divisions_contested = 0
 
     for directory in directories:
-        for _, votes in load_parliament(directory):
+        for _, votes in load_parliament(directory, member_ids=True):
             lopsided = is_lopsided(votes)
             if not lopsided:
                 divisions_contested += 1
@@ -158,94 +142,115 @@ def parliament_unity(directories):
 
 
 def load_benchmarks():
-    if not os.path.exists(BENCHMARKS):
-        return []
     with open(BENCHMARKS, encoding="utf-8-sig") as f:
         return list(csv.DictReader(f))
 
 
-def main():
-    os.makedirs(RESULTS_DIR, exist_ok=True)
-    groups = parliament_sessions()
+EXPECTED = {(p, party, metric) for p in (38, 39, 40)
+            for party in ("Conservative", "Liberal", "NDP", "Bloc Québécois")
+            for metric in ("rice", "rice_contested", "loyalty")}
+TOLERANCE = Decimal("1.00")
 
+
+def compare_benchmarks(rows, benchmarks):
+    """Return all comparisons, rejecting schema gaps and numerical drift."""
+    ours = {}
+    for row in rows:
+        key = (int(row['parliament']), row['party'])
+        if key in ours:
+            raise ValueError(f'Duplicate observed row: {key}')
+        ours[key] = row
+    seen, comparison = set(), []
+    for b in benchmarks:
+        key = (int(b['parliament']), b['party'], b['metric'])
+        if key not in EXPECTED or key in seen:
+            raise ValueError(f'Unexpected or duplicate benchmark: {key}')
+        if not b.get('source', '').strip():
+            raise ValueError(f'Missing benchmark provenance: {key}')
+        seen.add(key)
+        try:
+            observed = Decimal(str(ours[key[:2]][key[2]]))
+            reference = Decimal(str(b['value']))
+        except (KeyError, ArithmeticError):
+            raise ValueError(f'Missing or invalid value: {key}') from None
+        if any(not v.is_finite() or not 0 <= v <= 100 for v in (observed, reference)):
+            raise ValueError(f'Non-finite/out-of-range value: {key}')
+        difference = observed - reference
+        comparison.append(dict(parliament=key[0], party=key[1], metric=key[2],
+            observed=float(observed), benchmark=float(reference), difference=float(difference),
+            tolerance=float(TOLERANCE), passed=abs(difference) <= TOLERANCE, source=b['source']))
+    if seen != EXPECTED:
+        raise ValueError(f'Missing benchmarks: {sorted(EXPECTED - seen)}')
+    failed = [c for c in comparison if not c['passed']]
+    if failed:
+        raise ValueError(f'Benchmark tolerance exceeded: {failed}')
+    return sorted(comparison, key=lambda c: (c['parliament'], c['party'], c['metric']))
+
+
+def main(output_dir=None):
+    from check_data import require_valid_corpus
+    from experiment_io import write_csv, write_json, plot_style
+    require_valid_corpus()  # before creating or replacing any result files
     rows = []
-    for parliament, directories in sorted(groups.items()):
-        unity = parliament_unity(directories)
-        for party, entry in unity.items():
-            if entry["rice"] is None:
-                continue
-            rows.append({"parliament": parliament, "party": party, **entry})
-
-    out = os.path.join(RESULTS_DIR, "unity_by_parliament.csv")
-    with open(out, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=[
-            "parliament", "party", "rice", "rice_contested",
-            "rice_corrected", "loyalty", "mps", "divisions"])
-        writer.writeheader()
-        writer.writerows(rows)
-
-    print("E7: unity by parliament (lop-sided excluded where marked)")
-    print("=" * 78)
-    print(f"{'parl':5}{'party':17}{'rice':>7}{'contested':>11}"
-          f"{'corrected':>11}{'loyalty':>9}{'MPs':>5}")
-    for r in rows:
-        print(f"{r['parliament']:<5}{r['party']:17}"
-              f"{r['rice']:>7}{str(r['rice_contested']):>11}"
-              f"{str(r['rice_corrected']):>11}{str(r['loyalty']):>9}"
-              f"{r['mps']:>5}")
-
-    benchmarks = load_benchmarks()
-    if benchmarks:
-        print("\nBenchmark comparison (published values from "
-              "benchmarks_e7.csv):")
-        ours = {(r["parliament"], r["party"]): r for r in rows}
-        for b in benchmarks:
-            key = (int(b["parliament"]), b["party"])
-            metric = b.get("metric", "loyalty")
-            our_value = ours.get(key, {}).get(metric)
-            published = float(b["value"])
-            if our_value is None:
-                print(f"  P{b['parliament']} {b['party']} {metric}: "
-                      f"published {published}, ours: n/a")
-                continue
-            print(f"  P{b['parliament']} {b['party']} {metric}: "
-                  f"published {published}, ours {our_value} "
-                  f"(diff {our_value - published:+.2f}) [{b['source']}]")
-    else:
-        print("\nNo benchmarks_e7.csv found. To compare against published "
-              "figures, create experiments/benchmarks_e7.csv with columns "
-              "parliament,party,metric,value,source (metric: rice, "
-              "rice_contested, or loyalty). Godbout & Høyland 2017's "
-              "replication data: dataverse.harvard.edu (BJPolS dataverse).")
-
-    # Robustness figure: raw vs corrected Rice per party, by parliament
-    parliaments = sorted({r["parliament"] for r in rows})
-    plt.figure(figsize=(14, 7))
+    for parliament, directories in sorted(parliament_sessions().items()):
+        for party, entry in parliament_unity(directories).items():
+            if entry['rice'] is not None:
+                rows.append({'parliament': parliament, 'party': party, **entry})
+    comparisons = compare_benchmarks(rows, load_benchmarks())
+    destination = Path(output_dir or RESULTS_DIR)
+    destination.mkdir(parents=True, exist_ok=True)
+    write_csv(destination / 'unity_by_parliament.csv', rows)
+    write_csv(destination / 'benchmark_comparison.csv', comparisons)
+    summary = {'comparisons': len(comparisons),
+               'exact_to_two_decimals': sum(c['difference'] == 0 for c in comparisons),
+               'maximum_absolute_difference': max(abs(c['difference']) for c in comparisons),
+               'tolerance_percentage_points': float(TOLERANCE), 'status': 'pass'}
+    write_json(destination / 'validation_summary.json', summary)
+    plot_style()
+    fig, ax = plt.subplots(figsize=(10.5, 5.8))
     for party in TRACKED:
-        series = {r["parliament"]: r for r in rows if r["party"] == party}
-        xs = [p for p in parliaments if p in series
-              and series[p]["rice_contested"] is not None]
-        if not xs:
-            continue
-        plt.plot(xs, [series[p]["rice_contested"] for p in xs],
-                 color=PARTY_COLORS[party], marker="o", label=party)
-        cx = [p for p in xs if series[p]["rice_corrected"] is not None]
-        plt.plot(cx, [series[p]["rice_corrected"] for p in cx],
-                 color=PARTY_COLORS[party], marker="x", linestyle="--",
-                 alpha=0.6)
-    plt.xlabel("Parliament")
-    plt.ylabel("Mean Rice (contested divisions)")
-    plt.title("Unity by parliament: raw (solid) vs small-group-corrected "
-              "(dashed) Rice")
-    plt.xticks(parliaments)
-    plt.legend()
-    plt.grid(True, linestyle="--", alpha=0.4)
-    plt.tight_layout()
-    plt.savefig(os.path.join(RESULTS_DIR, "unity_robustness.png"))
-    plt.close()
+        series = [r for r in rows if r['party'] == party and r['rice_contested'] is not None]
+        ax.plot([r['parliament'] for r in series], [r['rice_contested'] for r in series],
+                color=PARTY_COLORS[party], marker='o', label=party)
+        corrected = [r for r in series if r['rice_corrected'] is not None]
+        ax.plot([r['parliament'] for r in corrected], [r['rice_corrected'] for r in corrected],
+                color=PARTY_COLORS[party], linestyle='--', alpha=.7)
+    ax.set(xlabel='Parliament', ylabel='Mean Rice index on contested divisions', ylim=(85, 101),
+           xticks=sorted({r['parliament'] for r in rows}), title='Party cohesion across the frozen corpus')
+    ax.legend(ncol=3, loc='lower right', frameon=False)
+    fig.text(.08, .015, 'Solid: raw Rice   Dashed: nonnegative small-group adjustment   P45 is incomplete   Y-axis starts at 85', fontsize=9)
+    fig.tight_layout(rect=(0, .05, 1, 1))
+    fig.savefig(destination / 'unity_robustness.png', dpi=180)
+    plt.close(fig)
+    (destination / 'FINDINGS_E7.md').write_text(
+        '# E7 Aggregate data agreement\n\n'
+        f"All {summary['comparisons']} comparisons pass the 1.00-point criterion. "
+        f"{summary['exact_to_two_decimals']} match to two decimals; the maximum absolute difference is "
+        f"{summary['maximum_absolute_difference']:.2f} percentage points.\n\n"
+        'The benchmark values are computed from Godbout and Høyland’s deposited raw matrices, '
+        'using shared definitions. This is an aggregate data-agreement check for Parliaments 38–40, '
+        'not an independent validation of the arithmetic, the vote classifier, or later parliaments. '
+        'Hand-calculated regression fixtures provide a separate check of metric behavior.\n\n'
+        'The reviewed baseline had 27 exact matches, not the previously documented 30. '
+        'Member-level reconciliation now matches 256,676 observable records exactly in vote flags and analytic party '
+        'across 933 divisions. One additional Yea in the deposit (Volpe, 40-2/157) is absent from the official export '
+        'and Journals. A midnight sitting-date difference is documented separately. See the '
+        '[record-level audit](../../audit/RECONCILIATION_REVIEW.md); aggregate agreement does not establish '
+        'complete record identity.\n\n'
+        'Contested means more than five observable binary votes on each side of the House. '
+        'MP loyalty averages require at least 25 qualifying votes and omit tied party divisions. '
+        'Paired and dual-coded member-votes are omitted. Two-member caucus loyalty is degenerate '
+        'because splits have no majority. The small-group series is a nonnegative baseline adjustment; '
+        'it excludes singleton votes and should not be presented as a fully replicated published estimator.\n\n'
+        'See [all comparisons](benchmark_comparison.csv), [unity table](unity_by_parliament.csv), '
+        '[validation summary](validation_summary.json), and [reproduction instructions](../../REPRODUCING.md).\n',
+        encoding='utf-8', newline='\n')
+    print('E7:', summary)
+    return summary
 
-    print(f"\nWrote {out} and unity_robustness.png to {RESULTS_DIR}/")
 
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output-dir', type=Path)
+    args = parser.parse_args()
+    main(args.output_dir)

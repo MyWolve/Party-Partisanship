@@ -7,7 +7,7 @@ Connects the three data sources of this project:
   House of Commons/<session>.xml           LEGISinfo bill details
 
 and classifies each division by the kind of business being voted on, so
-dissent can be analyzed separately for whipped and free votes.
+dissent can be analyzed by category and separately sourced whip status.
 
 Classification produces three fields per division:
 
@@ -17,7 +17,7 @@ Classification produces three fields per division:
   stage       second_reading | third_reading | report_stage |
               senate_amendments | amendment | None
   confidence  True for confidence-adjacent business (budget, supply,
-              throne speech), which is always whipped for the government
+              throne speech), a keyword proxy, not verified whip instructions
 
 Bill types come from the LEGISinfo XML when available ("House Government
 Bill", "Private Member's Bill", etc.); otherwise they are inferred from the
@@ -26,6 +26,10 @@ bills, C-201+ private members' bills, and correspondingly for S- numbers).
 """
 
 import csv
+import json
+from functools import lru_cache
+from pathlib import Path
+from vote_data import apply_metadata_decision
 import os
 import re
 import xml.etree.ElementTree as ET
@@ -45,19 +49,17 @@ def load_bill_types(session):
     formatted number (e.g. "C-30"), or {} if no XML exists for the session.
     """
     path = os.path.join(BILL_XML_DIR, f"{session}.xml")
+    # The original archive stops at 44-1. The separately archived 45-1 export
+    # was reviewed for coverage/type agreement; historical archives stay intact.
+    if not os.path.exists(path) and session == '45-1':
+        path = os.path.join(PROJECT_ROOT, 'evidence', 'legisinfo-45-1-current.xml')
+        if not os.path.exists(path):
+            raise FileNotFoundError('Missing reviewed 45-1 bill supplement')
     if not os.path.exists(path):
         return {}
 
-    bills = {}
-    for bill in ET.parse(path).getroot().findall("Bill"):
-        number = (bill.findtext("BillNumberFormatted") or "").strip()
-        if number:
-            bills[number] = {
-                "type": (bill.findtext("BillTypeEn") or "").strip(),
-                "sponsor": (bill.findtext("SponsorEn") or "").strip(),
-                "title": (bill.findtext("LongTitleEn") or "").strip(),
-            }
-    return bills
+    from bill_data import parse_bill_xml
+    return parse_bill_xml(Path(path).read_bytes(), session)
 
 
 def infer_bill_type(bill_number):
@@ -166,12 +168,12 @@ def classify_vote(subject, bill_number, bill_types):
               or "senate public" in type_lowered):
             category = "private_members_business"
         else:
-            category = "government_bill"  # unknown bill type: safer default
+            category = "unknown_bill"
     elif category is None and re.match(r"bill\b", subject, re.I):
         # Malformed source subjects like "Bill ,  (report stage subamendment)"
         # (42-1 vote 247) name a bill but lost its number; treat as a bill
         # vote of unknown type.
-        category = "government_bill"
+        category = "unknown_bill"
     elif category is None:
         category = "other"
 
@@ -189,46 +191,46 @@ def classify_vote(subject, bill_number, bill_types):
         "confidence": bool(_CONFIDENCE_PATTERN.search(subject)),
         "bill_number": bill_number,
         "bill_type": bill_type,
+        "bill_type_source": ("legisinfo" if bill_number in bill_types else "number_inference" if bill_type else "unknown"),
     }
 
 
-# Categories where MPs traditionally vote freely (no whip, or a loose one).
-FREE_VOTE_CATEGORIES = {"private_members_business"}
-
-# ---------------------------------------------------------------------------
-# Designated free votes
-#
-# Category is a proxy for whip status, and governments occasionally free
-# their members on specific government business. Documented cases are
-# recorded here so the whip analyses don't count sanctioned dissent as
-# rebellion. "Free" here means free for backbenchers; cabinet typically
-# remained whipped, so some conformity on these votes is still whip-driven.
-#
-# Only add entries verified against the record (Journals, Hansard, or
-# contemporary reporting). Bill-level entries cover every division on the
-# bill's stages (procedural motions about the bill, e.g. closure, classify
-# as procedural and are unaffected).
-# ---------------------------------------------------------------------------
-
-FREE_VOTE_BILLS = {
-    # Civil Marriage Act (same-sex marriage), 2005: PM Martin declared a
-    # free vote for Liberal MPs outside cabinet at all stages.
-    "38-1": {"C-38"},
-    # TODO pending spot-check against the record:
-    #   38-1 C-30 (Parliament of Canada Act / Salaries Act) — 11-14 Liberal
-    #     rebels across three stages; free vote or pay revolt?
-    #   42-1 C-14 (medical assistance in dying) — Liberal backbenchers were
-    #     reportedly freed; verify scope before adding.
-}
-
-FREE_VOTE_DIVISIONS = {
-    # For designated free votes not tied to a bill: session -> {division numbers}
-}
+FREE_VOTE_CATEGORIES = {"private_members_business"}  # proxy only
 
 
-def is_free_vote(meta_row):
-    """True if a division was free: unwhipped by category or by designation."""
-    return bool(meta_row.get("free_vote"))
+@lru_cache(maxsize=1)
+def load_designations():
+    rows = json.loads((Path(PROJECT_ROOT) / 'audit/whip_designations.json').read_text(encoding='utf-8'))
+    seen = set()
+    for row in rows:
+        key = (row['session'], row['bill'], row['party'])
+        if key in seen or not row['sources'] or not row['note']:
+            raise ValueError('Invalid or duplicate designation')
+        if row['status'] not in ('documented_free', 'unresolved'):
+            raise ValueError('Unknown designation status')
+        if row['status'] == 'documented_free' and (not row['stages'] or row['member_scope'] not in ('whole_caucus', 'backbench_only')):
+            raise ValueError('Free designation requires explicit scope')
+        seen.add(key)
+    return rows
+
+
+def whip_status(meta, party):
+    """Return sourced party/stage status, kept distinct from category proxies."""
+    # Procedural business never inherits a substantive bill's designation.
+    if meta['category'] not in ('procedural', 'government_motion'):
+        for rule in load_designations():
+            if (rule['session'], rule['bill'], rule['party']) == (meta.get('session'), meta['bill_number'], party):
+                status = rule['status'] if meta['stage'] in rule['stages'] else rule['other_stages']
+                return {'status': status, 'scope': rule['member_scope'], 'source_id': rule['id']}
+    if meta['category'] in ('unknown_bill', 'other'):
+        return {'status': 'unresolved', 'scope': 'unknown', 'source_id': ''}
+    return {'status': 'category_proxy_private' if meta['category'] in FREE_VOTE_CATEGORIES else 'category_proxy_other',
+            'scope': 'unknown', 'source_id': ''}
+
+
+def is_free_vote(meta_row, party):
+    """Compatibility helper: mixes documented status and a stated category proxy."""
+    return whip_status(meta_row, party)['status'] in ('documented_free', 'category_proxy_private')
 
 
 # ---------------------------------------------------------------------------
@@ -249,21 +251,26 @@ def load_vote_metadata(directory):
     session = os.path.basename(os.path.normpath(directory)).replace(
         "Parliament_", "")
     bill_types = load_bill_types(session)
-    free_bills = FREE_VOTE_BILLS.get(session, set())
-    free_divisions = FREE_VOTE_DIVISIONS.get(session, set())
 
     metadata = {}
     with open(path, encoding="utf-8-sig") as f:
-        for row in csv.DictReader(f):
+        reader = csv.DictReader(f)
+        required = {'vote_number', 'date', 'subject', 'bill_number', 'result', 'yeas', 'nays', 'paired'}
+        fields = reader.fieldnames or []
+        if len(fields) != len(set(fields)) or not required.issubset(fields):
+            raise ValueError('Missing or duplicate metadata columns')
+        for row in reader:
             if not row.get("vote_number", "").strip():
-                continue
+                raise ValueError("Missing vote number")
             number = int(row["vote_number"])
+            if number <= 0 or number in metadata:
+                raise ValueError(f"Invalid or duplicate vote number: {number}")
+            if None in row or any(value is None for value in row.values()):
+                raise ValueError("Malformed metadata row")
+            row = apply_metadata_decision(session, row)
+            row["session"] = session
             row.update(classify_vote(row.get("subject", ""),
                                      row.get("bill_number", "").strip(),
                                      bill_types))
-            row["designated_free"] = (row["bill_number"] in free_bills
-                                      or number in free_divisions)
-            row["free_vote"] = (row["designated_free"]
-                                or row["category"] in FREE_VOTE_CATEGORIES)
             metadata[number] = row
     return metadata

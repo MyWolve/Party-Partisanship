@@ -1,0 +1,132 @@
+derivation
+Verified audit/derived/42-1-871.csv
+Verified audit/data_decisions.json
+
+tests
+test_bad_downloads_remain_failed_with_raw_evidence (test_collection.CollectionTests.test_bad_downloads_remain_failed_with_raw_evidence) ... ok
+test_bad_metadata_fails_before_members (test_collection.CollectionTests.test_bad_metadata_fails_before_members) ... ok
+test_changing_session_fails (test_collection.CollectionTests.test_changing_session_fails) ... ok
+test_existing_directory_is_never_overwritten (test_collection.CollectionTests.test_existing_directory_is_never_overwritten) ... ok
+test_invalid_session_cannot_create_paths (test_collection.CollectionTests.test_invalid_session_cannot_create_paths) ... ok
+test_successful_snapshot_and_receipts (test_collection.CollectionTests.test_successful_snapshot_and_receipts) ... ok
+test_transport_failure_is_not_reported_as_skipped (test_collection.CollectionTests.test_transport_failure_is_not_reported_as_skipped) ... ok
+test_exact_division_lookup (test_collection.LegacyTests.test_exact_division_lookup) ... ok
+test_floor_crossing_and_ties (test_collection.LegacyTests.test_floor_crossing_and_ties) ... ok
+test_identity_survives_display_name_change (test_collection.LegacyTests.test_identity_survives_display_name_change) ... ok
+test_metadata_headers_are_required_and_unique (test_collection.LegacyTests.test_metadata_headers_are_required_and_unique) ... ok
+test_repeated_bill_and_session_keys (test_design_and_export.DesignChecks.test_repeated_bill_and_session_keys) ... ok
+test_scope_exclusions_and_size_boundaries (test_design_and_export.DesignChecks.test_scope_exclusions_and_size_boundaries) ... ok
+test_unnumbered_and_undefined_are_not_zero (test_design_and_export.DesignChecks.test_unnumbered_and_undefined_are_not_zero) ... ok
+test_compression_metadata_does_not_change_content_hash (test_design_and_export.ExportChecks.test_compression_metadata_does_not_change_content_hash) ... ok
+test_flags_and_repair_provenance (test_design_and_export.ExportChecks.test_flags_and_repair_provenance) ... ok
+test_round_trip_rejects_wrong_analysis_denominator_and_changed_content (test_design_and_export.ExportChecks.test_round_trip_rejects_wrong_analysis_denominator_and_changed_content) ... ok
+test_dissent_resets_and_sessions_continue (test_narrative.NarrativeTests.test_dissent_resets_and_sessions_continue) ... ok
+test_governing_party_transition_breaks_run (test_narrative.NarrativeTests.test_governing_party_transition_breaks_run) ... ok
+test_ineligible_observations_neither_extend_nor_break (test_narrative.NarrativeTests.test_ineligible_observations_neither_extend_nor_break) ... ok
+test_order_is_numeric (test_narrative.NarrativeTests.test_order_is_numeric) ... ok
+test_complete_and_boundary (test_pipeline.BenchmarkTests.test_complete_and_boundary) ... ok
+test_missing_duplicate_unexpected_invalid (test_pipeline.BenchmarkTests.test_missing_duplicate_unexpected_invalid) ... ok
+test_curly_apostrophe (test_pipeline.ClassificationTests.test_curly_apostrophe) ... ok
+test_party_and_cabinet_scope (test_pipeline.ClassificationTests.test_party_and_cabinet_scope) ... ok
+test_procedural_never_inherits (test_pipeline.ClassificationTests.test_procedural_never_inherits) ... ok
+test_senate_and_recommittal_unresolved (test_pipeline.ClassificationTests.test_senate_and_recommittal_unresolved) ... ok
+test_uncertainty_sensitivity (test_pipeline.ClassificationTests.test_uncertainty_sensitivity) ... ok
+test_unknown_bill_not_government (test_pipeline.ClassificationTests.test_unknown_bill_not_government) ... ok
+test_duplicate_metadata_fails (test_pipeline.IntegrityTests.test_duplicate_metadata_fails) ... ok
+test_empty_file_fails (test_pipeline.IntegrityTests.test_empty_file_fails) ... ok
+test_missing_file_and_orphan_fail (test_pipeline.IntegrityTests.test_missing_file_and_orphan_fail) ... ok
+test_real_repairs (test_pipeline.IntegrityTests.test_real_repairs) ... ok
+test_unlisted_small_and_large_mismatch_fail (test_pipeline.IntegrityTests.test_unlisted_small_and_large_mismatch_fail) ... ok
+test_valid_fixture (test_pipeline.IntegrityTests.test_valid_fixture) ... ok
+test_dual_excluded_not_arbitrarily_yea (test_pipeline.MetricTests.test_dual_excluded_not_arbitrarily_yea) ... ok
+test_hand_calculated_3_to_1 (test_pipeline.MetricTests.test_hand_calculated_3_to_1) ... ok
+test_lopsided_boundary (test_pipeline.MetricTests.test_lopsided_boundary) ... ok
+test_small_group_enumeration (test_pipeline.MetricTests.test_small_group_enumeration) ... ok
+test_tie_and_empty (test_pipeline.MetricTests.test_tie_and_empty) ... ok
+test_failed_benchmark_does_not_write_outputs (test_pipeline.OutputProtectionTests.test_failed_benchmark_does_not_write_outputs) ... ok
+test_preflight_stops_both_experiments_before_writing (test_pipeline.OutputProtectionTests.test_preflight_stops_both_experiments_before_writing) ... ok
+test_changed_audited_file_fails (test_pipeline.ParsingTests.test_changed_audited_file_fails) ... ok
+test_current_and_legacy_headers (test_pipeline.ParsingTests.test_current_and_legacy_headers) ... ok
+test_invalid_inputs_fail (test_pipeline.ParsingTests.test_invalid_inputs_fail) ... ok
+test_paired_and_dual_flags (test_pipeline.ParsingTests.test_paired_and_dual_flags) ... ok
+test_paired_binary_combination_is_excluded (test_pipeline.ParsingTests.test_paired_binary_combination_is_excluded) ... ok
+test_reordered_columns (test_pipeline.ParsingTests.test_reordered_columns) ... ok
+test_text_hash_portable (test_pipeline.ParsingTests.test_text_hash_portable) ... ok
+test_html_cannot_masquerade_as_vote_xml (test_pipeline.SourceArchiveTests.test_html_cannot_masquerade_as_vote_xml) ... ok
+test_pdf_archive_interstitial_is_rejected (test_pipeline.SourceArchiveTests.test_pdf_archive_interstitial_is_rejected) ... ok
+test_both_schemas_agree (test_reconciliation.BillSchemaTests.test_both_schemas_agree) ... ok
+test_invalid_refresh_retains_failure (test_reconciliation.BillSchemaTests.test_invalid_refresh_retains_failure) ... ok
+test_invalid_schemas_and_wrong_session (test_reconciliation.BillSchemaTests.test_invalid_schemas_and_wrong_session) ... ok
+test_lost_sponsor_is_a_change (test_reconciliation.BillSchemaTests.test_lost_sponsor_is_a_change) ... ok
+test_refresh_refuses_overwrite (test_reconciliation.BillSchemaTests.test_refresh_refuses_overwrite) ... ok
+test_split_bill_suffix (test_reconciliation.BillSchemaTests.test_split_bill_suffix) ... ok
+test_middle_name_fallback (test_reconciliation.ReconciliationTests.test_middle_name_fallback) ... ok
+test_real_record_level_discrepancy_stays_visible (test_reconciliation.ReconciliationTests.test_real_record_level_discrepancy_stays_visible) ... ok
+test_same_name_requires_constituency (test_reconciliation.ReconciliationTests.test_same_name_requires_constituency) ... ok
+test_45_supplement_is_used (test_source_coverage.CoverageTests.test_45_supplement_is_used) ... ok
+test_missing_supplement_cannot_silently_revert (test_source_coverage.CoverageTests.test_missing_supplement_cannot_silently_revert) ... ok
+test_real_sample_and_type_upgrade (test_source_coverage.CoverageTests.test_real_sample_and_type_upgrade) ... ok
+test_xml_rejects_duplicate_missing_and_html (test_source_coverage.CoverageTests.test_xml_rejects_duplicate_missing_and_html) ... ok
+test_xml_rejects_wrong_division_and_flags (test_source_coverage.CoverageTests.test_xml_rejects_wrong_division_and_flags) ... ok
+test_detailed_identity_and_namespace (test_sponsors.SponsorTests.test_detailed_identity_and_namespace) ... ok
+test_filtered_list_rejects_duplicate_and_wrong_shape (test_sponsors.SponsorTests.test_filtered_list_rejects_duplicate_and_wrong_shape) ... ok
+test_index_identity_and_count (test_sponsors.SponsorTests.test_index_identity_and_count) ... ok
+test_index_rejects_missing_duplicate_or_conflicting_identity (test_sponsors.SponsorTests.test_index_rejects_missing_duplicate_or_conflicting_identity) ... ok
+test_json_title_normalizes_only_xml_newlines_and_outer_space (test_sponsors.SponsorTests.test_json_title_normalizes_only_xml_newlines_and_outer_space) ... ok
+test_name_comparison_is_conservative (test_sponsors.SponsorTests.test_name_comparison_is_conservative) ... ok
+test_same_id_spacing_variant_preserves_aliases_and_count (test_sponsors.SponsorTests.test_same_id_spacing_variant_preserves_aliases_and_count) ... ok
+test_sponsor_collection_retains_identity_and_rejects_wrong_detail (test_sponsors.SponsorTests.test_sponsor_collection_retains_identity_and_rejects_wrong_detail) ... ok
+
+----------------------------------------------------------------------
+Ran 73 tests in 3.341s
+
+OK
+Export round-trip: 4 members; 5 E1 party/division denominators match
+
+integrity
+Integrity: PASS
+38-1: 0 problems, 0 classification warnings
+39-1: 0 problems, 0 classification warnings
+39-2: 0 problems, 0 classification warnings
+40-1: 0 problems, 0 classification warnings
+40-2: 0 problems, 0 classification warnings
+40-3: 0 problems, 0 classification warnings
+41-1: 0 problems, 0 classification warnings
+41-2: 0 problems, 0 classification warnings
+42-1: 0 problems, 1 classification warnings
+  247: unresolved business category (unknown_bill)
+43-1: 0 problems, 0 classification warnings
+43-2: 0 problems, 0 classification warnings
+44-1: 0 problems, 0 classification warnings
+45-1: 0 problems, 0 classification warnings
+19 documented source repairs; no blanket tolerance
+
+benchmark_rebuild
+House-38: 190 divisions (181 contested), 5 combo-coded member-votes excluded
+  Conservative     rice 97.13, contested 96.99, loyalty 98.58 (99 MPs)
+  Liberal          rice 92.73, contested 92.39, loyalty 96.19 (134 MPs)
+  NDP              rice 96.93, contested 96.78, loyalty 98.64 (19 MPs)
+  Bloc Québécois   rice 98.58, contested 98.51, loyalty 99.24 (54 MPs)
+  Green Party      rice None, contested None, loyalty None (0 MPs)
+House-39: 380 divisions (350 contested), 7 combo-coded member-votes excluded
+  Conservative     rice 99.08, contested 99.02, loyalty 99.5 (129 MPs)
+  Liberal          rice 95.47, contested 95.09, loyalty 97.25 (105 MPs)
+  NDP              rice 99.02, contested 98.97, loyalty 99.49 (30 MPs)
+  Bloc Québécois   rice 99.61, contested 99.58, loyalty 99.83 (53 MPs)
+  Green Party      rice None, contested None, loyalty None (0 MPs)
+House-40: 363 divisions (334 contested), 25 combo-coded member-votes excluded
+  Conservative     rice 99.26, contested 99.21, loyalty 99.58 (147 MPs)
+  Liberal          rice 96.02, contested 95.71, loyalty 97.9 (77 MPs)
+  NDP              rice 98.83, contested 98.72, loyalty 99.35 (38 MPs)
+  Bloc Québécois   rice 99.96, contested 99.96, loyalty 99.98 (50 MPs)
+  Green Party      rice None, contested None, loyalty None (0 MPs)
+Verified all 36 benchmark rows without overwriting the baseline
+
+reconciliation
+[{'parliament': 38, 'divisions': 190, 'deposit_terms': 314, 'unmatched_nonobserved_terms': 1, 'union_observable_records': 54220, 'joined_records': 54220, 'exact_flag_and_analytic_party_matches': 54220}, {'parliament': 39, 'divisions': 380, 'deposit_terms': 327, 'unmatched_nonobserved_terms': 1, 'union_observable_records': 101643, 'joined_records': 101643, 'exact_flag_and_analytic_party_matches': 101643}, {'parliament': 40, 'divisions': 363, 'deposit_terms': 316, 'unmatched_nonobserved_terms': 1, 'union_observable_records': 100814, 'joined_records': 100813, 'exact_flag_and_analytic_party_matches': 100813, 'deposit_only_observation': 1}]
+
+source_coverage
+Reviewed 13 bill sessions and 35 sampled divisions; 0 member differences
+
+sponsors
+Recovered 4596 bill sponsors without name-based identity inference
