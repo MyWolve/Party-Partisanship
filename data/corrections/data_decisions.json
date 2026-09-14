@@ -16,7 +16,7 @@
     "raw_sha256": "2d0c791e71235945f53bf2d9664e6e3fdaa501a385e9ecbd62fcb4e520fe7f15",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/38-1-159.xml.gz"
+      "data/sources/38-1-159.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -37,7 +37,7 @@
     "raw_sha256": "dd0b7d2a8079745c0e6eb5caa3d3f04d010a2bc1e8d6df66c76d73c1c1d0cbe3",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/39-1-166.xml.gz"
+      "data/sources/39-1-166.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -58,7 +58,7 @@
     "raw_sha256": "2004600d68ab2bc9f462cb9dd7c2c485f0818e83a72baf7c6f6c27dba014791d",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/39-2-57.xml.gz"
+      "data/sources/39-2-57.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -84,7 +84,7 @@
     "raw_sha256": "5bb0323520944885b11158bd1a6e74fae799eca50194d81d8fa377413150da71",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/40-3-12.xml.gz"
+      "data/sources/40-3-12.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -105,7 +105,7 @@
     "raw_sha256": "424b7899884b4ba42136a979b7fc99d347c05260dedcd36df5ecf4ca0e78e119",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/41-1-208.xml.gz"
+      "data/sources/41-1-208.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -126,7 +126,7 @@
     "raw_sha256": "0025b31011c6fb1f14d751eca4123814b6b8fe5fd438a452966a8fd87fbadaa3",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/41-1-351.xml.gz"
+      "data/sources/41-1-351.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -148,7 +148,7 @@
     "raw_sha256": "84d0c4213ee71093c473357f7de44a86f1ba9c9ae475ebaf243591559e9a7aa8",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/41-1-425.xml.gz"
+      "data/sources/41-1-425.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -175,7 +175,7 @@
     "raw_sha256": "8705cc76cd371f8b22756210bc81e70f568a03f7d48c21ce9b45b6b7aa7da4d2",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/41-1-699.xml.gz"
+      "data/sources/41-1-699.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -203,7 +203,7 @@
     "raw_sha256": "04f99a15ad5d835432093eac02825b9dd2b797478001154bdded892e681268b8",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/41-1-742.xml.gz"
+      "data/sources/41-1-742.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -224,7 +224,7 @@
     "raw_sha256": "eacbd8917c00fe8bb8a2fb54ab8f59174c43ea9612dd3554266d9bfe083ec641",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/41-1-748.xml.gz"
+      "data/sources/41-1-748.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -245,7 +245,7 @@
     "raw_sha256": "4c9159520e79e473262012a0b77a32b936907acec9aa209ebbf45f4b6bcee869",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/41-1-752.xml.gz"
+      "data/sources/41-1-752.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -266,7 +266,7 @@
     "raw_sha256": "6216dda0d487c4691b2982839e3ab473599fe68140214950bf3098b2015808c1",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/42-1-106.xml.gz"
+      "data/sources/42-1-106.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -287,7 +287,7 @@
     "raw_sha256": "e16fe6739b8d704fd3ae1fef694310ef61ebc265b039f438a667692296397360",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/42-1-136.xml.gz"
+      "data/sources/42-1-136.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -308,7 +308,7 @@
     "raw_sha256": "032c11e6cf5cf64acbc8ac8b0901ef8857edf32982d62660ab7bf5584fe88049",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/42-1-150.xml.gz"
+      "data/sources/42-1-150.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -331,7 +331,7 @@
     "raw_sha256": "1d8f9e080202991f055130e20e51abe564532e65c69a51abcc1c34f947a313a1",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/42-1-175.xml.gz"
+      "data/sources/42-1-175.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -352,7 +352,7 @@
     "raw_sha256": "63edf80da8a366a3c5d9f64e15e1e899a16bb6ef31478d6496ba068679ee7d8f",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/42-1-71.xml.gz"
+      "data/sources/42-1-71.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -373,7 +373,7 @@
     "raw_sha256": "95e2c0c19a6ad9b5880a1ded485a1452e4c6376f99a75d906911ea458125ba4b",
     "reason": "Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.",
     "source_files": [
-      "evidence/42-1-713.xml.gz"
+      "data/sources/42-1-713.xml.gz"
     ],
     "treatment": "exclude_dual_from_binary_metrics"
   },
@@ -400,10 +400,10 @@
     "raw_sha256": "2e7275b9c4a83ef18b0d647edc15d66a965db15dd7d28571389f119c4ccc1270",
     "reason": "Journal includes Monique Pauzé (Yea). Adjacent-day XML rosters use two minor-group labels, both aggregated as Independent; exact June 5 group label remains unresolved.",
     "source_files": [
-      "evidence/42-1-724.xml.gz",
-      "evidence/42-1-724-journals.html.gz",
-      "evidence/42-1-723.xml.gz",
-      "evidence/42-1-725.xml.gz"
+      "data/sources/42-1-724.xml.gz",
+      "data/sources/42-1-724-journals.html.gz",
+      "data/sources/42-1-723.xml.gz",
+      "data/sources/42-1-725.xml.gz"
     ],
     "treatment": "restore_member"
   },
@@ -426,12 +426,12 @@
     },
     "raw_sha256": "ccb0aec39a737fa7029c926ee0362916f8a3a202455809103ce80c9b13ca313f",
     "reason": "Journal roll call; identities and affiliations uniquely joined to the same-sitting division 872 roster. No votes copied from 872.",
-    "replacement": "audit/derived/42-1-871.csv",
+    "replacement": "data/corrections/derived/42-1-871.csv",
     "replacement_sha256": "2bbb0f1a1774b5623d4777686c294db465310841313d171985c74e4244cf51ca",
     "source_files": [
-      "evidence/42-1-871.xml.gz",
-      "evidence/42-1-871-journals.html.gz",
-      "evidence/42-1-872.xml.gz"
+      "data/sources/42-1-871.xml.gz",
+      "data/sources/42-1-871-journals.html.gz",
+      "data/sources/42-1-872.xml.gz"
     ],
     "treatment": "restore_division"
   }

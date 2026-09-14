@@ -11,7 +11,7 @@ from functools import lru_cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-DECISIONS = ROOT / 'audit' / 'data_decisions.json'
+DECISIONS = ROOT / 'data' / 'corrections' / 'data_decisions.json'
 
 
 def text_hash(text):

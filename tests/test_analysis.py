@@ -55,13 +55,9 @@ class MetricsTests(unittest.TestCase):
         self.assertFalse(matches(meta,dict(type="Private Member's Bill",title='Postal services'),args))
         self.assertFalse(matches({**meta,'session':'43-1'},dict(type='House Government Bill',title='Postal services'),args))
 
-    def test_actual_type_and_free_vote_scope(self):
+    def test_actual_bill_type(self):
         import bill_info
-        details=bill_info.load_bill_types('42-1')
-        self.assertEqual(details['C-89']['type'],'House Government Bill')
-        meta=dict(session='42-1',bill_number='C-14',category='government_bill',stage='third_reading')
-        self.assertEqual(bill_info.whip_status(meta,'Liberal')['status'],'documented_free')
-        self.assertNotEqual(bill_info.whip_status({**meta,'category':'procedural'},'Liberal')['status'],'documented_free')
+        self.assertEqual(bill_info.load_bill_types('42-1')['C-89']['type'], 'House Government Bill')
 
 
 class ExportTests(unittest.TestCase):

@@ -118,7 +118,7 @@ def run(args):
         files.add(directory/'votes_metadata.csv')
         xml = ROOT/'House of Commons'/f'{session}.xml'
         if not xml.exists():
-            xml = ROOT/'evidence'/f'legisinfo-{session}-current.xml.gz'
+            xml = ROOT/'data'/'sources'/f'legisinfo-{session}-current.xml.gz'
         if xml.exists():
             files.add(xml)
         for number, meta in sorted(metadata.items()):
@@ -138,9 +138,7 @@ def run(args):
                 source_url=f'https://www.ourcommons.ca/members/en/votes/{session.replace("-", "/")}/{number}')
             selected.append(record)
             for party, (yea, nay) in party_counts(rows).items():
-                status = bill_info.whip_status(meta, party)
-                observations.append({**record, 'party': party, 'yea': yea, 'nay': nay,
-                    'whip_status': status['status'], 'whip_scope': status['scope']})
+                observations.append({**record, 'party': party, 'yea': yea, 'nay': nay})
     if not selected:
         raise ValueError('No matching divisions; check bill keys, type, category or keywords')
     if args.bill:
@@ -167,7 +165,7 @@ def run(args):
                         writer.writerow(dict(session=r['session'], division=r['division'], member_id=m['member_id'],
                             member=m['member'], raw_party=m['party'], party=analytic_party(m['party']),
                             vote=m['vote'], paired=m['paired'], binary_vote=binary_vote(m) or '', correction=r['correction']))
-    files.update(ROOT/p for p in ['audit/data_decisions.json', 'audit/whip_designations.json', 'audit/derived/42-1-871.csv'])
+    files.update(ROOT/p for p in ['data/corrections/data_decisions.json', 'data/corrections/derived/42-1-871.csv'])
     # Portable hashes cover the selected source tables, corrections and code.
     files.update(ROOT.glob('*.py'))
     hashes = {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes() if p.suffix=='.gz' else p.read_bytes().replace(b'\r\n', b'\n')).hexdigest() for p in sorted(files)}

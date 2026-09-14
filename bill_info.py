@@ -27,8 +27,6 @@ bills, C-201+ private members' bills, and correspondingly for S- numbers).
 
 import csv
 import gzip
-import json
-from functools import lru_cache
 from pathlib import Path
 from vote_data import apply_metadata_decision
 import os
@@ -53,7 +51,7 @@ def load_bill_types(session):
     # The original archive stops at 44-1. The separately archived 45-1 export
     # was reviewed for coverage/type agreement; historical archives stay intact.
     if not os.path.exists(path) and session == '45-1':
-        path = os.path.join(PROJECT_ROOT, 'evidence', 'legisinfo-45-1-current.xml.gz')
+        path = os.path.join(PROJECT_ROOT, 'data', 'sources', 'legisinfo-45-1-current.xml.gz')
         if not os.path.exists(path):
             raise FileNotFoundError('Missing reviewed 45-1 bill supplement')
     if not os.path.exists(path):
@@ -200,32 +198,8 @@ def classify_vote(subject, bill_number, bill_types):
 FREE_VOTE_CATEGORIES = {"private_members_business"}  # proxy only
 
 
-@lru_cache(maxsize=1)
-def load_designations():
-    rows = json.loads((Path(PROJECT_ROOT) / 'audit/whip_designations.json').read_text(encoding='utf-8'))
-    seen = set()
-    for row in rows:
-        key = (row['session'], row['bill'], row['party'])
-        if key in seen or not row['sources'] or not row['note']:
-            raise ValueError('Invalid or duplicate designation')
-        if row['status'] not in ('documented_free', 'unresolved'):
-            raise ValueError('Unknown designation status')
-        if row['status'] == 'documented_free' and (not row['stages'] or row['member_scope'] not in ('whole_caucus', 'backbench_only')):
-            raise ValueError('Free designation requires explicit scope')
-        seen.add(key)
-    return rows
-
-
 def whip_status(meta, party):
-    """Return sourced party/stage status, kept distinct from category proxies."""
-    # Procedural business never inherits a substantive bill's designation.
-    if meta['category'] not in ('procedural', 'government_motion'):
-        for rule in load_designations():
-            if (rule['session'], rule['bill'], rule['party']) == (meta.get('session'), meta['bill_number'], party):
-                status = rule['status'] if meta['stage'] in rule['stages'] else rule['other_stages']
-                return {'status': status, 'scope': rule['member_scope'], 'source_id': rule['id']}
-    if meta['category'] in ('unknown_bill', 'other'):
-        return {'status': 'unresolved', 'scope': 'unknown', 'source_id': ''}
+    """Legacy compatibility: category proxies, never verified instructions."""
     return {'status': 'category_proxy_private' if meta['category'] in FREE_VOTE_CATEGORIES else 'category_proxy_other',
             'scope': 'unknown', 'source_id': ''}
 

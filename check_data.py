@@ -1,6 +1,6 @@
 """Fail-closed integrity gate for the corpus and documented source repairs.
 
-python check_data.py [44-1 45-1] [--output audit/integrity.json]
+python check_data.py [44-1 45-1] [--output data/corrections/integrity.json]
 No network calls, plotting imports, or blanket tally tolerances.
 """
 import argparse
@@ -61,8 +61,6 @@ def check_session(session, directory, audit_records=None):
 def require_valid_corpus(root=ROOT, sessions=None):
     root = Path(root)
     decisions.cache_clear()
-    bill_info.load_designations.cache_clear()
-    bill_info.load_designations()
     wanted = tuple(sessions) if sessions is not None else SESSIONS
     if not wanted or set(wanted) - set(SESSIONS):
         raise IntegrityError('Unknown or empty session selection')
@@ -70,7 +68,7 @@ def require_valid_corpus(root=ROOT, sessions=None):
         actual_sessions = {p.name.replace('Parliament_', '') for p in root.glob('Parliament_*') if p.is_dir()}
         if actual_sessions != set(SESSIONS):
             raise IntegrityError(f'Session universe changed: {sorted(actual_sessions ^ set(SESSIONS))}')
-    from tools.build_audit_data import build
+    from tools.repair_data import build
     for name, content in build().items():
         if (ROOT / name).read_text(encoding='utf-8') != content:
             raise IntegrityError(f'Audit derivation changed: {name}')

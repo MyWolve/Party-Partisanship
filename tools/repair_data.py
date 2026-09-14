@@ -22,11 +22,11 @@ from vote_data import parse_vote_text, text_hash, tally
 
 def xml_rows(name):
     return [{c.tag: c.text or '' for c in e}
-            for e in ET.fromstring(gzip.decompress((ROOT / 'evidence' / (name+'.gz')).read_bytes()))]
+            for e in ET.fromstring(gzip.decompress((ROOT / 'data' / 'sources' / (name+'.gz')).read_bytes()))]
 
 
 def journal_names(number):
-    s = gzip.decompress((ROOT / 'evidence' / f'42-1-{number}-journals.html.gz').read_bytes()).decode('utf-8')
+    s = gzip.decompress((ROOT / 'data' / 'sources' / f'42-1-{number}-journals.html.gz').read_bytes()).decode('utf-8')
     start = s.index(f'Division No. {number}')
     block = s[start:s.index('</table>', start)]
     groups = block.split('class="DivisionType">')[2::2]
@@ -67,11 +67,11 @@ def csv_text(rows):
 def build():
     if not __debug__:
         raise ValueError('Audit derivation must run without Python optimization (-O)')
-    sources = json.loads((ROOT / 'evidence/sources.json').read_text(encoding='utf-8'))
+    sources = json.loads((ROOT / 'data/sources/sources.json').read_text(encoding='utf-8'))
     for name, source in sources.items():
-        if hashlib.sha256((ROOT / 'evidence' / name).read_bytes()).hexdigest() != source['sha256']:
+        if hashlib.sha256((ROOT / 'data' / 'sources' / name).read_bytes()).hexdigest() != source['sha256']:
             raise ValueError(f'Evidence checksum mismatch: {name}')
-    issues = json.loads((ROOT / 'audit/baseline_discrepancies.json').read_text(encoding='utf-8'))
+    issues = json.loads((ROOT / 'data/corrections/baseline_discrepancies.json').read_text(encoding='utf-8'))
     result, files = {}, {}
     for issue in sorted(issues, key=lambda r: (r['session'], r['division'])):
         session, number = issue['session'], issue['division']
@@ -81,7 +81,7 @@ def build():
         with (directory / 'votes_metadata.csv').open(encoding='utf-8-sig') as stream:
             meta = next(r for r in csv.DictReader(stream) if int(r['vote_number']) == number)
         decision = {'raw_sha256': text_hash(raw), 'raw_metadata': meta,
-                    'source_files': [f'evidence/{session}-{number}.xml']}
+                    'source_files': [f'data/sources/{session}-{number}.xml']}
         official = xml_rows(f'{session}-{number}.xml')
         if number == 871 and session == '42-1':
             assert not rows and not official
@@ -91,13 +91,13 @@ def build():
             repaired = [member(match_name(name, roster), vote) for vote in ('Yea', 'Nay') for name in names[vote]]
             assert tally(repaired) == (172, 134, 0)
             assert len({r['member_id'] for r in repaired}) == 306
-            path = 'audit/derived/42-1-871.csv'
+            path = 'data/corrections/derived/42-1-871.csv'
             files[path] = csv_text(repaired)
             decision.update(replacement=path, replacement_sha256=text_hash(files[path]),
                 metadata_override={'yeas': '172', 'nays': '134', 'paired': '0', 'result': 'Agreed To'},
                 reason='Journal roll call; identities and affiliations uniquely joined to the same-sitting division 872 roster. No votes copied from 872.',
                 treatment='restore_division')
-            decision['source_files'] += ['evidence/42-1-871-journals.html', 'evidence/42-1-872.xml']
+            decision['source_files'] += ['data/sources/42-1-871-journals.html', 'data/sources/42-1-872.xml']
         elif number == 724 and session == '42-1':
             # Match every Journal name against the original XML plus the missing member.
             before = next(p for p in xml_rows('42-1-723.xml') if p['PersonId'] == '88595')
@@ -120,7 +120,7 @@ def build():
             added['party'] = 'Independent'
             decision.update(append_rows=[added], treatment='restore_member',
                 reason='Journal includes Monique Pauzé (Yea). Adjacent-day XML rosters use two minor-group labels, both aggregated as Independent; exact June 5 group label remains unresolved.')
-            decision['source_files'] += ['evidence/42-1-724-journals.html', 'evidence/42-1-723.xml', 'evidence/42-1-725.xml']
+            decision['source_files'] += ['data/sources/42-1-724-journals.html', 'data/sources/42-1-723.xml', 'data/sources/42-1-725.xml']
             assert tally(rows + [added]) == (40, 245, 0)
         else:
             by_id = {p['PersonId']: p for p in official}
@@ -142,7 +142,7 @@ def build():
                 reason='Official XML has both Yea and Nay flags. Retain both for tally verification; exclude this member-division from binary metrics.')
         decision['source_files'] = [p+'.gz' for p in decision['source_files']]
         result[f'{session}/{number}'] = decision
-    files['audit/data_decisions.json'] = json.dumps(result, indent=2, ensure_ascii=False, sort_keys=True) + '\n'
+    files['data/corrections/data_decisions.json'] = json.dumps(result, indent=2, ensure_ascii=False, sort_keys=True) + '\n'
     return files
 
 
