@@ -19,6 +19,7 @@ import bill_info
 from check_data import require_valid_corpus, SESSIONS
 from experiment_io import write_csv, write_json, plot_style
 from experiments.design_checks import summarize
+from experiments.e1_narrative import narrative_lines
 from visualize_parliament import WHIPPED_PARTIES, PARTY_COLORS, load_parliament, find_rebels, vote_number, count_yea_nay
 
 RESULTS_DIR = PROJECT_ROOT / 'experiments/results_e1'
@@ -56,6 +57,7 @@ def gather_session(directory):
             status = bill_info.whip_status(meta, party)
             r = rebels[party]
             classifications.append(dict(session=session, division=number, party=party,
+                date=meta['date'],
                 governing=party == SESSION_GOVERNMENT[session], category=meta['category'],
                 stage=meta['stage'] or '', bill=meta['bill_number'], bill_type_source=meta['bill_type_source'],
                 whip_status=status['status'], member_scope=status['scope'], source_id=status['source_id'],
@@ -161,11 +163,12 @@ def main(output_dir=None):
     h = headline
     lines = ['# E1 Dissent by parliamentary business', '',
         f"Government bills: **{h['government_with_dissent']}/{h['government_divisions']}** divisions with governing-party dissent "
-        f"({h['government_rate']:.2f}%). Private members’ business: **{h['private_with_dissent']}/{h['private_divisions']}** "
+        f"({h['government_rate']:.2f}%). Private members' business: **{h['private_with_dissent']}/{h['private_divisions']}** "
         f"({h['private_rate']:.2f}%). The descriptive ratio is **{h['ratio']:.2f}**.", '',
         f"Supply: **{supply[1]}/{supply[0]}**. The main comparison excludes {h['documented_free_governing_divisions']} "
         f"documented free stages for the governing party. There are {h['unresolved_governing_divisions']} "
         'governing-party divisions with explicitly unresolved status; see sensitivity below.', '',
+        *narrative_lines(rows, classifications, SESSION_GOVERNMENT, SESSIONS),
         '## Sensitivity', '',
         '| Scope | Government dissent | Private business dissent | Ratio |', '| --- | --- | --- | --- |']
     for r in sensitivity:
@@ -182,10 +185,10 @@ def main(output_dir=None):
     for r in weighting:
         lines.append(f"| {r['category']} | {r['all_division_rate']:.2f}% | {r['numbered_division_rate']:.2f}% | "
                      f"{r['equal_bill_mean_rate']:.2f}% | {r['session_bill_units']} | {r['unnumbered_divisions']} |")
-    lines += ['', 'The equal-bill mean first computes each session–bill’s fraction of eligible divisions containing dissent, '
+    lines += ['', 'The equal-bill mean first computes each session–bill\'s fraction of eligible divisions containing dissent, '
         'then weights those bills equally. It is not the fraction of bills with any dissent. Bill numbers restart across sessions; '
         'the key includes session. The numbered-only division rate separates selection changes from weighting changes. '
-        'Private members’ motions without a bill number remain in the headline but cannot enter this bill-level comparison. '
+        'Private members\' motions without a bill number remain in the headline but cannot enter this bill-level comparison. '
         'Reintroduced bills can still be related across sessions; no independence or causal claim follows.', '',
         '| Category | Observed party voters | Divisions | Divisions with dissent | Minority member-votes |',
         '| --- | --- | --- | --- | --- |']

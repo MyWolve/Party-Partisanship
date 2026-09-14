@@ -18,6 +18,15 @@ A division counts once if at least one binary voter opposes the observed governi
 
 The private/government ratio is **9.65** under the main classification. Alternative all-division classifications produce **6.58–12.29**; this is a sensitivity range, not a confidence interval. [Counts and scope sensitivity](experiments/results_e1/FINDINGS_E1.md)
 
+Several concrete patterns stand out in that same main scope:
+
+- **658 consecutive eligible Conservative government-bill divisions without dissent**, from 39-2/113 on **27 May 2008** to 41-2/467 on **18 June 2015**. This counts eligible government-bill divisions, not every House vote.
+- **Harper-era government bills: 2/762 (0.26%)**, versus **30/669 (4.48%) under Trudeau and Carney**, a **17.09-fold** difference in observed dissent incidence across those pooled periods.
+- **Martin's 38-1 session has the highest government-bill rate: 9/60 (15.00%)**, among sessions with at least 30 eligible government-bill divisions. Supply dissent is rare across the sample: **1/1,118 (0.09%)**.
+- **C-89, 42-1/950: six Liberal dissenters** on postal-services legislation. It is the largest episode not already flagged unresolved and a candidate for further investigation; a whip instruction still needs a source.
+
+See [the generated narrative, session table and ranked dissent episodes](experiments/results_e1/FINDINGS_E1.md#what-stands-out).
+
 This is evidence about voting patterns by business category. It does not identify the causal effect of a whip instruction. Party policy, issues, participation, caucus size, and repeated votes on a bill also matter.
 
 ![Governing-party dissent by session](experiments/results_e1/whip_test_by_session.png)

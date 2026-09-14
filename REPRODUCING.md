@@ -81,7 +81,7 @@ E7 averages Rice over divisions with observed party votes. MP loyalty gives each
 | File | Unit and key fields |
 | --- | --- |
 | E1 `summary.csv` | Session × party × category × scope × variant; divisions, with_dissent, dissent_rate |
-| E1 `classification_audit.csv` | Division × party; category, stage, source of bill type, documented status and scope, majority definition, dissent count |
+| E1 `classification_audit.csv` | Division × party; source date/time, category, stage, source of bill type, documented status and scope, majority definition, dissent count and binary voter count |
 | E1 `sensitivity.csv` | Pooled governing-party comparison × scope × variant; both denominators, counts, rates, ratio |
 | E1 `outliers.csv` | Governing-party government-bill divisions with dissent; names and status included for inspection |
 | E1 `headline.json` | Main comparison and counts used by the generated findings |

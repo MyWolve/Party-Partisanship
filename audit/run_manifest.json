@@ -8,7 +8,8 @@
     "experiment_io.py": "1ac7d99bbf3e51b3b1f68f2924b96b803572d54641a5824a55c3ba6cb89a4b28",
     "experiments/build_benchmarks_e7.py": "f0b6f505fb4ba212ad3755ddf0843b1f535fc8e3b55fcc8eaafcc111986461f2",
     "experiments/design_checks.py": "0e3de1d681f23e0ada28bc39e2e5ce5bcf0623d8d894be2c6b834bbdc74322cf",
-    "experiments/experiment_e1.py": "3a3947eb2f89650886ff72b7d62c98cbb5ffe33702445646a7acc6b11042707b",
+    "experiments/e1_narrative.py": "0ca84670b230ce411e97f3f39c30b734650a5bd3140ddc12911434c9aaef97a8",
+    "experiments/experiment_e1.py": "5b4e6060c9c6e9d8590bce2ba18c29c89c5395c4a05f2c5d2168fd5b23b489c7",
     "experiments/experiment_e7.py": "74c0017c797aaffee5331aa70950064722c502240ade3062cab1c13ef9e8c5ba",
     "provenance.py": "d926f81b7c8f4b798167cfb4bdc6dde81cb5b4a1a527db657a883dfd3be3da86",
     "reproduce.py": "6d952078bda8c4377006386d34b234840f508112efdf2b33defb4f38c1f4be80",
@@ -16,6 +17,7 @@
     "requirements.txt": "c5c47ecfbac90e9ce72b9e8a547f723374dc09af7dd51685093d122c8199671f",
     "tests/test_collection.py": "fc932f770ca3a16c0a92f9e894ba9fd429d6f74be726a094fd0db6b1428c9e23",
     "tests/test_design_and_export.py": "86ef52835c828e158339a7e0f3d598e5ff2cbca1e126689d7f53cab285f64bbb",
+    "tests/test_narrative.py": "43ecc5cafaf2d0a4b1cbccceb2aab4ac7180fe9a2826e6c321f99e6cca6770be",
     "tests/test_pipeline.py": "b9449141fbbdb82564891be0f3678db273e5256e70edfc117bfffe81fa959199",
     "tests/test_reconciliation.py": "878a1bca30753a42eebd890b43e52800750ab4e506ee46cf7084ed5da970d9e5",
     "tests/test_source_coverage.py": "0feef5ff62482a20956019ec4db4e862ac7d673f398b01e184bec90fef007769",
@@ -32,7 +34,7 @@
     "visualize_parliament.py": "16ba7296cd8bbc322c9b4c52a5caef204bee779588a08cdf8de04d63373ab37d",
     "vote_data.py": "5c0d4c07e0f8089db697c3881264489193fabc2c278319ffe2c83129b15518f3"
   },
-  "code_sha256": "58e56ed6b1a3ad850196af451ec2c132c2405b206da29c814e558bdeff652798",
+  "code_sha256": "cc29558dd991041e21768c39a7c79e049a7bcc9d9bc62478132bbf0aa558f74c",
   "commands": [
     "tools/build_audit_data.py --check",
     "-m unittest discover -s tests -v",
@@ -66,7 +68,7 @@
     "six": "1.17.0",
     "urllib3": "2.7.0"
   },
-  "git_base_revision": "d0ebbdd0a387682cca82d532df5910d0e938a0bf",
+  "git_base_revision": "6e7a7b30ac5b9f9acf604674c28a85daa7d61f7d",
   "outputs": {
     "data/processed/bill_sponsors.csv": "b19ff1bef98fdcfdffc99c06e241552f090ad0328d9d60a71843806220be7bec",
     "data/processed/divisions.csv": "c5ee6f72c3314880d5bd37fb723935ec957d77c616921fc98630ecbf138e6c3d",
@@ -74,9 +76,9 @@
     "data/processed/members.csv.gz": "a8d0f629436c12abadfc5011f04c02d25cae9a1d518b50bc502105d47ca81302",
     "data/processed/repairs.json": "f164d15305e4dd8f996558b0ac28de3e145836a02bef52fefbe6c78e561e32cb",
     "data/processed/sources.json": "31e4b08b578d053485b7fab6d0c4deac608500d72ede1d668195dfc0a472e753",
-    "experiments/results_e1/FINDINGS_E1.md": "f589b6512132d23b1793105aa6063c16e6171f5d850773ec1a99248ed86f803e",
+    "experiments/results_e1/FINDINGS_E1.md": "e99cc510ec834cdb6a4f7fa4b6b4bd22040c54e714ee13567b871fc589608b5d",
     "experiments/results_e1/bill_units.csv": "17bd32f797829ab23916ab49be4d2be24072ceaf23d3064d7c206abf4f344437",
-    "experiments/results_e1/classification_audit.csv": "72d85ae1877bf2095e475b3e094f18191f79827980b9be482d95a892b228946a",
+    "experiments/results_e1/classification_audit.csv": "ea0e77ae64835e20adb44ff4b9769f255be9cfbd46499394832ec262c30779fd",
     "experiments/results_e1/design_checks.csv": "747d19bc80f36f9af5f94fc993b06f733eea924b5167c0abbe00046d8498175c",
     "experiments/results_e1/dissent_by_category_pooled.png": "8ff08cad5e9ffeb8178b53f4d1466f7c5ac56f82cb91417869206e83f982c106",
     "experiments/results_e1/headline.json": "0b44664b672311e30b85cb1ff263eafd2e18b4f6569e94d930f4b1166830c6b9",
@@ -99,5 +101,5 @@
   },
   "saved_results_match": true,
   "status": "pass",
-  "table_sha256": "9ee13d629f4a474feae84c23bcd725ed7aabf3b1a938107c76ac00d0d3dd122b"
+  "table_sha256": "96eff6cf3a400bf5d35453311c1f715c49e2ca677a8ea5536ad494db05e4bf23"
 }

@@ -20,6 +20,10 @@ test_unnumbered_and_undefined_are_not_zero (test_design_and_export.DesignChecks.
 test_compression_metadata_does_not_change_content_hash (test_design_and_export.ExportChecks.test_compression_metadata_does_not_change_content_hash) ... ok
 test_flags_and_repair_provenance (test_design_and_export.ExportChecks.test_flags_and_repair_provenance) ... ok
 test_round_trip_rejects_wrong_analysis_denominator_and_changed_content (test_design_and_export.ExportChecks.test_round_trip_rejects_wrong_analysis_denominator_and_changed_content) ... ok
+test_dissent_resets_and_sessions_continue (test_narrative.NarrativeTests.test_dissent_resets_and_sessions_continue) ... ok
+test_governing_party_transition_breaks_run (test_narrative.NarrativeTests.test_governing_party_transition_breaks_run) ... ok
+test_ineligible_observations_neither_extend_nor_break (test_narrative.NarrativeTests.test_ineligible_observations_neither_extend_nor_break) ... ok
+test_order_is_numeric (test_narrative.NarrativeTests.test_order_is_numeric) ... ok
 test_complete_and_boundary (test_pipeline.BenchmarkTests.test_complete_and_boundary) ... ok
 test_missing_duplicate_unexpected_invalid (test_pipeline.BenchmarkTests.test_missing_duplicate_unexpected_invalid) ... ok
 test_curly_apostrophe (test_pipeline.ClassificationTests.test_curly_apostrophe) ... ok
@@ -74,7 +78,7 @@ test_same_id_spacing_variant_preserves_aliases_and_count (test_sponsors.SponsorT
 test_sponsor_collection_retains_identity_and_rejects_wrong_detail (test_sponsors.SponsorTests.test_sponsor_collection_retains_identity_and_rejects_wrong_detail) ... ok
 
 ----------------------------------------------------------------------
-Ran 69 tests in 2.941s
+Ran 73 tests in 3.341s
 
 OK
 Export round-trip: 4 members; 5 E1 party/division denominators match
