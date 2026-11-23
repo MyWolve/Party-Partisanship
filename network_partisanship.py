@@ -252,11 +252,13 @@ def save_panel_grid(rows: list[tuple[Period, np.ndarray, np.ndarray, list[str]]]
         render_network(ax, metric, xy, edges, party, PARTY_COLORS)
     markers = [plt.Line2D([0], [0], marker='o', linestyle='', color=PARTY_COLORS[p],
                           label=p, markersize=6) for p in PARTY_ORDER]
-    fig.legend(handles=markers, loc='lower center', ncol=6, frameon=False, fontsize=8)
-    fig.suptitle(title, fontsize=15)
-    fig.text(.5, .035, 'Edges are display-sparsified; agreement statistics use every eligible MP pair. '
-             'Missing and paired votes are excluded.', ha='center', fontsize=7)
-    fig.tight_layout(rect=(0, .08, 1, .95), w_pad=.8, h_pad=1.6)
+    fig.suptitle(title, fontsize=15, y=.985)
+    fig.legend(handles=markers, loc='lower center', ncol=6, frameon=False,
+               fontsize=8, bbox_to_anchor=(.5, .085))
+    fig.text(.5, .042, 'Drawn edges are sparsified for legibility; all eligible pairs enter the statistics. '
+             'Paired, dual-coded and absent votes are excluded.',
+             ha='center', fontsize=8)
+    fig.tight_layout(rect=(0, .16, 1, .945), w_pad=.8, h_pad=2.0)
     fig.savefig(destination, dpi=190, bbox_inches='tight')
     plt.close(fig)
 
