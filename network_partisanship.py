@@ -250,10 +250,11 @@ def save_panel_grid(rows: list[tuple[Period, np.ndarray, np.ndarray, list[str]]]
         ax.axis('off')
     for ax, (metric, xy, edges, party) in zip(axs.flat, rows):
         render_network(ax, metric, xy, edges, party, PARTY_COLORS)
+    present = {p for _, _, _, parties in rows for p in parties}
     markers = [plt.Line2D([0], [0], marker='o', linestyle='', color=PARTY_COLORS[p],
-                          label=p, markersize=6) for p in PARTY_ORDER]
+                          label=p, markersize=6) for p in PARTY_ORDER if p in present]
     fig.suptitle(title, fontsize=15, y=.985)
-    fig.legend(handles=markers, loc='lower center', ncol=6, frameon=False,
+    fig.legend(handles=markers, loc='lower center', ncol=max(1, min(6, len(markers))), frameon=False,
                fontsize=8, bbox_to_anchor=(.5, .085))
     fig.text(.5, .042, 'Drawn edges are sparsified for legibility; all eligible pairs enter the statistics. '
              'Paired, dual-coded and absent votes are excluded.',
@@ -280,6 +281,32 @@ def save_trends(metrics: list[Period], destination: Path) -> None:
     ax.set_title('Canadian MP voting agreement by parliamentary session')
     fig.text(.5, .01, 'Based on available recorded divisions; sessions vary in duration and vote composition. '
              'Missing/short sessions are not interpolated.', ha='center', fontsize=8)
+    fig.tight_layout(rect=(0, .05, 1, 1))
+    fig.savefig(destination, dpi=180)
+    plt.close(fig)
+
+
+def save_party_pair_trends(pair_rows: list[dict], sessions: list[str], destination: Path) -> None:
+    """Plot selected cross-party relationships rather than collapsing every party pair."""
+    relations = [('Liberal', 'Conservative'), ('Liberal', 'NDP'),
+                 ('Conservative', 'NDP'), ('Bloc Québécois', 'Liberal')]
+    indexed = {(r['session'], r['party_a'], r['party_b']): r['mean_agreement']
+               for r in pair_rows}
+    x = np.arange(len(sessions))
+    fig, ax = plt.subplots(figsize=(12, 5.5))
+    for party_a, party_b in relations:
+        a, b = sorted((party_a, party_b))
+        values = [indexed.get((session, a, b), float('nan')) for session in sessions]
+        ax.plot(x, np.array(values) * 100, '-o', linewidth=2, markersize=4.5,
+                label=f'{party_a}–{party_b}')
+    ax.set_xticks(x, sessions, rotation=45)
+    ax.set_ylim(0, 100)
+    ax.set_ylabel('Mean pair agreement across jointly observed votes (%)')
+    ax.set_title('Canadian cross-party voting relationships by parliamentary session')
+    ax.grid(alpha=.2)
+    ax.legend(loc='upper center', ncol=2, frameon=False)
+    fig.text(.5, .015, 'All eligible MP pairs; absent and paired votes excluded. '
+             'The 45-1 session is an incomplete snapshot.', ha='center', fontsize=8)
     fig.tight_layout(rect=(0, .05, 1, 1))
     fig.savefig(destination, dpi=180)
     plt.close(fig)
@@ -382,6 +409,7 @@ def main(argv=None):
     save_panel_grid(panels, args.output/'voting_networks.png',
                     'Canadian House of Commons: networks of voting agreement')
     save_trends(metrics, args.output/'agreement_trends.png')
+    save_party_pair_trends(pair_rows, sessions, args.output/'cross_party_trends.png')
     save_heatmaps(pair_rows, [s for s in PILOT if s in sessions], args.output/'party_agreement_heatmaps.png')
     (args.output/'manifest.json').write_text(json.dumps({
         'schema': 1, 'sessions': sessions, 'category': args.category,
