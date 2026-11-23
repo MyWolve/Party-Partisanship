@@ -364,10 +364,24 @@ def main(argv=None):
                         help='Minimum number of jointly observed divisions for each pair and each MP')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--seed', type=int, default=7)
+    parser.add_argument('--temporal-mode', choices=['quarterly'], default=None,
+                        help='Within-session independent quarters, cumulative snapshots and rolling windows')
+    parser.add_argument('--rolling-width', type=int, default=100,
+                        help='Rolling-window width in recorded divisions (default 100)')
+    parser.add_argument('--rolling-step', type=int, default=25,
+                        help='Advance rolling windows by this many divisions (default 25)')
+    parser.add_argument('--min-window-divisions', type=int, default=40,
+                        help='Suppress statistics for windows with fewer divisions (default 40)')
     parser.add_argument('--skip-validation', action='store_true', help='Development only; skip corpus audit')
     args = parser.parse_args(argv)
     if not 0 <= args.threshold <= 1 or args.min_common < 2:
         parser.error('threshold must be in [0,1] and min-common at least 2')
+    if args.temporal_mode:
+        if args.rolling_width < 2 or args.rolling_step < 1 or args.min_window_divisions < 2:
+            parser.error('rolling width >=2, step >=1 and min-window-divisions >=2 required')
+        from temporal_partisanship import run as run_temporal
+        run_temporal(args)
+        return
     sessions = list(SESSIONS) if args.all else args.sessions
     if not args.skip_validation:
         require_valid_corpus(sessions=sessions)
