@@ -159,6 +159,11 @@ def evaluate(corpus: Corpus, window: Window, *, threshold: float = .80,
         min_common, threshold, switchers)
     if window.end-window.start < min_window_divisions:
         metric.status = 'insufficient_window'
+        for field in ('mean_same', 'mean_cross', 'gap', 'median_same', 'median_cross',
+                      'cross_edge_share', 'assortativity'):
+            setattr(metric, field, None)
+        metric.graph_edges = 0
+        metric.graph_cross_edges = 0
         summary = {}
     if draw and metric.status == 'ok':
         xy, shown = layout_graph(agreement, edges, filtered_parties, seed=seed)
@@ -300,7 +305,14 @@ def save_atlas(all_results: dict[str, list[Result]], path: Path, title: str) -> 
         for col, result in enumerate(results):
             ax = axs[r, col]
             render_network(ax, result.metric, result.xy, result.shown, result.parties, PARTY_COLORS)
+            # The base renderer's footnote falls into the next panel in a 2-row atlas.
+            # Put the useful figures directly in the panel title instead.
             if result.metric.status == 'ok':
+                for annotation in list(ax.texts):
+                    if 'votes ·' in annotation.get_text():
+                        annotation.remove()
+                ax.set_title(f'{session} {result.window.label} | {result.metric.divisions} votes'
+                             f' | gap {100*result.metric.gap:.1f} pp', fontsize=9, pad=4)
                 ax.set_xlim(xmin-margin, xmax+margin)
                 ax.set_ylim(ymin-margin, ymax+margin)
                 ax.set_aspect('equal', adjustable='box')
