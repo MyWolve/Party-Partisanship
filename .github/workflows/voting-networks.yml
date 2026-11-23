@@ -28,7 +28,7 @@ jobs:
       - name: Test existing and new analyses
         run: |
           python -m unittest discover -s tests -q
-          python -m unittest test_network_partisanship.py -v
+          python -m unittest test_network_partisanship.py test_temporal_partisanship.py -v
       - name: Pilot 38-1, 42-1, 44-1
         run: python network_partisanship.py --sessions 38-1 42-1 44-1 --output outputs/networks-pilot
       - name: Every saved session
@@ -40,6 +40,9 @@ jobs:
           python network_partisanship.py --sessions 38-1 42-1 44-1 --category government_bill --output outputs/pilot-government-bills
           python network_partisanship.py --sessions 38-1 42-1 44-1 --category private_members_business --output outputs/pilot-private-members-business
           python network_partisanship.py --sessions 38-1 42-1 44-1 --category opposition_motion --output outputs/pilot-opposition-motions
+      - name: Within-session longitudinal networks (42nd and 44th Parliaments)
+        run: |
+          python network_partisanship.py --temporal-mode quarterly --sessions 42-1 44-1 --rolling-width 100 --rolling-step 25 --output outputs/temporal-42-44
       - name: Upload analysis, figures and metrics
         if: always()
         uses: actions/upload-artifact@v4
