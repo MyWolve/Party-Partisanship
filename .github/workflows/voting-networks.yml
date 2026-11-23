@@ -35,6 +35,11 @@ jobs:
         run: python network_partisanship.py --all --output outputs/networks-all
       - name: Liberal-Conservative two-party comparison
         run: python network_partisanship.py --all --parties Liberal Conservative --output outputs/networks-liberal-conservative
+      - name: Legislative-category comparisons for pilot sessions
+        run: |
+          python network_partisanship.py --sessions 38-1 42-1 44-1 --category government_bill --output outputs/pilot-government-bills
+          python network_partisanship.py --sessions 38-1 42-1 44-1 --category private_members_business --output outputs/pilot-private-members-business
+          python network_partisanship.py --sessions 38-1 42-1 44-1 --category opposition_motion --output outputs/pilot-opposition-motions
       - name: Upload analysis, figures and metrics
         if: always()
         uses: actions/upload-artifact@v4
