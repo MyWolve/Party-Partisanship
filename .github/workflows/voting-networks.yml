@@ -1,0 +1,53 @@
+name: Parliamentary voting networks
+
+on:
+  push:
+    branches:
+      - analysis/voting-agreement-networks
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install 'networkx>=3.2,<4'
+      - name: Test existing and new analyses
+        run: |
+          python -m unittest discover -s tests -q
+          python -m unittest test_network_partisanship.py test_temporal_partisanship.py -v
+      - name: Pilot 38-1, 42-1, 44-1
+        run: python network_partisanship.py --sessions 38-1 42-1 44-1 --output outputs/networks-pilot
+      - name: Every saved session
+        run: python network_partisanship.py --all --output outputs/networks-all
+      - name: Liberal-Conservative two-party comparison
+        run: python network_partisanship.py --all --parties Liberal Conservative --output outputs/networks-liberal-conservative
+      - name: Legislative-category comparisons for pilot sessions
+        run: |
+          python network_partisanship.py --sessions 38-1 42-1 44-1 --category government_bill --output outputs/pilot-government-bills
+          python network_partisanship.py --sessions 38-1 42-1 44-1 --category private_members_business --output outputs/pilot-private-members-business
+          python network_partisanship.py --sessions 38-1 42-1 44-1 --category opposition_motion --output outputs/pilot-opposition-motions
+      - name: Within-session longitudinal networks (42nd and 44th Parliaments)
+        run: |
+          python network_partisanship.py --temporal-mode quarterly --sessions 42-1 44-1 --rolling-width 100 --rolling-step 25 --output outputs/temporal-42-44
+      - name: Upload analysis, figures and metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: canadian-voting-networks
+          path: outputs/
+          if-no-files-found: warn
+          retention-days: 30
